@@ -60,6 +60,8 @@
                 </tr>
             </tfoot>
         </table>
+
+        <button class="checkout">Checkout</button>
     </section>
  
     <!-- Bootstrap & jQuery JS -->
