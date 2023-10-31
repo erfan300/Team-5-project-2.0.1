@@ -49,9 +49,6 @@
   <br><br> 
 
   <input type="submit" value="Submit"/>
-
-  
-
   <br><br>
 
 </form>
@@ -62,4 +59,3 @@
   </footer>
 </body>
 </html>
-
