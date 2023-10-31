@@ -36,42 +36,6 @@
         </div>
     </nav>
  
-    <!-- Product List -->
-    <section id="product-list" class="container mt-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">Description for Product 1.</p>
-                        <button class="btn btn-primary add-to-Baset" data-product-id="1">Add to Basket</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Product 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                        <p class="card-text">Description for Product 2.</p>
-                        <button class="btn btn-primary add-to-Basket" data-product-id="2">Add to Basket</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Product 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">Description for Product 3.</p>
-                        <button class="btn btn-primary add-to-basket" data-product-id="3">Add to Basket</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- 
     <!-- Shopping Basket -->
     <section id="shopping-basket" class="container mt-5">
         <h2>Shopping Basket</h2>
