@@ -13,9 +13,14 @@
                 <li><a href="#">Link 3</a></li>
                 <li><a href="#">Link 4</a></li>
             </ul>
-        </nav>
-        
+        </nav>  
     </header>
+    <!-- SlideShow -->
+    <section class="slideShow">
+
+    </section>
+
+
     <h1><u>HOME</u></h1>
     
     <p>Fill in the blanks with the names of your pages.</p>
