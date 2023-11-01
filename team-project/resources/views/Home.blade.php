@@ -25,6 +25,8 @@
     
     <p>Fill in the blanks with the names of your pages.</p>
     <p>Greetings and welcome to the X webpage, where I will be offering books in a variety of genres. We are the top sellers of specialized books that you won't find anywhere else.</p>
+    
+    <!-- Book Selection -->
     <p><u>BEST SELLERS</u></p>
     <img src="Image/BLANK.PNG" alt="Best Seller 1" title="Best Seller 1">
     <img src="Image/BLANK.PNG" alt="Best Seller 2" title="Best Seller 2">
