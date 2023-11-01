@@ -7,18 +7,17 @@
 <body>
     <header>
         <nav>
-            <!-- Place your navigation links here -->
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
         </nav>
-        <img src="Image/BLANK.PNG" alt="Homepage" title="My Homepage">
-        <a href="Home.html"></a>
+        
     </header>
     <h1><u>HOME</u></h1>
-    <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-    </ul>
+    
     <p>Fill in the blanks with the names of your pages.</p>
     <p>Greetings and welcome to the X webpage, where I will be offering books in a variety of genres. We are the top sellers of specialized books that you won't find anywhere else.</p>
     <p><u>BEST SELLERS</u></p>
