@@ -8,6 +8,7 @@
     <title>Homepage</title>
 </head>
 <body>
+    <!-- Header -->
     <section class="header">
         <nav>
             <ul>
