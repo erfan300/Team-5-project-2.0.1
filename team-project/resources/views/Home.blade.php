@@ -8,7 +8,7 @@
     <title>Homepage</title>
 </head>
 <body>
-    <header>
+    <section class="header">
         <nav>
             <ul>
                 <li><a href="#">Link 1</a></li>
@@ -17,7 +17,7 @@
                 <li><a href="#">Link 4</a></li>
             </ul>
         </nav>  
-    </header>
+    </section>
     <!-- SlideShow -->
     <section class="slideShow">
 
