@@ -8,6 +8,7 @@
     <title>Homepage</title>
 </head>
 <body>
+    
     <!-- Header -->
     <section class="header">
         <nav>
@@ -19,6 +20,7 @@
             </ul>
         </nav>  
     </section>
+
     <!-- SlideShow -->
     <section class="slideShow">
 
@@ -47,6 +49,11 @@
             <img src="Image/BLANK.PNG" alt="Genre 2" title="Genre 2">
             <img src="Image/BLANK.PNG" alt="Genre 3" title="Genre 3">
             <img src="Image/BLANK.PNG" alt="Genre 4" title="Genre 4">
+    </section>
+    
+    <!-- Footer -->
+    <section class="footer">
+        <h6>Book4U 2023</h6>
     </section>
 </body>
 </html>
