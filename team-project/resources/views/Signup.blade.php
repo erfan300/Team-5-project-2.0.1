@@ -18,31 +18,24 @@
 </header>
 <main>
 
-    <form>
+        <form method="POST" action="/register">
+            @csrf
+            <input type="text" name="first_name" placeholder="First Name" required><br><br>
+            <input type="text" name="last_name" placeholder="Last Name" required><br><br>
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="text" name="address" placeholder="Address"><br><br>
+            <input type="text" name="phone_number" placeholder="Phone Number"><br><br>
+            <input type="password" name="password" placeholder="Password" required pattern=".{8,}"><br><br>
+            
+            <label for="user_type">Select User Type:</label>
+            <select name="user_type" id="user_type" required>
+                <option value="Customer">Customer</option>
+                <option value="Admin">Admin</option>
+            </select><br><br>
 
-        <input type="text" name="fullName"
-        placeholder="Full Name"/> 
-       
-        <br/><br/>
-
-        <input type="email" name="email"
-        placeholder="Email"/>
-       
-        <br/><br/>
-
-        <input type="Password" name="Password"
-        placeholder="Password" pattern="\w\w\w\w\w\w\w\w" required/>
-       
-        <br/><br/>
-
-
-
-<input type="submit" value="Submit"/>
-
-//>
-
-
-    </form>
+            <input type="submit" value="Sign Up">
+        </form>
 </main>
 <footer>
 

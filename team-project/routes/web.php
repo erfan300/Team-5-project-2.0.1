@@ -20,3 +20,17 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('Home');
 });
+
+Route::get('/home', function () {
+    return view('Home');
+});
+
+Route::get('/register', function () {
+    return view('Signup');
+});
+
+Route::get('/signup', function () {
+    return view('SignUp');
+});
+
+Route::post('/register', 'App\Http\Controllers\UserController@register');
