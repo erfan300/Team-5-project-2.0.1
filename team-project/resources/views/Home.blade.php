@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Home.css">
+    <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
     <title>Homepage</title>
 </head>
 <body>
@@ -35,10 +35,28 @@
     <!-- Book Selection -->
     <section class="book-categories">
         <p><u>BEST SELLERS</u></p>
-            <img src="Image/BLANK.PNG" alt="Best Seller 1" title="Best Seller 1">
-            <img src="Image/BLANK.PNG" alt="Best Seller 2" title="Best Seller 2">
-            <img src="Image/BLANK.PNG" alt="Best Seller 3" title="Best Seller 3">
-            <img src="Image/BLANK.PNG" alt="Best Seller 4" title="Best Seller 4">
+        <div class="book-category">
+            <div class="book-genre-container">
+        
+                @if(count($books) == 0)
+                    <p> No Books found </p>
+                @endif
+         
+                @foreach($books as $book)
+                    <div class="book-container">
+                        <img class="book-image" src="images/acme.png" alt="" />
+                        <div>
+                            <h3 class="book-title">
+                                <a href="/book/{{$book['Product_ID']}}"> {{$book->Product_Name}} </a>
+                            </h3>
+                            <div class="book-Author">{{$book->Author_Name}}</div>
+                            <div class="book-price">{{$book->Price}}</div>
+                            <div class="book-type">{{$book->Book_Type}}</div>
+                        </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
         <p><u>NEW IN</u></p>
             <img src="Image/BLANK.PNG" alt="New In 1" title="New In 1">
             <img src="Image/BLANK.PNG" alt="New In 2" title="New In 2">

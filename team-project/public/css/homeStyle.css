@@ -1,0 +1,36 @@
+.book-category {
+    display: flex;
+    justify-content: center;
+}
+
+.book-genre-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.book-container {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.book-image {
+    max-width: 100px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
+.book-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.book-author { 
+    font-size: 1em;
+}
+
+.book-price,
+.book-type {
+    font-size: 1em;
+}
