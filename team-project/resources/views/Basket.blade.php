@@ -27,14 +27,16 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link" href="#">Basket</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Basket</a>
+                    <a class="nav-link" href="#">About us</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log In/Sign In </a>
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> 
  
     <!-- Shopping Basket -->
     <section id="shopping-basket" class="container mt-5">
