@@ -26,10 +26,6 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/home', function () {
-    return view('Home');
-});
-
 Route::get('/register', function () {
     return view('Signup');
 });
@@ -46,3 +42,7 @@ Route::get('/book/{id}', function ($id) {
         'book' => Products::find($id)
     ]);
 }); 
+
+Route::get('/login', function () {
+    return view('login', ['title' => 'Login']);
+})->name('login');

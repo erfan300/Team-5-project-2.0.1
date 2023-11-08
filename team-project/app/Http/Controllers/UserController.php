@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Customer;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
+
 
 
 class UserController extends Controller
@@ -12,41 +16,48 @@ class UserController extends Controller
     public function register(Request $request)
     {
         // Validate the input data
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
             'username' => 'required|unique:users',
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            'email_confirmation' => 'required|email|same:email',
             'address' => 'nullable',
             'phone_number' => 'nullable',
-            'password' => 'required|min:8',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|same:password',
             'user_type' => 'required|in:Customer,Admin',
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withInput()->withErrors($validator->errors()->all());
+        }
+    
     
         // Create a new user
         $user = new User;
-        $user->username = $validatedData['username'];
-        $user->password = bcrypt($validatedData['password']);
-        $user->email = $validatedData['email'];
-        $user->user_type = $validatedData['user_type'];
+        $user->username = $request->input('username');
+        $user->password = Hash::make($request->input('password'));
+        $user->email = $request->input('email');
+        $user->user_type = $request->input('user_type');
         $user->save();
     
         // Determine the user type and insert data into the corresponding table
-        if ($validatedData['user_type'] === 'Customer') {
+        if ($request->input('user_type') === 'Customer') {
             $customer = new Customer;
             $customer->User_ID = $user->User_ID;
-            $customer->First_Name = $validatedData['first_name'];
-            $customer->Last_Name = $validatedData['last_name'];
-            $customer->Address = $validatedData['address'];
-            $customer->Phone_Number = $validatedData['phone_number'];
+            $customer->First_Name = $request->input('first_name');
+            $customer->Last_Name = $request->input('last_name');
+            $customer->Address = $request->input('address');
+            $customer->Phone_Number = $request->input('phone_number');
             $customer->save();
-        } elseif ($validatedData['user_type'] === 'Admin') {
+        } elseif ($request->input('user_type') === 'Admin') {
             $admin = new Admin;
             $admin->User_ID = $user->User_ID;
-            $admin->First_Name = $validatedData['first_name'];
-            $admin->Last_Name = $validatedData['last_name'];
-            $admin->Email = $validatedData['email'];
-            $admin->Phone_Number = $validatedData['phone_number'];
+            $admin->First_Name = $request->input('first_name');
+            $admin->Last_Name = $request->input('last_name');
+            $admin->Email = $request->input('email');
+            $admin->Phone_Number = $request->input('phone_number');
             $admin->save();
         }
     
