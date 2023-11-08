@@ -1,6 +1,9 @@
 .book-category {
+    color: rgb(128, 128, 128);
+    border: solid rgb(192, 189, 189);
     display: flex;
     justify-content: center;
+    padding: 10px; 
 }
 
 .book-genre-container {
@@ -22,15 +25,24 @@
 }
 
 .book-title {
-    font-size: 1.2em;
+    font-size: 1.3em; 
+    color: #000; 
     margin: 10px 0;
+    margin-bottom: 15px;
+    
 }
 
-.book-author { 
+.book-author {
     font-size: 1em;
+    color: #8B4513; 
 }
 
-.book-price,
+.book-price {
+    font-size: 1.1em; 
+    color: #000; 
+}
+
 .book-type {
-    font-size: 1em;
+    font-size: 0.9em;
+    color: #444; 
 }

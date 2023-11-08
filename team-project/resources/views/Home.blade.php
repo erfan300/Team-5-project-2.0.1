@@ -49,11 +49,11 @@
                             <h3 class="book-title">
                                 <a href="/book/{{$book['Product_ID']}}"> {{$book->Product_Name}} </a>
                             </h3>
-                            <div class="book-Author">{{$book->Author_Name}}</div>
+                            <div class="book-author">{{$book->Author_Name}}</div>
                             <div class="book-price">{{$book->Price}}</div>
                             <div class="book-type">{{$book->Book_Type}}</div>
                         </div>
-                </div>
+                    </div>
                 @endforeach
             </div>
         </div>
