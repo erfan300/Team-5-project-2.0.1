@@ -12,7 +12,6 @@
     <p>
         Books4U is a book store...
     </p>
-
   <!--Contact Form-->
   <h2 class="section-title">Contact Us</h2>
   <section id="contact-us">
@@ -50,9 +49,6 @@
   <br><br> 
 
   <input type="submit" value="Submit"/>
-
-  
-
   <br><br>
 
 </form>
@@ -63,4 +59,3 @@
   </footer>
 </body>
 </html>
-

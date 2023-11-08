@@ -1,0 +1,48 @@
+.book-category {
+    color: rgb(128, 128, 128);
+    border: solid rgb(192, 189, 189);
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+}
+
+.book-genre-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.book-container {
+    text-align: center;
+    margin: 0 10px;
+}
+
+.book-image {
+    max-width: 100px;
+    max-height: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
+.book-title {
+    font-size: 1.3em; 
+    color: #000; 
+    margin: 10px 0;
+    margin-bottom: 15px;
+    
+}
+
+.book-author {
+    font-size: 1em;
+    color: #8B4513; 
+}
+
+.book-price {
+    font-size: 1.1em; 
+    color: #000; 
+}
+
+.book-type {
+    font-size: 0.9em;
+    color: #444; 
+}
