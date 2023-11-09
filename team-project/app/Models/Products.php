@@ -16,5 +16,12 @@ class Products extends Model
         if($filters['author'] ?? false) {
             $query->where('Author_Name', 'like', '%' . request('author') . '%');
         }
+
+        if($filters['search'] ?? false) {
+            $query->where('Product_Name', 'like', '%' . request('search') . '%')
+                ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
+                ->orWhere('Description', 'like', '%' . request('search') . '%')
+                ->orWhere('Book_Type', 'like', '%' . request('search') . '%');
+        }
     }
 }
