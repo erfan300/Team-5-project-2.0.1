@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -45,7 +46,7 @@ class UserController extends Controller
         // Determine the user type and insert data into the corresponding table
         if ($request->input('user_type') === 'Customer') {
             $customer = new Customer;
-            $customer->User_ID = $user->User_ID;
+            $customer->user_id = $user->id; // Use $user->id to set the User_ID
             $customer->First_Name = $request->input('first_name');
             $customer->Last_Name = $request->input('last_name');
             $customer->Address = $request->input('address');
@@ -53,7 +54,7 @@ class UserController extends Controller
             $customer->save();
         } elseif ($request->input('user_type') === 'Admin') {
             $admin = new Admin;
-            $admin->User_ID = $user->User_ID;
+            $admin->user_id = $user->id; // Use $user->id to set the User_ID
             $admin->First_Name = $request->input('first_name');
             $admin->Last_Name = $request->input('last_name');
             $admin->Email = $request->input('email');
@@ -64,5 +65,37 @@ class UserController extends Controller
         // You can also redirect the user to a success page or provide a response message.
         return redirect('/signup');
     }
+
+
+    public function login(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+    
+        $username = $request->input('username');
+        $user = User::where('username', $username)->first();
+        Log::info('User Data: ' . json_encode($user));
+
+        if ($user) {
+            Log::info('Input Password: ' . $request->input('password'));
+            Log::info('User Password: ' . $user->password);
+            if (Hash::check(trim($request->input('password')), $user->password)) {
+                // Password correct, log the user in
+                return redirect()->route('home');
+            } else {
+                return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
+            }
+            
+        } else {
+            return redirect()->back()->withErrors(['error' => 'User not found'])->withInput();
+        }
+    }
+    
+    
     
 }

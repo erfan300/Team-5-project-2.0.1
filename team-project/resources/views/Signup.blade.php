@@ -48,6 +48,7 @@
             
             <label for="user_type">Select User Type:</label>
             <select name="user_type" id="user_type" required>
+                <option></option>
                 <option value="Customer">Customer</option>
                 <option value="Admin">Admin</option>
             </select><br><br>

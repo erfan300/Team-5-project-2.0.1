@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home', [
         'books' => Products::all()
     ]);
-});
+})->name('home');
 
 Route::get('/home', function () {
     return view('Home', [
@@ -30,11 +30,14 @@ Route::get('/register', function () {
     return view('Signup');
 });
 
+
 Route::get('/signup', function () {
     return view('SignUp');
-});
+})->name('Signup');
 
 Route::post('/register', 'App\Http\Controllers\UserController@register');
+
+Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login');
 
 
 Route::get('/book/{id}', function ($id) {
