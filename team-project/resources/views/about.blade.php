@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-</head>
-<body>
-<header>
-    <h1>About Us</h1>
-</header>
-<!--About the company-->
-    <p>
-        Books4U is a book store...
-    </p>
-  <!--Contact Form-->
-  <h2 class="section-title">Contact Us</h2>
-  <section id="contact-us">
-
-  <form name="contact">
-
-  <input type="text" name="name" placeholder="Name" class="name">
-
-  <br><br>
-
-  <input type="email" name="email" placeholder="Email" class="email">
-
-  <br><br>
-
-  <input type="number" name="phone" placeholder="Phone Number" class="phone-number">
-
-  <br><br>
-
-  <textarea id="message" name="subject" placeholder="Message" class="message"></textarea>
-
-  <br><br>
-
-  <p>How would you like to be contacted?</p>
-
-  <input type = "checkbox" name="cbx" value="sms">Text<br>
-
-  <br><br>
-
-  <input type="checkbox" name="cbx" value= "calls">Call<br>
-
-  <br><br> 
-
-  <input type="checkbox" name="cbx" value= "emails">Email<br>
-
-  <br><br> 
-
-  <input type="submit" value="Submit"/>
-  <br><br>
-
-</form>
-  </section>
-
-  <footer>
+    <link rel="stylesheet" href="css/aboutcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  </head>
+  <header class="header">
+        
+    <a href="#"><img src="images/logo.png" class="logo" alt="logo"></a>
     
-  </footer>
-</body>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+        <a href="#">Sign up</a>
+        <a href="#">Log in</a>
+    </nav>
+</header>
+
+<br><br><br><br><br><br><br><br>
+    <body>
+        <div class="heading">
+            <h1>About Us</h1>
+            </div>
+            <div class="container">
+                <section class="about">
+                    <div class="about-content">
+                        <h2>About us information.......</h2>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        
+        <br><br><br><br><br><br>
+
+         <!--contact section start-->
+    <div class="contact-section">
+        <section class="contact-info">
+          <div><i class="fas fa-map-marker-alt"></i>Aston University, Birmingham</div>
+          <div><i class="fas fa-envelope"></i>info@books4u.com</div>
+          <div><i class="fas fa-phone"></i>0121 204 3000</div>
+        </section>
+
+        <section class="contact-form">
+          <h2>Contact Us</h2>
+          <form class="contact" action="" method="post">
+            <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+            <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+            <input type="submit" name="submit" class="send-btn" value="Send">
+          </form>
+        </section>
+      </div>
+      <!--contact section end-->
+
+  </body>
 </html>
