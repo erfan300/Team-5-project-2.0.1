@@ -46,3 +46,34 @@
     font-size: 0.9em;
     color: #444; 
 }
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
