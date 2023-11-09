@@ -48,7 +48,8 @@
         <div class="wrapper">
             <div class="form-box login">
                 <h2>Login</h2>
-                <form action="#">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="mail"></ion-icon>
@@ -64,8 +65,8 @@
                         </div>
                         <button type="submit" class="btn">Login</button>
                         <div class="login-register">
-                            <p>Don't have an account? <a href="Signup.blade.html" class="register-link">Register</a>
-                            </p>
+                        <p>Don't have an account? <a href="{{ route('Signup') }}" class="register-link">Register</a></p>
+                            
                         </div>
                     </div>
                 </form>

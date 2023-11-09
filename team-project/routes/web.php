@@ -22,7 +22,7 @@ Route::get('/home', function () {
     return view('Home', [
         'books' => Products::all()
     ]);
-});
+})->name('home');
 
 Route::get('/register', function () {
     return view('Signup');

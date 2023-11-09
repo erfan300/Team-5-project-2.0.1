@@ -8,6 +8,8 @@ use App\Models\Customer;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -65,37 +67,5 @@ class UserController extends Controller
         // You can also redirect the user to a success page or provide a response message.
         return redirect('/signup');
     }
-
-
-    public function login(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-    
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-    
-        $username = $request->input('username');
-        $user = User::where('username', $username)->first();
-        Log::info('User Data: ' . json_encode($user));
-
-        if ($user) {
-            Log::info('Input Password: ' . $request->input('password'));
-            Log::info('User Password: ' . $user->password);
-            if (Hash::check(trim($request->input('password')), $user->password)) {
-                // Password correct, log the user in
-                return redirect()->route('home');
-            } else {
-                return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
-            }
-            
-        } else {
-            return redirect()->back()->withErrors(['error' => 'User not found'])->withInput();
-        }
-    }
-    
-    
-    
+   
 }
