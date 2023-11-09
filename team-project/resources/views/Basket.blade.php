@@ -63,11 +63,9 @@
             </tfoot>
         </table>
 
-        <form>
-       
-    
+        <form action="Paymentpage.html">
             <input type="submit" value="Continue to checkout" class="btn">
-          </form>
+        </form>
     </section>
      
  
