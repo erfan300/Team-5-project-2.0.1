@@ -6,7 +6,9 @@
         <h3 class="book-title">
             <a href="/book/{{$book['Product_ID']}}"> {{$book->Product_Name}} </a>
         </h3>
-        <div class="book-author">{{$book->Author_Name}}</div>
+        <div class="book-author">
+            <a href="/search/?author={{ urlencode($book->Author_Name) }}"> {{$book->Author_Name}} </a>
+        </div>
         <div class="book-price">{{$book->Price}}</div>
         <div class="book-type">{{$book->Book_Type}}</div>
     </div>

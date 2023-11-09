@@ -11,4 +11,10 @@ class Products extends Model
     protected $table = 'products';
     protected $primaryKey = 'Product_ID';
     public $timestamps = false;
+
+    public function scopeFilter($query, array $filters) {
+        if($filters['author'] ?? false) {
+            $query->where('Author_Name', 'like', '%' . request('author') . '%');
+        }
+    }
 }

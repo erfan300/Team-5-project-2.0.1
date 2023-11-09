@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,8 @@ Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login'
 
 
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
+
+Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
 Route::get('/login', function () {
     return view('login', ['title' => 'Login']);
