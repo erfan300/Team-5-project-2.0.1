@@ -32,7 +32,7 @@
     <p>Fill in the blanks with the names of your pages.</p>
     <p>Greetings and welcome to the X webpage, where I will be offering books in a variety of genres. We are the top sellers of specialized books that you won't find anywhere else.</p>
     <!-- Search Bar -->
-    <form action="" class="search-form">
+    <form action="/search" class="search-form">
         <div class="search-container">
             <input type="text" name="search" class="search-input" placeholder="Search Books4U..." />
             <div class="search-button-container">
