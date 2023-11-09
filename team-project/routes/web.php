@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'books' => Products::all()
-    ]);
-})->name('home');
+Route::get('/', [ProductsController::class, 'index'])->name('home');
 
 Route::get('/home', function () {
     return view('Home', [
@@ -40,11 +37,7 @@ Route::post('/register', 'App\Http\Controllers\UserController@register');
 Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login');
 
 
-Route::get('/book/{id}', function ($id) {
-    return view('book', [
-        'book' => Products::find($id)
-    ]);
-}); 
+Route::get('/book/{book}', [ProductsController::class, 'show']); 
 
 Route::get('/login', function () {
     return view('login', ['title' => 'Login']);
