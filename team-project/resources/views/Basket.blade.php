@@ -24,17 +24,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link" href="Basket.blade.html">Basket</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Basket</a>
+                    <a class="nav-link" href="#">About us</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Log In/Sign In </a>
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> 
  
     <!-- Shopping Basket -->
     <section id="shopping-basket" class="container mt-5">
@@ -60,6 +62,8 @@
                 </tr>
             </tfoot>
         </table>
+
+        <button class="checkout">Checkout</button>
     </section>
  
     <!-- Bootstrap & jQuery JS -->
