@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-    <link rel="stylesheet" href="css/aboutcss.css">
+    <link href="{{ asset('css/aboutcss.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
   </head>
+
+  <!--Navigation start-->
   <header class="header">
         
     <a href="#"><img src="images/logo.png" class="logo" alt="logo"></a>
@@ -16,12 +18,15 @@
     <nav class="navbar">
         <a href="#">Home</a>
         <a href="#">Products</a>
-        <a href="#">Contact</a>
+        <a href="#">About us</a>
         <a href="#">Sign up</a>
         <a href="#">Log in</a>
     </nav>
 </header>
 
+<!--Navigation end-->
+
+<!--About us section start-->
 <br><br><br><br><br><br><br><br>
     <body>
         <div class="heading">
@@ -38,6 +43,8 @@
         
         
         <br><br><br><br><br><br>
+
+         <!--About section end-->
 
          <!--contact section start-->
     <div class="contact-section">
