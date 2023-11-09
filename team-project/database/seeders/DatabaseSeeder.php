@@ -37,5 +37,14 @@ class DatabaseSeeder extends Seeder
             'Book_Type' => 'Paperback',
             'Stock_Level' => 7
         ]);
+
+        Products::create([
+            'Product_Name' => 'Book Title 3',
+            'Author_Name' => 'Billy',
+            'Description' => 'book description test',
+            'Price' => 10.50,
+            'Book_Type' => 'Paperback',
+            'Stock_Level' => 9
+        ]);
     }
 }
