@@ -49,3 +49,7 @@ Route::get('/book/{id}', function ($id) {
 Route::get('/login', function () {
     return view('login', ['title' => 'Login']);
 })->name('login');
+
+Route::get('/aboutus', function () {
+    return view('about');
+});
