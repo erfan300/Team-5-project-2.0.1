@@ -64,7 +64,7 @@
                         </div>
                         <button type="submit" class="btn">Login</button>
                         <div class="login-register">
-                            <p>Don't have an account? <a href="#" class="register-link">Register</a>
+                            <p>Don't have an account? <a href="Signup.blade.html" class="register-link">Register</a>
                             </p>
                         </div>
                     </div>
