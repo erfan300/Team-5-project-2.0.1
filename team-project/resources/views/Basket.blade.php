@@ -30,7 +30,7 @@
                     <a class="nav-link" href="Basket.blade.html">Basket</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="about.blade.html">About us</a>
                     <li class="nav-item">
                         <a class="nav-link" href="login.blade.html">Log In/Sign In </a>
                 </li>
