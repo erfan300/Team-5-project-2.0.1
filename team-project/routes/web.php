@@ -16,18 +16,14 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
+// index/home page
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 
-Route::get('/home', function () {
-    return view('Home', [
-        'books' => Products::all()
-    ]);
-})->name('home');
+Route::get('/home', [ProductsController::class, 'index'])->name('home');
 
 Route::get('/register', function () {
     return view('Signup');
 });
-
 
 Route::get('/signup', function () {
     return view('SignUp');
@@ -37,10 +33,13 @@ Route::post('/register', 'App\Http\Controllers\UserController@register');
 
 Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login');
 
-
+// Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
 
+// Shows searched books
 Route::get('/search', [SearchController::class, 'index'])->name('Search');
+
+Route::get('/create', [ProductsController::class, 'create']);
 
 Route::get('/login', function () {
     return view('login', ['title' => 'Login']);

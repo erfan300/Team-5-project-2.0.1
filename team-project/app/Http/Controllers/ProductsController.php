@@ -30,4 +30,9 @@ class ProductsController extends Controller
             'book' => $book
         ]);
     }
+
+    //Show form for adding book
+    public function create() {
+        return view('create');
+    }
 }
