@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Products;
 use Illuminate\Database\Seeder;
+use App\Models\Products;
+use App\Models\ProductCategories;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +21,19 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        ProductCategories::create([
+            'Category_ID' => 1,
+            'Category_Name' => 'Best Sellers',
+        ]);
+
+        ProductCategories::create([
+            'Category_ID' => 2,
+            'Category_Name' => 'Fiction',
+        ]);
+
         Products::create([
             'Product_Name' => 'Book Title 1',
+            'Category_ID' => 1,
             'Author_Name' => 'Billy',
             'Description' => 'book description test',
             'Price' => 9.99,
@@ -31,6 +43,7 @@ class DatabaseSeeder extends Seeder
 
         Products::create([
             'Product_Name' => 'Book Title 2',
+            'Category_ID' => 2,
             'Author_Name' => 'Samantha',
             'Description' => 'book description test',
             'Price' => 8.50,
@@ -40,6 +53,7 @@ class DatabaseSeeder extends Seeder
 
         Products::create([
             'Product_Name' => 'Book Title 3',
+            'Category_ID' => 1,
             'Author_Name' => 'Billy',
             'Description' => 'book description test',
             'Price' => 10.50,

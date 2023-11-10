@@ -7,10 +7,17 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    // Show all books in the products table
-    public function index(){
+    // Show all books specific to a certain category
+    public function index() {
+
+        // Retrieve books for the specified category
+        $bestSellers = Products::where('Category_ID', 1)->get();
+        $Fiction = Products::where('Category_ID', 2)->get();
+
         return view('index', [
-            'books' => Products::all()
+            'books' => Products::all(),
+            'bestSellers' => $bestSellers,
+            'fiction' => $Fiction
         ]);
     }
 

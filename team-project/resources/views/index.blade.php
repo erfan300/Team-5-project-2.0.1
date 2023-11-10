@@ -46,20 +46,28 @@
         <div class="book-category">
             <div class="book-genre-container">
         
-                @if(count($books) == 0)
+                @if(count($bestSellers) == 0)
                     <p> No Books found </p>
                 @endif
          
-                @foreach($books as $book)
+                @foreach($bestSellers as $book)
                     <x-book-card :book="$book"/>
                 @endforeach
             </div>
         </div>
-        <p><u>NEW IN</u></p>
-            <img src="Image/BLANK.PNG" alt="New In 1" title="New In 1">
-            <img src="Image/BLANK.PNG" alt="New In 2" title="New In 2">
-            <img src="Image/BLANK.PNG" alt="New In 3" title="New In 3">
-            <img src="Image/BLANK.PNG" alt="New In 4" title="New In 4">
+        <p><u>Fiction</u></p>
+        <div class="book-category">
+            <div class="book-genre-container">
+        
+                @if(count($fiction) == 0)
+                    <p> No Books found </p>
+                @endif
+         
+                @foreach($fiction as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>    
         <p><u>GENRES</u></p>
             <img src="Image/BLANK.PNG" alt="Genre 1" title="Genre 1">
             <img src="Image/BLANK.PNG" alt="Genre 2" title="Genre 2">
