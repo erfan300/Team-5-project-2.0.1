@@ -4,6 +4,7 @@ use App\Models\Products;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,11 @@ Route::get('/', [ProductsController::class, 'index'])->name('home');
 Route::get('/home', [ProductsController::class, 'index'])->name('home');
 
 Route::get('/register', function () {
-    return view('Signup');
+    return view('signup');
 });
 
 Route::get('/signup', function () {
-    return view('SignUp');
+    return view('signUp');
 })->name('Signup');
 
 Route::post('/register', 'App\Http\Controllers\UserController@register');
