@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Customer;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -16,39 +17,33 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function register(Request $request)
-    {
-        // Validate the input data
-        $validator = Validator::make($request->all(), [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'username' => 'required|unique:users',
-            'email' => 'required|email|unique:users|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'email_confirmation' => 'required|email|same:email',
-            'address' => 'nullable',
-            'phone_number' => 'nullable',
-            'password' => 'required|min:8|confirmed',
-            'password_confirmation' => 'required|same:password',
-            'user_type' => 'required|in:Customer,Admin',
-        ]);
+    //Show register form
+    public function register() {
+        return view('signup');
+    }
 
-        if ($validator->fails()) {
-            return redirect()->back()->withInput()->withErrors($validator->errors()->all());
-        }
+    // Creates a new user
+    public function store(Request $request) {
+        $form = $request->validate([
+            'first_name' => ['required', 'min:3'],
+            'last_name' => ['required', 'min:3'],
+            'username' => ['required', Rule::unique('users', 'Username')],
+            'email' => ['required', 'email', 'confirmed', Rule::unique('users', 'Email')],
+            'password' => ['required', 'confirmed', 'min:5'],
+            'user_type' => ['required', 'in:Customer,Admin']
+        ]);
     
-    
-        // Create a new user
-        $user = new User;
-        $user->username = $request->input('username');
-        $user->password = Hash::make($request->input('password'));
-        $user->email = $request->input('email');
-        $user->user_type = $request->input('user_type');
+        // Create User
+        $user = User::create($form);
+
+        $user->password = bcrypt($form['password']); // Hash the password
         $user->save();
+        Log::info('New user created:', $user->toArray());
     
         // Determine the user type and insert data into the corresponding table
         if ($request->input('user_type') === 'Customer') {
             $customer = new Customer;
-            $customer->user_id = $user->id; // Use $user->id to set the User_ID
+            $customer->User_ID = $user->User_ID;
             $customer->First_Name = $request->input('first_name');
             $customer->Last_Name = $request->input('last_name');
             $customer->Address = $request->input('address');
@@ -56,16 +51,47 @@ class UserController extends Controller
             $customer->save();
         } elseif ($request->input('user_type') === 'Admin') {
             $admin = new Admin;
-            $admin->user_id = $user->id; // Use $user->id to set the User_ID
+            $admin->User_ID = $user->User_ID;
             $admin->First_Name = $request->input('first_name');
             $admin->Last_Name = $request->input('last_name');
             $admin->Email = $request->input('email');
             $admin->Phone_Number = $request->input('phone_number');
             $admin->save();
         }
+
     
-        // You can also redirect the user to a success page or provide a response message.
-        return redirect('/signup');
+        auth()->login($user);
+    
+        return redirect('/home')->with('message', 'User created successfully');
     }
+    
+
+    //Show Login Form
+    public function login() {
+        return view('login');
+    }
+
+    public function authenticate(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'email'],
+            'password' => 'required',
+        ]);
+    
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $user = User::where('Email','=',$request->email)->first();
+
+        if ($user && Hash::check($request->password, $user->Password)) {
+            $request->session()->regenerate();
+            return redirect('/')->with('message', 'Log in successful!');
+        } else {
+            return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
+        }
+        
+        
+    }
+    
    
 }

@@ -22,17 +22,11 @@ Route::get('/', [ProductsController::class, 'index'])->name('home');
 
 Route::get('/home', [ProductsController::class, 'index'])->name('home');
 
-Route::get('/register', function () {
-    return view('signup');
-});
+// Shows register page
+Route::get('/register', [UserController::class, 'register']);
 
-Route::get('/signup', function () {
-    return view('signUp');
-})->name('Signup');
-
-Route::post('/register', 'App\Http\Controllers\UserController@register');
-
-Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login');
+// Creates a new user
+Route::post('/users', [UserController::class, 'store']);
 
 // Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
@@ -42,9 +36,11 @@ Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
 Route::get('/create', [ProductsController::class, 'create']);
 
-Route::get('/login', function () {
-    return view('login', ['title' => 'Login']);
-})->name('login');
+// Shows Login Form
+Route::get('/login', [UserController::class, 'login']); 
+
+//Logs in User
+Route::post('/authenticate', [UserController::class, 'authenticate']);
 
 Route::get('/aboutus', function () {
     return view('about');

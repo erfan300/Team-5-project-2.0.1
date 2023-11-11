@@ -44,28 +44,37 @@
 
 
     <!--Login form start-->
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <body>
         <div class="wrapper">
             <div class="form-box login">
                 <h2>Login</h2>
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="/authenticate">
                     @csrf
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="mail"></ion-icon>
                             </span>
-                            <input type="email" required>
+                            <input type="email" name="email" required>
                             <label>Email</label>
                         </div>
         
                         <div class="input-box">
                             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                            <input type="password" required>
+                            <input type="password" name="password" required>
                             <label>Password</label>
                         </div>
-                        <button type="submit" class="btn">Login</button>
+                        <button type="submit" class="btn">Sign In</button>
                         <div class="login-register">
-                        <p>Don't have an account? <a href="{{ route('Signup') }}" class="register-link">Register</a></p>
+                        <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
                             
                         </div>
                     </div>

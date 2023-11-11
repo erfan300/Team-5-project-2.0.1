@@ -50,37 +50,58 @@
             </ul>
         </div>
     @endif
-        <form method="POST" action="/register">
-            @csrf
-            <input type="text" name="first_name" placeholder="First Name" required><br><br>
-            <input type="text" name="last_name" placeholder="Last Name" required><br><br>
-
-            <input type="text" name="username" placeholder="Username" required><br><br>
-            
-            <input type="email" name="email" placeholder="Email Address" required><br><br>
-            <input type="email" name="email_confirmation" placeholder="Confirm Email Address" required><br><br>
-
-            
-            <input type="password" name="password" placeholder="Password"><br><br>
-            <input type="password" name="password_confirmation" placeholder="Confirm Password"><br><br>
-
-
-            
-            <input type="text" name="address" placeholder="Address"><br><br>
-            <input type="text" name="phone_number" placeholder="Phone Number"><br><br>
-           
-            
-            <label for="user_type">Select User Type:</label>
-            <select name="user_type" id="user_type" required>
-                <option></option>
-                <option value="Customer">Customer</option>
-                <option value="Admin">Admin</option>
-            </select><br><br>
-
-            <input type="submit" value="Sign Up">
-            <a href="{{ route('login') }}">Already registered</a>
-
-        </form>
+    <form method="POST" action="/users">
+        @csrf
+        <input type="text" name="first_name" placeholder="First Name" required><br><br>
+            @error('first_name')
+                <p class="first-name-error">{{$message}}</p>
+            @enderror
+        <input type="text" name="last_name" placeholder="Last Name" required><br><br>
+            @error('last_name')
+                <p class="last-name-error">{{$message}}</p>
+            @enderror
+        <input type="text" name="username" placeholder="Username" required><br><br>
+            @error('username')
+                <p class="username-error">{{$message}}</p>
+            @enderror
+        <input type="email" name="email" placeholder="Email Address" required><br><br>
+            @error('email')
+                <p class="email-error">{{$message}}</p>
+            @enderror
+        <input type="email" name="email_confirmation" placeholder="Confirm Email Address" required><br><br>
+            @error('email_confirmation')
+                <p class="confirm-email-error">{{$message}}</p>
+            @enderror
+        <input type="password" name="password" placeholder="Password" required><br><br>
+            @error('password')
+                <p class="password-error">{{$message}}</p>
+            @enderror
+        <input type="password" name="password_confirmation" placeholder="Confirm Password" required><br><br>
+            @error('password_confirmation')
+                <p class="confirm-password-error">{{$message}}</p>
+            @enderror
+        <input type="text" name="address" placeholder="Address"><br><br>
+            @error('address')
+                <p class="address-error">{{$message}}</p>
+            @enderror
+        <input type="text" name="phone_number" placeholder="Phone Number"><br><br>
+            @error('phone_number')
+                <p class="phone-number-error">{{$message}}</p>
+            @enderror
+    
+        <label for="user_type">Select User Type:</label>
+        <select name="user_type" id="user_type" required>
+            <option value="" disabled selected>Select User Type</option>
+            <option value="Customer">Customer</option>
+            <option value="Admin">Admin</option>
+        </select><br><br>
+            @error('user_type')
+                <p class="user-type-error">{{$message}}</p>
+            @enderror
+        <input type="submit" value="Sign Up">
+        <a href="/login">Already registered</a>
+    </form>
+    
 </main>
 <footer>
 

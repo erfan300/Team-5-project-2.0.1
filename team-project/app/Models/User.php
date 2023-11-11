@@ -12,6 +12,15 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'users';
+    protected $primaryKey = 'User_ID';
+    protected $username = 'Username';
+    protected $password = 'Password';
+    protected $email = 'Email';
+    protected $userType = 'User_Type';
+    public $incrementing = true;
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,9 +52,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $table = 'users';
-    public $primaryKey = 'uid';
-    public $incrementing = true;
-    public $timestamps = false;
 
+
+    public function customer() {
+        return $this->hasOne(Customer::class, 'User_ID', 'id');
+    }
+
+    
 }

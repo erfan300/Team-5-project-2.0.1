@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    
     // Show all books specific to a certain category
     public function index() {
 
