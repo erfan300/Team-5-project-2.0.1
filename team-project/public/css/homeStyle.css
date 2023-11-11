@@ -1,3 +1,31 @@
+.alert-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    z-index: 1000; 
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success.fade-out {
+    animation: fadeOut 2s ease-out; 
+}
+
+
 .book-category {
     color: rgb(128, 128, 128);
     border: solid rgb(192, 189, 189);

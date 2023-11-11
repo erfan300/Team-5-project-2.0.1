@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Books4U Bookstore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -166,6 +167,29 @@
                         <i class="fas fa-shopping-cart"></i> Cart
                     </a>
                 </li>
+=======
+    <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- Display login flash Message -->
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+    
+    <!-- Header -->
+    <section class="header">
+        <nav>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+>>>>>>> b1951e1cb54d1cf4d779368e9be0ddda482533a7
             </ul>
         </div>
     </nav>
