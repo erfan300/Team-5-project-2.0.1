@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/custom.js') }}"></script>
     <title>Homepage</title>
 </head>
 <body>
+    <!-- Display login flash Message -->
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     
     <!-- Header -->
     <section class="header">
