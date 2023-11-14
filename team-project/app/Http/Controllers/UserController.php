@@ -61,7 +61,7 @@ class UserController extends Controller
 
     
         auth()->login($user);
-    
+        session(['user_id' => $user->User_ID]);
         return redirect('/home')->with('message', 'User created successfully');
     }
     
@@ -85,6 +85,7 @@ class UserController extends Controller
 
         if ($user && Hash::check($request->password, $user->Password)) {
             $request->session()->regenerate();
+            session(['user_id' => $user->User_ID]);
             return redirect('/')->with('message', 'Log in successful!');
         } else {
             return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
