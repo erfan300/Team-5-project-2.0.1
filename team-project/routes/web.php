@@ -39,6 +39,9 @@ Route::get('/create', [ProductsController::class, 'create']);
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login']); 
 
+//Shows Basket
+Route::get('/basket', [UserController::class, 'basket']); 
+
 //Logs in User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
 
