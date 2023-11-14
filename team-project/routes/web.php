@@ -39,9 +39,16 @@ Route::get('/create', [ProductsController::class, 'create']);
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login']); 
 
+
+
+
 //Logs in User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
 
 Route::get('/aboutus', function () {
     return view('about');
+});
+//Shows Basket
+Route::get('/basket', function () {
+    return view('Basket');
 });
