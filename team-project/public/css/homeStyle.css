@@ -1,3 +1,4 @@
+/* Successfull login alert */
 .alert-success {
     position: fixed;
     top: 0;
@@ -11,7 +12,7 @@
     z-index: 1000; 
 }
 
-/* Fade-out animation */
+/* Fade-out animation for alert */
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -24,7 +25,123 @@
 .alert-success.fade-out {
     animation: fadeOut 2s ease-out; 
 }
+/*----------------------------------------------------------*/
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    background-color: #495057;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #17a2b8;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+}
+
+.nav-link-cart {
+    display: flex;
+    align-items: center;
+    color: #17a2b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link-cart i {
+    margin-right: 5px;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mySlides {
+    display: none;
+    animation: fade 4s ease-in-out infinite;
+}
+
+
+
+img {
+    width: 50%; /* Make the image fill the width of the container */
+    height: auto;
+    border-radius: 5px;
+    display: block; /* Remove any extra space below the image */
+    margin: 0 auto;
+}
 
 .book-category {
     color: rgb(128, 128, 128);
@@ -52,17 +169,17 @@
     display: block;
 }
 
-.book-title {
-    font-size: 1.3em; 
-    color: #000; 
+.book-title a{
+    font-size: 0.7em; 
+    color: #000;
     margin: 10px 0;
-    margin-bottom: 15px;
     
 }
 
-.book-author {
+.book-author a{
     font-size: 1em;
     color: #8B4513; 
+    
 }
 
 .book-price {
@@ -73,35 +190,4 @@
 .book-type {
     font-size: 0.9em;
     color: #444; 
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-}
-
-.search-container {
-    position: relative;
-    display: flex;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.search-input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-}
-
-.search-button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 16px;
 }
