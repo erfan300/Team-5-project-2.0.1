@@ -52,3 +52,7 @@ Route::get('/aboutus', function () {
 Route::get('/basket', function () {
     return view('Basket');
 });
+//Shows Basket
+Route::get('/payment', function () {
+    return view('Paymentpage');
+});
