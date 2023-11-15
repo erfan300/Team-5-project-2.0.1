@@ -21,44 +21,37 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        ProductCategories::create([
-            'Category_ID' => 1,
-            'Category_Name' => 'Best Sellers',
-        ]);
-
-        ProductCategories::create([
-            'Category_ID' => 2,
-            'Category_Name' => 'Fiction',
-        ]);
-
         Products::create([
             'Product_Name' => 'Book Title 1',
-            'Category_ID' => 1,
+            'Category_ID' => 2,
             'Author_Name' => 'Billy',
             'Description' => 'book description test',
             'Price' => 9.99,
             'Book_Type' => 'Hardback',
-            'Stock_Level' => 10
+            'Stock_Level' => 10,
+            'Book_Genre' => 'Fiction'
         ]);
 
         Products::create([
             'Product_Name' => 'Book Title 2',
-            'Category_ID' => 2,
+            'Category_ID' => 3,
             'Author_Name' => 'Samantha',
             'Description' => 'book description test',
             'Price' => 8.50,
             'Book_Type' => 'Paperback',
-            'Stock_Level' => 7
+            'Stock_Level' => 7,
+            'Book_Genre' => 'Romance'
         ]);
 
         Products::create([
             'Product_Name' => 'Book Title 3',
-            'Category_ID' => 1,
+            'Category_ID' => 2,
             'Author_Name' => 'Billy',
             'Description' => 'book description test',
             'Price' => 10.50,
             'Book_Type' => 'Paperback',
-            'Stock_Level' => 9
+            'Stock_Level' => 9,
+            'Book_Genre' => 'True Crime'
         ]);
     }
 }

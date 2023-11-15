@@ -82,13 +82,13 @@
                 @endforeach
             </div>
         </div>
-        <h3>Fiction</h3>
+        <h3>New Books</h3>
         <div class="book-category">
             <div class="book-genre-container">
-                @if(count($fiction) == 0)
+                @if(count($newBooks) == 0)
                     <p>No Books found</p>
                 @endif
-                @foreach($fiction as $book)
+                @foreach($newBooks as $book)
                     <x-book-card :book="$book"/>
                 @endforeach
             </div>
