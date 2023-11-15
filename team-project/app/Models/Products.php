@@ -21,7 +21,8 @@ class Products extends Model
             $query->where('Product_Name', 'like', '%' . request('search') . '%')
                 ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
                 ->orWhere('Description', 'like', '%' . request('search') . '%')
-                ->orWhere('Book_Type', 'like', '%' . request('search') . '%');
+                ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
+                ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
         }
     }
 }

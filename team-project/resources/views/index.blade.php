@@ -54,7 +54,49 @@
                 <button type="submit" class="search-button">Search</button>
             </div>
         </div>
+        <div class="filter-link">Filter
+            <div class="filter-dropdown">
+                <div class="filter-categories">
+                    <div class="filter-category">
+                        <h6>Genre</h6>
+                        <a href="/search">Fiction</a>
+                        <a href="/search">Non-fiction</a>
+                        <a href="/search">Science Fiction</a>
+                        <a href="/search">Mystery</a>
+                        <a href="/search">Historical</a>
+                        <a href="/search">Thriller</a>
+                        <a href="/search">Romance</a>
+                        <a href="/search">Young Adult</a>
+                        <a href="/search">Fantasy</a>
+                        <a href="/search">Children</a>
+                        <a href="/search">Biography</a>
+                        <a href="/search">Adventure</a>
+                        <a href="/search">True Crime</a>
+                        <a href="/search">Horror</a>
+                    </div>
+                    <div class="filter-category">
+                        <h6>Category</h6>
+                        <a href="/search">All</a>
+                        <a href="/search">General</a>
+                        <a href="/search">Best Sellers</a>
+                        <a href="/search">New Books</a>
+                        <a href="/search">Classics</a>
+                        <a href="/search">Recommended</a>
+                        <a href="/search">Books For Children</a>
+                        <a href="/search">Books For Young Adults</a>
+                        <a href="/search">Historical Period</a>
+                    </div>
+                    <div class="filter-category">
+                        <h6>Book Type</h6>
+                        <a href="/search">Paperbacks</a>
+                        <a href="/search">Hardbacks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
+    
+    
 
     <!-- Slideshow -->
     <div class="slideshow-container">

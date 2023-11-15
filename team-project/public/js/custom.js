@@ -31,3 +31,17 @@ let slideIndex = 0;
         document.addEventListener("DOMContentLoaded", function () {
             showSlides();
         });
+
+//Function for filter link
+document.addEventListener("DOMContentLoaded", function () {
+    var filterLink = document.querySelector(".filter-link");
+    var filterDropdown = document.querySelector(".filter-dropdown");
+
+    filterLink.addEventListener("mouseover", function () {
+        filterDropdown.style.display = "block";
+    });
+
+    filterLink.addEventListener("mouseout", function () {
+        filterDropdown.style.display = "none";
+    });
+});
