@@ -11,4 +11,5 @@ class ProductCategories extends Model
     protected $table = 'productCategories';
     protected $primaryKey = 'Category_ID';
     public $timestamps = false;
+
 }

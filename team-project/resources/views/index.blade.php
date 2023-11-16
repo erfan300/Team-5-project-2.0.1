@@ -59,37 +59,37 @@
                 <div class="filter-categories">
                     <div class="filter-category">
                         <h6>Genre</h6>
-                        <a href="/search">Fiction</a>
-                        <a href="/search">Non-fiction</a>
-                        <a href="/search">Science Fiction</a>
-                        <a href="/search">Mystery</a>
-                        <a href="/search">Historical</a>
-                        <a href="/search">Thriller</a>
-                        <a href="/search">Romance</a>
-                        <a href="/search">Young Adult</a>
-                        <a href="/search">Fantasy</a>
-                        <a href="/search">Children</a>
-                        <a href="/search">Biography</a>
-                        <a href="/search">Adventure</a>
-                        <a href="/search">True Crime</a>
-                        <a href="/search">Horror</a>
+                        <a href="/search?genre=Fiction">Fiction</a>
+                        <a href="/search?genre=Non-fiction">Non-fiction</a>
+                        <a href="/search?genre=Science Fiction">Science Fiction</a>
+                        <a href="/search?genre=Mystery">Mystery</a>
+                        <a href="/search?genre=Historical">Historical</a>
+                        <a href="/search?genre=Thriller">Thriller</a>
+                        <a href="/search?genre=Romance">Romance</a>
+                        <a href="/search?genre=Young Adult">Young Adult</a>
+                        <a href="/search?genre=Fantasy">Fantasy</a>
+                        <a href="/search?genre=Children">Children</a>
+                        <a href="/search?genre=Biography">Biography</a>
+                        <a href="/search?genre=Adventure">Adventure</a>
+                        <a href="/search?genre=True Crime">True Crime</a>
+                        <a href="/search?genre=Horror">Horror</a>
                     </div>
                     <div class="filter-category">
                         <h6>Category</h6>
                         <a href="/search">All</a>
-                        <a href="/search">General</a>
-                        <a href="/search">Best Sellers</a>
-                        <a href="/search">New Books</a>
-                        <a href="/search">Classics</a>
-                        <a href="/search">Recommended</a>
-                        <a href="/search">Books For Children</a>
-                        <a href="/search">Books For Young Adults</a>
-                        <a href="/search">Historical Period</a>
+                        <a href="/search?category=1">General</a>
+                        <a href="/search?category=2">Best Sellers</a>
+                        <a href="/search?category=3">New Books</a>
+                        <a href="/search?category=4">Classics</a>
+                        <a href="/search?category=5">Recommended</a>
+                        <a href="/search?category=6">Books For Children</a>
+                        <a href="/search?category=7">Books For Young Adults</a>
+                        <a href="/search?category=8">Historical Period</a>
                     </div>
                     <div class="filter-category">
                         <h6>Book Type</h6>
-                        <a href="/search">Paperbacks</a>
-                        <a href="/search">Hardbacks</a>
+                        <a href="/search?type=Paperback">Paperbacks</a>
+                        <a href="/search?type=Hardback">Hardbacks</a>
                     </div>
                 </div>
             </div>
@@ -131,6 +131,72 @@
                     <p>No Books found</p>
                 @endif
                 @foreach($newBooks as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>General</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($general) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($general as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>Classics</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($classics) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($classics as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>Recommended</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($recommended) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($recommended as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>Books For Children</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($booksForChildren) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($booksForChildren as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>Books For Young Adults</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($booksForYoungAdults) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($booksForYoungAdults as $book)
+                    <x-book-card :book="$book"/>
+                @endforeach
+            </div>
+        </div>
+        <h3>Historical Period</h3>
+        <div class="book-category">
+            <div class="book-genre-container">
+                @if(count($historicalPeriod) == 0)
+                    <p>No Books found</p>
+                @endif
+                @foreach($historicalPeriod as $book)
                     <x-book-card :book="$book"/>
                 @endforeach
             </div>

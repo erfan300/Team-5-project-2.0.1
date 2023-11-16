@@ -13,16 +13,31 @@ class Products extends Model
     public $timestamps = false;
 
     public function scopeFilter($query, array $filters) {
+        //This filter is for author link in the book showcase
         if($filters['author'] ?? false) {
             $query->where('Author_Name', 'like', '%' . request('author') . '%');
         }
 
+        //This filter is for the search bar
         if($filters['search'] ?? false) {
             $query->where('Product_Name', 'like', '%' . request('search') . '%')
                 ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
                 ->orWhere('Description', 'like', '%' . request('search') . '%')
                 ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
                 ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
+        }
+
+        //These three filters are for the filter list next to the searchbar
+        if ($filters['genre'] ?? false) {
+            $query->where('Book_Genre', $filters['genre']);
+        }
+
+        if ($filters['category'] ?? false) {
+            $query->where('Category_ID', $filters['category']);
+        }
+
+        if ($filters['type'] ?? false) {
+            $query->where('Book_Type', $filters['type']);
         }
     }
 }
