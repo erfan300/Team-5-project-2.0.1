@@ -1,0 +1,39 @@
+.book-form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15%;
+    width: 400px;
+}
+
+.book-form button {
+    width: 150px;
+}
+
+.book-form label {
+    padding-bottom: 5px;
+}
+
+.book-form input,
+.book-form textarea,
+.book-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.book-form span {
+    position: relative;
+    bottom: 50px;
+    left: 300px;
+    font-size: 14px;
+    color: rgb(255, 0, 0);
+}
+
+#btn-submit {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(128, 128, 128);
+    border: solid rgb(192, 189, 189);
+    align-items: center;
+}

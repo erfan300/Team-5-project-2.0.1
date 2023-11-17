@@ -34,6 +34,7 @@ Route::get('/book/{book}', [ProductsController::class, 'show']);
 // Shows searched books
 Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
+//Shows create page for admins
 Route::get('/create', [ProductsController::class, 'create']);
 
 // Shows Login Form
