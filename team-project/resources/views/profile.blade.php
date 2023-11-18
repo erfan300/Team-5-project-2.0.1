@@ -26,20 +26,7 @@
             <label for="email">Email</label>
             <input type="email" name="email" value="{{ $user->email }}"><br><br>
 
-            @if($user->user_type === 'Customer')
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name" value="{{ $user->customer->first_name }}"><br><br>
-
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" value="{{ $user->customer->last_name }}"><br><br>
-            @elseif($user->user_type === 'Admin')
-                
-
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" value="{{ $user->admin->last_name }}"><br><br>
-            @endif
-
-            <!-- Add other fields as needed -->
+            <!-- Other fields for address, phone number, etc. can be added here -->
 
             <input type="submit" value="Update Profile">
         </form>
