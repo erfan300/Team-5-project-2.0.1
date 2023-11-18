@@ -93,6 +93,75 @@ class UserController extends Controller
         
         
     }
-    
-   
+
+    public function profile() {
+        $user = User::where('User_ID', session('user_id'))->first();
+        return view('profile', compact('user'));
+    }
+    // Update user profile
+    public function updateProfile(Request $request) {
+        $form = $request->validate([
+            'first_name' => ['required', 'min:3'],
+            'last_name' => ['required', 'min:3'],
+            'email' => ['required', 'email'],
+            // Add other fields as needed
+        ]);
+
+        $user = Auth::user();
+
+        $userModel = User::find($user->User_ID);
+        $userModel->update([
+            'Username' => $request->input('username'), // Update Username if needed
+            'Email' => $request->input('email'),
+            // Add other fields from the Users table as needed
+        ]);
+
+        if ($user->User_Type === 'Customer') {
+            $customer = Customer::where('User_ID', $user->User_ID)->first();
+            if ($customer) {
+                $customer->update([
+                    'First_Name' => $request->input('first_name'),
+                    'Last_Name' => $request->input('last_name'),
+                    'Address' => $request->input('address'), // Update Address if needed
+                    'Phone_Number' => $request->input('phone_number'), // Update Phone Number if needed
+                    // Add other fields from the Customers table as needed
+                ]);
+            } else {
+                Customer::create([
+                    'User_ID' => $user->User_ID,
+                    'First_Name' => $request->input('first_name'),
+                    'Last_Name' => $request->input('last_name'),
+                    'Address' => $request->input('address'), // Set Address if needed
+                    'Phone_Number' => $request->input('phone_number'), // Set Phone Number if needed
+                    // Add other fields for new Customer record
+                ]);
+            }
+        } elseif ($user->User_Type === 'Admin') {
+            $admin = Admin::where('User_ID', $user->User_ID)->first();
+            if ($admin) {
+                $admin->update([
+                    'First_Name' => $request->input('first_name'),
+                    'Last_Name' => $request->input('last_name'),
+                    'Email' => $request->input('email'), // Update Email if needed
+                    'Phone_Number' => $request->input('phone_number'), // Update Phone Number if needed
+                    // Add other fields from the Admins table as needed
+                ]);
+
+                // Update the email in the User model as well
+                $userModel->update(['Email' => $request->input('email')]);
+            } else {
+                Admin::create([
+                    'User_ID' => $user->User_ID,
+                    'First_Name' => $request->input('first_name'),
+                    'Last_Name' => $request->input('last_name'),
+                    'Email' => $request->input('email'), // Set Email if needed
+                    'Phone_Number' => $request->input('phone_number'), // Set Phone Number if needed
+                    // I have to remember to add the other admin fields
+                ]);
+            }
+        }
+
+        return redirect('/profile')->with('message', 'Profile updated successfully');
+    }
+
 }

@@ -11,5 +11,12 @@ class Admin extends Model
     protected $table = 'admins';
     protected $primaryKey = 'Admin_ID';
     public $timestamps = false;
-
+    
+    protected $fillable = [
+        'First_Name',
+        'Last_Name',
+        'Email',
+        'Phone_Number',
+        // Add other fields that are fillable here
+    ];
 }

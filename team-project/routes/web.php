@@ -57,3 +57,7 @@ Route::get('/basket', function () {
 Route::get('/payment', function () {
     return view('Paymentpage');
 });
+
+
+Route::get('/profile', [UserController::class, 'profile']);
+Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
