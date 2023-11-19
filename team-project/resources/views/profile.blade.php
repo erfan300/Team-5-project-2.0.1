@@ -14,22 +14,23 @@
     
     <main>
         <h1>Profile</h1>
-        <form method="POST" action="{{ route('updateProfile') }}">
-            @csrf
+        <form method="POST" action="{{ route('update-profile') }}">
+    @csrf
+    <!-- Display current user details -->
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="{{ $user->Username }}" required>
+    <!-- Display other user details -->
+    <!-- Add fields for other details to update -->
+    <label for="new_password">New Password:</label>
+    <input type="password" name="new_password">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name" value="{{ $user->customer->First_Name ?? $user->admin->First_Name }}" required>
+    <label for="email">Email:</label>
+    <input type="email" name="email" value="{{ $user->customer->Email ?? $user->admin->Email }}" required>
+    <!-- Add other fields you want to update -->
 
-            <label for="first_name">First Name</label>
-            <input type="text" name="first_name" value="{{ $user->first_name }}"><br><br>
-
-            <label for="last_name">Last Name</label>
-            <input type="text" name="last_name" value="{{ $user->last_name }}"><br><br>
-
-            <label for="email">Email</label>
-            <input type="email" name="email" value="{{ $user->email }}"><br><br>
-
-            <!-- Other fields for address, phone number, etc. can be added here -->
-
-            <input type="submit" value="Update Profile">
-        </form>
+    <button type="submit">Update Profile</button>
+</form>
     </main>
 </body>
 </html>

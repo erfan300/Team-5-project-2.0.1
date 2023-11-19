@@ -94,75 +94,73 @@ class UserController extends Controller
         
     }
 
-    public function profile() {
-        $user = User::where('User_ID', session('user_id'))->first();
+    public function showProfile() {
+        $user = Auth::user(); // Get the authenticated user
+    
+        // Return the view with the user's details
         return view('profile', compact('user'));
     }
-    // Update user profile
-    // Update user profile
-public function updateProfile(Request $request) {
-    $form = $request->validate([
-        'first_name' => ['required', 'min:3'],
-        'last_name' => ['required', 'min:3'],
-        'email' => ['required', 'email'],
-        // Add other fields as needed
-    ]);
-
-    $user = Auth::user();
-
-    $userModel = User::find($user->User_ID);
-    $userModel->update([
-        'Username' => $request->input('username'), // Update Username if needed
-        'Email' => $request->input('email'), // Update Email in the User model
-        // Add other fields from the Users table as needed
-    ]);
-
-    // Update email in the User model first before further updates
-    if ($user->User_Type === 'Customer') {
-        $customer = Customer::where('User_ID', $user->User_ID)->first();
-        if ($customer) {
-            $customer->update([
-                'First_Name' => $request->input('first_name'),
-                'Last_Name' => $request->input('last_name'),
-                'Address' => $request->input('address'), // Update Address if needed
-                'Phone_Number' => $request->input('phone_number'), // Update Phone Number if needed
-                // Add other fields from the Customers table as needed
-            ]);
-        } else {
-            Customer::create([
-                'User_ID' => $user->User_ID,
-                'First_Name' => $request->input('first_name'),
-                'Last_Name' => $request->input('last_name'),
-                'Address' => $request->input('address'), // Set Address if needed
-                'Phone_Number' => $request->input('phone_number'), // Set Phone Number if needed
-                // Add other fields for new Customer record
-            ]);
+    
+ 
+    public function updateProfile(Request $request) {
+      // Retrieve user ID from session
+      $userId = session('user_id');
+    
+      // Retrieve user instance from the User model using the user ID
+      $user = User::find($userId);
+  
+      if (!$user) {
+          // Handle if user not found
+          return redirect()->route('profile')->with('error', 'User not found');
+      }
+        // Validate and update the user's details
+        $validatedData = $request->validate([
+            'username' => ['required', 'unique:users,Username,'.$user->User_ID.',User_ID'],
+            'new_password' => ['nullable', 'min:5'],
+            'first_name' => ['required', 'min:3'],
+            'email' => ['required', 'email'],
+            // Add validation for other fields you want to update
+        ]);
+    
+        // Update the user's details
+        $user->Username = $validatedData['username'];
+    
+        if ($request->filled('new_password')) {
+            $user->Password = bcrypt($validatedData['new_password']); // Hash the new password
         }
-    } elseif ($user->User_Type === 'Admin') {
-        $admin = Admin::where('User_ID', $user->User_ID)->first();
-        if ($admin) {
-            $admin->update([
-                'First_Name' => $request->input('first_name'),
-                'Last_Name' => $request->input('last_name'),
-                'Email' => $request->input('email'), // Update Email if needed
-                'Phone_Number' => $request->input('phone_number'), // Update Phone Number if needed
-                // Add other fields from the Admins table as needed
-            ]);
-        } else {
-            Admin::create([
-                'User_ID' => $user->User_ID,
-                'First_Name' => $request->input('first_name'),
-                'Last_Name' => $request->input('last_name'),
-                'Email' => $request->input('email'), // Set Email if needed
-                'Phone_Number' => $request->input('phone_number'), // Set Phone Number if needed
-                // Add other fields for new Admin record
-            ]);
+    
+        $user->Email = $validatedData['email']; // Update user's email
+    
+        $user->save(); // Save changes to the user
+    
+        // Update the corresponding table (Admins or Customers) based on User_Type
+        if ($user->User_Type === 'Admin') {
+            $admin = Admin::where('User_ID', $user->User_ID)->first();
+            if ($admin) {
+                // Update admin details if found
+                $admin->First_Name = $validatedData['first_name'];
+                $admin->Last_Name = $validatedData['last_name'] ?? $admin->Last_Name; // Check if last_name is present
+                $admin->Email = $validatedData['email'];
+                $admin->Phone_Number = $validatedData['phone_number'] ?? $admin->Phone_Number; // Check if phone_number is present
+                // Update other admin fields here as needed
+                $admin->save(); // Save changes to the admin
+            }
+        } elseif ($user->User_Type === 'Customer') {
+            $customer = Customer::where('User_ID', $user->User_ID)->first();
+            if ($customer) {
+                // Update customer details if found
+                $customer->First_Name = $validatedData['first_name'];
+                $customer->Last_Name = $validatedData['last_name'] ?? $customer->Last_Name; // Check if last_name is present
+                $customer->Address = $validatedData['address'] ?? $customer->Address; // Check if address is present
+                $customer->Phone_Number = $validatedData['phone_number'] ?? $customer->Phone_Number; // Check if phone_number is present
+                // Update other customer fields here as needed
+                $customer->save(); // Save changes to the customer
+            }
         }
+    
+        // Redirect back to the profile page with a success message
+        return redirect()->route('profile')->with('success', 'Profile updated successfully');
     }
-
-    return redirect('/profile')->with('message', 'Profile updated successfully');
-}
-
     
     
 }

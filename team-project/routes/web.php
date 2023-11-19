@@ -60,6 +60,10 @@ Route::get('/payment', function () {
     return view('Paymentpage');
 });
 
+Route::middleware('auth')->group(function () {
+    // Add route to display user profile
+    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
 
-Route::get('/profile', [UserController::class, 'profile']);
-Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
+    // Add route to update user profile
+    Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
+});

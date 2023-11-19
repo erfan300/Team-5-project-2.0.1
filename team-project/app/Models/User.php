@@ -52,6 +52,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function admin()
+    {
+        return $this->hasOne(Admin::class, 'User_ID', 'User_ID');
+    }
+
 
 
     public function customer() {
