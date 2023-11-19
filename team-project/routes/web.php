@@ -41,7 +41,9 @@ Route::get('/create', [ProductsController::class, 'create']);
 Route::get('/login', [UserController::class, 'login']); 
 
 
-
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 //Logs in User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
