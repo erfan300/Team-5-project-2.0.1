@@ -113,7 +113,7 @@ public function updateProfile(Request $request) {
     $userModel = User::find($user->User_ID);
     $userModel->update([
         'Username' => $request->input('username'), // Update Username if needed
-        'Email' => $request->input('email'),
+        'Email' => $request->input('email'), // Update Email in the User model
         // Add other fields from the Users table as needed
     ]);
 
