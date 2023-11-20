@@ -48,4 +48,23 @@ class ProductsController extends Controller
     public function create() {
         return view('create');
     }
+
+    //store new book data
+    public function store(Request $request) {   
+        $formFields = $request->validate([
+            'productName' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'stockLevel' => 'required',
+            'authorName' => 'required',
+            'bookType' => 'required',
+            'bookGenre' => 'required',
+            'categoryName' => 'required'
+        ]);
+
+        Products::create($formFields);
+
+        return redirect('/');
+
+    }
 }

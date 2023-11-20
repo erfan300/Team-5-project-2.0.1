@@ -28,6 +28,9 @@ Route::get('/register', [UserController::class, 'register']);
 // Creates a new user
 Route::post('/users', [UserController::class, 'store']);
 
+//Store new book into Database
+Route::post('/store', [ProductsController::class, 'store']);
+
 // Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
 

@@ -15,12 +15,15 @@
 
 .book-form input,
 .book-form textarea,
-.book-form select {
+.book-form select,
+.book-form .form-control {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
     outline: none;
+    border: 1px solid #ccc; 
 }
+
 
 .book-form span {
     position: relative;

@@ -12,6 +12,7 @@ class Products extends Model
     protected $primaryKey = 'Product_ID';
     public $timestamps = false;
 
+
     public function scopeFilter($query, array $filters) {
         //This filter is for author link in the book showcase
         if($filters['author'] ?? false) {
