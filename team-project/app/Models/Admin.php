@@ -17,6 +17,5 @@ class Admin extends Model
         'Last_Name',
         'Email',
         'Phone_Number',
-        // Add other fields that are fillable here
     ];
 }

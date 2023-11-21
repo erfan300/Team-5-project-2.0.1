@@ -64,9 +64,9 @@ Route::get('/payment', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    // Add route to display user profile
+    //route to display user profile
     Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
 
-    // Add route to update user profile
+    //route to update user profile
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
 });
