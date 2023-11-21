@@ -118,7 +118,9 @@ class UserController extends Controller
             'username' => ['required', 'unique:users,Username,'.$user->User_ID.',User_ID'],
             'new_password' => ['nullable', 'min:5'],
             'first_name' => ['required', 'min:3'],
+            'last_name' => ['required', 'min:3'],
             'email' => ['required', 'email'],
+            'phone_number' => ['required', 'regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/'],
             // Add validation for other fields you want to update
         ]);
     
@@ -159,7 +161,7 @@ class UserController extends Controller
         }
     
         // Redirect back to the profile page with a success message
-        return redirect()->route('profile')->with('success', 'Profile updated successfully');
+        return redirect()->route('profile')->with('message', 'Profile updated successfully');
     }
     
     
