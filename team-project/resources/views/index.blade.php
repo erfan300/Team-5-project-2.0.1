@@ -35,7 +35,7 @@
                     <a class="nav-link" href="about.blade.html">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.blade.html">Log In/Sign In</a>
+                    <a class="nav-link" href="login">Log In/Sign In</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link-cart" href="Basket.blade.html">
