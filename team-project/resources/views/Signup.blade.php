@@ -9,6 +9,10 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"/>
         <script defer src="js/main.js"></script>
+         <!-- Bootstrap & jQuery JS -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
     </head>
 
 </head>
@@ -107,9 +111,6 @@
 
 </footer>
 
- <!-- Bootstrap & jQuery JS -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+
 </body>
 </html>
