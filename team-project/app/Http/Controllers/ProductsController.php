@@ -52,19 +52,19 @@ class ProductsController extends Controller
     //store new book data
     public function store(Request $request) {   
         $formFields = $request->validate([
-            'productName' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'stockLevel' => 'required',
-            'authorName' => 'required',
-            'bookType' => 'required',
-            'bookGenre' => 'required',
-            'categoryName' => 'required'
+            'Product_Name' => 'required',
+            'Description' => 'required',
+            'Price' => 'required',
+            'Stock_Level' => 'required',
+            'Author_Name' => 'required',
+            'Book_Type' => 'required',
+            'Book_Genre' => 'required',
+            'Category_ID' => 'required',
         ]);
 
         Products::create($formFields);
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Book Added Successfully!');
 
     }
 }

@@ -12,6 +12,15 @@ class Products extends Model
     protected $primaryKey = 'Product_ID';
     public $timestamps = false;
 
+    protected $fillable = [
+    'Category_ID',
+    'Product_Name',
+    'Description',
+    'Price',
+    'Stock_Level',
+    'Author_Name',
+    'Book_Type',
+    'Book_Genre'];
 
     public function scopeFilter($query, array $filters) {
         //This filter is for author link in the book showcase
