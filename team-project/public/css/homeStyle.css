@@ -236,13 +236,25 @@ img {
 .book-container {
     text-align: center;
     margin: 0 10px;
+    width: 150px;
+    height: 300px
+}
+
+/*This container is for the search page*/
+.search-book-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
 }
 
 .book-image {
-    max-width: 100px;
-    max-height: 150px;
-    margin: 0 auto;
+    width: 100px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 5px;
     display: block;
+    margin: 0 auto;
 }
 
 .book-title a{

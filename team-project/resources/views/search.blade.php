@@ -8,14 +8,14 @@
     <title>Search Books | Book4U</title>
 </head>
 <body>
-    @if(count($books) == 0)
-        <p> No Books found </p>
-    @endif
-         
-    @foreach($books as $book)
-        <x-book-card :book="$book"/>
-    @endforeach
-    
+    <div class="search-book-container">
+        @if(count($books) == 0)
+            <p> No Books found </p>
+        @endif
+        @foreach($books as $book)
+            <x-book-card :book="$book"/>
+        @endforeach
+    </div>
 </body>
 </html>
 
