@@ -29,12 +29,18 @@ class Products extends Model
         }
 
         //This filter is for the search bar
-        if($filters['search'] ?? false) {
-            $query->where('Product_Name', 'like', '%' . request('search') . '%')
-                ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
-                ->orWhere('Description', 'like', '%' . request('search') . '%')
-                ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
-                ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
+        if ($filters['search'] ?? false) {
+            $query->where(function ($query) use ($filters) {
+                $query->where('Product_Name', 'like', '%' . request('search') . '%')
+                    ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
+                    ->orWhere('Description', 'like', '%' . request('search') . '%')
+                    ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
+                    ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
+    
+                $query->orWhereHas('category', function ($query) use ($filters) {
+                    $query->where('Category_Name', 'like', '%' . request('search') . '%');
+                });
+            });
         }
 
         //These three filters are for the filter list next to the searchbar
@@ -49,5 +55,8 @@ class Products extends Model
         if ($filters['type'] ?? false) {
             $query->where('Book_Type', $filters['type']);
         }
+    }
+    public function category(){
+        return $this->belongsTo(ProductCategories::class, 'Category_ID');
     }
 }
