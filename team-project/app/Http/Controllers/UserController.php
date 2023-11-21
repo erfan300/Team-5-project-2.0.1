@@ -31,7 +31,6 @@ class UserController extends Controller
             'email' => ['required', 'email', 'confirmed', Rule::unique('users', 'Email')],
             'password' => ['required', 'confirmed', 'min:5'],
             'user_type' => ['required', 'in:Customer,Admin'],
-            'phone_number' => ['regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/']
         ]);
     
         // Create User
