@@ -21,13 +21,13 @@
     <label for="new_password">New Password:</label>
     <input type="password" name="new_password">
     <label for="first_name">First Name:</label>
-    <input type="text" name="first_name" value="{{ $user->customer->First_Name ?? $user->admin->First_Name }}" required>
+    <input type="text" name="first_name" value="{{ $relatedModel ? $relatedModel->First_Name : '' }}" required>
     <label for="last_name">Last Name:</label>
-    <input type="text" name="last_name" value="{{ $user->customer->Last_Name ?? $user->admin->Last_Name }}" required>
+    <input type="text" name="last_name" value="{{ $relatedModel ? $relatedModel->Last_Name : '' }}" required>
     <label for="email">Email:</label>
-    <input type="email" name="email" value="{{ $user->customer->Email ?? $user->admin->Email }}" required>
+    <input type="email" name="email" value="{{ $user -> Email}}" required>
     <label for="phone_number">Phone Number:</label>
-    <input type="text" name="phone_number" value="{{ $user->customer->Phone_Number ?? $user->admin->Phone_Number }}" required>
+    <input type="text" name="phone_number" value="{{ $relatedModel ? $relatedModel->Phone_Number : '' }}" required>
 
     <button type="submit">Update Profile</button>
 </form>
