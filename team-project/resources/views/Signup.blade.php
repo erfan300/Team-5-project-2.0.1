@@ -2,20 +2,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset = "UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-    <link rel="icon" type="" href="">
-     <link rel = "stylesheet" type="text/css" href="" />
-        <link rel="stylesheet" type="text/css" href="css/style.css"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"/>
-        <script defer src="js/main.js"></script>
-         <!-- Bootstrap & jQuery JS -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <link rel="icon" href="" type="" />
+    <link rel="stylesheet" type="text/css" href="/" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"/>
+    <script defer src="js/main.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- Bootstrap & jQuery JS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    </head>
-
 </head>
+
+
+
 <body>
 <header>
 
