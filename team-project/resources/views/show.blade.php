@@ -10,7 +10,7 @@
 <body>
     <div class="book-container">
         <div class="book-image-container">
-            <img class="book-image" src="{{asset('images/no-image.png')}}" alt="" />
+            <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
         </div>
         <div class="book-details">
             <h2>{{$book['Product_Name']}}</h2>

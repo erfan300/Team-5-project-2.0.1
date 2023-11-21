@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductImages;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -60,9 +61,20 @@ class ProductsController extends Controller
             'Book_Type' => 'required',
             'Book_Genre' => 'required',
             'Category_ID' => 'required',
+            'Book_Image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        Products::create($formFields);
+        $product = Products::create($formFields);
+
+        // Handle image upload
+        if ($request->hasFile('Book_Image')) {
+            $imagePath = $request->file('Book_Image')->store('product_images', 'public');
+    
+            // Creates a new product image and stores it in the ProductImages table
+            $product->productimages()->create([
+                'Image_URL' => $imagePath,
+            ]);
+        }
 
         return redirect('/')->with('message', 'Book Added Successfully!');
 

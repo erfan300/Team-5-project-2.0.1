@@ -56,7 +56,14 @@ class Products extends Model
             $query->where('Book_Type', $filters['type']);
         }
     }
+
+    //Relationship between Category_ID in the products table and the productCategory table
     public function category(){
         return $this->belongsTo(ProductCategories::class, 'Category_ID');
+    }
+
+    //Relationship between Product_ID in the products table and the productImages table
+    public function productImages() {
+        return $this->hasMany(ProductImages::class, 'Product_ID');
     }
 }

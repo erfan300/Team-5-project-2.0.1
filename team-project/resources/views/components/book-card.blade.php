@@ -1,7 +1,7 @@
 @props(['book'])
 
 <div class="book-container"><a href="/book/{{$book['Product_ID']}}">
-    <img class="book-image" src="{{asset('images/no-image.png')}}" alt="" />
+    <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
     <div>
         <h3 class="book-title">
             <a href="/book/{{$book['Product_ID']}}"> {{$book->Product_Name}} </a>
