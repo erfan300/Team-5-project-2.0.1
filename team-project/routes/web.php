@@ -62,6 +62,10 @@ Route::get('/basket', function () {
 Route::get('/payment', function () {
     return view('Paymentpage');
 });
+//Shows Forgot Password
+Route::get('/password', function () {
+    return view('password');
+});
 
 Route::middleware('auth')->group(function () {
     //route to display user profile
