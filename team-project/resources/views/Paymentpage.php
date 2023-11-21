@@ -1,3 +1,5 @@
+
+<style>
 h1 {
     font-family:Arial,Helvetica,sans-serif;
     font-size: 100;
@@ -94,12 +96,11 @@ h1 {
           }
         }
         
-
-
-
+</style>
 
 <header> 
     <!DOCTYPE html>
+    
 <html lang="en">
 <head>
     <meta charset="UTF-8">
