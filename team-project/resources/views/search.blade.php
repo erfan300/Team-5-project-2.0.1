@@ -16,6 +16,9 @@
             <x-book-card :book="$book"/>
         @endforeach
     </div>
+    <div class="pagination-container"> 
+        {{$books->appends(request()->query())->links()}} <!-- This is the button to show next page of books -->
+    </div>
 </body>
 </html>
 

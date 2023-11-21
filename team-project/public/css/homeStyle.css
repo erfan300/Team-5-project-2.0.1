@@ -243,7 +243,9 @@ img {
 /*This container is for the search page*/
 .search-book-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: stretch; 
     margin: 10px;
     padding: 10px;
 }
@@ -278,4 +280,50 @@ img {
 .book-type {
     font-size: 0.9em;
     color: #444; 
+}
+
+/* Style for pagination links */
+.pagination-container nav {
+    text-align: right;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 4px 8px;
+    margin: 0;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination .active {
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid #17a2b8;
+}
+
+.pagination .disabled {
+    color: #aaa;
+    cursor: not-allowed;
 }
