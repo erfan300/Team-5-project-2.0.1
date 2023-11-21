@@ -9,7 +9,7 @@
 </head>
 <body>
     <section class="form-section">
-        <form action="/store" method="POST" class="book-form">
+        <form action="/store" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="Product_Name">Book Name</label>
@@ -52,9 +52,9 @@
             </div>
 
             <div class="form-group">
-                <label for="book-image">Book Cover</label>
-                <input type="file" name="bookImage" class="form-control"/>
-                @error('bookImage')
+                <label for="Book_Image">Book Cover</label>
+                <input type="file" name="Book_Image" class="form-control"/>
+                @error('Book_Image')
                     <p class="book-image-error">{{$message}}</p>
                 @enderror
             </div>
@@ -97,7 +97,7 @@
         
             <div class="form-group">
                 <label for="Category_ID">Category Name</label>
-                <select name="Category_ID" class="form-control">
+                <select name="Category_ID" class="form-control" required>
                     <option value="" selected disabled>Select Category Name</option>
                     <option value="1">General</option> <!-- Makes book Category_ID = 1 -->
                     <option value="2">Best Sellers</option> <!-- Makes book Category_ID = 2 -->

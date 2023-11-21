@@ -284,10 +284,10 @@ img {
 
 /* Style for pagination links */
 .pagination-container nav {
-    text-align: right;
+    text-align: center;
     margin-top: 20px;
-    background-color: #fff;
-    color: #fff;
+    background-color: #f8f9fa;
+    color: #f8f9fa;
 }
 
 .pagination {
@@ -296,7 +296,7 @@ img {
     padding: 4px 8px;
     margin: 0;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: #f8f9fa;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -318,12 +318,7 @@ img {
 }
 
 .pagination .active {
-    background-color: #17a2b8;
     color: #fff;
-    border: 1px solid #17a2b8;
+    
 }
 
-.pagination .disabled {
-    color: #aaa;
-    cursor: not-allowed;
-}
