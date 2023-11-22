@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/custom.js') }}"></script>
     <title>{{$book['Product_Name']}}</title>
 </head>
 <body>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="book-container">
         <div class="book-image-container">
             <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
@@ -25,10 +31,10 @@
                     <input type="number" id="book-quantity" name="quantityBox" min="1" max="365" required>
                 </div>   
                 <button type="submit" id="contact-button"">ADD TO BASKET</button>
+                <a href="/book/{{$book->Product_ID}}/edit">Edit</a>
             </div>
         </div>
     </div>
-    
 </body>
 </html>
 

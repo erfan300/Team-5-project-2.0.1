@@ -79,4 +79,46 @@ class ProductsController extends Controller
         return redirect('/')->with('message', 'Book Added Successfully!');
 
     }
+
+    //Show edit book form
+    public function edit(Products $book) {
+        return view('edit', ['book' => $book]);
+    }
+
+    //Update book data
+    public function update(Request $request, Products $book) {   
+        $formFields = $request->validate([
+            'Product_Name' => 'required',
+            'Description' => 'required',
+            'Price' => 'required',
+            'Stock_Level' => 'required',
+            'Author_Name' => 'required',
+            'Book_Type' => 'required',
+            'Book_Genre' => 'required',
+            'Category_ID' => 'required',
+            'Book_Image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Update the book data
+        $book->update($formFields);
+
+        if ($request->hasFile('Book_Image')) {
+            $imagePath = $request->file('Book_Image')->store('product_images', 'public');
+
+            if ($book->productimages->first()) {
+                // If yes, update the existing image
+                $book->productimages->first()->update([
+                    'Image_URL' => $imagePath,
+                ]);
+            } else {
+                // If no, create a new image
+                $book->productimages()->create([
+                    'Image_URL' => $imagePath,
+                ]);
+            }
+        }
+
+        return redirect('/book/' . $book->Product_ID)->with('message', 'Book Updated Successfully!');
+    }
+
 }

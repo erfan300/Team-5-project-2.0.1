@@ -1,3 +1,31 @@
+/* Successfull login alert */
+.alert-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    z-index: 1000; 
+}
+
+/* Fade-out animation for alert */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success.fade-out {
+    animation: fadeOut 2s ease-out; 
+}
+
 .book-container {
     display: flex;
     align-items: center;

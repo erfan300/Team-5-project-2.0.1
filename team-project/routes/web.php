@@ -31,6 +31,12 @@ Route::post('/users', [UserController::class, 'store']);
 //Store new book into Database
 Route::post('/store', [ProductsController::class, 'store']);
 
+//Shows edit book form
+Route::get('/book/{book}/edit', [ProductsController::class, 'edit']);
+
+//Update any new edits 
+Route::put('/book/{book}', [ProductsController::class, 'update']);
+
 // Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
 
