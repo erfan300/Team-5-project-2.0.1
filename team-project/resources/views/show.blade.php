@@ -32,6 +32,11 @@
                 </div>   
                 <button type="submit" id="contact-button"">ADD TO BASKET</button>
                 <a href="/book/{{$book->Product_ID}}/edit">Edit</a>
+                <form method="POST" action="/book/{{$book->Product_ID}}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="delete-button" onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">Delete</button>
+                </form>
             </div>
         </div>
     </div>

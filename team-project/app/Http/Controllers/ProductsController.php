@@ -121,4 +121,11 @@ class ProductsController extends Controller
         return redirect('/book/' . $book->Product_ID)->with('message', 'Book Updated Successfully!');
     }
 
+    // Delete book from database
+    public function delete(Products $book) {
+        $book->productImages()->delete(); //deletes image first
+        $book->delete(); //than deletes the book
+        return redirect('/')->with('message', 'Book Deleted Successfully!');
+    }
+
 }
