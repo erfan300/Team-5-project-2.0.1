@@ -31,27 +31,35 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #495057;
+    background-color: #081c15; /* Dark green background */
+    color: #d2e7d5; /* Light green text color */
 }
 
+/* Header Styling */
 header {
-    background-color: #343a40;
-    color: #fff;
+    background-color: #0b2e20; /* Dark green header background */
+    color: #d2e7d5;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Navigation Styling */
+/* Navigation Styling */
 nav {
-    background-color: #495057;
+    background-color: #0b2e20; /* Dark green navigation background */
     padding: 10px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    color: #fff;
+    color: #d2e7d5; /* Light green text color */
     text-decoration: none;
     padding: 10px;
     margin: 0 15px;
@@ -60,25 +68,34 @@ nav a {
 }
 
 nav a:hover {
-    color: #17a2b8;
+    color: #a3c1a0; /* Light green on hover */
 }
 
-/*Search bar section*/
+.banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
 
+.banner p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Search Bar Styling */
 .search-form {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .search-container {
     position: relative;
     display: flex;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    border: 2px solid #4CAF50; /* Dark green border */
+    border-radius: 5px;
     overflow: hidden;
-    width: 90%;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    width: 70%;
 }
 
 .search-input {
@@ -88,16 +105,27 @@ nav a:hover {
     outline: none;
     font-size: 16px;
     width: 90%;
+    background-color: #0b2e20; /* Dark green input background */
+    color: #d2e7d5;
 }
 
 .search-button {
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #4CAF50; /* Dark green search button background */
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #2ecc71; /* Light green on hover */
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 20px;
 }
 
 /*Filter section next to the search bar*/
@@ -178,7 +206,7 @@ nav a:hover {
 .footer {
     text-align: center;
     margin-top: 40px;
-    background-color: #343a40;
+    background-color: #0b2e20;
     color: #fff;
     padding: 20px;
 }
