@@ -79,6 +79,12 @@ Route::get('/password', function () {
     return view('password');
 });
 
+
+//Shows Password update page
+Route::get('/updatePassword', function () {
+    return view('pass-update');
+});
+
 Route::middleware('auth')->group(function () {
     //route to display user profile
     Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
