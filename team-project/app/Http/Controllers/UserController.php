@@ -125,7 +125,7 @@ class UserController extends Controller
   
       if (!$user) {
           // Handle if user not found
-          return redirect()->route('profile')->with('error', 'User not found');
+          return redirect()->route('home')->with('message', 'User not found');
       }
         // Validate and update the user's details
         $validatedData = $request->validate([
@@ -175,7 +175,7 @@ class UserController extends Controller
         }
     
         // Redirect back to the profile page with a success message
-        return redirect()->route('profile')->with('message', 'Profile updated successfully');
+        return redirect()->route('home')->with('message', 'Profile updated successfully');
     }
     
     
