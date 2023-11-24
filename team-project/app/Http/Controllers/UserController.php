@@ -101,7 +101,7 @@ class UserController extends Controller
                     ->first(); 
     
         if (!$user) {
-            return redirect()->route('/home')->with('error', 'User not found');
+            return redirect()->route('home')->with('error', 'User not found');
         }
     
         // Check if user is an admin or a customer
@@ -125,7 +125,7 @@ class UserController extends Controller
   
       if (!$user) {
           // Handle if user not found
-          return redirect()->route('home')->with('message', 'User not found');
+          return redirect()->route('profile')->with('error', 'User not found');
       }
         // Validate and update the user's details
         $validatedData = $request->validate([
