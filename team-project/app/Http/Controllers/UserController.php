@@ -54,7 +54,7 @@ class UserController extends Controller
             $admin->User_ID = $user->User_ID;
             $admin->First_Name = $request->input('first_name');
             $admin->Last_Name = $request->input('last_name');
-            $admin->Email = $request->input('email');
+            $admin->Address = $request->input('address');
             $admin->Phone_Number = $request->input('phone_number');
             $admin->save();
         }
@@ -152,7 +152,7 @@ class UserController extends Controller
                 // Update admin details if found
                 $admin->First_Name = $validatedData['first_name'];
                 $admin->Last_Name = $validatedData['last_name'] ?? $admin->Last_Name; // Check if last_name is present
-                $admin->Email = $validatedData['email'];
+                $admin->Address = $validatedData['address'] ?? $admin->Address; // Check if address is present
                 $admin->Phone_Number = $validatedData['phone_number'] ?? $admin->Phone_Number; // Check if phone_number is present
                 // Update other admin fields here as needed
                 $admin->save(); // Save changes to the admin
