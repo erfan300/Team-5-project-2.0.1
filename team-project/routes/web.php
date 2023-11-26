@@ -92,3 +92,16 @@ Route::middleware('auth')->group(function () {
     //route to update user profile
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/Basket', function () {
+    return view('Basket');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+

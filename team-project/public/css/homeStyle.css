@@ -1,15 +1,22 @@
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
+}
+
 /* Successfull login alert */
 .alert-success {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 15px; 
-    margin-bottom: 20px; 
-    text-align: center; 
-    z-index: 1000; 
+    background-color: var(--blue);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 1000;
 }
 
 /* Fade-out animation for alert */
@@ -23,61 +30,70 @@
 }
 
 .alert-success.fade-out {
-    animation: fadeOut 2s ease-out; 
+    animation: fadeOut 2s ease-out;
 }
+
 /*----------------------------------------------------------*/
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #081c15; /* Dark green background */
-    color: #d2e7d5; /* Light green text color */
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
 }
 
 /* Header Styling */
 header {
-    background-color: #0b2e20; /* Dark green header background */
-    color: #d2e7d5;
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
 /* Navigation Styling */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 nav {
-    background-color: #0b2e20; /* Dark green navigation background */
-    padding: 10px;
+    background-color: var(--darkgreen);
+    overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
-    color: #d2e7d5; /* Light green text color */
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    padding: 10px;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-nav a:hover {
-    color: #a3c1a0; /* Light green on hover */
+a:hover {
+    background-color: var(--blue); 
+    color: black;
 }
 
-.banner h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+a.active {
+    background-color: var(--blue);
+    color: white;
 }
 
-.banner p {
-    font-size: 1.2em;
-    line-height: 1.5;
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /* Search Bar Styling */
