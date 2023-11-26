@@ -19,7 +19,7 @@ class UserController extends Controller
 {
     //Show register form
     public function register() {
-        return view('signup');
+        return view('register');
     }
 
     // Creates a new user
