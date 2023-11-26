@@ -101,7 +101,4 @@ Route::get('/Basket', function () {
     return view('Basket');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
 
