@@ -30,7 +30,7 @@ class UserController extends Controller
             'username' => ['required', Rule::unique('users', 'Username')],
             'email' => ['required', 'email', 'confirmed', Rule::unique('users', 'Email')],
             'password' => ['required', 'confirmed', 'min:5'],
-            'user_type' => ['required', 'in:Customer,Admin']
+            'user_type' => ['required', 'in:Customer,Admin'],
         ]);
     
         // Create User
@@ -95,12 +95,26 @@ class UserController extends Controller
     }
 
     public function showProfile() {
-        $user = Auth::user(); // Get the authenticated user
+        $userId = Auth::id(); // Get the authenticated user's ID
+        $user = User::with(['admin', 'customer'])
+                    ->where('User_ID', $userId)
+                    ->first(); 
     
-        // Return the view with the user's details
-        return view('profile', compact('user'));
+        if (!$user) {
+            return redirect()->route('home')->with('error', 'User not found');
+        }
+    
+        // Check if user is an admin or a customer
+        $relatedModel = null;
+        if ($user->User_Type === 'Admin') {
+            $relatedModel = $user->admin;
+        } elseif ($user->User_Type === 'Customer') {
+            $relatedModel = $user->customer;
+        }
+    
+        // Return the view with the user's details and related model
+        return view('profile', compact('user', 'relatedModel'));
     }
-    
  
     public function updateProfile(Request $request) {
       // Retrieve user ID from session
@@ -116,21 +130,17 @@ class UserController extends Controller
         // Validate and update the user's details
         $validatedData = $request->validate([
             'username' => ['required', 'unique:users,Username,'.$user->User_ID.',User_ID'],
-            'new_password' => ['nullable', 'min:5'],
             'first_name' => ['required', 'min:3'],
             'last_name' => ['required', 'min:3'],
             'email' => ['required', 'email'],
-            'phone_number' => ['required', 'regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/'],
+            'phone_number' => ['nullable', 'regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/'],
             // Add validation for other fields you want to update
         ]);
     
         // Update the user's details
         $user->Username = $validatedData['username'];
     
-        if ($request->filled('new_password')) {
-            $user->Password = bcrypt($validatedData['new_password']); // Hash the new password
-        }
-    
+       
         $user->Email = $validatedData['email']; // Update user's email
     
         $user->save(); // Save changes to the user
@@ -161,7 +171,7 @@ class UserController extends Controller
         }
     
         // Redirect back to the profile page with a success message
-        return redirect()->route('profile')->with('message', 'Profile updated successfully');
+        return redirect()->route('home')->with('message', 'Profile updated successfully');
     }
     
     

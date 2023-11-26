@@ -15,7 +15,7 @@ class SearchController extends Controller
                 'genre' => $request->input('genre'),
                 'category' => $request->input('category'),
                 'type' => $request->input('type'),
-            ])->orderBy('Product_ID', 'desc')->get()
+            ])->orderBy('Product_ID', 'desc')->paginate(14)
         ]);
     }
 

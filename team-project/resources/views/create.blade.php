@@ -9,71 +9,71 @@
 </head>
 <body>
     <section class="form-section">
-        <form action="/store" method="POST" class="book-form">
+        <form action="/store" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="productName">Book Name</label>
-                <input type="text" name="productName" class="form-control" required/>
-                @error('productName')
+                <label for="Product_Name">Book Name</label>
+                <input type="text" name="Product_Name" class="form-control" required/>
+                @error('Product_Name')
                     <p class="product-name-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" rows="5" class="form-control"></textarea>
-                @error('description')
+                <label for="Description">Description</label>
+                <textarea name="Description" rows="5" class="form-control"></textarea>
+                @error('Description')
                     <p class="description-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" name="price" step="0.01" class="form-control" required/>
-                @error('price')
+                <label for="Price">Price</label>
+                <input type="number" name="Price" step="0.01" class="form-control" required/>
+                @error('Price')
                     <p class="price-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="stockLevel">Stock Level</label>
-                <input type="number" name="stockLevel" class="form-control" required/>
-                @error('stockLevel')
+                <label for="Stock_Level">Stock Level</label>
+                <input type="number" name="Stock_Level" class="form-control" required/>
+                @error('Stock_Level')
                     <p class="stock-level-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="authorName">Author Name</label>
-                <input type="text" name="authorName" class="form-control" required/>
-                @error('authorName')
+                <label for="Author_Name">Author Name</label>
+                <input type="text" name="Author_Name" class="form-control" required/>
+                @error('Author_Name')
                     <p class="author-name-error">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="form-group">
-                <label for="book-image">Book Cover</label>
-                <input type="file" name="bookImage" class="form-control"/>
-                @error('bookImage')
+                <label for="Book_Image">Book Cover</label>
+                <input type="file" name="Book_Image" class="form-control"/>
+                @error('Book_Image')
                     <p class="book-image-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="bookType">Book Type</label>
-                <select name="bookType" class="form-control" required>
+                <label for="Book_Type">Book Type</label>
+                <select name="Book_Type" class="form-control" required>
                     <option value="" selected disabled>Select Book Type</option>
                     <option value="Hardback">Hardback</option>
                     <option value="Paperback">Paperback</option>
                 </select>
-                @error('bookType')
+                @error('Book_Type')
                     <p class="book-type-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="bookGenre">Book Genre</label>
-                <select name="bookGenre" class="form-control" required>
+                <label for="Book_Genre">Book Genre</label>
+                <select name="Book_Genre" class="form-control" required>
                     <option value="" selected disabled>Select Book Genre</option>
                     <option value="Fiction">Fiction</option>
                     <option value="Non-fiction">Non-fiction</option>
@@ -90,25 +90,25 @@
                     <option value="True Crime">True Crime</option>
                     <option value="Horror">Horror</option>
                 </select>
-                @error('bookGenre')
+                @error('Book_Genre')
                     <p class="book-genre-error">{{$message}}</p>
                 @enderror
             </div>
         
             <div class="form-group">
-                <label for="categoryName">Category Name</label>
-                <select name="categoryName" class="form-control" required>
+                <label for="Category_ID">Category Name</label>
+                <select name="Category_ID" class="form-control" required>
                     <option value="" selected disabled>Select Category Name</option>
-                    <option value="General">General</option>
-                    <option value="Best Sellers">Best Sellers</option>
-                    <option value="New Books">New Books</option>
-                    <option value="Classics">Classics</option>
-                    <option value="Recommended">Recommended</option>
-                    <option value="Books For Children">Books For Children</option>
-                    <option value="Books For Young Adults">Books For Young Adults</option>
-                    <option value="Historical Period">Historical Period</option>
+                    <option value="1">General</option> <!-- Makes book Category_ID = 1 -->
+                    <option value="2">Best Sellers</option> <!-- Makes book Category_ID = 2 -->
+                    <option value="3">New Books</option> <!-- Makes book Category_ID = 3 -->
+                    <option value="4">Classics</option> <!-- Makes book Category_ID = 4 -->
+                    <option value="5">Recommended</option> <!-- Makes book Category_ID = 5 -->
+                    <option value="6">Books For Children</option> <!-- Makes book Category_ID = 6 -->
+                    <option value="7">Books For Young Adults</option> <!-- Makes book Category_ID = 7 -->
+                    <option value="8">Historical Period</option> <!-- Makes book Category_ID = 8 -->
                 </select>
-                @error('categoryName')
+                @error('Category_ID')
                     <p class="category-name-error">{{$message}}</p>
                 @enderror
             </div>

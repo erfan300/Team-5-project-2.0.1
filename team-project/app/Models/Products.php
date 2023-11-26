@@ -12,6 +12,15 @@ class Products extends Model
     protected $primaryKey = 'Product_ID';
     public $timestamps = false;
 
+    protected $fillable = [
+    'Category_ID',
+    'Product_Name',
+    'Description',
+    'Price',
+    'Stock_Level',
+    'Author_Name',
+    'Book_Type',
+    'Book_Genre'];
 
     public function scopeFilter($query, array $filters) {
         //This filter is for author link in the book showcase
@@ -20,12 +29,18 @@ class Products extends Model
         }
 
         //This filter is for the search bar
-        if($filters['search'] ?? false) {
-            $query->where('Product_Name', 'like', '%' . request('search') . '%')
-                ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
-                ->orWhere('Description', 'like', '%' . request('search') . '%')
-                ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
-                ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
+        if ($filters['search'] ?? false) {
+            $query->where(function ($query) use ($filters) {
+                $query->where('Product_Name', 'like', '%' . request('search') . '%')
+                    ->orWhere('Author_Name', 'like', '%' . request('search') . '%')
+                    ->orWhere('Description', 'like', '%' . request('search') . '%')
+                    ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
+                    ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
+    
+                $query->orWhereHas('category', function ($query) use ($filters) {
+                    $query->where('Category_Name', 'like', '%' . request('search') . '%');
+                });
+            });
         }
 
         //These three filters are for the filter list next to the searchbar
@@ -40,5 +55,15 @@ class Products extends Model
         if ($filters['type'] ?? false) {
             $query->where('Book_Type', $filters['type']);
         }
+    }
+
+    //Relationship between Category_ID in the products table and the productCategory table
+    public function category(){
+        return $this->belongsTo(ProductCategories::class, 'Category_ID');
+    }
+
+    //Relationship between Product_ID in the products table and the productImages table
+    public function productImages() {
+        return $this->hasMany(ProductImages::class, 'Product_ID');
     }
 }

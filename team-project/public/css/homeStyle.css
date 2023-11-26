@@ -1,15 +1,22 @@
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
+}
+
 /* Successfull login alert */
 .alert-success {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 15px; 
-    margin-bottom: 20px; 
-    text-align: center; 
-    z-index: 1000; 
+    background-color: var(--blue);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 1000;
 }
 
 /* Fade-out animation for alert */
@@ -23,62 +30,87 @@
 }
 
 .alert-success.fade-out {
-    animation: fadeOut 2s ease-out; 
+    animation: fadeOut 2s ease-out;
 }
+
 /*----------------------------------------------------------*/
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #495057;
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
 }
 
+/* Header Styling */
 header {
-    background-color: #343a40;
-    color: #fff;
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation Styling */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 nav {
-    background-color: #495057;
-    padding: 10px;
+    background-color: var(--darkgreen);
+    overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
-    color: #fff;
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    padding: 10px;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-nav a:hover {
-    color: #17a2b8;
+a:hover {
+    background-color: var(--blue); 
+    color: black;
 }
 
-/*Search bar section*/
+a.active {
+    background-color: var(--blue);
+    color: white;
+}
 
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Search Bar Styling */
 .search-form {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .search-container {
     position: relative;
     display: flex;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+    border: 2px solid #4CAF50; /* Dark green border */
+    border-radius: 5px;
     overflow: hidden;
-    width: 90%;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    width: 70%;
 }
 
 .search-input {
@@ -88,16 +120,27 @@ nav a:hover {
     outline: none;
     font-size: 16px;
     width: 90%;
+    background-color: #0b2e20; /* Dark green input background */
+    color: #d2e7d5;
 }
 
 .search-button {
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #4CAF50; /* Dark green search button background */
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #2ecc71; /* Light green on hover */
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 20px;
 }
 
 /*Filter section next to the search bar*/
@@ -178,7 +221,7 @@ nav a:hover {
 .footer {
     text-align: center;
     margin-top: 40px;
-    background-color: #343a40;
+    background-color: #0b2e20;
     color: #fff;
     padding: 20px;
 }
@@ -236,13 +279,27 @@ img {
 .book-container {
     text-align: center;
     margin: 0 10px;
+    width: 150px;
+    height: 300px
+}
+
+/*This container is for the search page*/
+.search-book-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: stretch; 
+    margin: 10px;
+    padding: 10px;
 }
 
 .book-image {
-    max-width: 100px;
-    max-height: 150px;
-    margin: 0 auto;
+    width: 100px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 5px;
     display: block;
+    margin: 0 auto;
 }
 
 .book-title a{
@@ -267,3 +324,44 @@ img {
     font-size: 0.9em;
     color: #444; 
 }
+
+/* Style for pagination links */
+.pagination-container nav {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    color: #f8f9fa;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 4px 8px;
+    margin: 0;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    background-color: #eee;
+}
+
+.pagination .active {
+    color: #fff;
+    
+}
+

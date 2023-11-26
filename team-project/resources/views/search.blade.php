@@ -8,14 +8,17 @@
     <title>Search Books | Book4U</title>
 </head>
 <body>
-    @if(count($books) == 0)
-        <p> No Books found </p>
-    @endif
-         
-    @foreach($books as $book)
-        <x-book-card :book="$book"/>
-    @endforeach
-    
+    <div class="search-book-container">
+        @if(count($books) == 0)
+            <p> No Books found </p>
+        @endif
+        @foreach($books as $book)
+            <x-book-card :book="$book"/>
+        @endforeach
+    </div>
+    <div class="pagination-container"> 
+        {{$books->appends(request()->query())->links()}} <!-- This is the button to show next page of books -->
+    </div>
 </body>
 </html>
 

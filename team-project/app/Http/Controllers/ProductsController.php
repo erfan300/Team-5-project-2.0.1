@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductImages;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -52,19 +53,79 @@ class ProductsController extends Controller
     //store new book data
     public function store(Request $request) {   
         $formFields = $request->validate([
-            'productName' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'stockLevel' => 'required',
-            'authorName' => 'required',
-            'bookType' => 'required',
-            'bookGenre' => 'required',
-            'categoryName' => 'required'
+            'Product_Name' => 'required',
+            'Description' => 'required',
+            'Price' => 'required',
+            'Stock_Level' => 'required',
+            'Author_Name' => 'required',
+            'Book_Type' => 'required',
+            'Book_Genre' => 'required',
+            'Category_ID' => 'required',
+            'Book_Image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        Products::create($formFields);
+        $product = Products::create($formFields);
 
-        return redirect('/');
+        // Handle image upload
+        if ($request->hasFile('Book_Image')) {
+            $imagePath = $request->file('Book_Image')->store('product_images', 'public');
+    
+            // Creates a new product image and stores it in the ProductImages table
+            $product->productimages()->create([
+                'Image_URL' => $imagePath,
+            ]);
+        }
+
+        return redirect('/')->with('message', 'Book Added Successfully!');
 
     }
+
+    //Show edit book form
+    public function edit(Products $book) {
+        return view('edit', ['book' => $book]);
+    }
+
+    //Update book data
+    public function update(Request $request, Products $book) {   
+        $formFields = $request->validate([
+            'Product_Name' => 'required',
+            'Description' => 'required',
+            'Price' => 'required',
+            'Stock_Level' => 'required',
+            'Author_Name' => 'required',
+            'Book_Type' => 'required',
+            'Book_Genre' => 'required',
+            'Category_ID' => 'required',
+            'Book_Image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Update the book data
+        $book->update($formFields);
+
+        if ($request->hasFile('Book_Image')) {
+            $imagePath = $request->file('Book_Image')->store('product_images', 'public');
+
+            if ($book->productimages->first()) {
+                // If yes, update the existing image
+                $book->productimages->first()->update([
+                    'Image_URL' => $imagePath,
+                ]);
+            } else {
+                // If no, create a new image
+                $book->productimages()->create([
+                    'Image_URL' => $imagePath,
+                ]);
+            }
+        }
+
+        return redirect('/book/' . $book->Product_ID)->with('message', 'Book Updated Successfully!');
+    }
+
+    // Delete book from database
+    public function delete(Products $book) {
+        $book->productImages()->delete(); //deletes image first
+        $book->delete(); //than deletes the book
+        return redirect('/')->with('message', 'Book Deleted Successfully!');
+    }
+
 }
