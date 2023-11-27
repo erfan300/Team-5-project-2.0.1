@@ -118,9 +118,8 @@ class UserController extends Controller
  
     public function updateProfile(Request $request) {
       // Retrieve user ID from session
-      $userId = session('user_id');
+      $userId = Auth::id(); // Fetch authenticated user ID
     
-      // Retrieve user instance from the User model using the user ID
       $user = User::find($userId);
   
       if (!$user) {

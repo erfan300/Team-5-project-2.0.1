@@ -17,12 +17,24 @@
         <form method="POST" action="{{ route('update-profile') }}">
     @csrf
     <label for="username">Username:</label>
+    @error('username')
+        <p class="username-error">{{$message}}</p>
+    @enderror
     <input type="text" name="username" value="{{ $user->Username }}" required>
     <label for="first_name">First Name:</label>
+    @error('first_name')
+        <p class="first-name-error">{{$message}}</p>
+    @enderror
     <input type="text" name="first_name" value="{{ $relatedModel ? $relatedModel->First_Name : '' }}" required>
     <label for="last_name">Last Name:</label>
+    @error('last_name')
+        <p class="last-name-error">{{$message}}</p>
+    @enderror
     <input type="text" name="last_name" value="{{ $relatedModel ? $relatedModel->Last_Name : '' }}" required>
     <label for="email">Email:</label>
+    @error('email')
+        <p class="email-error">{{$message}}</p>
+    @enderror
     <input type="email" name="email" value="{{ $user -> Email}}" required>
     <label for="phone_number" name="phone_number">Phone Number:</label>
     @error('phone_number')
@@ -31,6 +43,9 @@
     <input type="text" name="phone_number" value="{{ $relatedModel ? $relatedModel->Phone_Number : '' }}">
     
     <label for="address">Address:</label>
+    @error('address')
+        <p class="address-error">{{$message}}</p>
+    @enderror
     <input type="text" name="address" value="{{ $relatedModel ? $relatedModel->Address : '' }}">
     <button type="submit">Update Profile</button>
 </form>
