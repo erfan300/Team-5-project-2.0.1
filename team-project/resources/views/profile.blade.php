@@ -18,7 +18,6 @@
     @csrf
     <label for="username">Username:</label>
     <input type="text" name="username" value="{{ $user->Username }}" required>
-    <label for="new_password">New Password:</label>
     <label for="first_name">First Name:</label>
     <input type="text" name="first_name" value="{{ $relatedModel ? $relatedModel->First_Name : '' }}" required>
     <label for="last_name">Last Name:</label>
@@ -30,7 +29,9 @@
         <p class="phone-number-error">{{$message}}</p>
     @enderror
     <input type="text" name="phone_number" value="{{ $relatedModel ? $relatedModel->Phone_Number : '' }}">
-
+    
+    <label for="address">Address:</label>
+    <input type="text" name="address" value="{{ $relatedModel ? $relatedModel->Address : '' }}">
     <button type="submit">Update Profile</button>
 </form>
     </main>

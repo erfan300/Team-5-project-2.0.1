@@ -134,7 +134,7 @@ class UserController extends Controller
             'last_name' => ['required', 'min:3'],
             'email' => ['required', 'email'],
             'phone_number' => ['nullable', 'regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/'],
-            // Add validation for other fields you want to update
+            'address' => ['nullable'],
         ]);
     
         // Update the user's details
