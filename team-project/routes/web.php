@@ -60,6 +60,9 @@ Route::get('/contact', function () {
 //Logs in User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
 
+//Logs out User
+Route::post('/logout', [UserController::class, 'logout']);
+
 // Shows about us page
 Route::get('/aboutus', function () {
     return view('about');

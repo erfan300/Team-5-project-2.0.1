@@ -63,5 +63,19 @@ class User extends Authenticatable
         return $this->hasOne(Customer::class, 'User_ID', 'User_ID');
     }
 
-    
+    // Laravel provides default implementation for common columns like email, password, and remember_token in users. 
+    // Since we are using non-default column names for email and password, these three functions override some methods 
+    // in the User model.
+    public function getAuthPassword(){
+        return $this->Password;
+    }
+
+    public function getAuthIdentifierName(){
+        return 'User_ID';
+    }
+
+    public function getAuthIdentifier(){
+        return $this->{$this->getAuthIdentifierName()};
+    }
+
 }

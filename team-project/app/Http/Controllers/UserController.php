@@ -80,19 +80,23 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        $user = User::where('Email','=',$request->email)->first();
-
-        if ($user && Hash::check($request->password, $user->Password)) {
+    
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
-            session(['user_id' => $user->User_ID]);
-            return redirect('/')->with('message', 'Log in successful!');
+            return redirect('/home')->with('message', 'Log in successful!');
         } else {
             return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
         }
-        
-        
     }
+
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home')->with('message', 'You have been logged out!');
+    }
+    
 
     public function showProfile() {
         $userId = Auth::id(); // Get the authenticated user's ID
@@ -111,7 +115,7 @@ class UserController extends Controller
         } elseif ($user->User_Type === 'Customer') {
             $relatedModel = $user->customer;
         }
-    
+
         // Return the view with the user's details and related model
         return view('profile', compact('user', 'relatedModel'));
     }
