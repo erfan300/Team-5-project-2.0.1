@@ -22,7 +22,6 @@
 
 <body>
 <header>
-
 </header>
 <main>
 <nav>
@@ -33,6 +32,7 @@
     <a href="about">About</a>
     <a href="contact">Contact</a>
 </nav>
+
 
 
 <h1>Sign up</h1>
@@ -143,26 +143,35 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* Navigation bar styles */
 nav {
-    background: var(--darkgreen);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 7%;
-    border-bottom: var(--border);
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    z-index: 1000;
+    padding: 20px;
 }
+
+nav a {
+    margin-left: 20px;
+    color: white; 
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: color 0.2s linear;
+}
+
+nav a:hover {
+    color: var(--blue); 
+}
+
 /* Your signup form styles here */
 form {
-    font-size: 1.6rem;
+    font-size: 1.69em;
     padding: 20px;
     background-color: var(--lightgreen);
-    border: 2px solid var(--darkgreen);
+    border: 2px solid var(--white);
     border-radius: 10px;
+    width: 500px;
 }
 
 form input {
@@ -171,7 +180,5 @@ form input {
     padding: 8px;
     margin: 10px 0;
 }
-
-
 
     </style> 
