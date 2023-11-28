@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-   
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="/" />
     <link rel="stylesheet" type="text/css" href="css/style.css"
@@ -62,3 +61,79 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<style>
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86;
+    --lightgreen: #c8e6d1;
+    --border: .1rem solid #6a9b86;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+}
+
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--lightgreen);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--blue);
+    color: black;
+}
+
+/* Shopping Basket Section */
+
+#shopping-basket {
+    background-color: var(--lightgreen);
+    color: var(--darkgreen); /* Text color set to darkgreen */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#shopping-basket h2 {
+    color: var(--darkgreen);
+}
+
+.table th,
+.table td {
+    color: var(--darkgreen);
+}
+
+.table tfoot td {
+    color: var(--darkgreen);
+    font-weight: bold;
+}
+
+.btn {
+    background: var(--darkgreen);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s linear;
+}
+
+.btn:hover {
+    background: var(--blue);
+}
+    </style>
