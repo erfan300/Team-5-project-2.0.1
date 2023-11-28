@@ -18,27 +18,23 @@
   </head>
   
     <!--Navigation start-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Books4U</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="Home.blade.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Basket.blade.html">Basket</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.blade.html">About us</a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.blade.html">Log In/Sign In </a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
+    <body>
+    <header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+
+    <nav class="navbar">
+    <a href="home">Home</a>
+    <a href="profile">Profile</a>
+    <a href="basket">Basket</a>
+    <a href="login">Log In</a>
+    <a href="about">About</a>
+    <a href="contact">Contact</a>
+    </nav>
+
+</header>
 
     <!--Navigation end-->
 
