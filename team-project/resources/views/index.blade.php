@@ -35,7 +35,6 @@
     <a href="login">Log In</a>
     <a href="about">About</a>
     <a href="contact">Contact</a>
-    <a href="manage">Manage</a>
 </nav>
 
     <!-- Search Bar -->
