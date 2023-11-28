@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-    <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="/" />
     <link rel="stylesheet" type="text/css" href="css/style.css"
@@ -26,28 +25,15 @@
 
 </header>
 <main>
+<nav>
+    <a href="home">Home</a>
+    <a href="profile">Profile</a>
+    <a href="basket">Basket</a>
+    <a href="login">Log In</a>
+    <a href="about">About</a>
+    <a href="contact">Contact</a>
+</nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Books4U</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="Home.blade.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Basket.blade.html">Basket</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.blade.html">About us</a>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.blade.html">Log In/Sign In </a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
 
 <h1>Sign up</h1>
 @if ($errors->any())
@@ -119,3 +105,73 @@
 
 </body>
 </html>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #384b42;
+    --lightgreen: #6a9b86;
+    --border: 0.1rem solid #6a9b86;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--darkgreen); 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    background: var(--darkgreen);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+/* Your signup form styles here */
+form {
+    font-size: 1.6rem;
+    padding: 20px;
+    background-color: var(--lightgreen);
+    border: 2px solid var(--darkgreen);
+    border-radius: 10px;
+}
+
+form input {
+    width: 100%;
+    height: 30px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+
+
+    </style> 
