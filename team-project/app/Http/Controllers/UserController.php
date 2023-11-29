@@ -110,9 +110,9 @@ class UserController extends Controller
     
         // Check if user is an admin or a customer
         $relatedModel = null;
-        if ($user->User_Type === 'Admin') {
+        if ($user->user_type === 'Admin') {
             $relatedModel = $user->admin;
-        } elseif ($user->User_Type === 'Customer') {
+        } elseif ($user->user_type === 'Customer') {
             $relatedModel = $user->customer;
         }
 
@@ -149,7 +149,7 @@ class UserController extends Controller
         $user->save(); // Save changes to the user
     
         // Update the corresponding table (Admins or Customers) based on User_Type
-        if ($user->User_Type === 'Admin') {
+        if ($user->user_type === 'Admin') {
             $admin = Admin::where('User_ID', $user->User_ID)->first();
             if ($admin) {
                 // Update admin details if found
@@ -160,7 +160,7 @@ class UserController extends Controller
                 // Update other admin fields here as needed
                 $admin->save(); // Save changes to the admin
             }
-        } elseif ($user->User_Type === 'Customer') {
+        } elseif ($user->user_type === 'Customer') {
             $customer = Customer::where('User_ID', $user->User_ID)->first();
             if ($customer) {
                 // Update customer details if found

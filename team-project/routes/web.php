@@ -29,25 +29,13 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/users', [UserController::class, 'store']);
 
 // Store new book into Database
-Route::post('/store', [ProductsController::class, 'store']);
-
-// Shows edit book form
-Route::get('/book/{book}/edit', [ProductsController::class, 'edit']);
-
-// Update any new edits 
-Route::put('/book/{book}', [ProductsController::class, 'update']);
-
-// Delete book
-Route::delete('/book/{book}', [ProductsController::class, 'delete']); 
+Route::post('/store', [ProductsController::class, 'store']); 
 
 // Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
 
 // Shows searched books
 Route::get('/search', [SearchController::class, 'index'])->name('Search');
-
-// Shows create page for admins
-Route::get('/create', [ProductsController::class, 'create']);
 
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login']); 
@@ -94,6 +82,21 @@ Route::middleware('auth')->group(function () {
 
     //route to update user profile
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
+});
+
+// Middleware for admin access only
+Route::middleware('admin')->group(function () {
+    // Shows edit book form
+    Route::get('/book/{book}/edit', [ProductsController::class, 'edit']);
+
+    // Update any new edits 
+    Route::put('/book/{book}', [ProductsController::class, 'update']);
+
+    // Delete book
+    Route::delete('/book/{book}', [ProductsController::class, 'delete']);
+    
+    // Shows create page for admins
+    Route::get('/create', [ProductsController::class, 'create']);
 });
 
 Route::get('/about', function () {

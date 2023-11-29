@@ -17,7 +17,7 @@ class User extends Authenticatable
     protected $username = 'Username';
     protected $password = 'Password';
     protected $email = 'Email';
-    protected $userType = 'User_Type';
+    protected $user_type = 'User_Type';
     public $incrementing = true;
     public $timestamps = false;
 
