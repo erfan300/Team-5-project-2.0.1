@@ -80,19 +80,23 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        $user = User::where('Email','=',$request->email)->first();
-
-        if ($user && Hash::check($request->password, $user->Password)) {
+    
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
-            session(['user_id' => $user->User_ID]);
-            return redirect('/')->with('message', 'Log in successful!');
+            return redirect('/home')->with('message', 'Log in successful!');
         } else {
             return redirect()->back()->withErrors(['error' => 'Invalid credentials'])->withInput();
         }
-        
-        
     }
+
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home')->with('message', 'You have been logged out!');
+    }
+    
 
     public function showProfile() {
         $userId = Auth::id(); // Get the authenticated user's ID
@@ -106,12 +110,12 @@ class UserController extends Controller
     
         // Check if user is an admin or a customer
         $relatedModel = null;
-        if ($user->User_Type === 'Admin') {
+        if ($user->user_type === 'Admin') {
             $relatedModel = $user->admin;
-        } elseif ($user->User_Type === 'Customer') {
+        } elseif ($user->user_type === 'Customer') {
             $relatedModel = $user->customer;
         }
-    
+
         // Return the view with the user's details and related model
         return view('profile', compact('user', 'relatedModel'));
     }
@@ -145,7 +149,7 @@ class UserController extends Controller
         $user->save(); // Save changes to the user
     
         // Update the corresponding table (Admins or Customers) based on User_Type
-        if ($user->User_Type === 'Admin') {
+        if ($user->user_type === 'Admin') {
             $admin = Admin::where('User_ID', $user->User_ID)->first();
             if ($admin) {
                 // Update admin details if found
@@ -156,7 +160,7 @@ class UserController extends Controller
                 // Update other admin fields here as needed
                 $admin->save(); // Save changes to the admin
             }
-        } elseif ($user->User_Type === 'Customer') {
+        } elseif ($user->user_type === 'Customer') {
             $customer = Customer::where('User_ID', $user->User_ID)->first();
             if ($customer) {
                 // Update customer details if found

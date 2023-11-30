@@ -57,13 +57,18 @@ class Products extends Model
         }
     }
 
-    //Relationship between Category_ID in the products table and the productCategory table
+    //Relationship between products model and the productCategory model
     public function category(){
         return $this->belongsTo(ProductCategories::class, 'Category_ID');
     }
 
-    //Relationship between Product_ID in the products table and the productImages table
-    public function productImages() {
+    //Relationship between Product and the productImages model
+    public function productImages(){
         return $this->hasMany(ProductImages::class, 'Product_ID');
+    }
+
+    // One-to-one relationship with the ProductStatus model:
+    public function productStatus(){
+        return $this->hasOne(ProductStatus::class, 'product_id');
     }
 }
