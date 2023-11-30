@@ -91,28 +91,20 @@ nav a:last-child {
     margin: 80px auto;
 }
 table{
-    width:100%;
+    width:95%;
     border:collapse;
+    margin:auto;
+    background-color:white;
+    height:100px;
+
 }
-th{
+
+.basket-page thead tr{
+    background-color:black;
+    font-weight:normal ;
     text-align: left;
-    padding: 5px;
-    color:white;
-    background:black;
-    font-weight: normal;
+    padding: 60px;
+
 }
 
-total-price{
-    display:flex;
-    justify-content: flex-end;
-}
 
-total-price table{
-    border-top: 3px solid black;
-    width: 100%;
-    max-width: 350px;
-}
-
-td:last-child{
-    text-align:right;
-}

@@ -32,22 +32,36 @@
 </nav>
  
     <!-- Shopping Basket Items -->
+    <br>
+    <h1> Shopping Basket<h1>
     <div class="small-container basket-page">
         <table>
+            <thead>
             <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-</tr>
+            <th>
+                <h3>Product<h3>
+            
+                </th>
+            <th>
+                <h3>Quantity<h3>
 
+                </th>
+            <th>
+                <h3>Subtotal<h3>
+
+                </th>
+</tr>
+<thead>
+</div>
 <div class="total-price">
 
 <table>
+    <thead>
     <tr>
         <td>Total</td>
         <td>£0</td>
 </tr>
-
+</thead>
 </table>
 
 
