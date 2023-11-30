@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductImages;
 use App\Models\Products;
-use App\Models\ProductStatus;
 use Illuminate\Http\Request;
+use App\Models\ProductImages;
+use App\Models\ProductStatus;
+use Illuminate\Support\Facades\Log;
 
 class ProductsController extends Controller
 {
@@ -126,28 +127,37 @@ class ProductsController extends Controller
     }
 
     protected function updateProductStatus(Products $product){
-    $stockLevel = $product->Stock_Level;
-
-    if ($stockLevel >= 10) {
-        $status = 'In Stock';
-    } elseif ($stockLevel > 0) {
-        $status = 'Low Stock';
-    } else {
-        $status = 'Out of Stock';
+        $stockLevel = $product->Stock_Level;
+    
+        $threshold = 9;
+    
+        if ($stockLevel >= 10) {
+            $status = 'In Stock';
+        } elseif ($stockLevel > 0) {
+            $status = 'Low Stock';
+        } else {
+            $status = 'Out of Stock';
+        }
+    
+        $productStatus = $product->productStatus;
+    
+        if (!$productStatus) {
+            $product->productStatus()->create([
+                'Stock_Status' => $status,
+                'Threshold' => $threshold,
+            ]);
+        } else {
+            $productStatus->update([
+                'Stock_Status' => $status,
+                'Threshold' => $threshold,
+            ]);
+        }
     }
-
-    $productStatus = $product->productStatus;
-
-    if (!$productStatus) {
-        $product->productStatus()->create(['Stock_Status' => $status]);
-    } else {
-        $productStatus->update(['Stock_Status' => $status]);
-    }
-}
 
     // Delete book from database
     public function delete(Products $book) {
         $book->productImages()->delete(); //deletes image first
+        $book->productStatus()->delete(); //deletes product status second
         $book->delete(); //than deletes the book
         return redirect('/')->with('message', 'Book Deleted Successfully!');
     }
