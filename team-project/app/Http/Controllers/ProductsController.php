@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ProductImages;
 use App\Models\Products;
+use App\Models\ProductStatus;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -75,6 +76,7 @@ class ProductsController extends Controller
                 'Image_URL' => $imagePath,
             ]);
         }
+        $this->updateProductStatus($product);
 
         return redirect('/')->with('message', 'Book Added Successfully!');
 
@@ -118,8 +120,30 @@ class ProductsController extends Controller
             }
         }
 
+        $this->updateProductStatus($book);
+
         return redirect('/book/' . $book->Product_ID)->with('message', 'Book Updated Successfully!');
     }
+
+    protected function updateProductStatus(Products $product){
+    $stockLevel = $product->Stock_Level;
+
+    if ($stockLevel >= 10) {
+        $status = 'In Stock';
+    } elseif ($stockLevel > 0) {
+        $status = 'Low Stock';
+    } else {
+        $status = 'Out of Stock';
+    }
+
+    $productStatus = $product->productStatus;
+
+    if (!$productStatus) {
+        $product->productStatus()->create(['Stock_Status' => $status]);
+    } else {
+        $productStatus->update(['Stock_Status' => $status]);
+    }
+}
 
     // Delete book from database
     public function delete(Products $book) {
