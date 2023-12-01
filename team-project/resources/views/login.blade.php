@@ -57,6 +57,9 @@
                 <div class="login-register">
                     <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
                 </div>
+                <div class="login-register">
+                    <p>Forgot your password? <a href="/password" class="register-link">Reset Password here</a></p>
+                </div>
             </form>
         </div>
     </div>
