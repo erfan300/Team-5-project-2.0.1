@@ -7,22 +7,6 @@
     --border:.1rem solid #6a9b86;
 }
 
-*{
-    font-family: 'Roboto', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
-}
-
-html{
-    font-size: 70.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
-}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -39,51 +23,30 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+
 /* Navigation Styling */
 
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color:azure;
-}
-
 nav {
-    background-color: var(--lihgtgreen);
-    overflow: hidden;
-    text-align: center;
-    font-size: 15px;
-}
+            background-color: var(--darkgreen);
+            overflow: hidden;
+            text-align: center;
+        }
 
-a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
+        nav a {
+            display: inline-block;
+            color: var(--lightgreen);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
 
-a:hover {
-    background-color: var(--blue); 
-    color: black;
-}
+        nav a:hover {
+            background-color: var(--blue);
+            color: black;
+        }
 
-a.active {
-    background-color: var(--blue);
-    color: white;
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
 
 /*Shopping Basket Items*/
 
@@ -95,9 +58,15 @@ table{
     border:collapse;
     margin:auto;
     background-color:white;
-    height:100px;
-
+    height:100px;         
 }
+
+h2{
+    position: absolute;
+  left: 100px;
+  top: 200px;
+}
+
 
 .basket-page thead tr{
     background-color:black;
@@ -106,5 +75,29 @@ table{
     padding: 60px;
 
 }
+.btn {
+    position: absolute;
+    right: 130px;
+    top:480px;
+            background: var(--darkgreen);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s linear;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+        }
+
+
+
+
+
+
+
 
 
