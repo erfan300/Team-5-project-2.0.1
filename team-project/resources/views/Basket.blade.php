@@ -63,8 +63,8 @@
 
     <tr>
         <td colspan="3"></td>
-        <td><strong>Total:</strong></td>
-        <td>£0</td>
+        <td><strong><h3>Total:</h3></strong></td>
+        <td><h3>£0</h3></td>
 
 </tr>
 <t/foot>
@@ -145,6 +145,10 @@ h2{
     position: absolute;
   left: 100px;
   top: 200px;
+}
+
+h3{
+    color:darkgreen;
 }
 
 
