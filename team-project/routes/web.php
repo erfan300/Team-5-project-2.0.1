@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Contact page
+
+Route::post('/save-contact', [ContactController::class, 'store'])->name('save.contact');
+
 
 // index/home page
 Route::get('/', [ProductsController::class, 'index'])->name('home');
