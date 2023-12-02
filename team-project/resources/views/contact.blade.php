@@ -59,6 +59,7 @@
               <form class="contact" action="" method="post">
                 <input type="text" name="name" class="text-box" placeholder="Your Name" required>
                 <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+                <input type="text" name="subject" class="text-box" placeholder="Subject" required>
                 <textarea name="message" rows="5" placeholder="Your message" required></textarea>
                 <input type="submit" class="send-btn" value="Send" name="send" >
               </form>
