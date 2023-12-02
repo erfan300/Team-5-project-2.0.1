@@ -14,7 +14,6 @@ class Contact extends Model
     public $timestamps = false; // If 'created_at' and 'updated_at' fields are not present
 
     protected $fillable = [
-        'Customer_ID',
         'Name', 
         'Email', 
         'Subject', 
