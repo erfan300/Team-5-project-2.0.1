@@ -36,7 +36,7 @@
                     <form method="POST" action="/book/{{$book->Product_ID}}">
                         @csrf
                         @method('DELETE')
-                        <button class="delete-button" onclick="return confirm('{{ __('Are you sure you want to delete?') }}')">Delete</button>
+                        <button class="delete-button" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
                 @endif
 
