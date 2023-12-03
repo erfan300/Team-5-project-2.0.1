@@ -51,13 +51,6 @@
                     <input type="email" name="email" required>
                     <label>Email</label>
                 </div>
-
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="current_password" required>
-                    <label>Current Password</label>
-                </div>
-
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" name="new_password" required>
