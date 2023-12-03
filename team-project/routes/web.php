@@ -6,6 +6,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BasketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,8 +108,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/Basket', function () {
-    return view('Basket');
-});
+// Show Basket page
+Route::get('/Basket', [BasketController::class,'showBasket']);
+
+// Adds book to basket
+Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');
 
 

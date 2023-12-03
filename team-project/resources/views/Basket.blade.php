@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
-   <link rel="icon" href="" type="" />
-    <link rel="stylesheet" type="text/css" href="ccs/basket.css" />
+    <link rel="icon" href="" type="" />
+    <link rel="stylesheet" type="text/css" href="css/basket.css" />
     <script defer src="js/main.js"></script>
-
 </head>
 
 <body>
-<header>
+    <header>
         <h1>Books4U Bookstore</h1>
     </header>
+
     <!-- Navigation -->
     <nav>
         <a href="home">Home</a>
@@ -24,58 +24,49 @@
         <a href="about">About</a>
         <a href="contact">Contact</a>
     </nav>
-        <br><br>    
+    <br><br>
 
     <!-- Shopping Basket -->
 
-    <section id="shopping-basket" class="container mt-5">
-<header>
-    <h2>Shopping Basket</h2>
+<section id="shopping-basket" class="container mt-5">
     <header>
-        <table class="table">
-            <thead>
+        <h2>Shopping Basket</h2>
+    <header>
+
+    <table class="table">
+        <thead>
             <tr>
-            <th>
-                <h3>Product<h3>
-            
+                <th>
+                    <h3>Product<h3>
                 </th>
-            <th>
+                <th>
                     <h3>Price<h3>
-</th>
-            <th>
-                <h3>Quantity<h3>
-
                 </th>
-
-
-
-</tr>
-<thead>
-</div>
-
-<tbody id="basket-item">
-    <!-- basket items will be dynamically added here-->
-</tbody>
-
-<div class="total-price">
-
-<tfoot>
-
-    <tr>
-        <td colspan="3"></td>
-        <td><strong>Total:</strong></td>
-        <td>£0</td>
-
-</tr>
-<t/foot>
+                <th>
+                    <h3>Quantity<h3>
+                </th>
+            </tr>
+        <thead>
+        
+        <tbody id="basket-item">
+            <!-- basket items will be dynamically added here-->
+        </tbody>
+    
+    <div class="total-price">
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td><strong>Total:</strong></td>
+                <td>£0</td>
+            </tr>
+        </tfoot>
 </section>
 
 <section id = "checkout-button">
-
-        <form action="Paymentpage.html">
-            <input type="submit" value="Continue to checkout" class="btn">
-        </form>
-    </section>
+    <form action="Paymentpage.html">
+        <input type="submit" value="Continue to checkout" class="btn">
+    </form>
+</section>
      
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
