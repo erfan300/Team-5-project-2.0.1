@@ -32,7 +32,7 @@ class Basket extends Model
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'Product_ID');
+        return $this->belongsTo(Products::class, 'Product_ID');
     }
 }
 

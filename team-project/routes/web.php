@@ -61,11 +61,8 @@ Route::get('/aboutus', function () {
     return view('about');
 });
 
-//Shows Basket
-Route::get('/basket', function () {
-    return view('Basket');
-});
-//Shows Basket
+
+//Shows Payment
 Route::get('/payment', function () {
     return view('Paymentpage');
 });
@@ -109,9 +106,11 @@ Route::get('/about', function () {
 });
 
 // Show Basket page
-Route::get('/Basket', [BasketController::class,'showBasket']);
+Route::get('/basket', [BasketController::class,'showBasket']);
 
 // Adds book to basket
 Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');
 
+// Remove book from basket
+Route::get('/removeFromBasket/{id}', [BasketController::class,'removeFromBasket']);
 
