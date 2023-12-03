@@ -19,8 +19,5 @@ class Contact extends Model
         'Email', 
         'Subject', 
         'Message', 
-        'Status', 
-        'Response', 
-        'Response_Date'
     ];
 }
