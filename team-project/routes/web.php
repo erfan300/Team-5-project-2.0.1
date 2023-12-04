@@ -123,3 +123,5 @@ Route::get('/change-password', [ChPasswordController::class, 'showChangePassword
 // Handle change password request
 Route::post('/change-password', [ChPasswordController::class, 'changePassword'])->name('change-password');
 
+
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');

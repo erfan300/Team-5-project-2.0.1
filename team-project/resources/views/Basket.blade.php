@@ -78,8 +78,10 @@
                         
                     </tr>
                     <div id = "checkout-button">
-                        <form action="Paymentpage.html">
-                            <input type="submit" value="Continue to checkout" class="btn">
+                    <form method="POST" action="{{ route('checkout') }}">
+                        @csrf
+                            <input type="submit" value="Buy Now" class="btn">
+                        @csrf
                         </form>
                     </div>
                 </tfoot>
