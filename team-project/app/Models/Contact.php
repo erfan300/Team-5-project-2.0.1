@@ -20,4 +20,9 @@ class Contact extends Model
         'Subject', 
         'Message', 
     ];
+
+    public function customer() {
+        return $this->belongsTo(Customer::class, 'Customer_ID', 'Customer_ID');
+    }
+
 }

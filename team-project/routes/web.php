@@ -44,6 +44,8 @@ Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login']); 
+Route::post('/login', [UserController::class, 'login']);
+
 
 // Shows contact page
 Route::get('/contact', function () {
@@ -104,7 +106,6 @@ Route::middleware('admin')->group(function () {
 Route::get('/about', function () {
     return view('about');
 });
-
 // Show Basket page
 Route::get('/basket', [BasketController::class,'showBasket']);
 
