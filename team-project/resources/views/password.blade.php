@@ -29,6 +29,23 @@
     </header>
 
     <body>
+    @if(session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
+
+
+
+
+
+
         @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -59,7 +76,7 @@
 
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="confirm_password" required>
+                    <input type="password" name="new_password_confirmation" required>
                     <label>Confirm New Password</label>
                 </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,4 +24,13 @@ class Customer extends Model
     public function user() {
         return $this->belongsTo(User::class, 'User_ID', 'id');
     }
+
+
+    public function contactUs() {
+        return $this->hasMany(Contact::class, 'Customer_ID', 'Customer_ID');
+    }
+
+
+
+
 }

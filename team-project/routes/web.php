@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ChPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,4 +115,11 @@ Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name
 
 // Remove book from basket
 Route::get('/removeFromBasket/{id}', [BasketController::class,'removeFromBasket']);
+
+
+// Show change password form
+Route::get('/change-password', [ChPasswordController::class, 'showChangePasswordForm'])->name('change-password-form');
+
+// Handle change password request
+Route::post('/change-password', [ChPasswordController::class, 'changePassword'])->name('change-password');
 
