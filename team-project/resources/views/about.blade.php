@@ -1,137 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books4U</title>
+
+    <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/aboutcss.css">
-    </head>
+    
+</head>
 <body>
     
 <!-- header section starts  -->
 
 <header class="header">
 
-    <a href="#" class="logo">
-        <img src="images/logo.png" alt="">
-    </a>
+   <h1>Books4U BookStore</h1>
 
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Products</a>
-        <a href="#contact">Contact</a>
-        <a href="#">Sign up/log in</a>
-    </nav>
+   <nav>
+    <a href="home">Home</a>
+    <a href="profile">Profile</a>
+    <a href="basket">Basket</a>
+    <a href="login">Log In</a>
+    <a href="about">About</a>
+    <a href="contact">Contact</a>
+</nav>
+
 </header>
 
 <!-- header section ends -->
 
-<br><br><br><br><br><br><br><br>
 
 <!-- about section starts  -->
 
 <section class="about" id="about">
-
     <h1 class="heading"> <span>about</span> us </h1>
-
     <div class="row">
-
-        <div class="image">
-       
+        <div class="image" >
+            <img src="#" alt="">
         </div>
-
         <div class="content">
             <h3>Books4U</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-            <a href="#contact" class="btn">Contact us</a>
+            <a href="#moreabout" class="btn">Read more</a>
         </div>
-
     </div>
-
 </section>
 
 <!-- about section ends -->
 
+<!-- more about section starts -->
 
-<!-- contact section starts  -->
-
-<section class="contact" id="contact">
-
-    <h1 class="heading"> <span>contact</span> us </h1>
-
+<section class="moreabout" id="moreabout">
+    <div class="row">
+        <div class="image">
+        </div>
+        <div class="content">
+            <h3>Books4U</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
+            <a href="#" class="btn">Get in contact</a>
+        </div>
+    </div>
 </section>
 
-<!-- contact section ends -->
-
-         <!--contact section start-->
-         <div class="contact-section">
-            <section class="contact-info">
-              <div><i class="fas fa-map-marker-alt"></i>Aston University, Birmingham</div>
-              <div><i class="fas fa-envelope"></i>info@books4u.com</div>
-              <div><i class="fas fa-phone"></i>0121 204 3000</div>
-            </section>
-    
-    
-            <section class="contact-form">
-              <h2>Books4U</h2>
-              <form class="contact" action="" method="post">
-                <input type="text" name="name" class="text-box" placeholder="Your Name" required>
-                <input type="email" name="email" class="text-box" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-                <input type="submit" name="submit" class="send-btn" value="Send">
-              </form>
-            </section>
-          </div>
-          <!--contact section end-->
-
+<!-- more about section ends -->
 
           <!-- footer section starts  -->
+          <section class="footer">
+            <h6>&copy; 2023 Books4U Bookstore. All rights reserved.</h6>
+        </section>
 
-<section class="footer">
-
-    <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <div class="links">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Products</a>
-        <a href="#contact">Contact</a>
-        <a href="#">Sign up/log in</a>
-    </div>
-
-</section>
-
-<!-- footer section ends -->
+        <!-- footer section ends -->
 </body>
-
 
 <!--CSS-->
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-:root{
---blue:#6c96b6;
+   
+   :root{
+    --blue:#6c96b6;
 --darkgreen:#384b42;
 --lightgreen:#6a9b86;
 --border:.1rem solid #6a9b86;
+
 }
 
 *{
 font-family: 'Roboto', sans-serif;
 margin:0; padding:0;
-box-sizing: border-box;
 outline: none; border:none;
 text-decoration: none;
 text-transform: capitalize;
@@ -139,8 +98,6 @@ transition: .2s linear;
 }
 
 html{
-font-size: 62.5%;
-
 scroll-behavior: smooth;
 }
 
@@ -155,77 +112,83 @@ padding:2rem 7%;
 
 }
 
+
+
+/* Header Styling */
+header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styling */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: var(--blue); 
+    color: black;
+}
+
+a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* CSS FOR HEADINGS */
 .heading{
 text-align: center;
 color:#fff;
-text-transform: uppercase;
-padding-bottom: 3.5rem;
-font-size: 4rem;
+font-size:  30px;
+text-decoration: underline 1.5px var(--lightgreen);
 }
 
 .heading span{
-color:var(--blue);
-text-transform: uppercase;
+color:var(--lightgreen);
 }
 
-.btn{
-margin-top: 1rem;
-display: inline-block;
-padding:.9rem 3rem;
-font-size: 1.7rem;
-color:#fff;
-background: var(--blue);
-cursor: pointer;
-}
-
-.btn:hover{
-letter-spacing: .2rem;
-}
-
-.header{
-background: var(--darkgreen);
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding:1.5rem 7%;
-border-bottom: var(--border);
-position: fixed;
-top:0; left: 0; right: 0;
-z-index: 1000;
-}
-
-.header .logo img{
-height: 6rem;
-}
-
-.header .navbar a{
-margin:0 1rem;
-font-size: 1.6rem;
-color:#fff;
-}
-
-.header .navbar a:hover{
-color:var(--blue);
-border-bottom: .1rem solid var(--blue);
-padding-bottom: .5rem;
-}
-
-.header .icons div{
-color:#fff;
-cursor: pointer;
-font-size: 2.5rem;
-margin-left: 2rem;
-}
-
-.header .icons div:hover{
-color:var(--blue);
-}
+/* ABOUT US CSS */
 
 .about .row{
 display: flex;
 align-items: center;
 background:var(--lightgreen);
 flex-wrap: wrap;
+border: solid 3.5px black;
 }
 
 .about .row .image{
@@ -241,160 +204,78 @@ padding:2rem;
 }
 
 .about .row .content h3{
-font-size: 3rem;
-color:#fff;
+font-size: 25px;
+font-weight: bold;
+color:var(--darkgreen);
 }
 
 .about .row .content p{
-font-size: 1.6rem;
-color:#ccc;
-padding:1rem 0;
-line-height: 1.8;
-}
-
-/* contact CSS */
-
-.contact-section{
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-background: var(--lightgreen);
-}
-
-.contact-info{
-color: #fff;
-max-width: 500px;
-line-height: 65px;
-padding-left: 50px;
-font-size: 18px;
-}
-
-.contact-info i{
-margin-right: 20px;
-font-size: 25px;
-}
-
-.contact-form{
-max-width: 700px;
-margin-right: 50px;
-}
-
-.contact-info, .contact-form{
-flex: 1;
-}
-
-.contact-form h2{
-color: #fff;
-text-align: center;
-font-size: 35px;
-text-transform: uppercase;
-margin-bottom: 30px;
-}
-
-.contact-form .text-box{
-background: transparent;
-color: #fff;
-border: none;
-width: calc(50% - 10px);
-height: 50px;
-padding: 12px;
 font-size: 15px;
-border-radius: 5px;
-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-margin-bottom: 20px;
-opacity: 0.9;
-border: solid #fff;
-}
-
-.contact-form .text-box:first-child{
-margin-right: 15px;
-}
-
-.contact-form textarea{
-background: transparent;
-color: #fff;
-border: none;
-width: 100%;
-padding: 12px;
-font-size: 15px;
-min-height: 200px;
-max-height: 400px;
-resize: vertical;
-border-radius: 5px;
-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-margin-bottom: 20px;
-opacity: 0.9;
-border: solid #fff;
-}
-
-.contact-form .send-btn{
-float: right;
-background: var(--blue);
-color: #fff;
-border: none;
-width: 120px;
-height: 40px;
-font-size: 15px;
-font-weight: 600;
-text-transform: uppercase;
-letter-spacing: 2px;
-border-radius: 5px;
-cursor: pointer;
-
-}
-
-.send-btn:hover{
-background: lightblue;
-}
-
-.footer{
-background:var(--darkgreen);
-text-align: center;
-}
-
-.footer .share{
-padding:1rem 0;
-}
-
-.footer .share a{
-height: 5rem;
-width: 5rem;
-line-height: 5rem;
-font-size: 2rem;
-color:#fff;
-border:var(--border);
-margin:.3rem;
-border-radius: 50%;
-}
-
-.footer .share a:hover{
-background-color: var(--blue);
-}
-
-.footer .links{
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
+color:black;
+line-height: 2;
 padding:2rem 0;
-gap:1rem;
 }
 
-.footer .links a{
-padding:.7rem 2rem;
-color:#fff;
-border:var(--border);
-font-size: 2rem;
+.moreabout .row{
+display: flex;
+align-items: center;
+background:var(--lightgreen);
+flex-wrap: wrap;
+border: solid 3.5px black;
 }
 
-.footer .links a:hover{
-background:var(--blue);
+.moreabout .row .image{
+flex:1 1 45rem;
+}
+
+.moreabout .row .image img{
+width: 100%;
+}
+.moreabout .row .content{
+text-align: center;
+padding:2rem;
+}
+
+.moreabout .row .content h3{
+font-size: 25px;
+font-weight: bold;
+color:var(--darkgreen);
+}
+
+.moreabout .row .content p{
+font-size: 15px;
+color: black;
+line-height: 2;
+padding:2rem 0;
 }
 
 .image{
 max-width: 100%;
 height: auto;
 }
-</style>
 
+.btn{
+margin-top: 1rem;
+display: inline-block;
+padding:.9rem 3rem;
+font-size: 15px;
+color:#fff;
+background: var(--blue);
+cursor: pointer;
+}
+
+.btn:hover{
+letter-spacing: .1rem;
+}
+
+/*Footer section*/
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #0b2e20;
+    color: #fff;
+    padding: 20px;
+}
+
+</style>
 </html>
