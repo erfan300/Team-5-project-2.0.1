@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iN17PdL7FJTZ5KvZxjKlTJlU6TAPjzl5FMITSOA2U5ZlEaAgFsn7bF" crossorigin="anonymous">
     <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
@@ -29,14 +30,15 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="home">Home</a>
-        <a href="profile">Profile</a>
-        <a href="basket">Basket</a>
-        <a href="login">Log In</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
-
+    
     <!-- Search Bar -->
     <form action="/search" class="search-form">
         <div class="search-container">
