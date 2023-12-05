@@ -113,6 +113,9 @@ Route::get('/basket', [BasketController::class,'showBasket']);
 // Adds book to basket
 Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');
 
+// Update the quantity in the basket
+Route::post('/updateQuantity/{id}', [BasketController::class, 'updateQuantity']);
+
 // Remove book from basket
 Route::get('/removeFromBasket/{id}', [BasketController::class,'removeFromBasket']);
 

@@ -56,7 +56,16 @@
                     @endif
                 </th>
                 <th>{{ $basketItem->product->Product_Name }}</th>
-                <th>{{ $basketItem->Quantity }}</th>
+                <th>
+                    <form method="post" action="{{ url('/updateQuantity', $basketItem->Basket_ID) }}">
+                        @csrf
+                        <select name="quantity" onchange="this.form.submit()">
+                            @for ($i = 1; $i <= $basketItem->product->Stock_Level; $i++)
+                                <option value="{{ $i }}" @if($i == $basketItem->Quantity) selected @endif>{{ $i }}</option>
+                            @endfor
+                        </select>
+                    </form>
+                </th>
                 <th>£{{ $basketItem->Price}}</th>
                 <th><a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromBasket', $basketItem->Basket_ID)}}">Remove</th>
             </tr>

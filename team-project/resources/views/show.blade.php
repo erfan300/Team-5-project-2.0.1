@@ -33,8 +33,12 @@
                 @csrf
                 <div class="quantity-basket">
                     <div class="quantity-box">
-                        <label for="book-quantity">Quantity</label>
-                        <input type="number" id="book-quantity" name="quantityBox" value="1" min="1" required>
+                        <label for="book-quantity">Quantity:</label>
+                        <select id="book-quantity" name="quantityBox">
+                            @for ($i = 1; $i <= $book->Stock_Level; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                        </select>
                     </div>   
                     <button type="submit">Add to Basket</button>
                 </div>

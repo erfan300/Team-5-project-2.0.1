@@ -80,6 +80,23 @@ class BasketController extends Controller{
         ]);
     }
 
+    public function updateQuantity(Request $request, $id){
+        $basket = Basket::find($id);
+    
+        // Validate and update the quantity
+        $request->validate([
+            'quantity' => 'required|integer|min:1',
+        ]);
+    
+        $basket->update([
+            'Quantity' => $request->quantity,
+            'Price' => $basket->product->Price * $request->quantity,
+        ]);
+    
+        return redirect()->back();
+    }
+    
+
     public function removeFromBasket($id){
         $basket = Basket::find($id);
         $basket->delete();
