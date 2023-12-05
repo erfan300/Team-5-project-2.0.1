@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ChPasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,10 @@ use App\Http\Controllers\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Contact page
+
+Route::post('/save-contact', [ContactController::class, 'store'])->name('save.contact');
+
 
 // index/home page
 Route::get('/', [ProductsController::class, 'index'])->name('home');
@@ -39,6 +45,8 @@ Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login']); 
+Route::post('/login', [UserController::class, 'login']);
+
 
 // Shows contact page
 Route::get('/contact', function () {
@@ -56,11 +64,8 @@ Route::get('/aboutus', function () {
     return view('about');
 });
 
-//Shows Basket
-Route::get('/basket', function () {
-    return view('Basket');
-});
-//Shows Basket
+
+//Shows Payment
 Route::get('/payment', function () {
     return view('Paymentpage');
 });
@@ -102,9 +107,21 @@ Route::middleware('admin')->group(function () {
 Route::get('/about', function () {
     return view('about');
 });
+// Show Basket page
+Route::get('/basket', [BasketController::class,'showBasket']);
 
-Route::get('/Basket', function () {
-    return view('Basket');
-});
+// Adds book to basket
+Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');
+
+// Remove book from basket
+Route::get('/removeFromBasket/{id}', [BasketController::class,'removeFromBasket']);
 
 
+// Show change password form
+Route::get('/change-password', [ChPasswordController::class, 'showChangePasswordForm'])->name('change-password-form');
+
+// Handle change password request
+Route::post('/change-password', [ChPasswordController::class, 'changePassword'])->name('change-password');
+
+
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');

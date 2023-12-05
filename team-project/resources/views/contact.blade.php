@@ -16,23 +16,20 @@
 
 <header class="header">
 
-    <a href="#" class="logo">
-        <img src="images/logo.png" alt="">
-    </a>
-
-    <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
-        <a href="#">Sign up/log in</a>
-    </nav>
-
-</header>
-
-<!-- header section ends -->
-
-<br><br><br><br><br><br><br><br>
+    <h1>Books4U BookStore</h1>
+ 
+    <nav>
+     <a href="home">Home</a>
+     <a href="profile">Profile</a>
+     <a href="basket">Basket</a>
+     <a href="login">Log In</a>
+     <a href="about">About</a>
+     <a href="contact">Contact</a>
+ </nav>
+ 
+ </header>
+ 
+ <!-- header section ends -->
 
 <!-- contact section starts  -->
 
@@ -42,10 +39,6 @@
 
 </section>
 
-<!-- contact section ends -->
-
-
-         <!--contact section start-->
          <div class="contact-section">
             <section class="contact-info">
               <div><i class="fas fa-map-marker-alt"></i>Aston University, Birmingham</div>
@@ -56,46 +49,29 @@
     
             <section class="contact-form">
               <h2>Books4U</h2>
-              <form class="contact" action="" method="post">
-                <input type="text" name="name" class="text-box" placeholder="Your Name" required>
-                <input type="email" name="email" class="text-box" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-                <input type="submit" class="send-btn" value="Send" name="send" >
-              </form>
+              <form class="contact" action="{{ route('save.contact') }}" method="post">
+    @csrf
+    <input type="text" name="Name" class="text-box" placeholder="Your Name" required>
+    <input type="email" name="Email" class="text-box" placeholder="Your Email" required>
+    <input type="text" name="Subject" class="text-box" placeholder="Subject" required>
+    <textarea name="Message" rows="5" placeholder="Your message" required></textarea>
+    <!-- Add additional fields if needed for Status, Response, etc. -->
+    <input type="submit" class="send-btn" value="Send" name="send">
+</form>
+
+
             </section>
           </div>
           <!--contact section end-->
 
-
           <!-- footer section starts  -->
+          <section class="footer">
+            <h6>&copy; 2023 Books4U Bookstore. All rights reserved.</h6>
+        </section>
 
-<section class="footer">
+        <!-- footer section ends -->
 
-    <div class="share">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-pinterest"></a>
-    </div>
-
-    <div class="links">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Products</a>
-        <a href="#">Contact</a>
-        <a href="#">Sign up/log in</a>
-    </div>
-
-</section>
-
-<!-- footer section ends -->
 </body>
-
-
-
-
-
 
 
 
@@ -122,7 +98,6 @@ transition: .2s linear;
 }
 
 html{
-font-size: 62.5%;
 
 scroll-behavior: smooth;
 }
@@ -138,12 +113,15 @@ padding:2rem 7%;
 
 }
 
+/* PAGE HEADING CSS */
+
 .heading{
 text-align: center;
 color:#fff;
 text-transform: uppercase;
 padding-bottom: 3.5rem;
-font-size: 4rem;
+font-size: 30px;
+text-decoration: underline 1.5px var(--lightgreen);
 }
 
 .heading span{
@@ -165,45 +143,59 @@ cursor: pointer;
 letter-spacing: .2rem;
 }
 
-.header{
-background: var(--darkgreen);
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding:1.5rem 7%;
-border-bottom: var(--border);
-position: fixed;
-top:0; left: 0; right: 0;
-z-index: 1000;
+/* Header Styling */
+header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header .logo img{
-height: 6rem;
+/* Navigation Styling */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
-.header .navbar a{
-margin:0 1rem;
-font-size: 1.6rem;
-color:#fff;
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
 }
 
-.header .navbar a:hover{
-color:var(--blue);
-border-bottom: .1rem solid var(--blue);
-padding-bottom: .5rem;
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-
-.header .icons div{
-color:#fff;
-cursor: pointer;
-font-size: 2.5rem;
-margin-left: 2rem;
+a:hover {
+    background-color: var(--blue); 
+    color: black;
 }
 
-.header .icons div:hover{
-color:var(--blue);
+a.active {
+    background-color: var(--blue);
+    color: white;
 }
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 
 
 
@@ -303,49 +295,14 @@ cursor: pointer;
 background: lightblue;
 }
 
-.footer{
-background:var(--darkgreen);
-text-align: center;
+/*Footer section*/
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #0b2e20;
+    color: #fff;
+    padding: 20px;
 }
-
-.footer .share{
-padding:1rem 0;
-}
-
-.footer .share a{
-height: 5rem;
-width: 5rem;
-line-height: 5rem;
-font-size: 2rem;
-color:#fff;
-border:var(--border);
-margin:.3rem;
-border-radius: 50%;
-}
-
-.footer .share a:hover{
-background-color: var(--blue);
-}
-
-.footer .links{
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-padding:2rem 0;
-gap:1rem;
-}
-
-.footer .links a{
-padding:.7rem 2rem;
-color:#fff;
-border:var(--border);
-font-size: 2rem;
-}
-
-.footer .links a:hover{
-background:var(--blue);
-}
-
 
 .image{
 max-width: 100%;

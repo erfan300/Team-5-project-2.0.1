@@ -11,9 +11,15 @@
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="/" />
     <script defer src="js/main.js"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 
 <body>
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -56,6 +62,9 @@
                 <button type="submit" class="btn">Sign In</button>
                 <div class="login-register">
                     <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+                </div>
+                <div class="login-register">
+                    <p>Forgot your password? <a href="/password" class="register-link">Reset Password here</a></p>
                 </div>
             </form>
         </div>
