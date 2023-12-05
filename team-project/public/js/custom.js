@@ -45,3 +45,31 @@ document.addEventListener("DOMContentLoaded", function () {
         filterDropdown.style.display = "none";
     });
 });
+
+// This checks the threshold and quantity. If quantity if equal to or less than threshold, than alert message 
+// appears for the user
+document.addEventListener('DOMContentLoaded', function () {
+    var stockLevel = parseInt(document.querySelector('.book-container').dataset.stockLevel);
+    var threshold = parseInt(document.querySelector('.book-container').dataset.threshold);
+
+    if (!isNaN(stockLevel) && !isNaN(threshold) && stockLevel <= threshold) {
+
+        var notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.innerHTML = 'Hurry! Only ' + stockLevel + ' left in stock.';
+
+        document.body.appendChild(notification);
+
+        // Display the notification for 2 seconds before removing it
+        setTimeout(function () {
+            notification.style.opacity = '0';
+            setTimeout(function () {
+                notification.remove();
+            }, 1000);
+        }, 2000);
+    }
+});
+
+
+
+

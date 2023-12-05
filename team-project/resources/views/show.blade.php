@@ -14,17 +14,21 @@
             {{ session('message') }}
         </div>
     @endif
-    <div class="book-container">
+    <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
         <div class="book-image-container">
             <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
         </div>
         <div class="book-details">
+            <div id="stock-message" class="stock-message"></div>
             <h2>{{$book['Product_Name']}}</h2>
             <p>{{$book['Author_Name']}}</p>
             <div class="book-description-price">
                 <p class="book-description">{{$book['Description']}}</p>
                 <p class="book-price">{{$book['Price']}}</p>
             </div>
+            <p class="stock-status">
+                {{ $book->productStatus->Stock_Status ?? 'Not Available' }} | {{ $book->Stock_Level ?? 'Not Available' }} Available
+            </p>
             <form method="POST" action="{{url('addToBasket', $book->Product_ID)}}">
                 @csrf
                 <div class="quantity-basket">

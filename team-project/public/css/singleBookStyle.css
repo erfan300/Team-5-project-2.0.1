@@ -26,6 +26,18 @@
     animation: fadeOut 2s ease-out; 
 }
 
+.notification {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #f44336; /* Red background color */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
 .book-container {
     display: flex;
     align-items: center;
