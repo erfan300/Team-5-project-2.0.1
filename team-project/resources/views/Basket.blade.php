@@ -69,9 +69,9 @@
                 <tfoot>
                     <tr>
                         <td colspan="3"></td>
-                        <td><strong>Total:</strong></td>
+                        <td><strong><h3>Total:</h3></strong></td>
                         @if(count($basket) == 0)
-                            <td>£0</td>
+                            <td><h3>£0</h3></td>
                         @else
                             <td>£{{ $totalPrice }}</td>
                         @endif
@@ -157,6 +157,10 @@
         left: 100px;
         top: 200px;
     }
+
+h3{
+    color:darkgreen;
+}
 
     .basket-page thead tr {
         background-color: black;
