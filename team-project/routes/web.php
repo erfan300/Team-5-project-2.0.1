@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\ChPasswordController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,6 +89,8 @@ Route::middleware('auth')->group(function () {
 
     //route to update user profile
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
+
+
 });
 
 // Middleware for admin access only
@@ -102,6 +106,13 @@ Route::middleware('admin')->group(function () {
     
     // Shows create page for admins
     Route::get('/create', [ProductsController::class, 'create']);
+
+    Route::get('/list', [AdminController::class, 'listCustomers'])->name('list-customers');
+    Route::get('/customer/{id}', [AdminController::class, 'showCustomerDetails'])->name('customer.details');
+    Route::delete('/customer/{id}', [AdminController::class, 'deleteCustomer'])->name('customer.delete');
+    Route::get('/customer/{id}/modify', [AdminController::class, 'modifyCustomer'])->name('modify-customer');
+    Route::put('/customer/{id}/update', [AdminController::class, 'updateCustomer'])->name('update-customer');
+
 });
 
 Route::get('/about', function () {
@@ -128,3 +139,4 @@ Route::post('/change-password', [ChPasswordController::class, 'changePassword'])
 
 
 Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
+
