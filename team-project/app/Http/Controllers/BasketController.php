@@ -6,7 +6,6 @@ use App\Models\Basket;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Order;
 use App\Models\OrderDetails;
 use App\Models\InventoryLog;
 use App\Models\Orders;
