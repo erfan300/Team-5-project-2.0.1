@@ -52,8 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var stockLevel = parseInt(document.querySelector('.book-container').dataset.stockLevel);
     var threshold = parseInt(document.querySelector('.book-container').dataset.threshold);
 
-    if (!isNaN(stockLevel) && !isNaN(threshold) && stockLevel <= threshold) {
-
+    if (!isNaN(stockLevel) && !isNaN(threshold) && stockLevel <= threshold && stockLevel > 0) {
         var notification = document.createElement('div');
         notification.className = 'notification';
         notification.innerHTML = 'Hurry! Only ' + stockLevel + ' left in stock.';
@@ -69,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000);
     }
 });
+
 
 
 

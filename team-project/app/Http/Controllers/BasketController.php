@@ -29,7 +29,17 @@ class BasketController extends Controller{
 
         $basketItem = $basketItem->first();
 
+        if ($book->Stock_Level <= 0) {
+            return redirect()->back()->with('message', 'Sorry, Item out of stock!');
+        }
+
         if ($basketItem) {
+            // Check if the total quantity exceeds the stock level
+            $totalQuantity = $basketItem->Quantity + $request->quantityBox;
+            if ($totalQuantity > $book->Stock_Level) {
+                return redirect()->back()->with('message', 'Unable to add more to basket!');
+            }
+    
             // Update the quantity of the existing item
             $basketItem->update([
                 'Quantity' => $basketItem->Quantity + $request->quantityBox,
