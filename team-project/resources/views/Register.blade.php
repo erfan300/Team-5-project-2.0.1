@@ -173,7 +173,7 @@
         font-size: 1rem;
         margin-top: 5px;
     }
-23
+
     label {
         display: block;
         margin-bottom: 5px;
