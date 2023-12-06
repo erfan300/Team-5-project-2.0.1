@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Models\User;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Log;
+
 
 
 class AdminController extends Controller
@@ -88,6 +91,42 @@ public function updateCustomer(Request $request, $id)
 
     return redirect()->route('list-customers')->with('message', 'Customer details updated successfully');
 }
+public function createCustomer()
+{
+    return view('add');
+}
+public function storeCustomer(Request $request)
+{
+    $form = $request->validate([
+        'first_name' => ['required', 'min:3'],
+        'last_name' => ['required', 'min:3'],
+        'username' => ['required', Rule::unique('users', 'Username')],
+        'email' => ['required', 'email', 'confirmed', Rule::unique('users', 'Email')],
+        'password' => ['required', 'confirmed', 'min:5'],
+    ]);
+
+    // Set the user_type directly to "Customer"
+    $form['user_type'] = 'Customer';
+
+    $user = User::create($form);
+
+    $user->password = bcrypt($form['password']);
+    $user->save();
+
+    Log::info('New user created:', $user->toArray());
+
+    $customer = new Customer;
+    $customer->User_ID = $user->User_ID;
+    $customer->First_Name = $request->input('first_name');
+    $customer->Last_Name = $request->input('last_name');
+    $customer->Address = $request->input('address');
+    $customer->Phone_Number = $request->input('phone_number');
+    $customer->save();
+
+    return redirect('/list')->with('message', 'Customer created successfully');
+}
+
+
 
 
 }

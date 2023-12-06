@@ -45,13 +45,13 @@
                         @method('DELETE')
                         <button type="submit">Delete</button>
                     </form>
-                </td>
-                <td>
                     <a href="{{ route('modify-customer', ['id' => $customer->Customer_ID]) }}">Modify</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <a href="{{ route('create-customer') }}" class="btn btn-primary">Add Customer</a>
+
 </body>
 </html>
