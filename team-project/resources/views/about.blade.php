@@ -32,6 +32,7 @@
 <!-- header section ends -->
 
 
+
 <!-- about section starts  -->
 
 <section class="about" id="about">
@@ -41,7 +42,7 @@
             <img src="#" alt="">
         </div>
         <div class="content">
-            <h3>Books4U</h3>
+            <h3>Books4U</h3>            
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
             <a href="#moreabout" class="btn">Read more</a>
@@ -81,10 +82,10 @@
 <style>
    
    :root{
-    --blue:#6c96b6;
---darkgreen:#384b42;
---lightgreen:#6a9b86;
---border:.1rem solid #6a9b86;
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
 
 }
 

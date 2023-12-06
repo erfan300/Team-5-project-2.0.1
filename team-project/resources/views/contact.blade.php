@@ -53,7 +53,7 @@
     @csrf
     <input type="text" name="Name" class="text-box" placeholder="Your Name" required>
     <input type="email" name="Email" class="text-box" placeholder="Your Email" required>
-    <input type="text" name="Subject" class="text-box" placeholder="Subject" required>
+    <input type="text" name="Subject" class="subject-text-box" placeholder="Subject" required>
     <textarea name="Message" rows="5" placeholder="Your message" required></textarea>
     <!-- Add additional fields if needed for Status, Response, etc. -->
     <input type="submit" class="send-btn" value="Send" name="send">
@@ -78,13 +78,12 @@
 <!--CSS-->
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
+   
 :root{
---blue:#6c96b6;
---darkgreen:#384b42;
---lightgreen:#6a9b86;
---border:.1rem solid #6a9b86;
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
 }
 
 *{
@@ -101,7 +100,6 @@ html{
 
 scroll-behavior: smooth;
 }
-
 
 
 body{
@@ -125,7 +123,7 @@ text-decoration: underline 1.5px var(--lightgreen);
 }
 
 .heading span{
-color:var(--blue);
+color:var(--lightgreen);
 text-transform: uppercase;
 }
 
@@ -210,7 +208,7 @@ background: var(--lightgreen);
 }
 
 .contact-info{
-color: #fff;
+color: black;
 max-width: 500px;
 line-height: 65px;
 padding-left: 50px;
@@ -232,7 +230,7 @@ flex: 1;
 }
 
 .contact-form h2{
-color: #fff;
+color: black;
 text-align: center;
 font-size: 35px;
 text-transform: uppercase;
@@ -241,7 +239,7 @@ margin-bottom: 30px;
 
 .contact-form .text-box{
 background: transparent;
-color: #fff;
+color: black;
 border: none;
 width: calc(50% - 10px);
 height: 50px;
@@ -251,8 +249,24 @@ border-radius: 5px;
 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 margin-bottom: 20px;
 opacity: 0.9;
-border: solid #fff;
+border: solid black;
 }
+
+.subject-text-box{
+    background: transparent;
+    color: black;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+    border: solid black;
+}
+
 
 .contact-form .text-box:first-child{
 margin-right: 15px;
@@ -260,7 +274,7 @@ margin-right: 15px;
 
 .contact-form textarea{
 background: transparent;
-color: #fff;
+color: black;
 border: none;
 width: 100%;
 padding: 12px;
@@ -272,7 +286,7 @@ border-radius: 5px;
 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 margin-bottom: 20px;
 opacity: 0.9;
-border: solid #fff;
+border: solid black;
 }
 
 .contact-form .send-btn{
