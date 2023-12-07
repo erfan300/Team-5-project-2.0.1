@@ -112,7 +112,8 @@ Route::middleware('admin')->group(function () {
     Route::delete('/customer/{id}', [AdminController::class, 'deleteCustomer'])->name('customer.delete');
     Route::get('/customer/{id}/modify', [AdminController::class, 'modifyCustomer'])->name('modify-customer');
     Route::put('/customer/{id}/update', [AdminController::class, 'updateCustomer'])->name('update-customer');
-
+    Route::get('/create-customer', [AdminController::class, 'createCustomer'])->name('create-customer');
+    Route::post('/store-customer', [AdminController::class, 'storeCustomer'])->name('store-customer');
 });
 
 Route::get('/about', function () {
