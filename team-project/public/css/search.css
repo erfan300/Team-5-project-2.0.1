@@ -1,0 +1,48 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+    :root {
+        --blue: #6c96b6;
+        --darkgreen: #384b42;
+        --lightgreen: #6a9b86;
+        --border: .1rem solid #6a9b86;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--darkgreen);
+        color: var(--lightgreen);
+    }
+
+    /* Header Styling */
+    header {
+        background-color: var(--darkgreen);
+        color: #a7eecf;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Navigation Styling */
+    nav {
+        background-color: var(--darkgreen);
+        overflow: hidden;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        color: var(--lightgreen);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: var(--blue);
+        color: black;
+    }
+
+  
