@@ -73,6 +73,7 @@
             </div>
         </div>
     </form>
+    
     <div class="search-book-container">
         @if(count($books) == 0)
             <p> No Books found </p>
