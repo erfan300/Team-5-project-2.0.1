@@ -13,69 +13,59 @@
     <script defer src="js/main.js"></script>
 </head>
 
+<header class="header">
+
+<h1>Books4U BookStore</h1>
+
+<nav>
+    <a href="home">Home</a>
+    <a href="profile">Profile</a>
+    <a href="basket">Basket</a>
+    <a href="login">Log In</a>
+    <a href="about">About</a>
+    <a href="contact">Contact</a>
+</nav>
+
+</header>
+
 <body>
-    <header class="header">
-        <a href="#" class="logo">
-            <img src="images/logo.png" alt="">
-        </a>
-        <nav class="navbar">
-            <a href="home">Home</a>
-            <a href="profile">Profile</a>
-            <a href="basket">Basket</a>
-            <a href="login">Log In</a>
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
-        </nav>
-    </header>
-
-    <body>
     @if(session('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('error') }}
-            </div>
-        @endif
-
-
-
-
-
-
-        @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
         </div>
-        @endif
-        <div class="wrapper">
-            <div class="form-box change-password">
-                <h2>Change Password</h2>
-                <form method="POST" action="/change-password">
-                    @csrf
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    <div class="wrapper">
+        <div class="form-box password">
+        <h2><span>Change Password</span></h2>
+            <form method="POST" action="/change-password">
+                @csrf
 
                 <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
                     <input type="email" name="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" name="new_password" required>
                     <label>New Password</label>
                 </div>
 
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" name="new_password_confirmation" required>
                     <label>Confirm New Password</label>
                 </div>
@@ -87,18 +77,20 @@
             </form>
         </div>
     </div>
-    <!--Change Password form end-->
+</body>
+
   </body>
 </html>
-<style> 
+
+<style>
 :root {
     --blue: #6c96b6;
-    --darkgreen: #384b42;
-    --lightgreen: #6a9b86;
-    --border: 0.1rem solid #6a9b86;
-  }
-  
-  * {
+    --darkgreen: #6a9b86;
+    --lightgreen: #c8e6d1;
+    --border: .1rem solid #6a9b86;
+}
+
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -107,145 +99,162 @@
     border: none;
     text-decoration: none;
     text-transform: capitalize;
-    transition: 0.2s linear;
-  }
-  
-  html {
-    font-size: 62.5%;
+    transition: .2s linear;
+}
+
+html {
     scroll-behavior: smooth;
-  }
-  
-  body {
+}
+
+body {
     background: var(--darkgreen);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .header {
-    background: var(--darkgreen);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 7%;
-    border-bottom: var(--border);
+}
+
+.header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
     position: fixed;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     top: 0;
     left: 0;
     right: 0;
-  }
-  
-  .logo img {
-    height: 7rem;
-  }
-  
-  .header .navbar a {
-    font-size: 1.5rem; 
-    color: #fff;
-  }
-  
-  .header .navbar a:hover {
-    color: var(--blue);
-    border-bottom: 0.1rem solid var(--blue);
-    padding-bottom: 0.5rem;
-  }
-  
-  /* NAVIGATION CSS */
-  
-  .navbar a {
-    position: relative;
-    font-size: 1.8rem; 
-    color: #fff;
-    font-weight: 500;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    margin-left: 40px;
-  }
-  
-  /* PASSWORD CSS */
-  
-  .wrapper {
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: var(--blue);
+    color: black;
+}
+
+a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.wrapper {
     width: 500px;
     height: 500px;
     background: var(--lightgreen);
     border-radius: 25px;
     display: flex;
     align-items: center;
-  }
-  
-  .form-box {
+}
+
+.form-box {
     width: 100%;
     padding: 50px;
-  }
-  
-  .form-box h2 {
-    font-size: 2rem; 
+}
+.form-box h2 {
+    font-size: 20px;
     font-weight: bold;
     color: black;
     text-align: center;
-  }
-  
-  .input-box {
+    margin-top: -30px;
+}
+
+.form-box h2 span {
+    display: block;
+    margin-top: 61px; 
+}
+.input-box {
     width: 100%;
-    height: 35px;
+    height: 65px;
     position: relative;
     border-bottom: 3px solid black;
     margin: 40px 0;
-  }
-  
-  .input-box label {
+}
+
+.input-box label {
     position: absolute;
     top: 50%;
     margin-left: 5px;
-    font-size: 1.2rem; 
+    font-size: 11px;
     color: black;
     font-weight: bold;
-  }
-  
-  .input-box input:focus~label,
-  .input-box input:valid~label {
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
     top: -10px;
-  }
-  
-  .input-box input {
+}
+
+.input-box input {
     height: 100%;
     width: 100%;
-    font-size: 1rem;
+    font-size: 10px;
     color: black;
     background: transparent;
     font-weight: bold;
     margin-left: 5px;
-  }
-  
-  .password-register {
-    font-size: 1rem;
+}
+
+.password-register {
+    font-size: 10px;
     color: black;
     text-align: center;
     margin: 2em;
-  }
-  
-  .password-register p a {
+}
+
+.password-register p a {
     color: black;
     font-weight: bold;
-  }
-  
-  .password-register p a:hover {
+}
+
+.password-register p a:hover {
     text-decoration: underline;
-    color: var(--blue);
-  }
-  
-  .btn {
+    color: #fff;
+    border-radius: 7px;
+}
+
+.btn {
     background: var(--darkgreen);
     height: 50px;
     width: 100%;
     border-radius: 7px;
     cursor: pointer;
-    font-size: 1rem; 
+    font-size: 10px;
     color: #fff;
     font-weight: bold;
-  }
-  
-  .btn:hover {
-    color: var(--blue);
-  }
-</style> 
+}
+
+.btn:hover {
+    background-color: var(--blue);
+}
+</style>
