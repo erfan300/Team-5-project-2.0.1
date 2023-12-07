@@ -8,6 +8,9 @@ INSERT INTO ProductCategories (Category_Name) VALUES ('Books For Children');
 INSERT INTO ProductCategories (Category_Name) VALUES ('Books For Young Adults');
 INSERT INTO ProductCategories (Category_Name) VALUES ('Historical Period');
 
+/*Please do not use the book inserts below. They are outdated and will not function with the latest database*/
+/*Will keep anyway incase i have need for them*/
+
 INSERT INTO Products (Category_ID, Product_Name, Description, Price, Stock_Level, Author_Name, Book_Type, Book_Genre)
 VALUES (1, 'Beyond the Horizon', 'An epic tale of adventure and self-discovery', 19.99, 15, 'Elena Mitchell', 'Hardback', 'Adventure');
 
