@@ -1,29 +1,111 @@
-.book-form {
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86;
+    --lightgreen: #c8e6d1;
+    --border: .1rem solid #6a9b86;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--darkgreen);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--blue);
+    color: black;
+}
+
+nav a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.form-box {
+    text-align: center;
+}
+
+.book-form {
+    background: var(--lightgreen);
+    border-radius: 15px;
+    width: 700px; 
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
     margin-right: 15%;
-    width: 400px;
 }
 
 .book-form button {
     width: 150px;
 }
-
-.book-form label {
-    padding-bottom: 5px;
-}
-
-.book-form input,
-.book-form textarea,
-.book-form select,
-.book-form .form-control {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    outline: none;
-    border: 1px solid #ccc; 
-}
-
 
 .book-form span {
     position: relative;
@@ -33,10 +115,62 @@
     color: rgb(255, 0, 0);
 }
 
-#btn-submit {
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(128, 128, 128);
-    border: solid rgb(192, 189, 189);
-    align-items: center;
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control,
+.book-form input,
+.book-form textarea,
+.book-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: var(--blue);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.btn-submit,
+.btn-back {
+    background: var(--darkgreen);
+    color: #fff;
+    border: var(--border);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover,
+.btn-back:hover {
+    background-color: var(--blue);
+}
+
+.product-name-error,
+.description-error,
+.price-error,
+.stock-level-error,
+.author-name-error,
+.book-image-error,
+.book-type-error,
+.book-genre-error,
+.category-name-error {
+    font-size: 10px;
+    color: black;
+    text-align: center;
+    margin-top: 5px;
 }
