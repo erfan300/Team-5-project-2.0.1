@@ -16,17 +16,18 @@
 
 <header class="header">
 
-   <h1>Books4U BookStore</h1>
+<h1>Books4U BookStore</h1>
 
-   <nav>
-    <a href="home">Home</a>
-    <a href="profile">Profile</a>
-    <a href="basket">Basket</a>
-    <a href="login">Log In</a>
-    <a href="about">About</a>
-    <a href="contact">Contact</a>
-</nav>
-
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+    
 </header>
 
 <!-- header section ends -->
