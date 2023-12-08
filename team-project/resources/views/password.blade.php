@@ -99,7 +99,6 @@
     outline: none;
     border: none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: .2s linear;
 }
 
@@ -153,7 +152,7 @@ a:hover {
 }
 
 a.active {
-    background-color: var(--blue);
+    background-color: var(--blue);                      
     color: white;
 }
 
