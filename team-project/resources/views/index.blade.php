@@ -28,17 +28,26 @@
         @endauth
     </header>
 
-    <!-- Navigation -->
     <nav>
     <a href="home"><i class="fas fa-home"></i> Home</a>
     <a href="profile"><i class="fas fa-user"></i> Profile</a>
     <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    
+    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+        <a href="create"><i class="fas fa-plus"></i> Create</a>
+        <a href="add"><i class="fas fa-plus-circle"></i> Add</a>
+        <a href="show"><i class="fas fa-eye"></i> Show</a>
+        <a href="single"><i class="fas fa-file-alt"></i> Single</a>
+        <a href="search"><i class="fas fa-search"></i> Search</a>
+        <a href="update"><i class="fas fa-pencil-alt"></i> Update</a>
+        <a href="list"><i class="fas fa-list"></i> List</a>
+    @endif
+    
     <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
     <a href="register"><i class="fas fa-user-plus"></i> Register</a>
     <a href="about"><i class="fas fa-info-circle"></i> About</a>
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
-    
+</nav>
     <!-- Search Bar -->
     <form action="/search" class="search-form">
         <div class="search-container">
