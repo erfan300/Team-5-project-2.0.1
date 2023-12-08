@@ -2,23 +2,26 @@
 <html>
 <head>
     <title>List of Customers</title>
-    <style>
-        /* Add your CSS styles here */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link href="{{ asset('css/list.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 </head>
 <body>
+<header class="header">
+
+<h1>Books4U BookStore</h1>
+
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
+</header>
+
     <h1>List of Customers</h1>
     <table>
         <thead>

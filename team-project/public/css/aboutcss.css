@@ -1,298 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+ 
+   :root{
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
 
-:root{
-    --blue:#6c96b6;
-    --darkgreen:#384b42;
-    --lightgreen:#6a9b86;
-    --border:.1rem solid #6a9b86;
 }
 
 *{
-    font-family: 'Roboto', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
+font-family: 'Roboto', sans-serif;
+margin:0; padding:0;
+outline: none; border:none;
 }
 
 html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 9rem;
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 
 
 body{
-    background: var(--darkgreen);
+background: var(--darkgreen);
 }
 
 section{
-    padding:2rem 7%;
-    
+padding:2rem 7%;
+
 }
 
-.heading{
+
+
+/* Header Styling */
+header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
     text-align: center;
-    color:#fff;
-    text-transform: uppercase;
-    padding-bottom: 3.5rem;
-    font-size: 4rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styling */
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: var(--blue); 
+    color: black;
+}
+
+a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/* CSS FOR HEADINGS */
+.heading{
+text-align: center;
+color:#fff;
+font-size:  30px;
+text-decoration: underline 1.5px var(--lightgreen);
 }
 
 .heading span{
-    color:var(--blue);
-    text-transform: uppercase;
+color:var(--lightgreen);
 }
 
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:.9rem 3rem;
-    font-size: 1.7rem;
-    color:#fff;
-    background: var(--blue);
-    cursor: pointer;
-}
-
-.btn:hover{
-    letter-spacing: .2rem;
-}
-
-.header{
-    background: var(--darkgreen);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:1.5rem 7%;
-    border-bottom: var(--border);
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 1000;
-}
-
-.header .logo img{
-    height: 6rem;
-}
-
-.header .navbar a{
-    margin:0 1rem;
-    font-size: 1.6rem;
-    color:#fff;
-}
-
-.header .navbar a:hover{
-    color:var(--blue);
-    border-bottom: .1rem solid var(--blue);
-    padding-bottom: .5rem;
-}
-
-.header .icons div{
-    color:#fff;
-    cursor: pointer;
-    font-size: 2.5rem;
-    margin-left: 2rem;
-}
-
-.header .icons div:hover{
-    color:var(--blue);
-}
+/* ABOUT US CSS */
 
 .about .row{
-    display: flex;
-    align-items: center;
-    background:var(--lightgreen);
-    flex-wrap: wrap;
+display: flex;
+align-items: center;
+background:var(--lightgreen);
+flex-wrap: wrap;
+border: solid 3.5px black;
 }
 
 .about .row .image{
-    flex:1 1 45rem;
+flex:1 1 45rem;
 }
 
 .about .row .image img{
-    width: 100%;
+width: 100%;
 }
 .about .row .content{
-    flex:1 1 45rem;
-    padding:2rem;
+flex:1 1 45rem;
+padding:2rem;
 }
 
 .about .row .content h3{
-    font-size: 3rem;
-    color:#fff;
+font-size: 25px;
+font-weight: bold;
+color:var(--darkgreen);
 }
 
 .about .row .content p{
-    font-size: 1.6rem;
-    color:#ccc;
-    padding:1rem 0;
-    line-height: 1.8;
+font-size: 15px;
+color:black;
+line-height: 2;
+padding:2rem 0;
 }
 
-
-
-
-
-
-
-/* contact CSS */
-
-.contact-section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--lightgreen);
-  }
-  
-  .contact-info{
-    color: #fff;
-    max-width: 500px;
-    line-height: 65px;
-    padding-left: 50px;
-    font-size: 18px;
-  }
-  
-  .contact-info i{
-    margin-right: 20px;
-    font-size: 25px;
-  }
-  
-  .contact-form{
-    max-width: 700px;
-    margin-right: 50px;
-  }
-  
-  .contact-info, .contact-form{
-    flex: 1;
-  }
-  
-  .contact-form h2{
-    color: #fff;
-    text-align: center;
-    font-size: 35px;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-  }
-  
-  .contact-form .text-box{
-    background: transparent;
-    color: #fff;
-    border: none;
-    width: calc(50% - 10px);
-    height: 50px;
-    padding: 12px;
-    font-size: 15px;
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    opacity: 0.9;
-    border: solid #fff;
-  }
-  
-  .contact-form .text-box:first-child{
-    margin-right: 15px;
-  }
-  
-  .contact-form textarea{
-    background: transparent;
-    color: #fff;
-    border: none;
-    width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    min-height: 200px;
-    max-height: 400px;
-    resize: vertical;
-    border-radius: 5px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    opacity: 0.9;
-    border: solid #fff;
-  }
-  
-  .contact-form .send-btn{
-    float: right;
-    background: var(--blue);
-    color: #fff;
-    border: none;
-    width: 120px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-
-  }
-  
-  .send-btn:hover{
-    background: lightblue;
-  }
-
-
-
-
-  .footer{
-    background:var(--darkgreen);
-    text-align: center;
+.moreabout .row{
+display: flex;
+align-items: center;
+background:var(--lightgreen);
+flex-wrap: wrap;
+border: solid 3.5px black;
 }
 
-.footer .share{
-    padding:1rem 0;
+.moreabout .row .image{
+flex:1 1 45rem;
 }
 
-.footer .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
-    color:#fff;
-    border:var(--border);
-    margin:.3rem;
-    border-radius: 50%;
+.moreabout .row .image img{
+width: 100%;
+}
+.moreabout .row .content{
+text-align: center;
+padding:2rem;
 }
 
-.footer .share a:hover{
-    background-color: var(--blue);
+.moreabout .row .content h3{
+font-size: 25px;
+font-weight: bold;
+color:var(--darkgreen);
 }
 
-.footer .links{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:2rem 0;
-    gap:1rem;
+.moreabout .row .content p{
+font-size: 15px;
+color: black;
+line-height: 2;
+padding:2rem 0;
 }
-
-.footer .links a{
-    padding:.7rem 2rem;
-    color:#fff;
-    border:var(--border);
-    font-size: 2rem;
-}
-
-.footer .links a:hover{
-    background:var(--blue);
-}
-
-.footer .credit{
-    font-size: 2rem;
-    color:#fff;
-    font-weight: lighter;
-    padding:1.5rem;
-}
-
-.footer .credit span{
-    color:var(--blue);
-}
-
 
 .image{
-    max-width: 100%;
-    height: auto;
+max-width: 100%;
+height: auto;
+}
+
+.btn{
+margin-top: 1rem;
+display: inline-block;
+padding:.9rem 3rem;
+font-size: 15px;
+color:#fff;
+background: var(--blue);
+cursor: pointer;
+}
+
+.btn:hover{
+letter-spacing: .1rem;
+}
+
+/*Footer section*/
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #0b2e20;
+    color: #fff;
+    padding: 20px;
 }

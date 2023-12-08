@@ -1,196 +1,184 @@
 :root{
-    --blue:#6c96b6;
-    --darkgreen:#384b42;
-    --lightgreen:#6a9b86;
-    --border:.1rem solid #6a9b86;
+  --blue: #6c96b6;
+  --darkgreen: #6a9b86; 
+  --lightgreen: #c8e6d1; 
+  --border: .1rem solid #6a9b86;
 }
 
 *{
-    font-family: 'Roboto', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    transition: .2s linear;
+  font-family: 'Roboto', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
 }
 
 html{
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 
 
 body{
-    background: var(--darkgreen);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: var(--darkgreen);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.alert-success {
+
+/* Header Styling */
+.header{
+  background-color: var(--darkgreen);
+  color: var(--lightgreen);
+  padding: 20px;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  top:0; left: 0; right: 0;
+}
+
+
+
+/* Navigation Styling */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+nav {
+  background-color: var(--darkgreen);
+  overflow: hidden;
+  text-align: center;
+}
+
+a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: var(--blue); 
+  color: black;
+}
+
+a.active {
   background-color: var(--blue);
   color: white;
-  padding: 15px;
-  margin-bottom: 20px;
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+ /* LOGIN CSS */
+
+ .wrapper{
+  width: 500px;
+  height: 500px;
+  background: var(--lightgreen);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.form-box{
+  width: 100%;
+  padding: 50px;
+}
+
+.form-box h2{
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
   text-align: center;
-  z-index: 1000;
 }
 
-/* Fade-out animation for alert */
-@keyframes fadeOut {
-  from {
-      opacity: 1;
-  }
-  to {
-      opacity: 0;
-  }
-}
-
-.alert-success.fade-out {
-  animation: fadeOut 2s ease-out;
-}
-
-
-.header{
-    background: var(--darkgreen);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding:1.5rem 7%;
-    border-bottom: var(--border);
-    position: fixed;
-    top:0; left: 0; right: 0;
-    
-}
-
-.logo img{
-    height: 7rem;
-}
-
-.header .navbar a{
-   
-    font-size: 15px;
-    color:#fff;
-}
-
-.header .navbar a:hover{
-    color:var(--blue);
-    border-bottom: .1rem solid var(--blue);
-    padding-bottom: .5rem;
+.input-box{
+  width: 100%;
+  height: 65px;
+  position: relative;
+  border-bottom: 3px solid black;
+  margin: 40px 0;
 }
 
 
 
 
-/* NAVIGATION CSS */
-
-.navbar a{
-    position: relative;
-    font-size: 18px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-}
-
-
-
-   /* LOGIN CSS */
-
-   .wrapper{
-    width: 500px;
-    height: 500px;
-    background: var(--lightgreen);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-  }
+.input-box label {
+  position: absolute;
+  top: 50%;
+  margin-left: 5px;
+  font-size: 11px;
+  color: black;
+  font-weight: bold;
   
-  .form-box{
-    width: 100%;
-    padding: 50px;
-  }
+}
 
-  .form-box h2{
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    text-align: center;
-  }
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -10px;
+}
 
-  .input-box{
-    width: 100%;
-    height: 65px;
-    position: relative;
-    border-bottom: 3px solid black;
-    margin: 40px 0;
-  }
-  
-  
+.input-box input{
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+  color: black;
+  background: transparent;
+  font-weight: bold;
+  margin-left: 5px;
+}
 
 
-  .input-box label {
-    position: absolute;
-    top: 50%;
-    margin-left: 5px;
-    font-size: 11px;
-    color: black;
-    font-weight: bold;
-    
-  }
 
-  .input-box input:focus~label,
-  .input-box input:valid~label {
-    top: -10px;
-  }
+.login-register {
+  font-size: 10px;
+  color: black;
+  text-align: center;
+  margin: 2em;
+}
 
-  .input-box input{
-    height: 100%;
-    width: 100%;
-    font-size: 10px;
-    color: black;
-    background: transparent;
-    font-weight: bold;
-    margin-left: 5px;
-  }
+.login-register p a {
+  color: black;
+  font-weight: bold;
+}
 
-  
-
-  .login-register {
-    font-size: 10px;
-    color: black;
-    text-align: center;
-    margin: 2em;
-  }
-
-  .login-register p a {
-    color: black;
-    font-weight: bold;
-  }
-
-  .login-register p a:hover {
-    text-decoration: underline;
-    color: var(--blue);
-  }
+.login-register p a:hover {
+  text-decoration: underline;
+  color: var(--blue);
+}
 
 
-  .btn{
-    background: var(--darkgreen);
-    height: 50px;
-    width: 100%;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 10px;
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .btn:hover{
-    color: var(--blue);
+.btn{
+  background: var(--darkgreen);
+  height: 50px;
+  width: 100%;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn:hover{
+  background-color: var(--blue);
 }
