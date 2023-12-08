@@ -67,6 +67,27 @@
     </div>
 </section>
 
+<div class="navbar">
+  <a href="about">About</a>
+  <a href="Basket">Basket</a>
+  <a href="login">Login</a>
+  <a href="Register">Register</a>
+  <a href="profile">Profile</a>
+     
+    </button>
+    <div class="dropdown-content">
+    <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/about.blade.php">About</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/profile.blade.php">profile</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/Basket.blade.php">Basket</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/login.blade.php">Login</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/Register.blade.php">Register</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/about.blade.php">About</a>
+      <a href="https://vscode.dev/github/erfan300/Team-5-project-2.0.1/blob/main/team-project/resources/views/contact.blade.php">Contact</a>
+
+    </div>
+  </div>
+</div>
+
 <!-- more about section ends -->
 
           <!-- footer section starts  -->
