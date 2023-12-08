@@ -25,9 +25,12 @@ class ChPasswordController extends Controller
             return redirect('/change-password')->with('error', 'Email not found. Please enter a valid email.');
         }
 
-        // Update the password without hashing
-        $user->Password = $request->new_password; // Assign the plain text password
-        $user->save(); // Save the record without automatic hashing
+        
+        $hashedPassword = Hash::make($request->new_password);
+
+        // Update the hashed password
+        $user->Password = $hashedPassword;
+        $user->save();
 
         return redirect('/login')->with('success', 'Password updated successfully!');
     }

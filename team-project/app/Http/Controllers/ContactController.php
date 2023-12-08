@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ContactUs;
+use App\Models\Contact; 
 use Illuminate\Support\Facades\Log;
 use Auth;
 
@@ -12,11 +11,11 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         // Check if the user is logged in
-        if(Auth::check()) {
+        if (Auth::check()) {
             $user = Auth::user();
 
             // Check if the user is associated with a valid customer record
-            if($user->customer) {
+            if ($user->customer) {
                 $validatedData = $request->validate([
                     'Name' => 'required',
                     'Email' => 'required|email',
@@ -31,9 +30,11 @@ class ContactController extends Controller
                         'Email' => $validatedData['Email'],
                         'Subject' => $validatedData['Subject'],
                         'Message' => $validatedData['Message'],
+                        'Status' => 'Unread', // Assuming this is required
+                        // Add other necessary fields here
                     ];
 
-                    $contact = ContactController::create($contactData);
+                    $contact = Contact::create($contactData); // Using create method to insert data
                     if ($contact) {
                         return redirect()->back()->with('success', 'Message sent successfully!');
                     } else {
@@ -48,8 +49,7 @@ class ContactController extends Controller
             }
         } else {
             // Redirect to login if the user is not logged in
-            return redirect('login')->with('message', 'Please log in to submit the contact form.');
-       
-             }
+            return redirect()->route('login')->with('error', 'Please log in to submit the contact form.');
+        }
     }
 }
