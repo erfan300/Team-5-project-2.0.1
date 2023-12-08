@@ -46,14 +46,14 @@ Route::get('/book/{book}', [ProductsController::class, 'show']);
 Route::get('/search', [SearchController::class, 'index'])->name('Search');
 
 // Shows Login Form
-Route::get('/login', [UserController::class, 'login']); 
+Route::get('/login', [UserController::class, 'login'])->name('login'); 
 Route::post('/login', [UserController::class, 'login']);
 
 
 // Shows contact page
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 //Logs in User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
@@ -64,7 +64,7 @@ Route::post('/logout', [UserController::class, 'logout']);
 // Shows about us page
 Route::get('/aboutus', function () {
     return view('about');
-});
+})->name('about');
 
 
 //Shows Payment
@@ -120,7 +120,7 @@ Route::get('/about', function () {
     return view('about');
 });
 // Show Basket page
-Route::get('/basket', [BasketController::class,'showBasket']);
+Route::get('/basket', [BasketController::class,'showBasket'])->name('basket');
 
 // Adds book to basket
 Route::post('/addToBasket/{id}', [BasketController::class, 'addToBasket'])->name('addToBasket');

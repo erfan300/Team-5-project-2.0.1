@@ -15,13 +15,14 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="home">Home</a>
-        <a href="profile">Profile</a>
-        <a href="basket">Basket</a>
-        <a href="login">Log In</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
+        <a href="{{ route('home') }}">Home</a>
+        <a href="{{ route('profile') }}">Profile</a>
+        <a href="{{ route('basket') }}">Basket</a>
+        <a href="{{ route('login') }}">Log In</a>
+        <a href="{{ route('about') }}">About</a>
+        <a href="{{ route('contact') }}">Contact</a>
     </nav>
+    
     <br><br>
 
      <!-- Search Bar -->
