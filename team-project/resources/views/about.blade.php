@@ -37,16 +37,14 @@
 <!-- about section starts  -->
 
 <section class="about" id="about">
-    <h1 class="heading"> <span>about</span> us </h1>
-    <div class="row">
-        <div class="image" >
-            <img src="#" alt="">
-        </div>
+    <h1 class="heading"> <span>About</span> us </h1>
+    <div class="box">
         <div class="content">
             <h3>Books4U</h3>            
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-            <a href="#moreabout" class="btn">Read more</a>
+            <p>Welcome to Books4U, the place where the love for writing intertwines with the art of storytelling. We strongly believe in the transformative power of books, and their ability to greatly impact individuals, as well as communities. Our main purpose is to inspire, attract, and ignite the imaginations of the people who enjoy reading books. </p>
+            <p>At Books4U, we strive to be a guiding light for book lovers, connecting readers with narratives that leave a long-lasting impression.</p>
+            <p>Through our carefully selected selection of books, we aim to create an mesmerizing and enriching reading experience that exceeds the boundaries. Whether you are in search of thrilling adventures, or heartwarming tales, Books4U is your trusted source.</p>
+            <p>Your journey into the world of imagination begins here, at Books4U. Thank you.</p>
         </div>
     </div>
 </section>
@@ -55,18 +53,19 @@
 
 <!-- more about section starts -->
 
-<section class="moreabout" id="moreabout">
-    <div class="row">
-        <div class="image">
-        </div>
+<section class="about" id="about">
+    <div class="box">
         <div class="content">
             <h3>Books4U</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
-            <a href="#" class="btn">Get in contact</a>
+            <p>If you would like to get in contact with us, please click the button below which will redirect you to our contact page.<p>
+            <p>Fill out the contact form, and a member of our team will reach out to you within 24 hours. Thank you.</p>
+            <a href="contact" class="btn">Get in contact</a>
         </div>
+        
     </div>
+    
 </section>
+
 
 <div class="navbar">
   <a href="about">About</a>

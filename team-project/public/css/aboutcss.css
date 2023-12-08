@@ -90,7 +90,6 @@ nav a:last-child {
 text-align: center;
 color:#fff;
 font-size:  30px;
-text-decoration: underline 1.5px var(--lightgreen);
 }
 
 .heading span{
@@ -99,80 +98,39 @@ color:var(--lightgreen);
 
 /* ABOUT US CSS */
 
-.about .row{
-display: flex;
+.about .box{
 align-items: center;
 background:var(--lightgreen);
-flex-wrap: wrap;
 border: solid 3.5px black;
+
 }
 
-.about .row .image{
-flex:1 1 45rem;
-}
-
-.about .row .image img{
-width: 100%;
-}
-.about .row .content{
-flex:1 1 45rem;
+.content{
 padding:2rem;
+text-align: center;
 }
 
-.about .row .content h3{
+.content h3{
 font-size: 25px;
 font-weight: bold;
 color:var(--darkgreen);
+text-align: center;
 }
 
-.about .row .content p{
+.content p{
 font-size: 15px;
 color:black;
 line-height: 2;
 padding:2rem 0;
-}
-
-.moreabout .row{
-display: flex;
-align-items: center;
-background:var(--lightgreen);
-flex-wrap: wrap;
-border: solid 3.5px black;
-}
-
-.moreabout .row .image{
-flex:1 1 45rem;
-}
-
-.moreabout .row .image img{
-width: 100%;
-}
-.moreabout .row .content{
 text-align: center;
-padding:2rem;
 }
 
-.moreabout .row .content h3{
-font-size: 25px;
-font-weight: bold;
-color:var(--darkgreen);
-}
 
-.moreabout .row .content p{
-font-size: 15px;
-color: black;
-line-height: 2;
-padding:2rem 0;
-}
 
-.image{
-max-width: 100%;
-height: auto;
-}
 
 .btn{
 margin-top: 1rem;
-display: inline-block;
+
 padding:.9rem 3rem;
 font-size: 15px;
 color:#fff;
