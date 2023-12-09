@@ -37,9 +37,9 @@
         <table class="table">
             <tr>
                 <th></th>
-                <th>Book title</th>
-                <th>Quantity</th>
-                <th>Price</th>
+                <th><h3>Book title<h3></th>
+                <th><h3>Quantity<h3></th>
+                <th><h3>Price<h3></th>
                 <th></th>
             </tr>
             @if(count($basket) == 0)
@@ -89,7 +89,7 @@
                     <div id = "checkout-button">
                     <form method="POST" action="{{ route('checkout') }}">
                         @csrf
-                            <input type="submit" value="Buy Now" class="btn">
+                            <input type="submit" value="Checkout" class="btn">
                         @csrf
                         </form>
                     </div>
