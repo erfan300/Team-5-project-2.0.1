@@ -48,18 +48,18 @@ public function deleteCustomer($id)
 public function modifyCustomer($id)
 {
     $customer = Customer::find($id);
-    $user = User::find($id);
 
     if (!$customer) {
         return redirect('/')->with('error', 'Customer not found');
     }
+    $user = $customer->user;
 
     return view('update', compact('customer','user'));
 }
 public function updateCustomer(Request $request, $id)
 {
     $customer = Customer::find($id);
-    $user = User::find($id);
+    $user = $customer->user;
 
     if (!$customer) {
         return redirect('/')->with('error', 'Customer not found');
