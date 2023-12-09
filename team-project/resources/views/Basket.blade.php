@@ -101,106 +101,10 @@
 </section>
 
      
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-    :root {
-        --blue: #6c96b6;
-        --darkgreen: #384b42;
-        --lightgreen: #6a9b86;
-        --border: .1rem solid #6a9b86;
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--lightgreen);
-        color: var(--lightgreen);
-    }
-
-    /* Header Styling */
-    header {
-        background-color: var(--lightgreen);
-        color: #a7eecf;
-        padding: 20px;
-        text-align: center;
-    }
-
-    /* Navigation Styling */
-    nav {
-        background-color: var(--darkgreen);
-        overflow: hidden;
-        text-align: center;
-    }
-
-    nav a {
-        display: inline-block;
-        color: var(--lightgreen);
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-        background-color: var(--blue);
-        color: black;
-    }
-
-    /* Shopping Basket Items */
-    .basket-page {
-        margin: 80px auto;
-    }
-
-    table {
-        width: 95%;
-        border: collapse;
-        margin: auto;
-        background-color: white;
-        height: 100px;
-    }
-
-    h2 {
-        position: absolute;
-        left: 100px;
-        top: 200px;
-    }
-
-h3{
-    color:darkgreen;
-}
-
-    .basket-page thead tr {
-        background-color: black;
-        font-weight: normal;
-        text-align: left;
-        padding: 60px;
-    }
-
-    .btn {
-        /* Removed absolute positioning */
-        background: var(--darkgreen);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.2s linear;
-    }
-
-    .btn:hover {
-        background: var(--blue);
-    }
-
-    #checkout-button {
-        position: relative;
-        margin-top: 20px; 
-    }
-</style>
 
 
+
+  
 
 
 
