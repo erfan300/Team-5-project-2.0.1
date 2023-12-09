@@ -46,3 +46,27 @@ nav {
             background-color: var(--blue);
             color: black;
         }
+
+
+        h2{
+            position: absolute;
+          left: 100px;
+          top: 200px;
+
+        }
+
+        h3{
+            color:darkgreen;
+        }
+        
+        
+
+    .info{
+    width:85%;
+    border:collapse;
+    margin:auto;
+    background-color:white;
+    height:470px;   
+    text-align: center;
+
+}
