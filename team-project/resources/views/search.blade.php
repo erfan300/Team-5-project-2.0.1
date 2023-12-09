@@ -15,14 +15,14 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="{{ route('home') }}">Home</a>
-        <a href="{{ route('profile') }}">Profile</a>
-        <a href="{{ route('basket') }}">Basket</a>
-        <a href="{{ route('login') }}">Log In</a>
-        <a href="{{ route('about') }}">About</a>
-        <a href="{{ route('contact') }}">Contact</a>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
-    
     <br><br>
 
      <!-- Search Bar -->
@@ -73,8 +73,7 @@
                 </div>
             </div>
         </div>
-    </form>
-    
+    </form> 
     <div class="search-book-container">
         @if(count($books) == 0)
             <p> No Books found </p>
