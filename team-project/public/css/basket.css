@@ -67,6 +67,10 @@ h2{
   top: 200px;
 }
 
+h3{
+    color:darkgreen;
+}
+
 
 .basket-page thead tr{
     background-color:black;
@@ -77,8 +81,8 @@ h2{
 }
 .btn {
     position: absolute;
-    right: 130px;
-    top:480px;
+    right: 100px;
+    top:200px;
             background: var(--darkgreen);
             color: #fff;
             border: none;
