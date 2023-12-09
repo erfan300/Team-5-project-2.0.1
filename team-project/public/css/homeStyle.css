@@ -1,11 +1,10 @@
 :root {
     --blue: #6c96b6;
-    --darkgreen: #6a9b86; 
-    --lightgreen: #c8e6d1; 
+    --darkgreen: #6a9b86;
+    --lightgreen: #c8e6d1;
     --border: .1rem solid #6a9b86;
 }
 
-/* Successfull login alert */
 .alert-success {
     position: fixed;
     top: 0;
@@ -19,7 +18,6 @@
     z-index: 1000;
 }
 
-/* Fade-out animation for alert */
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -33,8 +31,6 @@
     animation: fadeOut 2s ease-out;
 }
 
-/*----------------------------------------------------------*/
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -43,7 +39,6 @@ body {
     color: var(--lightgreen);
 }
 
-/* Header Styling */
 header {
     background-color: var(--darkgreen);
     color: var(--lightgreen);
@@ -52,20 +47,13 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Styling */
-
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-}
-
 nav {
     background-color: var(--darkgreen);
     overflow: hidden;
     text-align: center;
 }
 
-a {
+nav a {
     display: inline-block;
     color: white;
     text-align: center;
@@ -74,12 +62,12 @@ a {
     transition: background-color 0.3s;
 }
 
-a:hover {
-    background-color: var(--blue); 
+nav a:hover {
+    background-color: var(--blue);
     color: black;
 }
 
-a.active {
+nav a.active {
     background-color: var(--blue);
     color: white;
 }
@@ -96,7 +84,6 @@ nav a:last-child {
     }
 }
 
-/* Search Bar Styling */
 .search-form {
     display: flex;
     align-items: center;
@@ -107,7 +94,7 @@ nav a:last-child {
 .search-container {
     position: relative;
     display: flex;
-    border: 2px solid #4CAF50; /* Dark green border */
+    border: 2px solid #4CAF50;
     border-radius: 5px;
     overflow: hidden;
     width: 70%;
@@ -120,13 +107,13 @@ nav a:last-child {
     outline: none;
     font-size: 16px;
     width: 90%;
-    background-color: #0b2e20; /* Dark green input background */
+    background-color: #0b2e20;
     color: #d2e7d5;
 }
 
 .search-button {
     padding: 10px 20px;
-    background-color: #4CAF50; /* Dark green search button background */
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -135,15 +122,13 @@ nav a:last-child {
 }
 
 .search-button:hover {
-    background-color: #2ecc71; /* Light green on hover */
+    background-color: #2ecc71;
 }
 
-/* Main Content Styling */
 .main-content {
     padding: 20px;
 }
 
-/*Filter section next to the search bar*/
 .filter-dropdown {
     display: none;
     position: absolute;
@@ -153,8 +138,9 @@ nav a:last-child {
     padding: 20px;
     z-index: 1;
     right: 0;
-    min-width: 370px; 
+    min-width: 370px;
 }
+
 .filter-categories {
     display: flex;
     flex-direction: row;
@@ -176,7 +162,7 @@ nav a:last-child {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    visibility: visible; /* or opacity: 1; */
+    visibility: visible;
 }
 
 .filter-category a {
@@ -200,7 +186,7 @@ nav a:last-child {
 .filter-link:hover .filter-dropdown {
     display: flex;
     flex-direction: row;
-    visibility: visible; /* or opacity: 1; */
+    visibility: visible;
 }
 
 .filter-dropdown a {
@@ -215,9 +201,6 @@ nav a:last-child {
     background-color: #ddd;
 }
 
-
-
-/*Footer section*/
 .footer {
     text-align: center;
     margin-top: 40px;
@@ -252,13 +235,11 @@ nav a:last-child {
     animation: fade 4s ease-in-out infinite;
 }
 
-
-
 img {
-    width: 50%; /* Make the image fill the width of the container */
+    width: 50%;
     height: auto;
     border-radius: 5px;
-    display: block; /* Remove any extra space below the image */
+    display: block;
     margin: 0 auto;
 }
 
@@ -267,7 +248,7 @@ img {
     border: solid rgb(192, 189, 189);
     display: flex;
     justify-content: center;
-    padding: 10px; 
+    padding: 10px;
 }
 
 .book-genre-container {
@@ -280,52 +261,48 @@ img {
     text-align: center;
     margin: 0 10px;
     width: 150px;
-    height: 300px
+    height: 300px;
 }
 
-/*This container is for the search page*/
 .search-book-container {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch; 
+    align-items: stretch;
     margin: 10px;
     padding: 10px;
 }
 
 .book-image {
-    width: 100px; 
-    height: 150px; 
-    object-fit: cover; 
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 5px;
     display: block;
     margin: 0 auto;
 }
 
-.book-title a{
-    font-size: 0.7em; 
+.book-title a {
+    font-size: 0.7em;
     color: #000;
     margin: 10px 0;
-    
 }
 
-.book-author a{
+.book-author a {
     font-size: 1em;
-    color: #8B4513; 
-    
+    color: #8B4513;
 }
 
 .book-price {
-    font-size: 1.1em; 
-    color: #000; 
+    font-size: 1.1em;
+    color: #000;
 }
 
 .book-type {
     font-size: 0.9em;
-    color: #444; 
+    color: #444;
 }
 
-/* Style for pagination links */
 .pagination-container nav {
     text-align: center;
     margin-top: 20px;
@@ -362,6 +339,4 @@ img {
 
 .pagination .active {
     color: #fff;
-    
 }
-
