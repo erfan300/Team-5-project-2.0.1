@@ -85,6 +85,8 @@ nav a {
 .book-description{
     color:darkgreen;
     border:black;
+    inline-size: 380px;
+    overflow-wrap: break-word;
 
 }
 
