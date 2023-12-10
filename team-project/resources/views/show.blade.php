@@ -33,14 +33,15 @@
     <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
         <div class="book-image-container">
             <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
-            <p class="book-description">{{$book['Description']}}</p>
+        
         </div>
         <div class="book-details">
             <div id="stock-message" class="stock-message"></div>
             <h2>{{$book['Product_Name']}}</h2>
-            <p>{{$book['Author_Name']}}</p>
+            <h3>{{$book['Author_Name']}}</h3>
             <div class="book-description-price">
-                <p class="book-price">{{$book['Price']}}</p>
+               <h3> <p class="book-description">{{$book['Description']}}</p><h3>
+                <h3><p class="book-price">{{$book['Price']}}</p><h3>
             </div>
             <p class="stock-status">
                 {{ $book->productStatus->Stock_Status ?? 'Not Available' }} | {{ $book->Stock_Level ?? 'Not Available' }} Available
@@ -56,7 +57,7 @@
                             @endfor
                         </select>
                     </div>   
-                    <button type="submit">Add to Basket</button>
+                    <button class="basket"button type="submit">Add to Basket</button>
                 </div>
             </form>
             @if(Auth::check() && Auth::user()->User_Type === 'Admin')

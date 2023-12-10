@@ -82,16 +82,22 @@ nav a {
     text-align: justify;
 }
 
+.book-description-price{
+    color:darkgreen;
+    border:black;
+
+}
+
 
 form{
     text-align:left;
     color:darkgreen;
 }
 
-.button {
+.delete-button {
     position: absolute;
-    right: 100px;
-    top:500px;
+    right: 300px;
+    top:600px;
             background: var(--darkgreen);
             color: #fff;
             border: none;
@@ -101,6 +107,20 @@ form{
             font-size: 16px;
             transition: background 0.2s linear;
         }
+
+        .basket {
+            position: absolute;
+            right: 100px;
+            top:500px;
+                    background: var(--darkgreen);
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    transition: background 0.2s linear;
+                }
 
         .btn:hover {
             background: var(--blue);
