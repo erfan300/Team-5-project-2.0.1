@@ -82,9 +82,16 @@ nav a {
     text-align: justify;
 }
 
-.book-description-price{
+.book-description{
     color:darkgreen;
     border:black;
+
+}
+
+.book-price{
+    color:darkgreen;
+    border:black;
+    text-align:center;
 
 }
 
@@ -96,8 +103,8 @@ form{
 
 .delete-button {
     position: absolute;
-    right: 300px;
-    top:600px;
+    right: 500px;
+    top:700px;
             background: var(--darkgreen);
             color: #fff;
             border: none;
@@ -110,8 +117,8 @@ form{
 
         .basket {
             position: absolute;
-            right: 100px;
-            top:500px;
+            left:880px;
+            top:700px;
                     background: var(--darkgreen);
                     color: #fff;
                     border: none;

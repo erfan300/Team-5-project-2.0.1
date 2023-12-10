@@ -39,8 +39,10 @@
             <div id="stock-message" class="stock-message"></div>
             <h2>{{$book['Product_Name']}}</h2>
             <h3>{{$book['Author_Name']}}</h3>
-            <div class="book-description-price">
+            <div class="book-description">
                <h3> <p class="book-description">{{$book['Description']}}</p><h3>
+</div>
+            <div class="book-price">
                 <h3><p class="book-price">{{$book['Price']}}</p><h3>
             </div>
             <p class="stock-status">
