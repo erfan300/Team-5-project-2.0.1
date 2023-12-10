@@ -22,16 +22,17 @@ class PrevOrdersController extends Controller
         // Handle the return process and update the stock level
         $logId = $request->input('log_id');
 
-        $inventoryLog = InventoryLog::find($logId);
+    $inventoryLog = InventoryLog::find($logId);
 
         if ($inventoryLog) {
-            // Assuming the return process involves increasing the stock level
+            //the return process involves increasing the stock level
             $newStockLevel = $inventoryLog->NewStockLevel + $inventoryLog->TransactionQuantity;
             $inventoryLog->NewStockLevel = $newStockLevel;
             $inventoryLog->save();
         }
 
-        // Redirect back to the profile page (assuming it's named profile.blade.php)
-        return redirect()->route('prev-orders.index');
+ 
+        
+        return redirect()->route('profile');
     }
 }

@@ -20,6 +20,12 @@ class Orders extends Model
         'Order_Data',
         'Total_Price'
     ];
+    public function customer() {
+        return $this->belongsTo(Customer::class, 'Customer_ID');
+    }
 
+    public function logs() {
+        return $this->hasMany(InventoryLog::class, 'Order_ID');
+    }
  
 }

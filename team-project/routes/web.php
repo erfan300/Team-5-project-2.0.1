@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PrevOrdersController;
 
 /*
 |--------------------------------------------------------------------------
