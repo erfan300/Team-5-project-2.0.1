@@ -104,8 +104,8 @@ form{
 }
 
 .delete-button {
-    right: 400px;
-    top:700px;
+    right: 20px;
+    top:600px;
             background: var(--darkgreen);
             color: #fff;
             border: none;

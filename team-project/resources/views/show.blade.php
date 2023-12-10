@@ -59,6 +59,7 @@
                             @endfor
                         </select>
                     </div>   
+                    <br><br>
                     <button class="basket"button type="submit">Add to Basket</button>
                 </div>
             </form>
