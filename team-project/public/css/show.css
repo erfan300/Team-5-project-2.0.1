@@ -77,3 +77,45 @@ nav a:last-child {
         box-sizing: border-box;
     }
 }
+
+.book-image-container{
+    width:70%;
+    border:collapse;
+    height:300px;   
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+.book-details{
+    text-align:center ;
+    color:darkgreen;
+}
+
+form{
+    text-align:left;
+    color:darkgreen;
+}
+
+.button {
+    position: absolute;
+    right: 100px;
+    top:500px;
+            background: var(--darkgreen);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s linear;
+        }
+
+        .btn:hover {
+            background: var(--blue);
+        }
+
+
+
