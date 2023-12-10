@@ -7,6 +7,7 @@
     <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="{{ asset('js/custom.js') }}"></script>
+    <link href="{{ asset('css/show.css') }}" rel="stylesheet">
     <title>{{$book['Product_Name']}}</title>
 </head>
 <body>
