@@ -11,7 +11,9 @@
     <title>{{$book['Product_Name']}}</title>
 </head>
 <body>
-    
+<header>
+        <h1>Books4U Bookstore</h1>
+    </header>
 <nav>
         <a href="home"><i class="fas fa-home"></i> Home</a>
         <a href="profile"><i class="fas fa-user"></i> Profile</a>
@@ -21,6 +23,8 @@
         <a href="about"><i class="fas fa-info-circle"></i> About</a>
         <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+
+
     @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
@@ -29,13 +33,13 @@
     <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
         <div class="book-image-container">
             <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
+            <p class="book-description">{{$book['Description']}}</p>
         </div>
         <div class="book-details">
             <div id="stock-message" class="stock-message"></div>
             <h2>{{$book['Product_Name']}}</h2>
             <p>{{$book['Author_Name']}}</p>
             <div class="book-description-price">
-                <p class="book-description">{{$book['Description']}}</p>
                 <p class="book-price">{{$book['Price']}}</p>
             </div>
             <p class="stock-status">
