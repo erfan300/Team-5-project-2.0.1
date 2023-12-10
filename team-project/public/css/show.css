@@ -85,7 +85,7 @@ nav a {
 .book-description{
     color:darkgreen;
     border:black;
-    inline-size: 380px;
+    inline-size: 480px;
     overflow-wrap: break-word;
 
 }
@@ -106,7 +106,7 @@ form{
 .delete-button {
     position: absolute;
     right: 400px;
-    top:800px;
+    top:700px;
             background: var(--darkgreen);
             color: #fff;
             border: none;
@@ -120,7 +120,7 @@ form{
         .basket {
             position: absolute;
             left:960px;
-            top:800px;
+            top:700px;
                     background: var(--darkgreen);
                     color: #fff;
                     border: none;
