@@ -105,7 +105,7 @@ form{
 
 .delete-button {
     position: absolute;
-    right: 500px;
+    right: 400px;
     top:700px;
             background: var(--darkgreen);
             color: #fff;
@@ -119,7 +119,7 @@ form{
 
         .basket {
             position: absolute;
-            left:880px;
+            left:960px;
             top:700px;
                     background: var(--darkgreen);
                     color: #fff;

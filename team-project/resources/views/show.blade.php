@@ -63,7 +63,7 @@
                 </div>
             </form>
             @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-                    <a href="/book/{{$book->Product_ID}}/edit">Edit</a>
+                    <h3><a href="/book/{{$book->Product_ID}}/edit">Edit</a><h3>
                     <form method="POST" action="/book/{{$book->Product_ID}}">
                         @csrf
                         @method('DELETE')
