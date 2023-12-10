@@ -22,6 +22,8 @@ class InventoryLog extends Model
         'TransactionQuantity',
         'NewStockLevel'
     ];
-
+    public function order() {
+        return $this->belongsTo(Orders::class, 'Order_ID');
+    }
  
 }

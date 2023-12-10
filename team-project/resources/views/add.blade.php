@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Add New Customer</title>
-    <!-- Add your styles or link your CSS here -->
 <link href="{{ asset('css/add.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 </head>
@@ -27,7 +26,6 @@
     <div class="container">
     <form method="POST" action="{{ route('store-customer') }}">
         @csrf
-        <!-- Add form fields to create a new customer -->
         <label for="first_name">First Name:</label>
         <input type="text" name="first_name" class="text-box" required>
         

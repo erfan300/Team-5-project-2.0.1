@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="{{ asset('js/custom.js') }}"></script>
     <title>{{$book['Product_Name']}}</title>
 </head>
 <body>
+    
+<nav>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
     @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}

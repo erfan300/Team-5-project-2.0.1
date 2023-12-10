@@ -30,7 +30,9 @@ class Customer extends Model
         return $this->hasMany(Contact::class, 'Customer_ID', 'Customer_ID');
     }
 
-
+    public function orders() {
+        return $this->hasMany(Orders::class, 'Customer_ID');
+    }
 
 
 }
