@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
-class SearchController extends Controller
-{
+class SearchController extends Controller{
     public function index(Request $request){
         return view('search', [
             'books' => Products::filter([

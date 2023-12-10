@@ -121,8 +121,8 @@ class BasketController extends Controller{
             return redirect('login')->with('message', 'Must be logged in!');
         }
     
-        $customerID = null; // Initialize customerID
-        $adminID = null; // Initialize adminID
+        $customerID = null;
+        $adminID = null; 
     
         // Get the items in the basket and set customer/admin ID based on the user type
         if ($user->User_Type === 'Customer') {

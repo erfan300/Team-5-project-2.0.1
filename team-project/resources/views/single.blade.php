@@ -42,12 +42,12 @@
         <h3><br>Last Name: {{ $customer->Last_Name }}</br><h3>
         <h3><br>Address: {{ $customer->Address }}</br><h3>
         <h3><br>Phone Number: {{ $customer->Phone_Number }}</br><h3>
-        <!-- Display additional details from the users table -->
+    
         @if(isset($user))
             <h3><br>Username: {{ $user->Username }}</br><h3>
             <h3><br>Email: {{ $user->Email }}</br><h3>
         @endif
-        <!-- Display other details as needed -->
+        
     </ul>
 </body>
 </html>
