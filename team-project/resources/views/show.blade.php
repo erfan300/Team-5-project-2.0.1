@@ -14,15 +14,16 @@
 <header>
         <h1>Books4U Bookstore</h1>
     </header>
-<nav>
-        <a href="home"><i class="fas fa-home"></i> Home</a>
-        <a href="profile"><i class="fas fa-user"></i> Profile</a>
-        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="about"><i class="fas fa-info-circle"></i> About</a>
-        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    <nav>
+        <a href="{{ url('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url('profile') }}"><i class="fas fa-user"></i> Profile</a>
+        <a href="{{ url('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        <a href="{{ url('register') }}"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="{{ url('about') }}"><i class="fas fa-info-circle"></i> About</a>
+        <a href="{{ url('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+    
 
 
     @if (session('message'))
