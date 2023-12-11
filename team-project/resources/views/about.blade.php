@@ -37,7 +37,7 @@
 <!-- about section starts  -->
 
 <section class="about" id="about">
-    <h1 class="heading"> <span>About</span> us </h1>
+    <h1 class="heading">About Us</h1>
     <div class="box">
         <div class="content">
             <h3>Books4U</h3>            

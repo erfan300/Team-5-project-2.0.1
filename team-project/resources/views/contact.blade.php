@@ -35,7 +35,7 @@
 
 <section class="contact" id="contact">
 
-    <h1 class="heading"> <span>contact</span> us </h1>
+    <h1 class="heading">Contact Us </h1>
 
 </section>
 
