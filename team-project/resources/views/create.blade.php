@@ -27,6 +27,7 @@
 </header>
 
     <section class="form-section">
+        <!-- The create book form (fully working)-->
         <form action="/store" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
             <div class="form-group">

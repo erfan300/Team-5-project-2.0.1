@@ -24,6 +24,7 @@
     </nav>
 
     <main>
+        <!-- The profile update form (fully working)-->
         <form method="POST" action="{{ route('update-profile') }}">
             @csrf
             <h2>Profile</h2>
@@ -81,7 +82,7 @@
                         @foreach($userOrders as $order)
                             <tr>
                                 <td>{{ $order->Order_ID }}</td>
-                                <td><!-- Display order status here --></td>
+                                <td><!-- Display order status here (TP2)--></td>
                                 <td>
                                     <form method="POST" action="{{ route('return-order') }}">
                                         @csrf

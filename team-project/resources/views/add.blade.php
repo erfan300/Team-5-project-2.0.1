@@ -24,6 +24,7 @@
 
     <h1 class="addTitle">Add New Customer</h1>
     <div class="container">
+    <!-- The adding customer form (fully working)-->
     <form method="POST" action="{{ route('store-customer') }}">
         @csrf
         <label for="first_name">First Name:</label>

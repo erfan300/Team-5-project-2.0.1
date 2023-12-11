@@ -49,6 +49,7 @@
             <p class="stock-status">
                 {{ $book->productStatus->Stock_Status ?? 'Not Available' }} | {{ $book->Stock_Level ?? 'Not Available' }} Available
             </p>
+            <!-- The book show form (fully working)-->
             <form method="POST" action="{{url('addToBasket', $book->Product_ID)}}">
                 @csrf
                 <div class="quantity-basket">

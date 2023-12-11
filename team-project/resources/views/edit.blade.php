@@ -24,6 +24,7 @@
 </header>
     <section class="form-section">
         <h1>Edit: {{$book->Product_Name}} </h1>
+        <!-- The book edit form (fully working)-->
         <form action="/book/{{$book->Product_ID}}" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
             @method('PUT')

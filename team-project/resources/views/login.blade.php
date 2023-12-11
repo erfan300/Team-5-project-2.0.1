@@ -54,6 +54,7 @@
     <div class="wrapper">
         <div class="form-box login">
             <h2>Login</h2>
+            <!-- Login form (fully working)-->
             <form method="POST" action="/authenticate">
                 @csrf
                 <div class="input-box">
