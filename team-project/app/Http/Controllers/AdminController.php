@@ -59,20 +59,24 @@ public function modifyCustomer($id)
 public function updateCustomer(Request $request, $id)
 {
     $customer = Customer::find($id);
-    $user = $customer->user;
 
     if (!$customer) {
         return redirect('/')->with('error', 'Customer not found');
     }
 
+    $user = $customer->user;
+
+
     $validatedData = $request->validate([
         'first_name' => 'required|min:3',
         'last_name' => 'required|min:3',
-        'username' => ['required', Rule::unique('users', 'Username')],
+        'username' => ['required', Rule::unique('users', 'Username')->ignore($user->User_ID, 'User_ID')],
         'email' => 'required|email',
         'phone_number' => ['sometimes', 'nullable', 'regex:/^(?:(?:\+|00)44|0)7(?:[45789]\d{2}|624)\s?\d{3}\s?\d{3}$/'],
         'address' => ['nullable'],
     ]);
+
+
 
     $customer->First_Name = $validatedData['first_name'];
     $customer->Last_Name = $validatedData['last_name'];
