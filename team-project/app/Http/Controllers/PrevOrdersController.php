@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Orders;
 use Illuminate\Http\Request;
 use App\Models\InventoryLog;
 
 class PrevOrdersController extends Controller
 {
-    public function index()
-{
-    $userId = auth()->user()->User_ID;
-
-    $userOrders = InventoryLog::where('Customer_ID', $userId)->get();
+    public function profile()
+    {
+        $user = auth()->user();
+        $userOrders = Orders::where('Customer_ID', $user->Customer_ID)->get();
+        
+        return view('profile', compact('user', 'userOrders'));
+    }
     
-    return view('profile', compact('userOrders'));
-}
-
-    
-    public function processReturn(Request $request)
+   /* public function processReturn(Request $request)
     {
         // Handle the return process and update the stock level
         $logId = $request->input('log_id');
@@ -25,7 +24,7 @@ class PrevOrdersController extends Controller
     $inventoryLog = InventoryLog::find($logId);
 
         if ($inventoryLog) {
-            //the return process involves increasing the stock level
+            //the return process involves increasing/decreasing the stock level
             $newStockLevel = $inventoryLog->NewStockLevel + $inventoryLog->TransactionQuantity;
             $inventoryLog->NewStockLevel = $newStockLevel;
             $inventoryLog->save();
@@ -35,4 +34,5 @@ class PrevOrdersController extends Controller
         
         return redirect()->route('profile');
     }
+    */
 }
