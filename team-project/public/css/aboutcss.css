@@ -42,7 +42,6 @@ header {
 /* Navigation Styling */
 
 body {
-    margin: 0;
     font-family: 'Arial', sans-serif;
 }
 
@@ -88,13 +87,11 @@ nav a:last-child {
 /* CSS FOR HEADINGS */
 .heading{
 text-align: center;
-color:#fff;
+color: var(--lightgreen);
 font-size:  30px;
 }
 
-.heading span{
-color:var(--lightgreen);
-}
+
 
 /* ABOUT US CSS */
 
@@ -125,22 +122,6 @@ padding:2rem 0;
 text-align: center;
 }
 
-
-
-
-.btn{
-margin-top: 1rem;
-
-padding:.9rem 3rem;
-font-size: 15px;
-color:#fff;
-background: var(--blue);
-cursor: pointer;
-}
-
-.btn:hover{
-letter-spacing: .1rem;
-}
 
 /*Footer section*/
 .footer {
