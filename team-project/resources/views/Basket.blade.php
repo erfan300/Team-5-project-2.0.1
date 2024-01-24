@@ -7,6 +7,7 @@
     <title>Books4U</title>
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="css/basket.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script defer src="js/main.js"></script>
 </head>
 
@@ -16,14 +17,19 @@
     </header>
 
     <!-- Navigation -->
-    <nav>
-        <a href="home">Home</a>
-        <a href="profile">Profile</a>
-        <a href="basket">Basket</a>
-        <a href="login">Log In</a>
-        <a href="about">About</a>
-        <a href="contact">Contact</a>
+   
+
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+
+
     <br><br>
 
     <!-- Shopping Basket -->

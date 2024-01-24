@@ -24,6 +24,7 @@
 
     <h1 class="updateTitle">Update Customer Information</h1>
     <div class="container">
+    <!-- The customer update form (fully working)-->
     <form method="POST" action="{{ route('update-customer', ['id' => $customer->Customer_ID]) }}">
         @csrf
         @method('PUT')

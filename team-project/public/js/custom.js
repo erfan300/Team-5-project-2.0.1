@@ -2,18 +2,16 @@
 function handleAnimationEnd() {
     document.querySelector('.alert-success').remove();
 }
-document.addEventListener('DOMContentLoaded', function() {
-    // Fade-out the log in message 
+document.addEventListener('DOMContentLoaded', function() { 
     setTimeout(function() {
         var alertElement = document.querySelector('.alert-success');
         alertElement.classList.add('fade-out');
 
-        // Event Listener Listens for the end of the fade-out animation and activates handleAnimatedEnd
         alertElement.addEventListener('animationend', handleAnimationEnd);
     }, 2000); 
 });
 
-//Function for Slide Show 
+//Function for Slide Show change
 let slideIndex = 0;
 
         function showSlides() {
@@ -32,7 +30,7 @@ let slideIndex = 0;
             showSlides();
         });
 
-//Function for filter link
+//Function for filter link popdown box
 document.addEventListener("DOMContentLoaded", function () {
     var filterLink = document.querySelector(".filter-link");
     var filterDropdown = document.querySelector(".filter-dropdown");

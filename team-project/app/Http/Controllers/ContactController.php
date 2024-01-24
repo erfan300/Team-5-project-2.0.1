@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact; 
 use Illuminate\Support\Facades\Log;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -30,11 +30,10 @@ class ContactController extends Controller
                         'Email' => $validatedData['Email'],
                         'Subject' => $validatedData['Subject'],
                         'Message' => $validatedData['Message'],
-                        'Status' => 'Unread', // Assuming this is required
-                        // Add other necessary fields here
+                        'Status' => 'Unread', 
                     ];
 
-                    $contact = Contact::create($contactData); // Using create method to insert data
+                    $contact = Contact::create($contactData); // Creates and inserts data into the contact database
                     if ($contact) {
                         return redirect()->back()->with('success', 'Message sent successfully!');
                     } else {
@@ -48,7 +47,6 @@ class ContactController extends Controller
                 return redirect()->back()->with('error', 'Only valid customers can submit the contact form.');
             }
         } else {
-            // Redirect to login if the user is not logged in
             return redirect()->route('login')->with('error', 'Please log in to submit the contact form.');
         }
     }

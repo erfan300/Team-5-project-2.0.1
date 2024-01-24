@@ -26,6 +26,7 @@
     </header>
 
     <main>
+        <!-- Register form-->
         <form method="POST" action="/users">
             <h2>Sign up</h2>
             @if ($errors->any())

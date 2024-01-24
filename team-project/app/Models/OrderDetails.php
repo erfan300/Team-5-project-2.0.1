@@ -9,7 +9,7 @@ class OrderDetails extends Model
 {
     use HasFactory;
 
-    protected $table = 'orderdetails'; // Adjust if your table name is different
+    protected $table = 'orderdetails'; 
     protected $primaryKey = 'OrderDetail_ID';
     public $timestamps = false;
 
@@ -20,9 +20,8 @@ class OrderDetails extends Model
         'Subtotal'
     ];
 
-    // Define relationships if needed (e.g., with the Product model)
     public function product()
     {
-        return $this->belongsTo(Product::class, 'Product_ID', 'Product_ID');
+        return $this->belongsTo(Products::class, 'Product_ID', 'Product_ID');
     }
 }

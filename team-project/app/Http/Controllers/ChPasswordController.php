@@ -9,7 +9,7 @@ class ChPasswordController extends Controller
 {
     public function showChangePasswordForm()
     {
-        return view('password'); // Assuming your view file name is 'password.blade.php'
+        return view('password'); 
     }
 
     public function changePassword(Request $request)
@@ -28,7 +28,7 @@ class ChPasswordController extends Controller
         
         $hashedPassword = Hash::make($request->new_password);
 
-        // Update the hashed password
+        // Updates the hashed password
         $user->Password = $hashedPassword;
         $user->save();
 

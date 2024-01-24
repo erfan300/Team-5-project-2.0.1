@@ -27,25 +27,45 @@ header {
 
 /* Navigation Styling */
 
-nav {
-            background-color: var(--darkgreen);
-            overflow: hidden;
-            text-align: center;
-        }
+ /* Navigation Styling */
+ nav {
+    background-color: var(--lightgreen);
+    overflow: hidden;
+    text-align: center;
+}
 
-        nav a {
-            display: inline-block;
-            color: var(--lightgreen);
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
 
-        nav a:hover {
-            background-color: var(--blue);
-            color: black;
-        }
+nav a:hover {
+    background-color: var(--blue);
+    color: black;
+}
+
+nav a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+  
 
 
 /*Shopping Basket Items*/
