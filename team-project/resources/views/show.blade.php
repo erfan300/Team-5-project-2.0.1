@@ -77,6 +77,26 @@
     </div>
     <div>
         <h1>Review Section</h1>
+    
+      
+
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+
+<label for="Customer review">Customer Review:</label>
+
+<textarea id="Customer review" name="Customer Review" rows="4" cols="50">
+
+</textarea>
+
+
+<button class="Submit Review" onclick="return confirm">Delete </button>
+</form>
+
+
     </div>
 </body>
 </html>
