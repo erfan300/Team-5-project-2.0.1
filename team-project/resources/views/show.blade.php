@@ -42,7 +42,7 @@
             <h3>{{$book['Author_Name']}}</h3>
             <div class="book-description">
                <h3> <p class="book-description">{{$book['Description']}}</p><h3>
-</div>
+            </div>
             <div class="book-price">
                 <h3><p class="book-price">{{$book['Price']}}</p><h3>
             </div>
@@ -72,8 +72,11 @@
                         @method('DELETE')
                         <button class="delete-button" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
-                @endif
+            @endif
         </div>
+    </div>
+    <div>
+        <h1>Review Section</h1>
     </div>
 </body>
 </html>
