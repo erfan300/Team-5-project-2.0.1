@@ -42,8 +42,22 @@ class ProductsController extends Controller
         if (!$book) {
             return abort(404); 
         }
+        $genre = $book->Book_Genre;
+        $author = $book->Author_Name;
+
+        // filtering recommended books based on what the customer or admin chose to view
+        $recommendedBooks = Products::where(function($query) use ($genre, $author) {
+            $query->where('Author_Name', $author)
+                  ->orWhere('Book_Genre', $genre);
+        })
+        ->where('Product_ID', '!=', $book->Product_ID)
+    ->take(5)
+    ->get();
+    
+
         return view('show', [
-            'book' => $book
+            'book' => $book,
+            'recommendedBooks' => $recommendedBooks,
         ]);
     }
 

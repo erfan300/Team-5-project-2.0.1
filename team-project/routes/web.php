@@ -142,3 +142,8 @@ Route::post('/change-password', [ChPasswordController::class, 'changePassword'])
 
 Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 
+// View forum page
+Route::get('/forum', function () {
+    return view('forum');
+});
+

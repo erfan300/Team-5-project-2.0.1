@@ -75,7 +75,33 @@
             @endif
         </div>
     </div>
-    <div>
+    <!-- Recommended Books -->
+    <h3 class="recommended-header">You may also be interested in..</h3>
+    <section class="recommended-book-categories">
+        <div class="recommended-book-category">
+            <div class="recommended-book-genre-container">
+                @if(count($recommendedBooks) == 0)
+                    <p>No Recommended Books found</p>
+                @endif
+                @foreach($recommendedBooks as $book)
+                <div class="recommended-book-container"><a href="/book/{{$book['Product_ID']}}">
+                    <img class="recommended-book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
+                    <div>
+                        <h3 class="recommended-book-title">
+                            <a href="/book/{{$book['Product_ID']}}"> {{$book->Product_Name}} </a>
+                        </h3>
+                        <div class="recommended-book-author">
+                            <a href="/search/?author={{ urlencode($book->Author_Name) }}"> {{$book->Author_Name}} </a>
+                        </div>
+                        <div class="recommended-book-price">{{$book->Price}}</div>
+                        <div class="recommended-book-type">{{$book->Book_Type}}</div>
+                    </div>
+                </div></a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <div class="review-section">
         <h1>Review Section</h1>
     </div>
 </body>
