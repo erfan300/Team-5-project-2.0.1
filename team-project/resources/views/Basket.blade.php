@@ -133,7 +133,30 @@
 
 
 
-  
+            <section id="Wishlist" class="container mt-6">
+    <header>
+        <h2>WishList</h2>
+    <header>
+
+    <div>
+<table class="table"
+  <tr>
+                <th></th>
+                <th><h3>Favourities<h3></th>
+        
+                <th></th>
+
+ @if ($basketItem->product->productImages->first())
+                        <img src="{{ asset('storage/' . $basketItem->product->productImages->first()->Image_URL) }}" alt="Product Image" width="150" height="200">
+                    @else
+                    <img src="{{ asset('/images/no-image.png') }}" alt="No Image" width="50" height="50">
+                    @endif
+                </th>
+                <th>{{ $basketItem->product->Product_Name }}</th>
+                <th>
+
+<th><a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromBasket', $basketItem->Basket_ID)}}">Remove</th>
+            </tr>
 
 
 
