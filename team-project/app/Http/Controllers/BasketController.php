@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\OrderDetails;
 use App\Models\InventoryLog;
 use App\Models\Orders;
+use App\Models\DiscountCode;
+
 
 class BasketController extends Controller{
 
@@ -183,7 +185,28 @@ class BasketController extends Controller{
     
         return redirect()->route('home')->with('message', 'Order placed successfully!');
     }
-    
+    public function applyDiscount(Request $request)
+    {
+        $discountCode = $request->input('discount_code');
+
+        $discount = DiscountCode::where('code', $discountCode)->first();
+
+        if (!$discount || !$discount->active || ($discount->expiry_date && now() > $discount->expiry_date)) {
+            return redirect()->back()->with('error', 'Invalid or expired discount code.');
+        }
+
+        $basketItems = Basket::where('Customer_ID', auth()->user()->customer->Customer_ID)->get();
+
+        foreach ($basketItems as $basketItem) {
+            $originalPrice = $basketItem->Price;
+            $discountedPrice = $originalPrice - ($originalPrice * $discount->percentage / 100);
+            $basketItem->Price = $discountedPrice;
+            $basketItem->DiscountCode_ID = $discount->DiscountCode_ID;
+            $basketItem->save();
+        }
+
+        return redirect()->back()->with('success', 'Discount applied successfully.');
+    }
 }
 
 

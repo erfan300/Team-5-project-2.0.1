@@ -10,6 +10,7 @@ use App\Http\Controllers\BasketController;
 use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PrevOrdersController;
+use App\Http\Controllers\DiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,9 @@ Route::middleware('auth')->group(function () {
 
     //route to update user profile
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
+    Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
+    Route::post('/create-discount', [DiscountController::class, 'create'])->name('create-discount');
+    Route::post('/apply-discount', [BasketController::class, 'applyDiscount'])->name('apply-discount');
 
 
 });

@@ -38,7 +38,12 @@
     <header>
         <h2>Shopping Basket</h2>
     <header>
-
+    <form method="POST" action="{{ route('apply-discount') }}">
+            @csrf
+            <label for="discount_code">Discount Code:</label>
+            <input type="text" name="discount_code">
+            <button type="submit">Apply Discount</button>
+        </form>
     <div>
         <table class="table">
             <tr>
@@ -72,6 +77,16 @@
                         </select>
                     </form>
                 </th>
+                <th>
+                     <?php
+                        $discountedPrice = $basketItem->Price;
+                            if (isset($basketItem->discountCode)) {
+                                $discountedPrice = $basketItem->Price - ($basketItem->Price * $basketItem->discountCode->Percentage / 100);
+                            }
+                        $totalPrice += $discountedPrice;
+                        ?>
+                            £{{ number_format($discountedPrice, 2) }}
+                        </th>
                 <th>£{{ $basketItem->Price}}</th>
                 <th><a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromBasket', $basketItem->Basket_ID)}}">Remove</th>
             </tr>
