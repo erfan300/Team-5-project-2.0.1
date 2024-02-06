@@ -2,15 +2,17 @@
 
 use App\Models\Products;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SearchController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\BasketController;
-use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PrevOrdersController;
+use App\Http\Controllers\BasketController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\ChPasswordController;
+use App\Http\Controllers\PrevOrdersController;
+use App\Models\Wishlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,6 +136,14 @@ Route::post('/updateQuantity/{id}', [BasketController::class, 'updateQuantity'])
 // Remove book from basket
 Route::get('/removeFromBasket/{id}', [BasketController::class,'removeFromBasket']);
 
+// Show Wishlist page
+Route::get('/wishlist', [WishlistController::class,'showWishlist'])->name('wishlist');
+
+// Add book to Wishlist
+Route::post('/addToWishlist/{id}', [WishlistController::class, 'addToWishlist'])->name('addToWishlist');
+
+// Remove book from wishlist
+Route::get('/removeFromWishlist/{id}', [WishlistController::class,'removeFromWishlist']);
 
 // Show change password form
 Route::get('/change-password', [ChPasswordController::class, 'showChangePasswordForm'])->name('change-password-form');

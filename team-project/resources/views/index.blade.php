@@ -32,6 +32,7 @@
     <a href="home"><i class="fas fa-home"></i> Home</a>
     <a href="profile"><i class="fas fa-user"></i> Profile</a>
     <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
     
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
         <a href="create"><i class="fas fa-plus"></i> Create</a>

@@ -18,6 +18,7 @@
         <a href="{{ url('home') }}"><i class="fas fa-home"></i> Home</a>
         <a href="{{ url('profile') }}"><i class="fas fa-user"></i> Profile</a>
         <a href="{{ url('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="{{ url('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
         <a href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
         <a href="{{ url('register') }}"><i class="fas fa-user-plus"></i> Register</a>
         <a href="{{ url('about') }}"><i class="fas fa-info-circle"></i> About</a>
@@ -65,6 +66,11 @@
                     <button class="basket"button type="submit">Add to Basket</button>
                 </div>
             </form>
+            <form method="POST" action="{{url('addToWishlist', $book->Product_ID)}}">
+                @csrf
+                <button class="wishlist" type="submit">Add to Wishlist</button>
+            </form>
+            
             @if(Auth::check() && Auth::user()->User_Type === 'Admin')
                     <h3><a href="/book/{{$book->Product_ID}}/edit">Edit</a><h3>
                     <form method="POST" action="/book/{{$book->Product_ID}}">
