@@ -87,6 +87,17 @@
         </div>
        
         </label>
+
+        <label for="shipping_method">Shipping Method:</label><br>
+        <select id="shipping_method" name="shipping_method" required>
+            <option value="">Select Shipping Method</option>
+            <option value="standard">Standard Shipping</option>
+            <option value="express">Express Shipping</option>
+            <option value="next_day">Next Day Delivery</option>
+        </select><br><br>
+
+        <input type="submit" value="Checkout">
+    </form>
         <input type="submit" value="Purchase" class="btn">
       </form>
     </div>
@@ -195,6 +206,8 @@
         position: relative;
         margin-top: 20px; 
     }
+
+
 </style>
 
 
