@@ -185,6 +185,7 @@ class BasketController extends Controller{
     
         return redirect()->route('home')->with('message', 'Order placed successfully!');
     }
+    
 }
 
 

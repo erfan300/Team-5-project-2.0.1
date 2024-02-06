@@ -93,8 +93,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
     Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
     Route::post('/create-discount', [DiscountController::class, 'create'])->name('create-discount');
-    Route::post('/apply-discount', [BasketController::class, 'applyDiscount'])->name('apply-discount');
-
 
 });
 

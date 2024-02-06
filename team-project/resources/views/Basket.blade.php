@@ -38,12 +38,6 @@
     <header>
         <h2>Shopping Basket</h2>
     <header>
-    <form method="POST" action="{{ route('apply-discount') }}">
-            @csrf
-            <label for="discount_code">Discount Code:</label>
-            <input type="text" name="discount_code">
-            <button type="submit">Apply Discount</button>
-        </form>
     <div>
         <table class="table">
             <tr>
