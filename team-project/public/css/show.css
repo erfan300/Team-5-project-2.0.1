@@ -132,6 +132,25 @@ form{
     background: var(--blue);
 }
 
+.wishlist {
+    left: 960px;
+    top: 700px;
+    background: var(--darkgreen);
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s linear;
+}
+
+.wishlist:hover {
+    background: var(--blue);
+}
+
+
 /* Recommendation section */
 
 .recommended-header{
