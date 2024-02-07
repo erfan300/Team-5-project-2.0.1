@@ -16,9 +16,9 @@ class PrevOrdersController extends Controller
         return view('profile', compact('user', 'userOrders'));
     }
     
-   /* public function processReturn(Request $request)
+   public function processReturn(Request $request)
     {
-        // Handle the return process and update the stock level
+        // Handles the return process and update the stock level
         $logId = $request->input('log_id');
 
     $inventoryLog = InventoryLog::find($logId);
@@ -34,5 +34,5 @@ class PrevOrdersController extends Controller
         
         return redirect()->route('profile');
     }
-    */
+    
 }
