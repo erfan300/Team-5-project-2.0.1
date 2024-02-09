@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\Products;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ContactController;
@@ -12,7 +14,6 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\PrevOrdersController;
-use App\Models\Wishlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,6 +120,10 @@ Route::middleware('admin')->group(function () {
     Route::put('/customer/{id}/update', [AdminController::class, 'updateCustomer'])->name('update-customer');
     Route::get('/create-customer', [AdminController::class, 'createCustomer'])->name('create-customer');
     Route::post('/store-customer', [AdminController::class, 'storeCustomer'])->name('store-customer');
+
+    //show order details page
+    Route::get('/order-report', [OrderController::class, 'orderReports'])->name('order-report');
+
 });
 
 Route::get('/about', function () {

@@ -78,7 +78,9 @@ class User extends Authenticatable
         return $this->{$this->getAuthIdentifierName()};
     }
 
-    
+    public function orders() {
+        return $this->hasMany(Orders::class, 'User_ID');
+    }
 
 
 }

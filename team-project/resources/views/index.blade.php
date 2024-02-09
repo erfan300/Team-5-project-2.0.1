@@ -38,6 +38,8 @@
         <a href="create"><i class="fas fa-plus"></i> Create</a>
         <a href="search"><i class="fas fa-search"></i> Search</a>
         <a href="list"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+
     @endif
     
     <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>

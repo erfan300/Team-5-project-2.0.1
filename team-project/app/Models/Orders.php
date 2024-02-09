@@ -24,6 +24,11 @@ class Orders extends Model
         return $this->belongsTo(Customer::class, 'Customer_ID');
     }
 
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'Admin_ID', 'Admin_ID');
+    }
+
     public function logs() {
         return $this->hasMany(InventoryLog::class, 'Order_ID');
     }

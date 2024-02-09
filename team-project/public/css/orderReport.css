@@ -1,0 +1,82 @@
+:root {
+    --blue: #6c96b6;
+    --darkgreen: #6a9b86; 
+    --lightgreen: #c8e6d1; 
+    --border: .1rem solid #6a9b86;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+}
+
+/* Header Styling */
+header {
+    background-color: var(--darkgreen);
+    color: var(--lightgreen);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styling */
+nav {
+    background-color: var(--darkgreen);
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--blue); 
+    color: black;
+    border-radius: 5px;
+}
+
+nav a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Table Styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}

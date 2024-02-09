@@ -25,7 +25,6 @@ class Customer extends Model
         return $this->belongsTo(User::class, 'User_ID', 'User_ID');
     }
 
-
     public function contactUs() {
         return $this->hasMany(Contact::class, 'Customer_ID', 'Customer_ID');
     }
