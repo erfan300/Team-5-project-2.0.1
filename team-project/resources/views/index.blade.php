@@ -19,13 +19,15 @@
     @endif
     <header>
         <h1>Books4U Bookstore</h1>
-        @auth
-        <span>Welcome {{ auth()->user()->Username }}</span>
-        <form class="inLine" method="POST" action="/logout">
-            @csrf
-            <button type="submit">Logout</button>
-        </form>
-        @endauth
+        <div class="log-out-box">
+            @auth
+            <span>Welcome {{ auth()->user()->Username }}</span>
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
+            @endauth
+        </div>    
     </header>
 
     <nav>

@@ -7,6 +7,37 @@
 </head>
 <body>
     <h1>Order Reports</h1>
+    <div class="log-out-box">
+        @auth
+        <div>
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+        <form class="inLine" method="POST" action="/logout">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+        @endauth
+    </div>
+    
+    <nav>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+        
+        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+            <a href="create"><i class="fas fa-plus"></i> Create</a>
+            <a href="search"><i class="fas fa-search"></i> Search</a>
+            <a href="list"><i class="fas fa-list"></i> List</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+    
+        @endif
+        
+        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
     <table>
         <thead>
             <tr>

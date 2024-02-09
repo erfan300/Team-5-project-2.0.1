@@ -22,6 +22,16 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.log-out-box {
+    text-align: center;
+}
+
+.log-out-box form {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px; /* Adjust the margin bottom as needed */
+}
+
 /* Navigation Styling */
 nav {
     background-color: var(--darkgreen);
