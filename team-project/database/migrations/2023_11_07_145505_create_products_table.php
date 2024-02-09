@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('Book_Type', 255);
             
 
-            $table->foreign('Category_ID')->references('Category_ID')->on('productcategories');
+            $table->foreign('Category_ID')->references('id')->on('productcategories');
         });
     }
 
