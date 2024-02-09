@@ -34,5 +34,10 @@ class Basket extends Model
     {
         return $this->belongsTo(Products::class, 'Product_ID');
     }
+
+    public function discountCode()
+{
+    return $this->belongsTo(DiscountCode::class, 'DiscountCode_ID');
+}
 }
 
