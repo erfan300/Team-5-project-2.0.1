@@ -8,10 +8,17 @@
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="css/basket.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <script defer src="js/main.js"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 
 <body>
+    <!-- Display login flash Message -->
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+    <header>
     <header>
         <h1>Books4U Bookstore</h1>
     </header>
@@ -78,7 +85,15 @@
                         </select>
                     </form>
                 </th>
-                <th>£{{ $basketItem->Price}}</th>
+                <th>
+                    @if ($basketItem->DiscountCode_ID)
+                        <span style="text-decoration: line-through;">
+                            £{{ number_format($basketItem->product->Price * $basketItem->Quantity, 2) }}
+                        </span><br>
+                    @endif
+
+                    <span style="color: red;">£{{ $basketItem->Price}}</span>
+                </th>
                 <th><a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromBasket', $basketItem->Basket_ID)}}">Remove</th>
             </tr>
             <?php $totalPrice = $totalPrice + $basketItem->Price ?>
@@ -94,7 +109,7 @@
                         @if(count($basket) == 0)
                             <td><h3>£0</h3></td>
                         @else
-                            <td>£{{ $totalPrice }}</td>
+                            <td><span style="color: red;">£{{ $totalPrice }}</span></td>
                         @endif
                         
                     </tr>

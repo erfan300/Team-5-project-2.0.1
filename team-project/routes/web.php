@@ -99,6 +99,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
+// Apply discount method for form
+Route::post('/apply-discount', [BasketController::class, 'applyDiscount'])->name('apply-discount');
+
 // Middleware for admin access only
 Route::middleware('admin')->group(function () {
     // Shows edit book form

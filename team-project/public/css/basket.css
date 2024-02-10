@@ -7,6 +7,32 @@
     --border:.1rem solid #6a9b86;
 }
 
+.alert-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success.fade-out {
+    animation: fadeOut 2s ease-out;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;

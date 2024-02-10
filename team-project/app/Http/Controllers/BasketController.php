@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Basket;
-use App\Models\Products;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\OrderDetails;
-use App\Models\InventoryLog;
 use App\Models\Orders;
+use App\Models\Products;
 use App\Models\DiscountCode;
+use App\Models\InventoryLog;
+use App\Models\OrderDetails;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 
 class BasketController extends Controller{
@@ -99,13 +100,23 @@ class BasketController extends Controller{
             'quantity' => 'required|integer|min:1',
         ]);
     
+        $newQuantity = $request->quantity;
         $basket->update([
-            'Quantity' => $request->quantity,
-            'Price' => $basket->product->Price * $request->quantity,
+            'Quantity' => $newQuantity,
+            'Price' => $basket->product->Price * $newQuantity,
         ]);
+    
+        if ($basket->DiscountCode_ID !== null) {
+            $discountCode = DiscountCode::find($basket->DiscountCode_ID);
+            $originalPrice = $basket->Price;
+            $discountedPrice = $originalPrice - ($originalPrice * ($discountCode->Percentage / 100));
+            $basket->Price = $discountedPrice;
+            $basket->save();
+        }
     
         return redirect()->back();
     }
+    
     
 
     public function removeFromBasket($id){
@@ -185,28 +196,49 @@ class BasketController extends Controller{
     
         return redirect()->route('home')->with('message', 'Order placed successfully!');
     }
-    public function applyDiscount(Request $request)
-    {
+
+
+    public function applyDiscount(Request $request){
         $discountCode = $request->input('discount_code');
-
+    
         $discount = DiscountCode::where('code', $discountCode)->first();
-
-        if (!$discount || !$discount->active || ($discount->expiry_date && now() > $discount->expiry_date)) {
-            return redirect()->back()->with('error', 'Invalid or expired discount code.');
+    
+        if (!$discount) {
+            return redirect()->back()->with('message', 'Invalid discount code.');
+        }
+    
+        if ($discount->Expiry_Date && now() > $discount->Expiry_Date) {
+            return redirect()->back()->with('message', 'Expired discount code.');
         }
 
-        $basketItems = Basket::where('Customer_ID', auth()->user()->customer->Customer_ID)->get();
 
+        $user = Auth::user();
+        if (!$user) {
+            return redirect('login')->with('message', 'Must be logged in!');
+        }
+        // Check the user type
+        if ($user->User_Type === 'Customer') {
+            $customerID = $user->customer->Customer_ID;
+            $basketItems = Basket::where('Customer_ID', $customerID)->get();
+        } elseif ($user->User_Type === 'Admin') {
+            $adminID = $user->admin->Admin_ID;
+            $basketItems = Basket::where('Admin_ID', $adminID)->get();
+        } 
+    
         foreach ($basketItems as $basketItem) {
-            $originalPrice = $basketItem->Price;
-            $discountedPrice = $originalPrice - ($originalPrice * $discount->percentage / 100);
-            $basketItem->Price = $discountedPrice;
-            $basketItem->DiscountCode_ID = $discount->DiscountCode_ID;
-            $basketItem->save();
+            // The if statement checks if the basket item already has a discount code applied
+            if (!$basketItem->DiscountCode_ID) {
+                $originalPrice = $basketItem->Price;
+                $discountedPrice = $originalPrice - ($originalPrice * ($discount->Percentage / 100));
+                $basketItem->Price = $discountedPrice;
+                $basketItem->DiscountCode_ID = $discount->DiscountCode_ID;
+                $basketItem->save();
+            }
         }
-
-        return redirect()->back()->with('success', 'Discount applied successfully.');
+    
+        return redirect()->back()->with('message', 'Discount applied successfully.');
     }
+    
 }
 
 
