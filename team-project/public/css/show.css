@@ -218,3 +218,123 @@ form{
 .review-section {
     color: white;
 }
+
+/* Add this to your existing CSS file or create a new one for comments.css */
+
+.comment-section {
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment p {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment button:hover {
+    background-color: #45a049;
+}
+
+.show-replies-btn,
+.hide-replies-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.show-replies-btn:hover,
+.hide-replies-btn:hover {
+    background-color: #2980b9;
+}
+
+.replies-content {
+    margin-left: 20px;
+}
+
+/* Optional: Smaller font size for replied comments */
+.replies-content p {
+    font-size: 0.9em;
+}
+
+/* Add this to your existing CSS file or create a new one for comments.css */
+
+.comment .reply-section {
+    margin-left: 20px; /* Indent replies to create a visual hierarchy */
+}
+
+.comment .reply-section .reply {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment .reply-section form {
+    margin-top: 10px;
+    margin-left: 20px; /* Indent reply form to align with replies */
+}
+
+.comment .reply-section form label,
+.comment .reply-section form textarea,
+.comment .reply-section form button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.comment .reply-section form textarea {
+    width: calc(100% - 20px); /* Adjust width to account for left margin */
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment .reply-section form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment .reply-section form button:hover {
+    background-color: #45a049;
+}

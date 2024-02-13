@@ -14,6 +14,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\PrevOrdersController;
+use App\Http\Controllers\CommentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -167,3 +169,8 @@ Route::get('/forum', function () {
     return view('forum');
 });
 
+Route::post('comments/{product}', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
+Route::get('comments/{product}', [CommentController::class, 'show'])->middleware('auth')->name('comments.show');
+Route::post('/comments/reply/{product_id}/{comment_id}', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');
+Route::delete('/comments/{product_id}/{comment_id}', [CommentController::class, 'destroy'])
+    ->name('comments.destroy');

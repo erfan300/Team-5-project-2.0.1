@@ -78,8 +78,84 @@
                         @method('DELETE')
                         <button class="delete-button" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
                     </form>
-            @endif
+            @endif  
         </div>
+        <div class="comment-section">
+    <h2>Comments</h2>
+    
+    @foreach($comments as $comment)
+        <div class="comment">
+        <p>
+                        @if($comment->user)
+                            {{ $comment->user->Username }} said: {{ $comment->comment_text }}
+                            @if(Auth::check() && (Auth::user()->User_Type === 'Admin' || Auth::user()->User_ID === $comment->user->User_ID))
+                                <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $comment->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="delete-comment-btn" onclick="return confirm('Are you sure you want to delete this comment and its replies?')">Delete</button>
+                                </form>
+                            @elseif(Auth::check() && Auth::user()->User_ID === $comment->user->User_ID)
+                                <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $comment->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="delete-comment-btn" onclick="return confirm('Are you sure you want to delete this comment and its replies?')">Delete</button>
+                                </form>
+                            @endif
+                        @else
+                            Anonymous User said: {{ $comment->comment_text }}
+                        @endif
+                    </p>
+            <!-- Show Replies button -->
+            @if(count($comment->replies) > 0)
+                <button class="show-replies-btn" data-comment-id="{{ $comment->id }}">Show Replies</button>
+                <div class="replies-content" id="replies-{{ $comment->id }}" style="display: none;">
+                    @foreach($comment->replies as $reply)
+                    <p>
+                            @if($reply->user)
+                                {{ $reply->user->Username }} replied: {{ $reply->comment_text }}
+                                @if(Auth::check() && Auth::user()->User_ID === $reply->user->User_ID)
+                                    <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $reply->id]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="delete-reply-btn" onclick="return confirm('Are you sure you want to delete this reply?')">Delete Reply</button>
+                                    </form>
+                                @endif
+                            @else
+                                Anonymous User replied: {{ $reply->comment_text }}
+                            @endif
+                        </p>
+                    @endforeach
+                    <!-- Hide Replies button -->
+                    <button class="hide-replies-btn" data-comment-id="{{ $comment->id }}" style="display: none;">Hide Replies</button>
+                </div>
+            @endif
+
+            <!-- Reply form for each comment -->
+            @auth
+                <form method="POST" action="{{ route('comments.reply', [$book->Product_ID, $comment->id]) }}">
+                    @csrf
+                    <label for="reply_text">Reply:</label>
+                    <textarea name="reply_text" id="reply_text" rows="2" cols="30"></textarea>
+                    <button type="submit">Reply</button>
+                </form>
+            @else
+                <p>Please log in to leave a reply.</p>
+            @endauth
+        </div>
+    @endforeach
+
+    <!-- Add comment form -->
+    @auth
+        <form method="POST" action="{{ route('comments.store', $book->Product_ID) }}">
+            @csrf
+            <label for="comment_text">Add a comment:</label>
+            <textarea name="comment_text" id="comment_text" rows="4" cols="50"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    @else
+        <p>Please log in to leave a comment.</p>
+    @endauth
+</div>
     </div>
     <!-- Recommended Books -->
     <h3 class="recommended-header">You may also be interested in..</h3>
@@ -130,6 +206,56 @@
 
 
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all buttons with class 'show-replies-btn'
+        var showButtons = document.querySelectorAll('.show-replies-btn');
+
+        // Loop through each button
+        showButtons.forEach(function(button) {
+            // Add click event listener to each button
+            button.addEventListener('click', function() {
+                // Get the comment id from the data attribute
+                var commentId = button.getAttribute('data-comment-id');
+                
+                // Get the corresponding replies content and hide/show buttons
+                var repliesContent = document.getElementById('replies-' + commentId);
+                var hideButton = document.querySelector('.hide-replies-btn[data-comment-id="' + commentId + '"]');
+
+                // Show the replies content and hide the show button
+                repliesContent.style.display = 'block';
+                button.style.display = 'none';
+
+                // Show the hide button
+                hideButton.style.display = 'inline-block';
+            });
+        });
+
+        // Get all buttons with class 'hide-replies-btn'
+        var hideButtons = document.querySelectorAll('.hide-replies-btn');
+
+        // Loop through each button
+        hideButtons.forEach(function(button) {
+            // Add click event listener to each button
+            button.addEventListener('click', function() {
+                // Get the comment id from the data attribute
+                var commentId = button.getAttribute('data-comment-id');
+
+                // Get the corresponding replies content and show/hide buttons
+                var repliesContent = document.getElementById('replies-' + commentId);
+                var showButton = document.querySelector('.show-replies-btn[data-comment-id="' + commentId + '"]');
+
+                // Hide the replies content and hide the hide button
+                repliesContent.style.display = 'none';
+                button.style.display = 'none';
+
+                // Show the show button
+                showButton.style.display = 'inline-block';
+            });
+        });
+    });
+</script>
 </body>
 </html>
 

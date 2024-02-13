@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\ProductImages;
 use App\Models\ProductStatus;
 use Illuminate\Support\Facades\Log;
+use App\Models\Comment;
+
 
 class ProductsController extends Controller
 {
@@ -45,6 +47,9 @@ class ProductsController extends Controller
         $genre = $book->Book_Genre;
         $author = $book->Author_Name;
 
+        $comments = Comment::where('product_id', $book->Product_ID)->whereNull('parent_id')->with('replies.user')->get();
+
+
         // filtering recommended books based on what the customer or admin chose to view
         $recommendedBooks = Products::where(function($query) use ($genre, $author) {
             $query->where('Author_Name', $author)
@@ -58,6 +63,7 @@ class ProductsController extends Controller
         return view('show', [
             'book' => $book,
             'recommendedBooks' => $recommendedBooks,
+            'comments' => $comments,
         ]);
     }
 
