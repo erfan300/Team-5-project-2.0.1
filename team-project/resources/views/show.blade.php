@@ -157,6 +157,10 @@
     @endauth
 </div>
     </div>
+    <br>
+    <br>
+    <br>
+    
     <!-- Recommended Books -->
     <h3 class="recommended-header">You may also be interested in..</h3>
     <section class="recommended-book-categories">
