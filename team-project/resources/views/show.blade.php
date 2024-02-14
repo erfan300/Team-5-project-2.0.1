@@ -259,6 +259,7 @@
 </body>
 <br>
 <br>
+<section>
 <div class = "rating-css">
     <div>star rating system </div>
     <div class="star-icon">
@@ -275,6 +276,7 @@
 
     </div>
      <div/>
+     </section>
 
 </body>
 </html>
