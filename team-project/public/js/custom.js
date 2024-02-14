@@ -67,54 +67,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
- document.addEventListener("DOMContentLoaded", function() {
-        // Get all buttons with class 'show-replies-btn'
-        var showButtons = document.querySelectorAll('.show-replies-btn');
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all buttons with class 'show-replies-btn'
+    var showButtons = document.querySelectorAll('.show-replies-btn');
 
-        // Loop through each button
-        showButtons.forEach(function(button) {
-            // Add click event listener to each button
-            button.addEventListener('click', function() {
-                // Get the comment id from the data attribute
-                var commentId = button.getAttribute('data-comment-id');
-                
-                // Get the corresponding replies content and hide/show buttons
-                var repliesContent = document.getElementById('replies-' + commentId);
-                var hideButton = document.querySelector('.hide-replies-btn[data-comment-id="' + commentId + '"]');
+    // Loop through each button
+    showButtons.forEach(function (button) {
+        // Add click event listener to each button
+        button.addEventListener('click', function () {
+            // Get the comment id from the data attribute
+            var commentId = button.getAttribute('data-comment-id');
 
-                // Show the replies content and hide the show button
-                repliesContent.style.display = 'block';
-                button.style.display = 'none';
+            // Get the corresponding replies content and hide/show buttons
+            var repliesContent = document.getElementById('replies-' + commentId);
+            var hideButton = document.querySelector('.hide-replies-btn[data-comment-id="' + commentId + '"]');
 
-                // Show the hide button
-                hideButton.style.display = 'inline-block';
-            });
-        });
+            // Show the replies content and hide the show button
+            repliesContent.style.display = 'block';
+            button.style.display = 'none';
 
-        // Get all buttons with class 'hide-replies-btn'
-        var hideButtons = document.querySelectorAll('.hide-replies-btn');
-
-        // Loop through each button
-        hideButtons.forEach(function(button) {
-            // Add click event listener to each button
-            button.addEventListener('click', function() {
-                // Get the comment id from the data attribute
-                var commentId = button.getAttribute('data-comment-id');
-
-                // Get the corresponding replies content and show/hide buttons
-                var repliesContent = document.getElementById('replies-' + commentId);
-                var showButton = document.querySelector('.show-replies-btn[data-comment-id="' + commentId + '"]');
-
-                // Hide the replies content and hide the hide button
-                repliesContent.style.display = 'none';
-                button.style.display = 'none';
-
-                // Show the show button
-                showButton.style.display = 'inline-block';
-            });
+            // Show the hide button
+            hideButton.style.display = 'inline-block';
         });
     });
 
+    // Get all buttons with class 'hide-replies-btn'
+    var hideButtons = document.querySelectorAll('.hide-replies-btn');
+
+    // Loop through each button
+    hideButtons.forEach(function (button) {
+        // Add click event listener to each button
+        button.addEventListener('click', function () {
+            // Get the comment id from the data attribute
+            var commentId = button.getAttribute('data-comment-id');
+
+            // Get the corresponding replies content and show/hide buttons
+            var repliesContent = document.getElementById('replies-' + commentId);
+            var showButton = document.querySelector('.show-replies-btn[data-comment-id="' + commentId + '"]');
+
+            // Hide the replies content and hide the hide button
+            repliesContent.style.display = 'none';
+            button.style.display = 'none';
+
+            // Show the show button
+            showButton.style.display = 'inline-block';
+        });
+    });
+});
 
 
 

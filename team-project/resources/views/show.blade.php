@@ -82,69 +82,7 @@
         </div>
         <div class="comment-section">
     <h2>Comments</h2>
-    
-    @foreach($comments as $comment)
-        <div class="comment">
-        <p>
-                        @if($comment->user)
-                            {{ $comment->user->Username }} said: {{ $comment->comment_text }}
-                            @if(Auth::check() && (Auth::user()->User_Type === 'Admin' || Auth::user()->User_ID === $comment->user->User_ID))
-                                <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $comment->id]) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="delete-comment-btn" onclick="return confirm('Are you sure you want to delete this comment and its replies?')">Delete</button>
-                                </form>
-                            @elseif(Auth::check() && Auth::user()->User_ID === $comment->user->User_ID)
-                                <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $comment->id]) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="delete-comment-btn" onclick="return confirm('Are you sure you want to delete this comment and its replies?')">Delete</button>
-                                </form>
-                            @endif
-                        @else
-                            Anonymous User said: {{ $comment->comment_text }}
-                        @endif
-                    </p>
-            <!-- Show Replies button -->
-            @if(count($comment->replies) > 0)
-                <button class="show-replies-btn" data-comment-id="{{ $comment->id }}">Show Replies</button>
-                <div class="replies-content" id="replies-{{ $comment->id }}" style="display: none;">
-                    @foreach($comment->replies as $reply)
-                    <p>
-                            @if($reply->user)
-                                {{ $reply->user->Username }} replied: {{ $reply->comment_text }}
-                                @if(Auth::check() && Auth::user()->User_ID === $reply->user->User_ID)
-                                    <form method="POST" action="{{ route('comments.destroy', [$book->Product_ID, $reply->id]) }}">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="delete-reply-btn" onclick="return confirm('Are you sure you want to delete this reply?')">Delete Reply</button>
-                                    </form>
-                                @endif
-                            @else
-                                Anonymous User replied: {{ $reply->comment_text }}
-                            @endif
-                        </p>
-                    @endforeach
-                    <!-- Hide Replies button -->
-                    <button class="hide-replies-btn" data-comment-id="{{ $comment->id }}" style="display: none;">Hide Replies</button>
-                </div>
-            @endif
 
-            <!-- Reply form for each comment -->
-            @auth
-                <form method="POST" action="{{ route('comments.reply', [$book->Product_ID, $comment->id]) }}">
-                    @csrf
-                    <label for="reply_text">Reply:</label>
-                    <textarea name="reply_text" id="reply_text" rows="2" cols="30"></textarea>
-                    <button type="submit">Reply</button>
-                </form>
-            @else
-                <p>Please log in to leave a reply.</p>
-            @endauth
-        </div>
-    @endforeach
-
-    <!-- Add comment form -->
     @auth
         <form method="POST" action="{{ route('comments.store', $book->Product_ID) }}">
             @csrf
@@ -155,12 +93,13 @@
     @else
         <p>Please log in to leave a comment.</p>
     @endauth
+
+    @foreach($comments as $comment)
+        @include('partials.comment', ['comment' => $comment, 'bookId' => $book->Product_ID])
+    @endforeach
 </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    
+
+
     <!-- Recommended Books -->
     <h3 class="recommended-header">You may also be interested in..</h3>
     <section class="recommended-book-categories">
@@ -212,29 +151,5 @@
     </div>
 
 </body>
-<br>
-<br>
-<section>
-    <div>
-<div class = "rating-css">
-    <div>star rating system </div>
-    <div class="star-icon">
-        <input type="ratio" name ="rating1" id="rating1 ">
-        <label for ="rating1" class="fa fa-star"></label>
-        <input type="ratio" name ="rating2" id="rating2 ">
-        <label for ="rating2" class="fa fa-star"></label>
-        <input type="ratio" name ="rating3" id="rating3 ">
-        <label for ="rating3" class="fa fa-star"></label>
-        <input type="ratio" name ="rating4" id="rating4 ">
-        <label for ="rating4" class="fa fa-star"></label>
-        <input type="ratio" name ="rating5" id="rating5 ">
-        <label for ="rating5" class="fa fa-star"></label>
-
-    </div>
-     <div/>
-     </div></section>
-
-</body>
-</html>
 </html>
 
