@@ -257,5 +257,26 @@
     });
 </script>
 </body>
+<br>
+<br>
+<div class = "rating-css">
+    <div>star rating system </div>
+    <div class="star-icon">
+        <input type="ratio" name ="rating1" id="rating1 ">
+        <label for ="rating1" class="fa fa-star"></label>
+        <input type="ratio" name ="rating2" id="rating2 ">
+        <label for ="rating2" class="fa fa-star"></label>
+        <input type="ratio" name ="rating3" id="rating3 ">
+        <label for ="rating3" class="fa fa-star"></label>
+        <input type="ratio" name ="rating4" id="rating4 ">
+        <label for ="rating4" class="fa fa-star"></label>
+        <input type="ratio" name ="rating5" id="rating5 ">
+        <label for ="rating5" class="fa fa-star"></label>
+
+    </div>
+     <div/>
+
+</body>
+</html>
 </html>
 
