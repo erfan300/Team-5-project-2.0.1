@@ -343,7 +343,7 @@ form{
         min-height: 100vh;
         align-items: center;
         justify-content: center;
-        background: #ffe400;
+        background: #fffffc;
     }
     .rating-css{
         height: 250px;
@@ -354,7 +354,7 @@ form{
     
     }
     .rating-css div{
-    color: #ffe400;
+    color: #ffffff;
     font-size: 30px;
     font-family: sans-serif;
     font-weight: 800;
@@ -367,7 +367,7 @@ form{
     }
     .rating-css input + label{
     font-size: 60px;
-    text-shadow: 1px 1px 0 #ffe400;
+    text-shadow: 1px 1px 0 #fefefe;
     cursor: pointer;
     }
     .rating-css input:checked + label~ label{
