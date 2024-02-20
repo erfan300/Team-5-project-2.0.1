@@ -13,16 +13,32 @@
 <body>
 <header>
         <h1>Books4U Bookstore</h1>
+        @auth
+            <div class="log-out-box">
+                <span>Welcome {{ auth()->user()->Username }}</span>
+                <form class="inLine" method="POST" action="/logout">
+                    @csrf
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
+        @endauth
     </header>
+
     <nav>
-        <a href="{{ url('home') }}"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ url('profile') }}"><i class="fas fa-user"></i> Profile</a>
-        <a href="{{ url('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
-        <a href="{{ url('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
-        <a href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
-        <a href="{{ url('register') }}"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="{{ url('about') }}"><i class="fas fa-info-circle"></i> About</a>
-        <a href="{{ url('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+        
+        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+            <a href="create"><i class="fas fa-plus"></i> Create</a>
+            <a href="search"><i class="fas fa-search"></i> Search</a>
+            <a href="list"><i class="fas fa-list"></i> List</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+        @endif
+        
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
     
 
