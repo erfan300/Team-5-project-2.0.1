@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
+    <title>Books4U</title>
+    <link rel="icon" href="" type="" />
+    <link rel="stylesheet" type="text/css" href="css/show.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="{{ asset('js/custom.js') }}"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/show.css') }}" rel="stylesheet">
-    <title>{{$book['Product_Name']}}</title>
+    <title>{{$book['Product_Name']}}</title> 
 </head>
+
 <body>
 <header>
+    <header>
         <h1>Books4U Bookstore</h1>
-        @auth
-            <div class="log-out-box">
-                <span>Welcome {{ auth()->user()->Username }}</span>
-                <form class="inLine" method="POST" action="/logout">
-                    @csrf
-                    <button type="submit">Logout</button>
-                </form>
-            </div>
-        @endauth
     </header>
 
-    <nav>
-        <a href="home"><i class="fas fa-home"></i> Home</a>
+    <!-- Navigation -->
+   
+
+<nav>
+<a href="home"><i class="fas fa-home"></i> Home</a>
         <a href="profile"><i class="fas fa-user"></i> Profile</a>
         <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
         <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-        
-        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-            <a href="create"><i class="fas fa-plus"></i> Create</a>
-            <a href="search"><i class="fas fa-search"></i> Search</a>
-            <a href="list"><i class="fas fa-list"></i> List</a>
-            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
-        @endif
-        
         <a href="about"><i class="fas fa-info-circle"></i> About</a>
         <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+
+
+
+    <br><br>
+
+    
     
 
 
