@@ -22,15 +22,16 @@ header {
 }
 
 /* Navigation Styling */
+/* Navigation Styling */
 nav {
-    background-color: var(--primary-color);
+    background-color: var(--lightgreen);
     overflow: hidden;
     text-align: center;
 }
 
 nav a {
     display: inline-block;
-    color: var(--secondary-color);
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -38,13 +39,13 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: var(--blue);
+    color: black;
 }
 
 nav a.active {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
+    background-color: var(--blue);
+    color: white;
 }
 
 nav a:last-child {
@@ -52,12 +53,15 @@ nav a:last-child {
 }
 
 @media screen and (max-width: 600px) {
-nav a {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
-}
+
+
+
 
 
 .book-image-container{
