@@ -101,7 +101,10 @@ nav a:last-child {
 
 table{
     width:95%;
-    border:collapse;
+    outline-style: outset;
+    outline-color: rgb(78, 78, 151);
+    border-style: round;
+    border-radius: 25px;
     margin:auto;
     background-color:white;
     height:100px;         
