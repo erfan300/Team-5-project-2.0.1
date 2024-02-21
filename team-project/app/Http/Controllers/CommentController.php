@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Gate;
+
 
 
 class CommentController extends Controller
@@ -58,9 +60,9 @@ public function destroy($product_id, $comment_id)
 {
     $comment = Comment::findOrFail($comment_id);
 
-    // Check if the user is authorized to delete the comment
-    if (auth()->user()->User_Type === 'Admin' || auth()->user()->User_ID === $comment->user_id) {
-        // Delete the comment and its replies recursively
+    // Checking if the user is authorized to delete the comment
+    if (Gate::allows('delete-comment', $comment)) {
+        // Deleting the comment and its replies recursively
         $this->deleteCommentAndReplies($comment);
 
         return redirect()->back()->with('message', 'Comment deleted successfully.');
@@ -69,11 +71,11 @@ public function destroy($product_id, $comment_id)
     return response('Unauthorized', Response::HTTP_UNAUTHORIZED);
 }
 private function deleteCommentAndReplies($comment)
-{
-    foreach ($comment->replies as $reply) {
-        $this->deleteCommentAndReplies($reply);
-    }
+    {
+        foreach ($comment->replies as $reply) {
+            $this->deleteCommentAndReplies($reply);
+        }
 
-    $comment->delete();
-}
+        $comment->delete();
+    }
 }

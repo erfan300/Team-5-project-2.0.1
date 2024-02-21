@@ -15,12 +15,12 @@
             <button type="submit">Reply</button>
         </form>
         @can('delete-comment', $comment)
-            <form method="POST" action="{{ route('comments.destroy', [$bookId, $comment->id]) }}">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Delete</button>
-            </form>
-        @endcan
+        <form method="POST" action="{{ route('comments.destroy', [$bookId, $comment->id]) }}">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Delete</button>
+        </form>
+         @endcan
     @else
         <p>Please log in to leave a reply.</p>
     @endauth
