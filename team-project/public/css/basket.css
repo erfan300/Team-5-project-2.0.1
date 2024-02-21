@@ -2,9 +2,8 @@
 
 :root{
     --blue:#6c96b6;
-    --darkgreen:#384b42;
-    --lightgreen:#6a9b86;
-    --border:.1rem solid #6a9b86;
+    --darkgreen:#283747;
+    --border:#283747;
 }
 
 .alert-success {
@@ -13,9 +12,9 @@
     left: 0;
     width: 100%;
     background-color: var(--blue);
-    color: white;
+    color:#283747;
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     text-align: center;
     z-index: 1000;
 }
@@ -37,16 +36,16 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--lightgreen);
-    color: var(--lightgreen);
+    background-color: var#283747;
+    color: var(#283747);
 }
 
 
 /* Header Styling */
 header {
-    background-color: var(--lightgreen);
-    color:#a7eecf ;
-    padding: 20px;
+    background-color: #283747;
+    color:#ffffff ;
+    padding: 27px;
     text-align: center;
 }
 
@@ -55,7 +54,7 @@ header {
 
  /* Navigation Styling */
  nav {
-    background-color: var(--lightgreen);
+    background-color: #283747;
     overflow: hidden;
     text-align: center;
 }
@@ -96,9 +95,10 @@ nav a:last-child {
 
 /*Shopping Basket Items*/
 
-.basket-page{
-    margin: 80px auto;
+/*.basket-page{
+    margin: 200px auto; 
 }
+*/
 table{
     width:95%;
     border:collapse;
@@ -114,12 +114,12 @@ h2{
 }
 
 h3{
-    color:darkgreen;
+    color:#283747;
 }
 
 
 .basket-page thead tr{
-    background-color:black;
+    background-color:#283747;
     font-weight:normal ;
     text-align: left;
     padding: 60px;
@@ -128,9 +128,9 @@ h3{
 .btn {
     position: absolute;
     right: 100px;
-    top:500px;
-            background: var(--darkgreen);
-            color: #fff;
+    top:550px;
+            background: rgb(78, 78, 151);
+            color:white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
