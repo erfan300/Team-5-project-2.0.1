@@ -1,5 +1,24 @@
+<link href="{{ asset('css/discountpage.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 @if(auth()->user()->User_Type == 'Admin')
     <h1>Discount Page</h1>
+    <header class="header">
+
+<h1>Books4U BookStore</h1>
+
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="profile"><i class="fas fa-user"></i> Profile</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+    
+</header>
+
     <form method="POST" action="{{ route('create-discount') }}">
         @csrf
         <label for="code">Discount Code:</label>
@@ -16,3 +35,126 @@
 @else
     <p>You do not have permission to access this page.</p>
 @endif
+
+<style>
+ :root {
+    --primary-color: #283747; /* Dark blue-gray */
+    --secondary-color: #f5f5f5; /* Light gray */
+    --accent-color: #2980b9; /* Blue */
+    --text-color: #34495e; /* Dark gray */
+    --link-color: #2980b9; /* Blue */
+    --button-color: #283747; /* Blue */
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border:none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color); 
+    color: var(--secondary-color);
+}
+
+/* Header Styling */
+.header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styling */
+nav {
+    background-color: var(--primary-color);
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+nav a.active {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Form Styling */
+.discount-form {
+    margin-top: 100px; 
+}
+
+.discount-form form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--primary-color); 
+    border-radius: 10px;
+}
+
+.discount-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.discount-form input[type="text"],
+.discount-form input[type="number"],
+.discount-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; 
+    color: var(--text-color);
+}
+
+.discount-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.discount-form button[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+</style>

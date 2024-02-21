@@ -169,7 +169,8 @@ Route::get('/forum', function () {
     return view('forum');
 });
 
-
+Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
+Route::post('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
 Route::post('comments/{product}', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
 Route::get('comments/{product}', [CommentController::class, 'show'])->middleware('auth')->name('comments.show');
 Route::post('/comments/reply/{product_id}/{comment_id}', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');
