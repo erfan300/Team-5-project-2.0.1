@@ -69,36 +69,45 @@
         </form>
 
         <section>
-            <h1>Previous Orders</h1>
-            @if(isset($userOrders) && $userOrders->count() > 0)
-            <table>
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($userOrders as $order)
-                            <tr>
-                                <td>{{ $order->Order_ID }}</td>
-                                <td><!-- Display order status here (TP2)--></td>
-                                <td>
-                                    <form method="POST" action="{{ route('return-order') }}">
-                                        @csrf
-                                        <input type="hidden" name="log_id" value="{{-- InventoryLog ID here --}}">
-                                        <button type="submit">Return</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            @else
-            <p>No previous orders found.</p>
-            @endif
-        </section>
-    </main>
+    <h1>Previous Orders</h1>
+    @if(isset($userOrders) && $userOrders->count() > 0)
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Status</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($userOrders as $order)
+                <tr>
+                    <td>{{ $order->Order_ID }}</td>
+                    <td><!-- Display order status here (TP2) --></td>
+
+                    @foreach($order->orderDetails as $orderDetail)
+                        <td>{{ $orderDetail->product->Product_Name }}</td>
+                        <td>{{ $orderDetail->product->Price }}</td>
+                        <td>{{ $orderDetail->Quantity }}</td>
+                        <td>
+                            <form method="POST" action="{{ route('return-order') }}">
+                                @csrf
+                                <input type="hidden" name="log_id" value="{{-- InventoryLog ID here --}}">
+                                <button type="submit">Return</button>
+                            </form>
+                        </td>
+                    @endforeach
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @else
+        <p>No previous orders available.</p>
+    @endif
+</section>
+</main>
 </body>
 </html>

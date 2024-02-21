@@ -33,4 +33,8 @@ class Orders extends Model
         return $this->hasMany(InventoryLog::class, 'Order_ID');
     }
  
+    public function orderDetails()
+    {
+        return $this->hasMany(OrderDetails::class, 'Order_ID', 'Order_ID');
+    }
 }
