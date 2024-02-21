@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-:root {
-    --blue: #6c96b6;
-    --darkgreen: #384b42;
-    --lightgreen: #6a9b86;
-    --border: .1rem solid #6a9b86;
+
+:root{
+    --blue:#6c96b6;
+    --darkgreen:#384b42;
+    --lightgreen:#6a9b86;
+    --border:.1rem solid #6a9b86;
 }
 
 body {
@@ -13,53 +14,54 @@ body {
     padding: 0;
     background-color: var(--lightgreen);
     color: var(--lightgreen);
-    
 }
+
 
 /* Header Styling */
 header {
     background-color: var(--lightgreen);
-    color: #a7eecf;
+    color:#a7eecf ;
     padding: 20px;
     text-align: center;
 }
 
 /* Navigation Styling */
+/* Navigation Styling */
 nav {
-background-color: var(--lightgreen);
-overflow: hidden;
-text-align: center;
+    background-color: var(--lightgreen);
+    overflow: hidden;
+    text-align: center;
 }
 
 nav a {
-display: inline-block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-transition: background-color 0.3s;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-background-color: var(--blue);
-color: black;
+    background-color: var(--blue);
+    color: black;
 }
 
 nav a.active {
-background-color: var(--blue);
-color: white;
+    background-color: var(--blue);
+    color: white;
 }
 
 nav a:last-child {
-border-right: none;
+    border-right: none;
 }
 
 @media screen and (max-width: 600px) {
-nav a {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-}
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 
@@ -74,15 +76,15 @@ nav a {
 
 
 .book-details{
-    text-align:center ;
-    color:darkgreen;
+    text-align:left;
+    color:#a7eecf ;
     height:auto;
     width:5%;
-    text-align: justify;
+
 }
 
 .book-description{
-    color:darkgreen;
+    color:#a7eecf ;
     border:black;
     inline-size: 480px;
     overflow-wrap: break-word;
@@ -95,6 +97,7 @@ nav a {
     text-align:center;
 
 }
+
 
 
 form{
@@ -132,6 +135,7 @@ form{
     background: var(--blue);
 }
 
+
 .wishlist {
     left: 960px;
     top: 700px;
@@ -149,16 +153,19 @@ form{
 .wishlist:hover {
     background: var(--blue);
 }
-
+*/
 
 /* Recommendation section */
+
 
 .recommended-header{
     color: white;
     margin-left: 10px;
 }
+*/
+
 .recommendation-section {
-    margin-top: 60px;
+    margin-top: 300px;
     color: white;
 }
 
@@ -346,7 +353,7 @@ form{
         min-height: 100vh;
         align-items: center;
         justify-content: center;
-        background: #ffe400;
+        background: #fffffc;
     }
     .rating-css{
         height: 250px;
@@ -357,7 +364,7 @@ form{
     
     }
     .rating-css div{
-    color: #ffe400;
+    color: #ffffff;
     font-size: 30px;
     font-family: sans-serif;
     font-weight: 800;
@@ -370,7 +377,7 @@ form{
     }
     .rating-css input + label{
     font-size: 60px;
-    text-shadow: 1px 1px 0 #ffe400;
+    text-shadow: 1px 1px 0 #fefefe;
     cursor: pointer;
     }
     .rating-css input:checked + label~ label{

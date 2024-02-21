@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
+    <title>Books4U</title>
+    <link rel="icon" href="" type="" />
+    <link rel="stylesheet" type="text/css" href="css/show.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="{{ asset('js/custom.js') }}"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/show.css') }}" rel="stylesheet">
-    <title>{{$book['Product_Name']}}</title>
+    <title>{{$book['Product_Name']}}</title> 
 </head>
+
 <body>
 <header>
+    <header>
         <h1>Books4U Bookstore</h1>
     </header>
-    <nav>
-        <a href="{{ url('home') }}"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ url('profile') }}"><i class="fas fa-user"></i> Profile</a>
-        <a href="{{ url('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
-        <a href="{{ url('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
-        <a href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
-        <a href="{{ url('register') }}"><i class="fas fa-user-plus"></i> Register</a>
-        <a href="{{ url('about') }}"><i class="fas fa-info-circle"></i> About</a>
-        <a href="{{ url('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+
+    <!-- Navigation -->
+   
+
+<nav>
+<a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+
+
+
+    <br><br>
+
+    
     
 
 
