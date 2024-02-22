@@ -229,10 +229,9 @@ form{
 
 .comment-section {
     text-align: left;
-    font-size: larger;
     margin-top: 20px;
     padding: 20px;
-    background-color: #13c47d;
+    background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
