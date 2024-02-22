@@ -158,12 +158,6 @@ form{
 /* Recommendation section */
 
 
-.recommended-header{
-    color: white;
-    margin-left: 10px;
-}
-*/
-
 .recommendation-section {
     margin-top: 300px;
     color: white;
@@ -341,4 +335,9 @@ form{
 
 .comment .reply-section form button:hover {
     background-color: #45a049;
+}
+
+.recommended-header{
+    color: white;
+    margin-left: 10px;
 }
