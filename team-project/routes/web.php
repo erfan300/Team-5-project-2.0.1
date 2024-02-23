@@ -128,6 +128,9 @@ Route::middleware('admin')->group(function () {
 
     //show order details page
     Route::get('/order-report', [OrderController::class, 'orderReports'])->name('order-report');
+    //Updating order process
+    Route::post('/updateOrderProcess/{orderID}', [OrderController::class, 'updateOrderProcess'])->name('updateOrderProcess');
+
 
     //Show products report page
 

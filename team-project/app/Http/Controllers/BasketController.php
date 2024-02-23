@@ -152,6 +152,7 @@ class BasketController extends Controller{
         $order->Admin_ID = $adminID; // Set admin ID or null if Customer
         $order->Order_Date = now(); // Set order date to current date
         $order->Total_Price = 0; // Initialize total price
+        $order->Order_Process = 'Order Processing...'; // Set order process to 'Order Processing...'
     
         $order->save();
     

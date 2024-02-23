@@ -47,6 +47,8 @@
                 <th>Quantity</th>
                 <th>Subtotal</th>
                 <th>Order Date</th>
+                <th>Order Process</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +66,22 @@
                 <td>{{ $orderDetail->Quantity }}</td>
                 <td>{{ $orderDetail->Subtotal }}</td>
                 <td>{{ $orderDetail->order->Order_Date }}</td>
+                <td class="
+                    @if($orderDetail->order->Order_Process === 'Order Processing...')
+                        processing
+                    @elseif($orderDetail->order->Order_Process === 'Order Processed')
+                        processed
+                    @endif
+                ">
+                    {{ $orderDetail->order->Order_Process }}
+                </td>
+                <td>
+                    <form method="POST" action="{{ route('updateOrderProcess', $orderDetail->order->Order_ID) }}">
+                        @csrf
+                        <button class="order-processing-btn" type="submit">Process Order</button>
+                    </form>   
+                </td>
+                
             </tr>
             @endforeach
         </tbody>

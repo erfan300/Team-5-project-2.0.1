@@ -90,3 +90,12 @@ th {
 h1 {
     text-align: center;
 }
+
+.processing {
+    background-color: red;
+}
+
+.processed {
+    background-color: green;
+}
+
