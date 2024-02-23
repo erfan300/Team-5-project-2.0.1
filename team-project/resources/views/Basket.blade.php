@@ -45,6 +45,7 @@
             <a href="search"><i class="fas fa-search"></i> Search</a>
             <a href="list"><i class="fas fa-list"></i> List</a>
             <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
         @endif
         
         <a href="about"><i class="fas fa-info-circle"></i> About</a>
