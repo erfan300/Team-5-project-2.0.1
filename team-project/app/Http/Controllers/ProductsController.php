@@ -182,4 +182,11 @@ class ProductsController extends Controller
         return redirect('/')->with('message', 'Book Deleted Successfully!');
     }
 
+    // Put all products into a variable and show it on the product Report page
+    public function productReport(){
+        $products = Products::with('productStatus')->get();
+        return view('productReport', compact('products'));
+    }
+
+
 }

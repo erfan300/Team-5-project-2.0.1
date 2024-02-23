@@ -51,7 +51,8 @@
             <a href="create"><i class="fas fa-plus"></i> Create</a>
             <a href="search"><i class="fas fa-search"></i> Search</a>
             <a href="list"><i class="fas fa-list"></i> List</a>
-            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Report</a>
+            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
             <a href="{{ route('discountpage') }}"><i class="fas fa-tag"></i> Discount Page</a>
         @endif
         

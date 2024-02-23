@@ -129,6 +129,11 @@ Route::middleware('admin')->group(function () {
     //show order details page
     Route::get('/order-report', [OrderController::class, 'orderReports'])->name('order-report');
 
+    //Show products report page
+
+    Route::get('/product-report', [ProductsController::class, 'productReport'])->name('product-report');
+
+
 });
 
 Route::get('/about', function () {
