@@ -1,34 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-
 :root{
     --blue:#6c96b6;
-    --darkgreen:#384b42;
-    --lightgreen:#6a9b86;
-    --border:.1rem solid #6a9b86;
+    --darkgreen:#283747;
+    --border:#283747;
+}
+
+.alert-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blue);
+    color:#283747;
+    padding: 15px;
+    margin-bottom: 60px;
+    text-align: center;
+    z-index: 1000;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success.fade-out {
+    animation: fadeOut 2s ease-out;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: var(--lightgreen);
-    color: var(--lightgreen);
+    background-color: #283747;
+
+    
 }
 
 
 /* Header Styling */
 header {
-    background-color: var(--lightgreen);
-    color:#a7eecf ;
-    padding: 20px;
+    background-color: #283747;
+    color:#ffffff ;
+    padding: 27px;
     text-align: center;
 }
 
-/* Navigation Styling */
+h4{
+    position: absolute;
+  left: 580px;
+  top: 120px;
+}
+
+
+
 /* Navigation Styling */
 nav {
-    background-color: var(--lightgreen);
+    background-color: #283747;
     overflow: hidden;
     text-align: center;
 }
@@ -56,6 +87,7 @@ nav a:last-child {
     border-right: none;
 }
 
+
 @media screen and (max-width: 600px) {
     nav a {
         display: block;
@@ -63,6 +95,7 @@ nav a:last-child {
         box-sizing: border-box;
     }
 }
+
 
 
 .book-image-container{
@@ -77,22 +110,24 @@ nav a:last-child {
 
 .book-details{
     text-align:left;
-    color:#a7eecf ;
+    font-size: 80%;
+    color:#ffffff ;
     height:auto;
-    width:5%;
-
+    width: 5px;
+   
+    
 }
 
 .book-description{
-    color:#a7eecf ;
+    color:#ffffff ;
     border:black;
     inline-size: 480px;
     overflow-wrap: break-word;
-
+    
 }
 
 .book-price{
-    color:darkgreen;
+    color:white;
     border:black;
     text-align:center;
 
@@ -102,26 +137,14 @@ nav a:last-child {
 
 form{
     text-align:left;
-    color:darkgreen;
+    color:white;
+    
 }
 
 .delete-button {
     right: 20px;
     top:600px;
-    background: var(--darkgreen);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s linear;
-}
-
-.basket {
-    left:960px;
-    top:700px;
-    background: var(--darkgreen);
+    background: rgb(78, 78, 151);;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -136,25 +159,6 @@ form{
 }
 
 
-.wishlist {
-    left: 960px;
-    top: 700px;
-    background: var(--darkgreen);
-    color: #fff;
-    border: none;
-    margin-top: 15px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.2s linear;
-}
-
-.wishlist:hover {
-    background: var(--blue);
-}
-*/
-
 /* Recommendation section */
 
 
@@ -165,7 +169,7 @@ form{
 
 .recommended-book-categories {
     color: rgb(128, 128, 128);
-    border: solid rgb(192, 189, 189);
+    border: dotted rgb(78, 78, 151);;
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -195,23 +199,23 @@ form{
 
 .recommended-book-title a {
     font-size: 0.7em;
-    color: #000;
+    color: #ffffff;
     margin: 10px 0;
 }
 
 .recommended-book-author a {
     font-size: 1em;
-    color: #8B4513;
+    color: #f9f8f8;
 }
 
 .recommended-book-price {
     font-size: 1.1em;
-    color: #000;
+    color: #ffffff;
 }
 
 .recommended-book-type {
     font-size: 0.9em;
-    color: #444;
+    color: #ffffff;
 }
 
 
@@ -223,13 +227,13 @@ form{
 
 .comment-section {
     text-align: left;
-    font-size: larger;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #13c47d;
+    font-size: large;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(78, 78, 151);;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -255,89 +259,20 @@ form{
 }
 
 .comment button {
-    background-color: #4caf50;
+    background-color:#283747;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
+    
 
 .comment button:hover {
-    background-color: #45a049;
+    background-color: #283747;
+    
 }
 
-.show-replies-btn,
-.hide-replies-btn {
-    background-color: #3498db;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.show-replies-btn:hover,
-.hide-replies-btn:hover {
-    background-color: #2980b9;
-}
-
-.replies-content {
-    margin-left: 20px;
-}
-
-.replies-content p {
-    font-size: 0.9em;
-}
-
-
-.comment .reply-section {
-    margin-left: 20px; 
-}
-
-.comment .reply-section .reply {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.comment .reply-section form {
-    margin-top: 10px;
-    margin-left: 20px; 
-}
-
-.comment .reply-section form label,
-.comment .reply-section form textarea,
-.comment .reply-section form button {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.comment .reply-section form textarea {
-    width: calc(100% - 20px); 
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.comment .reply-section form button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.comment .reply-section form button:hover {
-    background-color: #45a049;
-}
-
-.recommended-header{
-    color: white;
-    margin-left: 10px;
-}
+   

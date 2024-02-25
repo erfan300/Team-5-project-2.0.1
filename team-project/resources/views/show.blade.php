@@ -11,18 +11,46 @@
     <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
-<header>
-    <h1>Books4U Bookstore</h1>
-</header>
+   
+<!-- Display login flash Message -->
+@if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
 
-<nav>
-    <a href="{{ url('home') }}"><i class="fas fa-home"></i> Home</a>
-    <a href="{{ url('profile') }}"><i class="fas fa-user"></i> Profile</a>
-    <a href="{{ url('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="{{ url('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
-    <a href="{{ url('about') }}"><i class="fas fa-info-circle"></i> About</a>
-    <a href="{{ url('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
-</nav>
+
+    <header>
+        <h1>Books4U Bookstore</h1>
+        @auth
+            <div class="log-out-box">
+                <span>Welcome {{ auth()->user()->Username }}</span>
+                <form class="inLine" method="POST" action="/logout">
+                    @csrf
+                    <h4><button type="submit">Logout</button><h4>
+                </form>
+            </div>
+        @endauth
+    </header>
+
+    <nav>
+        <a href="home"><i class="fas fa-home"></i> Home</a>
+        <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+        
+        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+            <a href="create"><i class="fas fa-plus"></i> Create</a>
+            <a href="search"><i class="fas fa-search"></i> Search</a>
+            <a href="list"><i class="fas fa-list"></i> List</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
+        @endif
+        
+        <a href="about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+    
 
 @if (session('message'))
     <div class="alert alert-success">
@@ -31,7 +59,7 @@
 @endif
 
 <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
-    <div class="book-image-container">
+<div class="book-image-container">
         <img class="book-image" src="{{ $book->productImages->first() ? asset('storage/' . $book->productImages->first()->Image_URL) : asset('/images/no-image.png') }}" alt="" />
     </div>
     <div class="book-details">
