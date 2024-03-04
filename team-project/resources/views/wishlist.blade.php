@@ -68,26 +68,26 @@
                     <th><h3>Book Cover</h3></th>
                     <th><h3>Book title</h3></th>
                     <th></th>
-                    <th></th>
                 </tr>
                 @if(count($wishlist) == 0)
-                    <p>Wishlist is Empty!</p>
+                    <tr><td colspan="3">Wishlist is Empty!</td></tr>
+                @else
+                    @foreach ($wishlist as $wishlistItem)
+                    <tr>
+                        <td>
+                            @if ($wishlistItem->product->productImages->first())
+                                <a href="/book/{{$wishlistItem->product->Product_ID}}"><img src="{{ asset('storage/' . $wishlistItem->product->productImages->first()->Image_URL) }}" alt="Product Image" width="150" height="200"></a>
+                            @else
+                            <img src="{{ asset('/images/no-image.png') }}" alt="No Image" width="50" height="50">
+                            @endif
+                        </td>
+                        <td><a href="/book/{{$wishlistItem->product->Product_ID}}">{{ $wishlistItem->product->Product_Name }}</a></td>
+                        <td>
+                            <a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromWishlist', $wishlistItem->Wishlist_ID)}}">Remove</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 @endif
-                @foreach ($wishlist as $wishlistItem)
-                <tr>
-                    <th>
-                        @if ($wishlistItem->product->productImages->first())
-                            <a href="/book/{{$wishlistItem->product->Product_ID}}"><img src="{{ asset('storage/' . $wishlistItem->product->productImages->first()->Image_URL) }}" alt="Product Image" width="150" height="200"></a>
-                        @else
-                        <img src="{{ asset('/images/no-image.png') }}" alt="No Image" width="50" height="50">
-                        @endif
-                    </th>
-                    <th><a href="/book/{{$wishlistItem->product->Product_ID}}">{{ $wishlistItem->product->Product_Name }}</a></th>
-                    <th>
-                        <a class="removeButton" onclick="return confirm('Are you sure you want to remove?')" href="{{url('/removeFromWishlist', $wishlistItem->Wishlist_ID)}}">Remove
-                    </th>
-                </tr>
-                @endforeach
             </table>    
         </div>
     </section>
@@ -97,18 +97,18 @@
             <div class="footer-section about">
                 <h3>About Us</h3>
                 <p>Welcome to Books4U, the place where the love for writing intertwines with the art of storytelling. We strongly believe in the transformative power of books, and their ability to greatly impact individuals, as well as communities. Our main purpose is to inspire, attract, and ignite the imaginations of the people who enjoy reading books.</p>
-                <section class="footer-section contact">
-    <h3>Contact Us</h3>
-    <ul>
-        <li><i class="fas fa-phone"></i> Phone: +44 0121 456 7894</li>
-        <li><i class="fas fa-envelope"></i> Email: Books4U@gmail.com</li>
-        <div class="social-media">
-        <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/your_twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
-    </ul>
-</section>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> Phone: +44 0121 456 7894</li>
+                    <li><i class="fas fa-envelope"></i> Email: Books4U@gmail.com</li>
+                    <div class="social-media">
+                    <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/your_twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </ul>
             </div>
             <div class="footer-section links">
                 <h3>Quick Links</h3>
@@ -139,4 +139,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
