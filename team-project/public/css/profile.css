@@ -28,7 +28,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--text-color);
 }
 
@@ -41,19 +41,14 @@ header h1 {
     color: var(--text-color);
     font-family: 'EB Garamond', serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-right: 200px;
+    margin-right: 100px;
     margin-left: auto;
-    background-color:#283747;
 }
 
 header h1 span {
     color: #2980b9 !important;
-    text-emphasis-position: center;
 }
-.top-left {
-    display: flex;
-    align-items: center;
-}
+
 /* Header Styling */
 header {
     background-color: var(--darkgreen);
