@@ -1,5 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books4U Bookstore</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/custom.js') }}"></script>
+    
+</head>
+<body>
+<header>
+    
+    <div class="top-left">
+        <div class="login-buttons">
+            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            @auth
+                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+            @endauth
+        </div>
+    </div>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+    @auth
+        <div class="log-out-box">
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+        <div class="welcome-message">
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+    @endauth
+</header>
+
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+    
+    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
+        <a href="search"><i class="fas fa-search"></i> Search</a>
+        <a href="list"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
+        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
+    @endif
+    
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +78,7 @@
 
 <body>
    
-<!-- Display login flash Message -->
+ Display login flash Message 
 @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
@@ -22,7 +87,7 @@
 
 
     <header>
-        <h1>Books4U Bookstore</h1>
+        <h1>Books4U</h1>
         @auth
             <div class="log-out-box">
                 <span>Welcome {{ auth()->user()->Username }}</span>
@@ -51,18 +116,17 @@
         <a href="about"><i class="fas fa-info-circle"></i> About</a>
         <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
-    
-
+     
+-->
 
 
     <!-- Shopping Basket -->
 
 <section id="shopping-basket" class="container mt-5">
-    <header>
         <h2>Shopping Basket</h2>
-    <header>
     <form method="POST" action="{{ route('apply-discount') }}">
             @csrf
+            <br>
             <label for="discount_code">Discount Code:</label>
             <input type="text" name="discount_code">
             <button type="submit">Apply Discount</button>
@@ -127,6 +191,9 @@
                             <td><span style="color: red;">£{{ $totalPrice }}</span></td>
                         @endif
                         
+                       
+                </tfoot>
+                <br>
                     </tr>
                     <div id = "checkout-button">
                     <form method="POST" action="{{ route('checkout') }}">
@@ -135,7 +202,6 @@
                         @csrf
                         </form>
                     </div>
-                </tfoot>
             </div>
         </table>    
     </div>
