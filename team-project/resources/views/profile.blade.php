@@ -28,7 +28,7 @@
         <!-- The profile update form (fully working)-->
         <form method="POST" action="{{ route('update-profile') }}">
             @csrf
-            <h2>Profile</h2>
+            <h3>Profile</h3>
             <label for="username">Username:</label>
             @error('username')
             <p class="username-error">{{$message}}</p>
