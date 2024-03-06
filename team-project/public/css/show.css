@@ -212,8 +212,10 @@ nav a:last-child {
 .book-description{
     color:black;
     border:black;
-    inline-size: 480px;
+    inline-size: 400px;
     overflow-wrap: break-word;
+    text-align:left;
+    
     
 }
 
