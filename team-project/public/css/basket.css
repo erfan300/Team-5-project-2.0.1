@@ -176,7 +176,9 @@ nav a:last-child {
 }
 
 */
-
+.form{
+    color:black;
+}
 Shopping Basket Items
 
 .basket-page{
@@ -225,7 +227,7 @@ h3{
 .btn {
     position: absolute;
     right: 100px;
-    top:540px;
+    top:500px;
             background: rgb(78, 78, 151);
             color:white;
             border: none;
