@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-
 :root {
     --primary-color: #283747; /* Dark blue-gray */
     --secondary-color: #f5f5f5; /* Light gray */
@@ -42,7 +40,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--secondary-color);
-
+    color: var(--text-color);
 }
 
 .top-right {
@@ -91,8 +89,12 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin-right: 100px;
     margin-left: auto;
+    background-color:#283747;
 }
 
+header h1 span {
+    color: #2980b9 !important; 
+}
 
 .top-left {
     display: flex;
@@ -173,121 +175,9 @@ nav a:last-child {
     }
 }
 
-h2{
-    position: absolute;
-  left: 100px;
-  top: 240px;
-  color:#000000;
-}
-/*:root{
-    --blue:#6c96b6;
-    --darkgreen:#283747;
-    --border:#283747;
-}
+*/
 
-.alert-success {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--blue);
-    color:#283747;
-    padding: 15px;
-    margin-bottom: 60px;
-    text-align: center;
-    z-index: 1000;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-.alert-success.fade-out {
-    animation: fadeOut 2s ease-out;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: #283747;
-
-    
-}
-
-.top-right .login-buttons {
-    margin-left: auto;
-}
-
-.top-right .login-buttons a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.top-right .login-buttons a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
- Header Styling 
- 
- header {
-    background-color: #283747;
-    color: #c8e6d1; ;
-    padding: 27px;
-    text-align: center;
-}
-
-
- Navigation Styling 
-nav {
-    background-color: #283747;
-    overflow: hidden;
-    text-align: center;
-}
-
-nav a {
-    display: inline-block;
-    color:  #c8e6d1;;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: var(--blue);
-    color: black;
-}
-
-nav a.active {
-    background-color: var(--blue);
-    color: white;
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
-
-/*Shopping Basket Items
+Shopping Basket Items
 
 .basket-page{
     margin: 200px auto; 

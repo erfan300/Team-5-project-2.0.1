@@ -6,7 +6,7 @@
     <title>Books4U Bookstore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="{{ asset('css/homeStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/basket.css') }}" rel="stylesheet">
     <script src="{{ asset('js/custom.js') }}"></script>
     
 </head>
@@ -126,7 +126,6 @@
         <h2>Shopping Basket</h2>
     <form method="POST" action="{{ route('apply-discount') }}">
             @csrf
-            <br>
             <label for="discount_code">Discount Code:</label>
             <input type="text" name="discount_code">
             <button type="submit">Apply Discount</button>
@@ -191,9 +190,7 @@
                             <td><span style="color: red;">£{{ $totalPrice }}</span></td>
                         @endif
                         
-                       
-                </tfoot>
-                <br>
+                        <br>
                     </tr>
                     <div id = "checkout-button">
                     <form method="POST" action="{{ route('checkout') }}">
@@ -202,6 +199,7 @@
                         @csrf
                         </form>
                     </div>
+                </tfoot>
             </div>
         </table>    
     </div>
