@@ -45,6 +45,10 @@ header h1 {
     margin-left: auto;
 }
 
+header h1 span {
+    color: #2980b9 !important;
+}
+
 /* Header Styling */
 header {
     background-color: var(--darkgreen);
