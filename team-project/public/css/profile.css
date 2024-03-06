@@ -55,7 +55,9 @@ header {
     width: 100%;
 }
 
-
+header h3{
+    --text-color: #000000;
+}
 
 /* Navigation Styling */
 nav {
