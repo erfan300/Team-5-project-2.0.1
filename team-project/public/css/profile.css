@@ -3,7 +3,7 @@
     --primary-color: #283747; /* Dark blue-gray */
     --secondary-color: #f5f5f5; /* Light gray */
     --accent-color: #2980b9; /* Blue */
-    --text-color: #c8e6d1; /* Dark gray */
+    --text-color: #92e1aa; /* Dark gray */
     --text-color-2: #000000; /* Black */
     --link-color: #2980b9; /* Blue */
     --button-color: #283747; /* Blue */
@@ -145,6 +145,7 @@ form h2 {
     font-weight: bold;
     transition: top 0.2s ease-in-out;
     text-decoration-color: #000000;
+    
 }
 
 .input-box input {
