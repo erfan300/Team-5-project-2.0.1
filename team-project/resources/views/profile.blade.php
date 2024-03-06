@@ -10,7 +10,7 @@
 </head>
 
 <body> 
-<h1>BOOKS<span>4</span>U</h1>
+    <h1>Books4U BookStore</h1>
 
     <nav>
         <a href="home"><i class="fas fa-home"></i> Home</a>
@@ -88,7 +88,7 @@
                     <td>{{ $order->Order_ID }}</td>
                     <td><!-- Display order status here (TP2) --></td>
 
-                   
+                    <!--  -->
                     @foreach($order->orderDetails as $orderDetail)
                         <td>{{ $orderDetail->product->Product_Name }}</td>
                         <td>{{ $orderDetail->product->Price }}</td>
