@@ -187,6 +187,16 @@ Route::get('/forum', function () {
     return view('forum');
 });
 
+// Show single page
+Route::get('/single', function () {
+    return view('single');
+});
+
+// Show show page
+Route::get('/show', function () {
+    return view('show');
+});
+
 Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
 Route::post('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
 Route::post('comments/{product}', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');

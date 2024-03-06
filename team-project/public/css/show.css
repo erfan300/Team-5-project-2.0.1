@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-:root{
-    --blue:#6c96b6;
-    --darkgreen:#283747;
-    --border:#283747;
+:root {
+    --primary-color: #283747; /* Dark blue-gray */
+    --secondary-color: #f5f5f5; /* Light gray */
+    --accent-color: #2980b9; /* Blue */
+    --text-color: #c8e6d1; /* Dark gray */
+    --text-color-2: #000000; /* Black */
+    --link-color: #2980b9; /* Blue */
+    --button-color: #283747; /* Blue */
 }
 
 .alert-success {
@@ -35,19 +39,106 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #283747;
+    background-color: #f5f5f5; ;
 
     
+}
+top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+.top-right .login-buttons {
+    margin-left: auto;
+}
+
+.top-right .login-buttons a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.top-right .login-buttons a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3em;
+    text-decoration: underline;
+    text-decoration-color: #2980b9;
+    text-decoration-thickness: 4px;
+    color: var(--text-color);
+    font-family: 'EB Garamond', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 100px;
+    margin-left: auto;
+    background-color:#283747;
+}
+
+header h1 span {
+    color: #2980b9 !important; 
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+}
+
+.login-buttons {
+    margin-right: 10px;
+}
+
+.login-buttons a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-buttons a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.session-message {
+    margin-left: auto;
+}
+
+.log-out-box {
+    display: flex;
+    align-items: center;
+}
+
+.log-out-box form {
+    margin: 0;
+}
+
+.welcome-message {
+    margin-left: 10px;
 }
 
 
 /* Header Styling */
-header {
-    background-color: #283747;
-    color:#ffffff ;
-    padding: 27px;
-    text-align: center;
-}
 
 h4{
     position: absolute;
@@ -59,14 +150,15 @@ h4{
 
 /* Navigation Styling */
 nav {
-    background-color: #283747;
+    background-color: var(--primary-color);
     overflow: hidden;
     text-align: center;
+    color: var(--text-color);
 }
 
 nav a {
     display: inline-block;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -74,19 +166,18 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--blue);
-    color: black;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a.active {
-    background-color: var(--blue);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a:last-child {
     border-right: none;
 }
-
 
 @media screen and (max-width: 600px) {
     nav a {
@@ -95,6 +186,7 @@ nav a:last-child {
         box-sizing: border-box;
     }
 }
+
 
 
 .book-image-container{
@@ -110,7 +202,7 @@ nav a:last-child {
 .book-details{
     text-align:left;
     font-size: 80%;
-    color:#ffffff ;
+    color:black ;
     height:auto;
     width: 5px;
    
@@ -118,7 +210,7 @@ nav a:last-child {
 }
 
 .book-description{
-    color:#ffffff ;
+    color:black;
     border:black;
     inline-size: 480px;
     overflow-wrap: break-word;
@@ -126,7 +218,7 @@ nav a:last-child {
 }
 
 .book-price{
-    color:white;
+    color:black;
     border:black;
     text-align:center;
 
@@ -136,14 +228,14 @@ nav a:last-child {
 
 form{
     text-align:left;
-    color:white;
+    color:#000000;
     
 }
 
 .delete-button {
     right: 20px;
     top:600px;
-    background: rgb(78, 78, 151);;
+    background: rgb(9, 9, 9);;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -168,7 +260,7 @@ form{
 
 .recommended-book-categories {
     color: rgb(128, 128, 128);
-    border: dotted rgb(78, 78, 151);;
+    border: dotted  #283747;
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -198,23 +290,23 @@ form{
 
 .recommended-book-title a {
     font-size: 0.7em;
-    color: #ffffff;
+    color: #000000;
     margin: 10px 0;
 }
 
 .recommended-book-author a {
     font-size: 1em;
-    color: #f9f8f8;
+    color: #090909;
 }
 
 .recommended-book-price {
     font-size: 1.1em;
-    color: #ffffff;
+    color: #070606;
 }
 
 .recommended-book-type {
     font-size: 0.9em;
-    color: #ffffff;
+    color: #0c0b0b;
 }
 
 
@@ -229,7 +321,7 @@ form{
     font-size: large;
     margin-top: 10px;
     padding: 10px;
-    background-color: rgb(78, 78, 151);;
+    background-color:  #283747;;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
@@ -258,7 +350,7 @@ form{
 }
 
 .comment button {
-    background-color:#283747;
+    background-color:#000000;
     color: white;
     padding: 10px 15px;
     border: none;
