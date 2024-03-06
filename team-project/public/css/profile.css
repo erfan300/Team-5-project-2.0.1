@@ -1,9 +1,9 @@
 
 :root {
     --primary-color: #283747; /* Dark blue-gray */
-    --secondary-color: #283747; /* Light gray */
+    --secondary-color: #f5f5f5; /* Light gray */
     --accent-color: #2980b9; /* Blue */
-    --text-color: #000000; /* Dark gray */
+    --text-color: #071748; /* Dark gray */
     --text-color-2: #000000; /* Black */
     --link-color: #2980b9; /* Blue */
     --button-color: #283747; /* Blue */
@@ -31,21 +31,7 @@ body {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-}
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-p {
-    margin-bottom: 1rem;
-}
 
 header h1 {
     font-size: 3em;
@@ -183,7 +169,7 @@ button {
     border-radius: 7px;
     cursor: pointer;
     font-size: 16px;
-    color: #1d1b9b;
+    color: #fff;
     font-weight: bold;
     margin-top: 20px;
     width: 100%;
