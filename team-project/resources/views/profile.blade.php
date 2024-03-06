@@ -9,9 +9,25 @@
     <title>Profile</title>
 </head>
 
-<body>
-
-    <h1>Books4U BookStore</h1>
+<div class="top-left">
+        <div class="login-buttons">
+            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            @auth
+                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+            @endauth
+        </div>
+    </div>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+    @auth
+      
 
     <nav>
         <a href="home"><i class="fas fa-home"></i> Home</a>
@@ -26,6 +42,7 @@
 
     <main>
         <!-- The profile update form (fully working)-->
+       
         <form method="POST" action="{{ route('update-profile') }}">
             @csrf
             <h2>Profile</h2>
@@ -88,6 +105,7 @@
                     <td>{{ $order->Order_ID }}</td>
                     <td><!-- Display order status here (TP2) --></td>
 
+                   
                     @foreach($order->orderDetails as $orderDetail)
                         <td>{{ $orderDetail->product->Product_Name }}</td>
                         <td>{{ $orderDetail->product->Price }}</td>
