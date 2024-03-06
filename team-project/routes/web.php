@@ -57,6 +57,16 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 
 
+
+
+//routing for the forum page
+        Route::get('/forum', function () {
+            return view('forum');
+        })->name('forum');
+
+
+
+
 // Shows contact page
 Route::get('/contact', function () {
     return view('contact');
