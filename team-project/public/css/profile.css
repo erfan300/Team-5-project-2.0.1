@@ -28,7 +28,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-color);
 }
 
@@ -48,6 +48,7 @@ header h1 {
 
 header h1 span {
     color: #2980b9 !important;
+    text-emphasis-position: center;
 }
 .top-left {
     display: flex;
