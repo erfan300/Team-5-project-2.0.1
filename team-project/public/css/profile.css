@@ -25,37 +25,63 @@ html {
 }
 
 body {
-    background: var(--darkgreen);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-h1 {
-    color: var(--lightgreen);
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    font-size: 3em;
+    text-decoration: underline;
+    text-decoration-color: #2980b9;
+    text-decoration-thickness: 4px;
+    color: var(--text-color);
+    font-family: 'EB Garamond', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 100px;
+    margin-left: auto;
 }
 
 /* Header Styling */
 header {
     background-color: var(--darkgreen);
-    color: var(--lightgreen);
+    color: #2980b9 !important;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
+
+
 /* Navigation Styling */
 nav {
-    background-color: var(--darkgreen);
+    background-color: var(--primary-color);
     overflow: hidden;
     text-align: center;
+    color: var(--text-color);
 }
 
 nav a {
     display: inline-block;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -63,13 +89,13 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--blue);
-    color: black;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a.active {
-    background-color: var(--blue);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a:last-child {
@@ -90,6 +116,8 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+    padding: 20px;
+    
 }
 
 form {
