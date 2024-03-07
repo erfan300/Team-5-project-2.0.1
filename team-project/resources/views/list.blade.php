@@ -11,7 +11,6 @@
     <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
-<header class="header">
 <header>
     
     <div class="top-left">
@@ -44,31 +43,24 @@
     @endauth
 </header>
 
-
-
 <nav>
-
-<nav>
-        <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
-        <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
-        <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
-        
-        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-            <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
-            <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
-            <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
-            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
-            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
-        @endif
-        
-        <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
-        <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
-    </nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
     
+    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
+        <a href="search"><i class="fas fa-search"></i> Search</a>
+        <a href="list"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
+        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
+    @endif
+    
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
-</header>
 
     <h1>List of Customers</h1>
     <table>
