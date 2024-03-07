@@ -1,24 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>List of Customers</title>
-    <link href="{{ asset('css/list.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books4U</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link href="{{ asset('css/singleBookStyle.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/list.css') }}" rel="stylesheet">
+    <link rel="icon" href="" type="">
+    <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
 <header class="header">
+<header>
+    
+    <div class="top-left">
+        <div class="login-buttons">
+            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            @auth
+                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+            @endauth
+        </div>
+    </div>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+    @auth
+        <div class="log-out-box">
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+        <div class="welcome-message">
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+    @endauth
+</header>
 
-<h1>Books4U BookStore</h1>
+
 
 <nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="profile"><i class="fas fa-user"></i> Profile</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+
+<nav>
+        <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
+        <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
+        
+        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+            <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
+            <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
+            <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
+        @endif
+        
+        <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+        <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+    
 </nav>
 
 </header>
