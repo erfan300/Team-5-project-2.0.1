@@ -61,8 +61,10 @@
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
+<br>
 
-    <h1>List of Customers</h1>
+
+    <h2>Customer List</h2>
     <table>
         <thead>
             <tr>
