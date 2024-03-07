@@ -124,23 +124,26 @@
 
 <section id="shopping-basket" class="container mt-5">
         <h2>Shopping Basket</h2>
+        <br>
+        <div class="discount">
     <form method="POST" action="{{ route('apply-discount') }}">
             @csrf
             <label for="discount_code">Discount Code:</label>
             <input type="text" name="discount_code">
             <button type="submit">Apply Discount</button>
     </form>
+</div>
     <div>
         <table class="table">
             <tr>
                 <th></th>
-                <th><h3>Book title<h3></th>
-                <th><h3>Quantity<h3></th>
-                <th><h3>Price<h3></th>
+                <th>Book title</th>
+                <th>Quantity</th>
+                <th>Price</th>
                 <th></th>
             </tr>
             @if(count($basket) == 0)
-                <p>Basket is Empty!</p>
+                <p><h5>Basket is Empty!<h5></p>
             @endif
             <?php $totalPrice = 0; ?>
             @foreach ($basket as $basketItem)
@@ -183,9 +186,9 @@
                 <tfoot>
                     <tr>
                         <td colspan="3"></td>
-                        <td><strong><h3>Total:</h3></strong></td>
+                        <td><strong>Total:</strong></td>
                         @if(count($basket) == 0)
-                            <td><h3>£0</h3></td>
+                            <td>£0</td>
                         @else
                             <td><span style="color: red;">£{{ $totalPrice }}</span></td>
                         @endif

@@ -190,13 +190,19 @@ Shopping Basket Items
 table{
     width:100%;
     outline-style: outset;
-    outline-color: rgb(78, 78, 151);
+    outline-color:aquamarine;
     border-style: round;
-    border-radius: 25px;
+    border-radius: 7px;
     margin:auto;
     background-color:white;
     height:100px;         
 }
+
+th {
+    background-color: #283747;
+    color:#c8e6d1;  
+}
+
 h1 {
     font-size: 3em;
     text-decoration: underline;
@@ -208,13 +214,17 @@ h1 {
 }
 h2{
     position: absolute;
-  left: 100px;
-  top: 240px;
+  left: 10px;
+  top: 220px;
   color:#000000;
 }
 
 h3{
     color:#283747;
+}
+
+h5{
+    color:#ff0000;
 }
 
 .basket-page thead tr{
@@ -227,8 +237,8 @@ h3{
 .btn {
     position: absolute;
     right: 100px;
-    top:500px;
-            background: rgb(78, 78, 151);
+    top:480px;
+            background:#283747;
             color:white;
             border: none;
             padding: 10px 20px;
@@ -241,7 +251,13 @@ h3{
         .btn:hover {
             background: var(--blue);
         }
-
+.discount{
+    position: absolute;
+  left: 350px;
+  top: 480px;
+  color:green;
+  
+}
 
 
 
