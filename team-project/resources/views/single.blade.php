@@ -11,7 +11,7 @@
     <script defer src="js/main.js"></script>
 </head>
 
-<<header>
+<header>
     
     <div class="top-left">
         <div class="login-buttons">
