@@ -11,7 +11,7 @@
     <script defer src="js/main.js"></script>
 </head>
 
-<header>
+<<header>
     
     <div class="top-left">
         <div class="login-buttons">
@@ -74,10 +74,10 @@
             <h3>Address: {{ $customer->Address }}</h3>
             <h3>Phone Number: {{ $customer->Phone_Number }}</h3>
         
-            @isset($user) 
+            @if(isset($user))
                 <h3>Username: {{ $user->Username }}</h3>
                 <h3>Email: {{ $user->Email }}</h3>
-            @endisset
+                @endif
         </div>
     </ul>
 </section>
