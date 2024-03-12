@@ -12,7 +12,7 @@
 </head>
 
 <header>
-    
+
     <div class="top-left">
         <div class="login-buttons">
             <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
@@ -43,23 +43,32 @@
     @endauth
 </header>
 
-<nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    
-    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
-        <a href="search"><i class="fas fa-search"></i> Search</a>
-        <a href="list"><i class="fas fa-list"></i> List</a>
-        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
-        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
-        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
-    @endif
-    
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-</nav>
+<button onclick="goBack()" class="custom-button">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+<style>
+.custom-button {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.custom-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+</style>
+
 
 <section id="customer-details" class="container mt-5">
     <header>
