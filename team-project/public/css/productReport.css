@@ -1,47 +1,147 @@
+
 :root {
-    --blue: #6c96b6;
-    --darkgreen: #6a9b86; 
-    --lightgreen: #c8e6d1; 
-    --border: .1rem solid #6a9b86;
+    --primary-color: #283747;
+    --secondary-color: #f5f5f5;
+    --accent-color: #2980b9;
+    --text-color: #c8e6d1;
+    --text-color-2: #000000;
+    --button-color: #283747;
+    --white-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--darkgreen);
-    color: var(--lightgreen);
+    background-color: var(--primary-color); /* Set background color to match header */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Header Styling */
-header {
-    background-color: var(--darkgreen);
-    color: var(--lightgreen);
-    padding: 20px;
+.alert-success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
     text-align: center;
+    z-index: 1000;
+}
+
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+.top-right .login-buttons {
+    margin-left: auto;
+}
+
+.top-right .login-buttons a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.top-right .login-buttons a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+    font-size: 3em;
+    text-decoration: underline;
+    text-decoration-color: #2980b9;
+    text-decoration-thickness: 4px;
+    color: var(--text-color);
+    font-family: 'EB Garamond', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 100px;
+    margin-left: auto;
+}
+
+header h1 span {
+    color: #2980b9 !important; 
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+}
+
+.login-buttons {
+    margin-right: 10px;
+}
+
+.login-buttons a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-buttons a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.session-message {
+    margin-left: auto;
+}
+
 .log-out-box {
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .log-out-box form {
-    display: block;
-    margin: auto;
-    margin-bottom: 10px; /* Adjust the margin bottom as needed */
+    margin: 0;
 }
 
-/* Navigation Styling */
+.welcome-message {
+    margin-left: 10px;
+}
+
 nav {
-    background-color: var(--darkgreen);
+    background-color: var(--primary-color);
     overflow: hidden;
     text-align: center;
+    color: var(--text-color);
 }
 
 nav a {
     display: inline-block;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -49,26 +149,17 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--blue); 
-    color: black;
-    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a.active {
-    background-color: var(--blue);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 nav a:last-child {
     border-right: none;
-}
-
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
 }
 
 /* Table Styling */
