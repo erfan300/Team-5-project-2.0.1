@@ -43,7 +43,7 @@
     @endauth
 </header>
 
-<button onclick="goBack()" class="custom-button">Go Back</button>
+<button onclick="goBack()" class="custom-button">Previous Page</button>
 
 <script>
 function goBack() {
