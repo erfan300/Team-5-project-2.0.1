@@ -8,20 +8,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 </head>
 <body>
-@if(auth()->user()->User_Type == 'Admin')
-    <header class="header">
-        <h1>Books4U BookStore</h1>
-        <nav>
-            <a href="home"><i class="fas fa-home"></i> Home</a>
-            <a href="profile"><i class="fas fa-user"></i> Profile</a>
-            <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-            <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+<header>
+    
+    <div class="top-left">
+        <div class="login-buttons">
             <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
             <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-            <a href="about"><i class="fas fa-info-circle"></i> About</a>
-            <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-    </header>
+            @auth
+                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+            @endauth
+        </div>
+    </div>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+    @auth
+        <div class="log-out-box">
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+        <div class="welcome-message">
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+    @endauth
+</header>
+
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+    
+    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
+        <a href="search"><i class="fas fa-search"></i> Search</a>
+        <a href="list"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
+        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
+    @endif
+    
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
     <div class="discount-header">
         <h2>Discount</h2>
     </div>
@@ -40,137 +76,53 @@
             <button type="submit">Create/Update Discount Code</button>
         </form>
     </div>
-@else
-    <p>You do not have permission to access this page.</p>
-@endif
+
+ <!-- Footer -->
+ <section class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Welcome to Books4U, the place where the love for writing intertwines with the art of storytelling. We strongly believe in the transformative power of books, and their ability to greatly impact individuals, as well as communities. Our main purpose is to inspire, attract, and ignite the imaginations of the people who enjoy reading books.</p>
+                <section class="footer-section contact">
+    <h3>Contact Us</h3>
+    <ul>
+        <li><i class="fas fa-phone"></i> Phone: +44 0121 456 7894</li>
+        <li><i class="fas fa-envelope"></i> Email: Books4U@gmail.com</li>
+        <div class="social-media">
+        <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/your_twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </ul>
+</section>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <a href="about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="home"><i class="fas fa-home"></i> Home</a>
+                <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <form action="#" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Books4U Bookstore. All rights reserved.
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<style>
- :root {
-    --primary-color: #283747; /* Dark blue-gray */
-    --secondary-color: #f5f5f5; /* Light gray */
-    --accent-color: #2980b9; /* Blue */
-    --text-color: #c8e6d1; /* Dark gray */
-    --link-color: #2980b9; /* Blue */
-    --button-color: #283747; /* Blue */
-}
-
-* {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none; 
-    border:none;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-color); 
-    color: var(--secondary-color);
-}
-
-/* Header Styling */
-.header {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Navigation Styling */
-nav {
-    background-color: var(--primary-color);
-    overflow: hidden;
-    text-align: center;
-}
-
-nav a {
-    display: inline-block;
-    color: var(--secondary-color);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-nav a.active {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-.discount-header {
-    text-align: center;
-    margin-top: 50px; 
-}
-/* Form Styling */
-.discount-form {
-    margin-top: 20px; 
-    text-align: center;
-}
-
-.discount-form form {
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background: var(--primary-color); 
-    border-radius: 10px;
-}
-
-.discount-form label {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--text-color);
-}
-
-.discount-form input[type="text"],
-.discount-form input[type="number"],
-.discount-form input[type="date"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; 
-    color:black;
-}
-
-.discount-form button[type="submit"], .discount-form button[type="button"] {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.discount-form button[type="submit"]:hover, .discount-form button[type="button"]:hover {
-    background-color: var(--accent-color);
-}
-</style>
