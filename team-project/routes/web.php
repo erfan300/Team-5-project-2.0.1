@@ -15,8 +15,8 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ChPasswordController;
 use App\Http\Controllers\PrevOrdersController;
 use App\Http\Controllers\CommentController;
-
-
+use App\Http\Controllers\ThreadController;
+use App\Models\Thread;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -182,10 +182,10 @@ Route::post('/change-password', [ChPasswordController::class, 'changePassword'])
 
 Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 
-// View forum page
-Route::get('/forum', function () {
-    return view('forum');
-});
+ //View forum page
+//Route::get('/forum', function () {
+ //return view('forum');
+//});
 
 // Show single page
 Route::get('/single', function () {
@@ -196,6 +196,14 @@ Route::get('/single', function () {
 Route::get('/show', function () {
     return view('show');
 });
+
+
+//threads - (forum functionality)
+
+Route::get('/forum', [ThreadController::class, 'index'])->name('forum.index');
+Route::get('/forum/create', [ThreadController::class, 'create'])->name('forum.create');
+Route::post('/forum/store', [ThreadController::class, 'store'])->name('forum.store');
+
 
 Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
 Route::post('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
