@@ -21,6 +21,10 @@
 
 <header class="header">
 <h1>BOOKS<span>4</span>U</h1>
+<br>
+<br>
+<div>
+
 
 
 <nav>
@@ -33,7 +37,7 @@
     <a href="about"><i class="fas fa-info-circle"></i> About</a>
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
-    
+    </div>
 </header>
 
 
