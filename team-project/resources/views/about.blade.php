@@ -19,10 +19,11 @@
     
 <!-- header section starts  -->
 
+<header>
+
 <h1>BOOKS<span>4</span>U</h1>
-
-
-
+<br> 
+</header>
 <nav>
     <a href="home"><i class="fas fa-home"></i> Home</a>
     <a href="profile"><i class="fas fa-user"></i> Profile</a>
