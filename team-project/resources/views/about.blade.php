@@ -11,34 +11,9 @@
     <link href="{{ asset('css/aboutcss.css') }}" rel="stylesheet">
 </head>
 
-<body>
-<header>
-    
-    <div class="top-left">
-        <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-            @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
-            @endauth
-        </div>
-    </div>
-    <h1>BOOKS<span>4</span>U</h1>
-    <div class="session-message">
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-    </div>
-    @auth
-        <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
-                @csrf
-                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </form>
-        </div>
 
+    <h1>BOOKS<span>4</span>U</h1>
+    
 
 <body>
     
