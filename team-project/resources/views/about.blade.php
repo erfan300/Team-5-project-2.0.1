@@ -10,34 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="{{ asset('css/aboutcss.css') }}" rel="stylesheet">
 </head>
-
-<body>
-<header>
-    
-    
-    <h1>BOOKS<span>4</span>U</h1>
-    <div class="session-message">
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-    </div>
-    @auth
-        <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
-                @csrf
-                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </form>
-        </div>
-
-
 <body>
     
 <!-- header section starts  -->
 
 <header class="header">
 
+<h1>Books4U BookStore</h1>
 
 <nav>
     <a href="home"><i class="fas fa-home"></i> Home</a>
