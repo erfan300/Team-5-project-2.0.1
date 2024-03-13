@@ -1,5 +1,5 @@
  
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+ 
  :root {
     --primary-color: #283747; /* Dark blue-gray */
     --secondary-color: #f5f5f5; /* Light gray */
@@ -79,101 +79,7 @@ header {
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-header h1 {
-    font-size: 3em;
-    text-decoration: underline;
-    text-decoration-color: #2980b9;
-    text-decoration-thickness: 4px;
-    color: var(--text-color);
-    font-family: 'EB Garamond', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-right: 100px;
-    margin-left: auto;
-    background-color:#283747;
-}
 
-header h1 span {
-    color: #2980b9 !important; 
-}
-
-.top-left {
-    display: flex;
-    align-items: center;
-}
-
-.login-buttons {
-    margin-right: 10px;
-}
-
-.login-buttons a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-right: 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.login-buttons a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-.session-message {
-    margin-left: auto;
-}
-
-.log-out-box {
-    display: flex;
-    align-items: center;
-}
-
-.log-out-box form {
-    margin: 0;
-}
-
-.welcome-message {
-    margin-left: 10px;
-}
-
-nav {
-    background-color: var(--primary-color);
-    overflow: hidden;
-    text-align: center;
-    color: var(--text-color);
-}
-
-nav a {
-    display: inline-block;
-    color: var(--text-color);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-nav a.active {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-@media screen and (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
   
   /*:root{
     --primary-color: #283747;
