@@ -35,6 +35,17 @@ header h1 span {
     color: #2980b9 !important;
 }
 
+header h1 {
+    font-size: 3em;
+    text-decoration: underline;
+    text-decoration-color: #2980b9;
+    text-decoration-thickness: 4px;
+    color: var(--text-color);
+    font-family: 'EB Garamond', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 100px;
+    margin-left: auto;
+}
 
 /* Header Styling */
 header {
@@ -53,10 +64,27 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-nav {
-    background-color: var(--darkgreen);
-    overflow: hidden;
+nav a {
+    display: inline-block;
+    color: var(--text-color);
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+nav a.active {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+nav a:last-child {
+    border-right: none;
 }
 
 a {
