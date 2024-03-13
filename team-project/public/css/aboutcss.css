@@ -33,6 +33,7 @@ padding:2rem 7%;
 
 header h1 span {
     color: #2980b9 !important;
+    padding-bottom: 30px;
 }
 .top-left {
     display: flex;
@@ -68,9 +69,7 @@ header h1 {
 body {
     font-family: 'Arial', sans-serif;
 }
-nav {
-    padding-top: 10px;
-}
+
 
 nav a {
     display: inline-block;
