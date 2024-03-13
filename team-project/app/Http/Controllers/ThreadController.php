@@ -24,25 +24,19 @@ class ThreadController extends Controller
     
     public function store(Request $request)
     {
-        
         $request->validate([
             'thread' => 'required|max:255',
             'description' => 'required',
+            'author' => 'required|max:255',
         ]);
 
-        
-        $user = auth()->user();
-
-        
         Thread::create([
             'thread' => $request->input('thread'),
-            'created_at' => now(), 
+            'created_at' => now(), // Manually setting the created_at time
             'description' => $request->input('description'),
-            'author' => $user->name,
+            'author' => $request->input('author'),
         ]);
 
-        
         return redirect()->route('forum.index')->with('success', 'Thread created successfully!');
-        
     }
 }

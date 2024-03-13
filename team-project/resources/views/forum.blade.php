@@ -3,6 +3,27 @@
 
 @section('content')
 <div class="container">
+<table class="table">
+        <thead>
+            <tr>
+                <th>Thread Name</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($threads as $thread)
+                <tr>
+                    <td>{{ $thread->thread }}</td>
+                    <td>{{ $thread->description }}</td>
+                    <td>{{ $thread->author }}</td>
+                    <td>{{ $thread->created_at }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
     <h2>All Threads</h2>
 
     <div>
@@ -17,34 +38,10 @@
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
             </div>
+            <div class="form-group">
+        <label for="author">Author Name:</label>
+        <input type="text" class="form-control" id="author" name="author" required>
+    </div>
             <button type="submit" class="btn btn-primary">Create Thread</button>
         </form>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Thread Name</th>
-                <th>Description</th>
-                <th>Author</th>
-                <th>Created At</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($threads as $thread)
-                <tr>
-                    <td>{{ $thread->id }}</td>
-                    <td>{{ $thread->thread }}</td>
-                    <td>{{ $thread->description }}</td>
-                    <td>{{ $thread->author }}</td>
-                    <td>{{ $thread->created_at }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-@endsection
-
-</body>
-</html>
-<!-- resources/views/forum.blade.php -->
