@@ -12,7 +12,7 @@
 </head>
 
 
-    <h1>BOOKS<span>4</span>U</h1>
+    
     
 
 <body>
@@ -20,7 +20,8 @@
 <!-- header section starts  -->
 
 <header class="header">
-
+<h1>BOOKS<span>4</span>U</h1>
+</header>
 
 <nav>
     <a href="home"><i class="fas fa-home"></i> Home</a>
