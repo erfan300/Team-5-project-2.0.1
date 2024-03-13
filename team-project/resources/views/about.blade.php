@@ -14,15 +14,7 @@
 <body>
 <header>
     
-    <div class="top-left">
-        <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-            @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
-            @endauth
-        </div>
-    </div>
+    
     <h1>BOOKS<span>4</span>U</h1>
     <div class="session-message">
         @if (session('message'))
