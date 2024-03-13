@@ -19,7 +19,7 @@
     
 <!-- header section starts  -->
 
-<header>
+<header class="header">
 
 <h1>BOOKS<span>4</span>U</h1>
 <br> 
