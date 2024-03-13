@@ -68,6 +68,9 @@ header h1 {
 body {
     font-family: 'Arial', sans-serif;
 }
+nav {
+    padding-top: 10px;
+}
 
 nav a {
     display: inline-block;
