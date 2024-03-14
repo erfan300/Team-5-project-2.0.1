@@ -18,7 +18,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--primary-color); /* Set background color to match header */
+    background-color: var(--secondary-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -225,6 +225,9 @@ nav a:last-child {
 /* Book create form */
 .book-form {
     background: var(--white-color);
+    outline-style: outset;
+    outline-color:aquamarine;
+    border-style: round;
     border-radius: 15px;
     width: 700px; 
     padding: 40px 40px; 
