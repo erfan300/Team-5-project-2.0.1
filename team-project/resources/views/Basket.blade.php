@@ -198,8 +198,10 @@
                     <div id = "checkout-button">
                     <form method="POST" action="{{ route('checkout') }}">
                         @csrf
+                        <a href = "Paymentpage.php">
                             <input type="submit" value="Checkout" class="btn">
                         @csrf
+</a>
                         </form>
                     </div>
                 </tfoot>
