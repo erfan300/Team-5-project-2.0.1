@@ -195,15 +195,9 @@
                         
                         <br>
                     </tr>
-                    <div id = "checkout-button">
-                    <form method="POST" action="{{ route('checkout') }}">
-                        @csrf
-                        <a href = "Paymentpage.php">
-                            <input type="submit" value="Checkout" class="btn">
-                        @csrf
-</a>
-                        </form>
-                    </div>
+                    <div class="checkout-button">
+            <a href="{{ route('payment-page') }}" class="btn btn-success">Checkout</a>
+        </div>
                 </tfoot>
             </div>
         </table>    
