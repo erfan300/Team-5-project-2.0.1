@@ -106,8 +106,10 @@
                 </div>
 
                 <button type="submit" class="btn">Change Password</button>
-                <div class="password-register">
-                    <p>Remember your password? <a href="/login" class="login-link">Log In</a></p>
+                <div class="remember-text">
+                <p style="color: black;">Remember your password?  <a href="login" class="forgot-link">Login</a></p>
+
+                  </div>
                 </div>
             </form>
         </div>
