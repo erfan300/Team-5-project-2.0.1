@@ -197,6 +197,14 @@ Route::get('/show', function () {
     return view('show');
 });
 
+//prev orders related stuff
+Route::get('/profile/previous-orders', [PrevOrdersController::class, 'showPreviousOrders'])->name('profile.previous-orders');
+Route::post('/return-order/{orderDetail}', [PrevOrdersController::class, 'returnOrder'])->name('return-order');
+
+
+Route::get('/PrevOrders', function () {
+    return view('PrevOrders');
+});
 
 //threads - (forum functionality)
 

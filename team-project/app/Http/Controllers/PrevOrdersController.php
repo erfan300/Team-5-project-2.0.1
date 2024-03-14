@@ -2,37 +2,68 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
+use App\Models\OrderDetails;
 use App\Models\Orders;
-use Illuminate\Http\Request;
 use App\Models\InventoryLog;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 class PrevOrdersController extends Controller
 {
-    public function profile()
-    {
-        $user = auth()->user();
-        $userOrders = Orders::where('Customer_ID', $user->Customer_ID)->get();
+    //public function profile()
+    //{
+      //  $user = auth()->user();
+
         
-        return view('profile', compact('user', 'userOrders'));
-    }
+        //$userOrders = $user->orders()->with(['orderDetails.product'])->get();
     
-   public function processReturn(Request $request)
+        //return view('profile', compact('user', 'userOrders'));
+    //}
+    
+    public function showPreviousOrders(Request $request)
+{
+    $user = auth()->user();
+    $userId = $user->User_ID;
+
+    $orders = Orders::query()
+        ->join('customers', 'orders.Customer_ID', '=', 'customers.Customer_ID')
+        ->where('customers.User_ID', $userId)
+        ->with('orderDetails.product')
+        ->get();
+
+    // return the PrevOrders view with the orders data
+    return view('PrevOrders', compact('orders'));
+
+}
+
+public function returnOrder($orderDetailId)
     {
-        // Handles the return process and update the stock level
-        $logId = $request->input('log_id');
+        DB::transaction(function () use ($orderDetailId) {
+            $orderDetail = OrderDetails::findOrFail($orderDetailId);
+            $product = $orderDetail->product; 
+            $quantity = $orderDetail->Quantity;
 
-    $inventoryLog = InventoryLog::find($logId);
+            // Update the inventory
+            $latestInventory = InventoryLog::where('Product_ID', $product->Product_ID)->latest('TransactionDate')->first();
+            if ($latestInventory) {
+                InventoryLog::create([
+                    'Product_ID' => $product->Product_ID,
+                    'Admin_ID' => auth()->user()->id, 
+                    'TransactionType' => 'In', // using In for transaction type
+                    'TransactionDate' => now(),
+                    'TransactionQuantity' => $quantity,
+                    'NewStockLevel' => $latestInventory->NewStockLevel + $quantity,
+                ]);
+            }
 
-        if ($inventoryLog) {
-            //the return process involves increasing/decreasing the stock level
-            $newStockLevel = $inventoryLog->NewStockLevel + $inventoryLog->TransactionQuantity;
-            $inventoryLog->NewStockLevel = $newStockLevel;
-            $inventoryLog->save();
-        }
+            
+            $orderDetail->delete();
+        });
 
- 
-        
-        return redirect()->route('profile');
+        return back()->with('success', 'Order returned and inventory updated.');
     }
-    
+  
 }
