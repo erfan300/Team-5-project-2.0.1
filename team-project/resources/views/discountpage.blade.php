@@ -59,7 +59,7 @@
 </nav>
 
     <div class="discount-header">
-        <h2>Discount</h2>
+        <h2>Discount Code</h2>
     </div>
     <div class="discount-form">
         <form method="POST" action="{{ route('create-discount') }}">
