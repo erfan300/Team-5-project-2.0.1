@@ -261,7 +261,130 @@ h5{
 
 
 
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 200px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 20px;
+}
 
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-section.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section.links h3 {
+    color: white;
+}
+
+.footer-section.links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.footer-section.links a:hover {
+    color: #2980b9;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.contact {
+    margin-top: 1rem;
+    color: white;
+}
+
+.footer-section p {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-color);
+}
+
+/* Styles for contact form */
+.contact-form {
+    color: var(--text-color);
+}
+
+.contact-form h3 {
+    color: var(--text-color);
+}
+
+.contact-form .text-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1;
+    left: 950px;
+  top: 930px;
+}
+
+.contact-btn:hover {
+    background-color: var(--button-color);
+    color: #fff;
+
+}
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #2980b9;
+}
 
 
 
