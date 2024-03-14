@@ -55,7 +55,10 @@
     <a href="about"><i class="fas fa-info-circle"></i> About</a>
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
+<br>
 
+
+    <h2>Product Report</h2>
     <table>
         <thead>
             <tr>
