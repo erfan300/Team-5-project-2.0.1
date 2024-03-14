@@ -55,6 +55,11 @@
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
+<br>
+
+
+    <h2>Order Report</h2>
+
     <table>
         <thead>
             <tr>
