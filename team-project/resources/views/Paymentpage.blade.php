@@ -58,9 +58,9 @@
     <br><br>
 
     <!-- Payment page -->
-    <section class="payment" id="checkout">
+    <section class="checkout" id="checkout">
     <h1 class="heading">Checkout</h1>
-    
+    <div class="box">
             <form>
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
@@ -80,6 +80,7 @@
                 <input type="text" id="postcode" name="Postcode">
               </div>
             </div>
+</div>
           </div>
 <br>
 <br>
