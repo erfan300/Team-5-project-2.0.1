@@ -20,6 +20,7 @@
     <a href="register"><i class="fas fa-user-plus"></i> Register</a>
     <a href="about"><i class="fas fa-info-circle"></i> About</a>
     <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
     </nav>
     
 </header>
