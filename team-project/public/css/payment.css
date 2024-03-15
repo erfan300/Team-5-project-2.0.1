@@ -217,6 +217,9 @@ h1 {
     color: var(--text-color);
     font-family: 'EB Garamond', serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-right: 100px;
+    margin-left: auto;
+    background-color:#283747;
 }
 h2{
     position: absolute;
