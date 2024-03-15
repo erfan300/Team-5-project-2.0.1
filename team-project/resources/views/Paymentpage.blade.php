@@ -63,15 +63,13 @@
 
 
 <section class="about" id="about">
-<h1 class="title">Checkout</h1>
+       <h1 class="title">Checkout</h1>
     <br><br>
-    <div class="box">
-        <div class="content">
-            </div>
-   
+    
+</section>
 
 
-
+    <header>
     
  
     <br>
@@ -139,8 +137,6 @@
           </div>
 <br>
 <br>
-</div>
-</section>
 </section>
 
         </div>
