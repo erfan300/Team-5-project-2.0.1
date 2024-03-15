@@ -58,24 +58,16 @@
         
     </nav>
     <br>
+
     <!-- Payment page -->
-
-
-
-<section class="about" id="about">
-       <h1 class="title">Checkout</h1>
-    <br><br>
+    <h1 class="title">Checkout</h1>
+<main>
+   
     
-</section>
-
-
-    <header>
     
- 
-    <br>
-    <header>
+    
       <br>
-      <section>  
+      
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -137,7 +129,7 @@
           </div>
 <br>
 <br>
-</section>
+
 
         </div>
        
@@ -153,10 +145,7 @@
 
 
         
-      </form>
-    </div>
-  </div>
-</section>
+   
 <br>
 <br>
 </main>
