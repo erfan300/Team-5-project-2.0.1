@@ -58,18 +58,16 @@
     <br><br>
 
     <!-- Payment page -->
-    <h1 class="title">Checkout</h1>
 
 <main>
     <header>
     
-    
+    <h1 class="title">Checkout</h1>
     <br>
     <header>
       <br>
       <section>  
             <h3>Billing Address</h3>
-        
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
             <input type="text" id="fname" name="firstname" placeholder="John Smith">
@@ -150,6 +148,9 @@
     </div>
   </div>
 </section>
+<br>
+<br>
+</main>
 
   <!-- Footer -->
   <section class="footer">
