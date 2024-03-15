@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-section{
+section {
 
     float: center
   }
@@ -41,14 +41,7 @@ section{
     animation: fadeOut 2s ease-out;
 }
 
-body {
-    float: center   ;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-}
+
 
 .top-right {
     display: flex;
