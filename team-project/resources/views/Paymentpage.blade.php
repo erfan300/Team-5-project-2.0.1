@@ -7,8 +7,6 @@
     <title>Books4U</title>
     <link rel="icon" href="" type="" />
     <link rel="stylesheet" type="text/css" href="css/payment.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-
     <script defer src="js/main.js"></script>
 </head>
 
@@ -57,17 +55,16 @@
        
         
     </nav>
-    <br>
+    <br><br>
 
     <!-- Payment page -->
-    <h1 class="title">Checkout</h1>
-<main>
-   
-    
-    
-    
+
+    <section id="Payment page" class="container mt-5">
+    <header>
+        <h2>Checkout </h2>
+    <header>
       <br>
-      
+      <section>   
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -129,7 +126,7 @@
           </div>
 <br>
 <br>
-
+</section>
 
         </div>
        
@@ -145,10 +142,10 @@
 
 
         
-   
-<br>
-<br>
-</main>
+      </form>
+    </div>
+  </div>
+
 
   <!-- Footer -->
   <section class="footer">
