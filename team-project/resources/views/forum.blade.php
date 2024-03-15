@@ -1,5 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<link href="{{ asset('css/forum.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+</head>
+<nav>
+    <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+    <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
+    <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+    <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+<br>
+
+<h2>All Threads</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Create New Thread</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Create New Thread</h3>
+    <form method="post" action="{{ route('forum.store') }}">
+        @csrf
+        <div class="form-group">
+            <label for="thread">Thread Name:</label>
+            <input type="text" id="thread" name="thread" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="author">Author Name:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Thread</button>
+    </form>
+  </div>
+
+</div>
 
 @section('content')
 <div class="container">
@@ -23,25 +66,31 @@
             @endforeach
         </tbody>
     </table>
+<script>
+  
+var modal = document.getElementById("myModal");
 
-    <h2>All Threads</h2>
 
-    <div>
-        <h3>Create New Thread</h3>
-        <form method="post" action="{{ route('forum.store') }}">
-            @csrf
-            <div class="form-group">
-                <label for="thread">Thread Name:</label>
-                <input type="text" class="form-control" id="thread" name="thread" required>
-            </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-            </div>
-            <div class="form-group">
-        <label for="author">Author Name:</label>
-        <input type="text" class="form-control" id="author" name="author" required>
-    </div>
-            <button type="submit" class="btn btn-primary">Create Thread</button>
-        </form>
-    </div>
+var btn = document.getElementById("myBtn");
+
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+    </script>
+   

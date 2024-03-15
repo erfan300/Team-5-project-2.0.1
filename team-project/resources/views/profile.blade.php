@@ -110,7 +110,6 @@
 <h2>Previous Orders</h2>
 <a href="{{ route('profile.previous-orders') }}" class="button-style">Click Here To View Your Previous Orders</a>
 </section>
-
 </main>
 
  <!-- Footer -->
