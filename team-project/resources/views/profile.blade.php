@@ -107,7 +107,7 @@
     </form>
 
     <section class="previous-orders">
-<h2>Previous Orders</h2>
+    <h1 class="title">Previous orders</h1>
 <a href="{{ route('profile.previous-orders') }}" class="button-style">Click Here To View Your Previous Orders</a>
 </section>
 </main>
