@@ -9,7 +9,7 @@ section{
     --primary-color: #283747; /* Dark blue-gray */
     --secondary-color: white; /* white */
     --accent-color: #2980b9; /* Blue */
-    --text-color: #c8e6d1; /* Dark gray */
+    --text-color: #000502; /* Dark gray */
     --text-color-2: #000000; /* Black */
     --link-color: #2980b9; /* Blue */
     --button-color: #283747; /* Blue */
@@ -282,7 +282,25 @@ h5{
   
 }
 
+.btn {
+    /* Removed absolute positioning */
+    background: var(--darkgreen);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s linear;
+}
+.btn:hover {
+    background: var(--blue);
+}
 
+#checkout-button {
+    position: relative;
+    margin-top: 20px; 
+}
 
 /* Footer */
 .footer {
