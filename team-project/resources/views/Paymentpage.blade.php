@@ -56,15 +56,11 @@
         
     </nav>
     <br><br>
-
+    <h1 class="title">Checkout</h1>
     <!-- Payment page -->
-
-    <section id="Payment page" class="container mt-5">
-    <header>
-        <h2>Checkout </h2>
-    <header>
-      <br>
-      <section>   
+<main>
+   
+         
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -145,7 +141,7 @@
       </form>
     </div>
   </div>
-
+</main>
 
   <!-- Footer -->
   <section class="footer">
