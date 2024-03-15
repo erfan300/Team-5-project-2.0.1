@@ -55,14 +55,15 @@
        
         
     </nav>
-    <br><br>
+    <br>
 
     <!-- Payment page -->
 
 <main>
-    <header>
+   
     
     <h1 class="title">Checkout</h1>
+    <div class="box">
     <br>
     <header>
       <br>
