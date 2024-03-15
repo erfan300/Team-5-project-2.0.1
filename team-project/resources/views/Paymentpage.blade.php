@@ -61,7 +61,8 @@
 
 <section id="Payment page" class="container mt-5">
     <header>
-    <h1 class="title">Checkout</h1>
+    <h2 class="title">Checkout</h2>
+    <br>
     <header>
       <br>
       <section>  
@@ -136,48 +137,48 @@
 </section>
 
   <!-- Footer -->
- <section class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h3>About Us</h3>
-            <p>Welcome to Books4U, the place where the love for writing intertwines with the art of storytelling. We strongly believe in the transformative power of books, and their ability to greatly impact individuals, as well as communities. Our main purpose is to inspire, attract, and ignite the imaginations of the people who enjoy reading books.</p>
-            <section class="footer-section contact">
-<h3>Contact Us</h3>
-<ul>
-    <li><i class="fas fa-phone"></i> Phone: +44 0121 456 7894</li>
-    <li><i class="fas fa-envelope"></i> Email: Books4U@gmail.com</li>
-    <div class="social-media">
-    <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://twitter.com/your_twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-    </div>
-</ul>
-</section>
+  <section class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Welcome to Books4U, the place where the love for writing intertwines with the art of storytelling. We strongly believe in the transformative power of books, and their ability to greatly impact individuals, as well as communities. Our main purpose is to inspire, attract, and ignite the imaginations of the people who enjoy reading books.</p>
+                <section class="footer-section contact">
+    <h3>Contact Us</h3>
+    <ul>
+        <li><i class="fas fa-phone"></i> Phone: +44 0121 456 7894</li>
+        <li><i class="fas fa-envelope"></i> Email: Books4U@gmail.com</li>
+        <div class="social-media">
+        <a href="https://www.instagram.com/your_instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/your_facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/your_twitter" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
+    </ul>
+</section>
+            </div>
         <div class="footer-section links">
-            <h3>Quick Links</h3>
-            <a href="about"><i class="fas fa-info-circle"></i> About</a>
-            <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="home"><i class="fas fa-home"></i> Home</a>
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+                <h3>Quick Links</h3>
+                <a href="about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="home"><i class="fas fa-home"></i> Home</a>
+                <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <form action="#" method="post">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="footer-section contact-form">
-            <h3>Contact Us</h3>
-            <form action="#" method="post">
-                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                <button type="submit" class="btn btn-big contact-btn">
-                    <i class="fas fa-envelope"></i>
-                    Send
-                </button>
-            </form>
+        <div class="footer-bottom">
+            &copy; 2024 Books4U Bookstore. All rights reserved.
         </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2024 Books4U Bookstore. All rights reserved.
-    </div>
-</section>
+    </section>
 
 </body>
 
