@@ -41,7 +41,14 @@ section {
     animation: fadeOut 2s ease-out;
 }
 
-
+body {
+    float: center   ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
 
 .top-right {
     display: flex;
