@@ -56,7 +56,7 @@
         
     </nav>
     <br><br>
-
+<section>
     <!-- Payment page -->
     <section class="checkout" id="checkout">
     <h1 class="header">Checkout</h1>
@@ -131,12 +131,6 @@
         </div>
        
         </label>
-
-        
-
-       
-    
-    
 
 </box>
         

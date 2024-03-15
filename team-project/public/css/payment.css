@@ -7,7 +7,7 @@ section{
 
 :root {
     --primary-color: #283747; /* Dark blue-gray */
-    --secondary-color: #f5f5f5; /* Light gray */
+    --secondary-color: white; /* white */
     --accent-color: #2980b9; /* Blue */
     --text-color: #c8e6d1; /* Dark gray */
     --text-color-2: #000000; /* Black */
@@ -95,7 +95,6 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     margin-right: 100px;
     margin-left: auto;
-    background-color:#283747;
 }
 
 header h1 span {
@@ -377,7 +376,7 @@ h5{
 }
 
 .contact-btn {
-    background-color: #fff;
+    background-color:white;
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -391,7 +390,7 @@ h5{
 
 .contact-btn:hover {
     background-color: var(--button-color);
-    color: #fff;
+    color:white;
 
 }
 
