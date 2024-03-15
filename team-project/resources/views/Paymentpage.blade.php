@@ -62,10 +62,10 @@
     <br>
 
     <!-- Payment page -->
-   <main>
-   <section>
+   <body>
+   <section class="checkout">
     
-            <form>
+            
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -89,7 +89,7 @@
 <br>
 <br>
          
-<h3 class="title">Payment</h3>
+<h3>Payment</h3>
             <br>
 <label for="shipping_method">Shipping Method:</label><br>
         <select id="shipping_method" name="shipping_method" required>
@@ -140,8 +140,8 @@
         
 
   </section>
-</main>
-<body>
+
+</body>
   <!-- Footer -->
   <section class="footer">
         <div class="footer-content">
