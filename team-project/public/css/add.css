@@ -31,18 +31,27 @@ padding:2rem 7%;
 .title{
     text-align: center;
     font-size: 30px;
+    color: var(--primary-color);
 }
 
 .add {
-    background-color: var(--primary-color);
-    margin: 50px;
-    padding: 75px;
-    border-radius: 8px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
 }
-form {
+.add-form {
     gap: 15px;
+    background: var(--primary-color);
+    border-radius: 15px;
+    width: 1000px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin-bottom: 50px;
 }
 
 

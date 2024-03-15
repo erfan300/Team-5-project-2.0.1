@@ -65,7 +65,7 @@
 <section class="add" id="add">
     
     
-        <form method="POST" action="{{ route('store-customer') }}">
+        <form method="POST" class="add-form" action="{{ route('store-customer') }}">
             @csrf
             <!-- Add form fields to create a new customer -->
             <label for="first_name">First Name:</label>

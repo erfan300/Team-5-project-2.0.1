@@ -65,7 +65,7 @@
 <section class="update" id="update">
     
     
-    <form method="POST" action="{{ route('update-customer', ['id' => $customer->Customer_ID]) }}">
+    <form method="POST" class="update-form" action="{{ route('update-customer', ['id' => $customer->Customer_ID]) }}">
         @csrf
         @method('PUT')
         <label for="first_name">First Name:</label>
@@ -141,3 +141,4 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
