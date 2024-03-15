@@ -60,7 +60,7 @@
     <!-- Payment page -->
 <main>
    
-         
+        <section> 
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -122,25 +122,17 @@
           </div>
 <br>
 <br>
-</section>
+<div class="purchase">
+            <a href="{{ route('payment-page') }}" class="btn btn-success">Purchase</a>
+        </div>
 
         </div>
        
         </label>
 
-        
-
-       
-    
-    <div class="purchase">
-            <a href="{{ route('payment-page') }}" class="btn btn-success">Purchase</a>
-        </div>
-
-
-        
-      </form>
-    </div>
-  </div>
+     
+   
+  </section>
 </main>
 
   <!-- Footer -->
