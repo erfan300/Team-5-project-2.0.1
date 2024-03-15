@@ -59,7 +59,7 @@
 
     <!-- Payment page -->
     <section class="checkout" id="checkout">
-    <h1 class="heading">Checkout</h1>
+    <h1 class="header">Checkout</h1>
     <div class="box">
             <form>
             <h3>Billing Address</h3>
@@ -93,7 +93,7 @@
             <option value="standard">Standard Shipping</option>
             <option value="express">Express Shipping</option>
             <option value="next_day">Next Day Delivery</option>
-        </select><br><br>
+        </select>
 
 
             <br>
@@ -138,7 +138,7 @@
     
     
 
-
+</box>
         
 
   </section>
