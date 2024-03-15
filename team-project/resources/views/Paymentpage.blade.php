@@ -79,7 +79,7 @@
             <br>
             <input type="text" id="adr" name="address" placeholder="10 Wall Street">
             <br>>
-                <label for="zip" ></label > Postcode</label>
+                <label for="zip" ></label> Postcode</label>
                 <br>
                 <input type="text" id="postcode" name="Postcode">
               </div>
