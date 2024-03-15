@@ -43,6 +43,8 @@ section {
 
 body {
     align-items: center;
+    display: flex;
+    justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
