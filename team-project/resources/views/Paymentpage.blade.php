@@ -61,6 +61,7 @@
 <main>
    
         <section> 
+            <form>
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
@@ -139,6 +140,7 @@
 
         
      
+</form>
     </div>
   </div>
   </section>
