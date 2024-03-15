@@ -70,9 +70,10 @@
 
         <section>
     <h2>Previous Orders</h2>
-    <a href="{{ route('profile.previous-orders') }}" class="button-style">Previous Orders</a>
+    <form action="{{ route('profile.previous-orders') }}" method="get">
+        <button type="submit" class="button-style" style="color: black;">Previous Orders</button>
+    </form>
 </section>
-
 </main>
 </body>
 </html>
