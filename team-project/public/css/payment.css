@@ -98,7 +98,11 @@ header {
 .btn:hover {
     background: var(--blue);
 }
-
+.title{
+    text-align: center;
+    font-size: 30px;
+    color: var(--primary-color);
+}
 #checkout-button {
     position: relative;
     margin-top: 20px; 
@@ -276,7 +280,7 @@ h5{
     border-radius: 10px;
     }
 .btn {
-    position: absolute;
+    position: left;
     right: 100px;
     top:480px;
             background:#283747;

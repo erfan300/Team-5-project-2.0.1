@@ -57,12 +57,14 @@
        
         
     </nav>
-    <br><br>
-<section>
+    
+    <h1 class="title">Profile</h1>
+    <br>
+
     <!-- Payment page -->
-    <section class="checkout" id="checkout">
-    <h1 class="header">Checkout</h1>
-    <div class="box">
+   <main>
+   <section>
+    
             <form>
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
@@ -138,7 +140,7 @@
         
 
   </section>
-
+</main>
 <body>
   <!-- Footer -->
   <section class="footer">
@@ -174,7 +176,7 @@
                     <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
                     <button type="submit" class="btn btn-big contact-btn">
                         <i class="fas fa-envelope"></i>
-                        Send
+                       
                     </button>
                 </form>
             </div>
