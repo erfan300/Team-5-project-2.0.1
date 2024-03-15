@@ -61,7 +61,7 @@
 <main>
    
         <section> 
-            <h2>Billing Address</h2>
+            <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
            <br>
             <input type="text" id="fname" name="firstname" placeholder="John Smith">
@@ -83,7 +83,7 @@
 <br>
 <br>
          
-<h2 class="title">Payment</h2>
+<h3 class="title">Payment</h3>
             <br>
 <label for="shipping_method">Shipping Method:</label><br>
         <select id="shipping_method" name="shipping_method" required>
@@ -130,11 +130,21 @@
        
         </label>
 
+        
+
+       
+    
+    
+
+
+        
      
-   
+    </div>
+  </div>
   </section>
 </main>
-
+</body >
+<body>
   <!-- Footer -->
   <section class="footer">
         <div class="footer-content">
