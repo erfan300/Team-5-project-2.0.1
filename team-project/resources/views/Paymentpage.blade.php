@@ -58,13 +58,22 @@
         
     </nav>
     <br>
-
     <!-- Payment page -->
 
-<main>
-    <header>
+
+
+<section class="about" id="about">
+<h1 class="title">Checkout</h1>
+    <br><br>
+    <div class="box">
+        <div class="content">
+            </div>
+   
+
+
+
     
-    <h1 class="title">Checkout</h1>
+ 
     <br>
     <header>
       <br>
@@ -130,6 +139,8 @@
           </div>
 <br>
 <br>
+</div>
+</section>
 </section>
 
         </div>
