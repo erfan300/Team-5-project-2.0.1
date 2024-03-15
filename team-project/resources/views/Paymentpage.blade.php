@@ -87,7 +87,7 @@
 <br>
 <br>
          
-<h1 class="title">Payment</h1>
+<h2 class="title">Payment</h2>
             <br>
             <br>
             <label for="cname">Name on Card</label>
@@ -133,6 +133,7 @@
       </form>
     </div>
   </div>
+</section>
 
   <!-- Footer -->
  <section class="footer">
@@ -291,6 +292,6 @@
 
 
 </body>
---> 
+Footer --> 
 
 </html>
