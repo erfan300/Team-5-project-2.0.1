@@ -78,7 +78,7 @@
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <br>
             <input type="text" id="adr" name="address" placeholder="10 Wall Street">
-            <br>>
+            <br>
                 <label for="zip" ></label> Postcode</label>
                 <br>
                 <input type="text" id="postcode" name="Postcode">
