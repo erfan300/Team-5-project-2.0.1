@@ -38,7 +38,7 @@ Route::get('/', [ProductsController::class, 'index'])->name('home');
 Route::get('/home', [ProductsController::class, 'index'])->name('home');
 
 // Shows register page
-Route::get('/register', [UserController::class, 'register']);
+Route::get('/register', [UserController::class, 'register'])->name('register');
 
 // Creates a new user
 Route::post('/users', [UserController::class, 'store']);
@@ -50,7 +50,7 @@ Route::post('/store', [ProductsController::class, 'store']);
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
 
 // Shows searched books
-Route::get('/search', [SearchController::class, 'index'])->name('Search');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 // Shows Login Form
 Route::get('/login', [UserController::class, 'login'])->name('login'); 
@@ -126,9 +126,9 @@ Route::middleware('admin')->group(function () {
     Route::delete('/book/{book}', [ProductsController::class, 'delete']);
     
     // Shows create page for admins
-    Route::get('/create', [ProductsController::class, 'create']);
+    Route::get('/create', [ProductsController::class, 'create'])->name('create');
 
-    Route::get('/list', [AdminController::class, 'listCustomers'])->name('list-customers');
+    Route::get('/list', [AdminController::class, 'listCustomers'])->name('list');
     Route::get('/customer/{id}', [AdminController::class, 'showCustomerDetails'])->name('customer.details');
     Route::delete('/customer/{id}', [AdminController::class, 'deleteCustomer'])->name('customer.delete');
     Route::get('/customer/{id}/modify', [AdminController::class, 'modifyCustomer'])->name('modify-customer');
