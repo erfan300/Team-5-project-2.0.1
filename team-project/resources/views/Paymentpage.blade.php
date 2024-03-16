@@ -59,7 +59,7 @@
         
     </nav>
     
-    <h1 class="title">Profile</h1>
+    <h1 class="title">Checkout</h1>
     <br>
 
     <!-- Payment page -->
