@@ -58,7 +58,7 @@
         <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
         <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
         <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
-        <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
+        <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
         
         @if(Auth::check() && Auth::user()->User_Type === 'Admin')
             <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>

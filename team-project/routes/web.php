@@ -211,7 +211,7 @@ Route::get('/PrevOrders', function () {
 
 //threads - (forum functionality)
 
-Route::get('/forum', [ThreadController::class, 'index'])->name('forum.index');
+Route::get('/forum', [ThreadController::class, 'index'])->name('forum');
 Route::get('/forum/create', [ThreadController::class, 'create'])->name('forum.create');
 Route::post('/forum/store', [ThreadController::class, 'store'])->name('forum.store');
 
