@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/prevorders.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
     </head>
+=======
+>>>>>>> parent of ce1b945 (update)
     <header>
-
-<div class="top-left">
-    <div class="login-buttons">
-        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-        @auth
-            <a href="profile"><i class="fas fa-user"></i> Profile</a>
-        @endauth
-    </div>
-</div>
-<h1>BOOKS<span>4</span>U</h1>
-<div class="session-message">
-    @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
+    
+    <div class="top-left">
+        <div class="login-buttons">
+            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            @auth
+                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+            @endauth
         </div>
-    @endif
-</div>
-@auth
-    <div class="log-out-box">
-        <form class="inLine" method="POST" action="/logout">
-            @csrf
-            <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
-        </form>
     </div>
-    <div class="welcome-message">
-        <span>Welcome {{ auth()->user()->Username }}</span>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
     </div>
-@endauth
+    @auth
+        <div class="log-out-box">
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+        <div class="welcome-message">
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+    @endauth
 </header>
 
+<<<<<<< HEAD
 <button onclick="goBack()" class="custom-button">Previous Page</button>
 
 <script>
@@ -78,6 +83,25 @@ color: var(--accent-color);
     <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
     </nav>
 >>>>>>> parent of 4746b6c (added footer and header to forum prev orders)
+=======
+<nav>
+    <a href="home"><i class="fas fa-home"></i> Home</a>
+    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+    
+    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
+        <a href="search"><i class="fas fa-search"></i> Search</a>
+        <a href="list"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
+        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
+    @endif
+    
+    <a href="about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+>>>>>>> parent of ce1b945 (update)
 
     <section>
     <h2>Previous Orders</h2>
