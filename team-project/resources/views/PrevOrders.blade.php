@@ -15,6 +15,7 @@
     <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
     <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
     <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
     </nav>
 
     <section>

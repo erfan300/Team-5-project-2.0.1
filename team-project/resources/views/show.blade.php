@@ -12,22 +12,14 @@
 </head>
 <body>
    
-<!-- Display login flash Message -->
-@if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
-
-
     <header>
     
     <div class="top-left">
         <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
             @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+                <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
             @endauth
         </div>
     </div>
@@ -58,6 +50,7 @@
         <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
         <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
         <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
         
         @if(Auth::check() && Auth::user()->User_Type === 'Admin')
             <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
@@ -71,12 +64,6 @@
         <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
     
-
-@if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-@endif
 
 <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
 <div class="book-image-container">

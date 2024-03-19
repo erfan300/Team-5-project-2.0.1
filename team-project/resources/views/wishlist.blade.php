@@ -45,7 +45,7 @@
     <a href="home"><i class="fas fa-home"></i> Home</a>
     <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
     <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    
+    <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
         <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
         <a href="search"><i class="fas fa-search"></i> Search</a>
@@ -70,7 +70,7 @@
                     <th></th>
                 </tr>
                 @if(count($wishlist) == 0)
-                    <tr><td colspan="3">Wishlist is Empty!</td></tr>
+                    <tr><td colspan="3"><h4>Wishlist is Empty!</h4></td></tr>
                 @else
                     @foreach ($wishlist as $wishlistItem)
                     <tr>

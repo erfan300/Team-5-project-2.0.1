@@ -90,6 +90,10 @@ header h1 span {
     color: #2980b9 !important; 
 }
 
+.book-title-edit {
+    color: #2980b9;
+}
+
 .top-left {
     display: flex;
     align-items: center;

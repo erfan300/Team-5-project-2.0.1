@@ -3,28 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/createStyle.css') }}" rel="stylesheet">
+    <title>Books4U</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <title>Edit Book in Database</title>
+    <link href="{{ asset('css/createStyle.css') }}" rel="stylesheet">
+    <link rel="icon" href="" type="">
+    <script src="{{ asset('js/custom.js') }}"></script>
 </head>
 <body>
-<h1>Books4U BookStore</h1>
+<!-- Display login flash Message -->
+@if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
 
-<nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="profile"><i class="fas fa-user"></i> Profile</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-    <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+
+    <header>
+    
+    <div class="top-left">
+        <div class="login-buttons">
+            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
+            @auth
+                <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
+            @endauth
+        </div>
+    </div>
+    <h1>BOOKS<span>4</span>U</h1>
+    <div class="session-message">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+    </div>
+    @auth
+        <div class="log-out-box">
+            <form class="inLine" method="POST" action="/logout">
+                @csrf
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+        <div class="welcome-message">
+            <span>Welcome {{ auth()->user()->Username }}</span>
+        </div>
+    @endauth
+</header>
+
+
+    <nav>
+        <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
+        <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+        <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
+        
+        @if(Auth::check() && Auth::user()->User_Type === 'Admin')
+            <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
+            <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
+            <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
+            <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+            <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
+        @endif
+        
+        <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+        <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
+    
+
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
     
 </header>
     <section class="form-section">
-        <h1>Edit: {{$book->Product_Name}} </h1>
+        <h1 class="book-title-edit">Edit: {{$book->Product_Name}} </h1>
         <!-- The book edit form (fully working)-->
         <form action="/book/{{$book->Product_ID}}" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
