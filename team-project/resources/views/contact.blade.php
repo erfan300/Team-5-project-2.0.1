@@ -73,6 +73,7 @@
    <section class="contact-form">
      <h2>Books4U</h2>
      <form class="contact" action="{{ route('save.contact') }}" method="post">
+     @csrf
 
 <input type="text" name="Name" class="text-box" placeholder="Your Name" required>
 <input type="email" name="Email" class="text-box" placeholder="Your Email" required>
