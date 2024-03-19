@@ -12,14 +12,6 @@
 </head>
 <body>
    
-<!-- Display login flash Message -->
-@if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
-
-
     <header>
     
     <div class="top-left">
@@ -72,12 +64,6 @@
         <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
     
-
-@if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-@endif
 
 <div class="book-container" data-stock-level="{{ $book->Stock_Level }}" data-threshold="{{ $book->productStatus->Threshold }}">
 <div class="book-image-container">

@@ -180,7 +180,7 @@ Route::get('/change-password', [ChPasswordController::class, 'showChangePassword
 Route::post('/change-password', [ChPasswordController::class, 'changePassword'])->name('change-password');
 
 
-//Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
+Route::post('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 
 // payment page routing
 Route::get('/payment-page', function () { return view('Paymentpage'); })->name('payment-page');

@@ -2,6 +2,7 @@
 function handleAnimationEnd() {
     document.querySelector('.alert-success').remove();
 }
+
 document.addEventListener('DOMContentLoaded', function() { 
     setTimeout(function() {
         var alertElement = document.querySelector('.alert-success');

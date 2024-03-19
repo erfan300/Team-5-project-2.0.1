@@ -70,7 +70,7 @@
                     <th></th>
                 </tr>
                 @if(count($wishlist) == 0)
-                    <tr><td colspan="3">Wishlist is Empty!</td></tr>
+                    <tr><td colspan="3"><h4>Wishlist is Empty!</h4></td></tr>
                 @else
                     @foreach ($wishlist as $wishlistItem)
                     <tr>
