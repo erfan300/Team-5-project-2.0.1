@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/prevorders.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    </head>
     <header>
-    
-    <div class="top-left">
-        <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-            @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
-            @endauth
-        </div>
+
+<div class="top-left">
+    <div class="login-buttons">
+        <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+        @auth
+            <a href="profile"><i class="fas fa-user"></i> Profile</a>
+        @endauth
     </div>
-    <h1>BOOKS<span>4</span>U</h1>
-    <div class="session-message">
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
+</div>
+<h1>BOOKS<span>4</span>U</h1>
+<div class="session-message">
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+</div>
+@auth
+    <div class="log-out-box">
+        <form class="inLine" method="POST" action="/logout">
+            @csrf
+            <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </form>
     </div>
-    @auth
-        <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
-                @csrf
-                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </form>
-        </div>
-        <div class="welcome-message">
-            <span>Welcome {{ auth()->user()->Username }}</span>
-        </div>
-    @endauth
+    <div class="welcome-message">
+        <span>Welcome {{ auth()->user()->Username }}</span>
+    </div>
+@endauth
 </header>
 
-<nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    
-    @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
-        <a href="search"><i class="fas fa-search"></i> Search</a>
-        <a href="list"><i class="fas fa-list"></i> List</a>
-        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
-        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
-        <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
-    @endif
-    
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-</nav>
+<button onclick="goBack()" class="custom-button">Previous Page</button>
+
+<script>
+function goBack() {
+window.history.back();
+}
+</script>
+
+<style>
+.custom-button {
+background-color: var(--accent-color);
+color: var(--secondary-color);
+border: none;
+padding: 10px 20px;
+font-size: 1rem;
+cursor: pointer;
+transition: background-color 0.3s, color 0.3s;
+border-radius: 5px;
+}
+
+.custom-button:hover {
+background-color: var(--secondary-color);
+color: var(--accent-color);
+}
+</style>
+
 
     <section>
     <h2>Previous Orders</h2>
