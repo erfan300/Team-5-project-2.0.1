@@ -1,23 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
 :root {
-    --primary-color: #283747;
-    --secondary-color: #f5f5f5;
-    --accent-color: #2980b9;
-    --text-color: #c8e6d1;
-    --text-color-2: #000000;
-    --button-color: #283747;
-    --white-color: #ffffff;
+    --primary-color: #283747; /* Dark blue-gray */
+    --secondary-color: #f5f5f5; /* Light gray */
+    --accent-color: #2980b9; /* Blue */
+    --text-color: #c8e6d1; /* Dark gray */
+    --text-color-2: #000000; /* Black */
+    --link-color: #2980b9; /* Blue */
+    --button-color: #283747; /* Dark blue-gray */
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-}
+
+
 
 
 
@@ -25,118 +18,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--white-color); /* Set background color to match header */
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.alert-success {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--accent-color);
-    color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    text-align: center;
-    z-index: 1000;
-}
-
-.top-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 10px;
-}
-
-.top-right .login-buttons {
-    margin-left: auto;
-}
-
-.top-right .login-buttons a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.top-right .login-buttons a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 3em;
-    text-decoration: underline;
-    text-decoration-color: #2980b9;
-    text-decoration-thickness: 4px;
-    color: var(--text-color);
-    font-family: 'EB Garamond', serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-right: 100px;
-    margin-left: auto;
-}
-
-header h1 span {
-    color: #2980b9 !important; 
-}
-
-.top-left {
-    display: flex;
-    align-items: center;
-}
-
-.login-buttons {
-    margin-right: 10px;
-}
-
-.login-buttons a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    margin-right: 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.login-buttons a:hover {
-    background-color: var(--accent-color);
-    color: var(--secondary-color);
-}
-
-.session-message {
-    margin-left: auto;
-}
-
-.log-out-box {
-    display: flex;
-    align-items: center;
-}
-
-.log-out-box form {
-    margin: 0;
-}
-
-.welcome-message {
-    margin-left: 10px;
-}
+    background-color:#f5f5f5;
+    }
 
 nav {
     background-color: var(--primary-color);
@@ -168,6 +51,15 @@ nav a:last-child {
     border-right: none;
 }
 
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
 
 table {
     border-collapse: collapse;
@@ -184,128 +76,3 @@ th {
     background-color: #283747;
     color: #c8e6d1;
 }
-
-
-/* Footer */
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 20px;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .footer-section {
-    flex: 1 1 300px;
-    margin-bottom: 2rem;
-  }
-  
-  .footer-section h3 {
-    margin-bottom: 1rem;
-    color: white;
-  }
-  
-  .footer-section.links {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .footer-section.links h3 {
-    color: white;
-  }
-  
-  .footer-section.links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-bottom: 5px;
-    transition: color 0.3s;
-  }
-  
-  .footer-section.links a:hover {
-    color: #2980b9;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact { 
-    margin-top: 1rem;
-    color: white;
-  }
-  
-  .footer-section p {
-    color: white;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    color: var(--text-color);
-  }
-  
-  /* Styles for contact form */
-  .contact-form {
-    color: var(--text-color);
-  }
-  
-  .contact-form h3 {
-    color: var(--text-color);
-  }
-  
-  .contact-form .text-input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .contact-form textarea {
-    resize: vertical;
-  }
-  
-  .contact-btn {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    z-index: 1;
-  }
-  
-  .contact-btn:hover {
-    background-color: var(--button-color);
-    color: #fff;
-  }
-  
-  .social-media {
-    margin-top: 20px;
-  }
-  
-  .social-media a {
-    color: #fff;
-    margin-right: 10px;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .social-media a:hover {
-    color: #2980b9;
-  }
-  
-  
