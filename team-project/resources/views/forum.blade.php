@@ -59,7 +59,10 @@
 <h2>All Threads</h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Create New Thread</button>
+
+@auth
+    <button id="myBtn">Create New Thread</button>
+@endauth
 
 <!-- The Modal -->
 <div id="myModal" class="modal">

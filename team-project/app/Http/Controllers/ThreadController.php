@@ -24,6 +24,9 @@ class ThreadController extends Controller
     
     public function store(Request $request)
     {
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to create a thread.');
+        }
         $request->validate([
             'thread' => 'required|max:255',
             'description' => 'required',
@@ -37,6 +40,6 @@ class ThreadController extends Controller
             'author' => $request->input('author'),
         ]);
 
-        return redirect()->route('forum.index')->with('success', 'Thread created successfully!');
+        return redirect()->route('forum')->with('success', 'Thread created successfully!');
     }
 }

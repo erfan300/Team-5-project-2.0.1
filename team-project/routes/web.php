@@ -214,6 +214,7 @@ Route::get('/PrevOrders', function () {
 Route::get('/forum', [ThreadController::class, 'index'])->name('forum');
 Route::get('/forum/create', [ThreadController::class, 'create'])->name('forum.create');
 Route::post('/forum/store', [ThreadController::class, 'store'])->name('forum.store');
+Route::post('/forum', [ThreadController::class, 'store'])->middleware('auth')->name('forum.store');
 
 
 Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
