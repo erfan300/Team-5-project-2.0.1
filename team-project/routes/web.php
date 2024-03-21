@@ -33,7 +33,7 @@ Route::post('/save-contact', [ContactController::class, 'store'])->name('save.co
 
 
 // index/home page
-Route::get('/', [ProductsController::class, 'index'])->name('home');
+Route::get('/', [ProductsController::class, 'index'])->name('home.dashboard');
 
 Route::get('/home', [ProductsController::class, 'index'])->name('home');
 
@@ -44,7 +44,7 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/users', [UserController::class, 'store']);
 
 // Store new book into Database
-Route::post('/store', [ProductsController::class, 'store']); 
+Route::post('/store', [ProductsController::class, 'store'])->name('store'); 
 
 // Shows single book
 Route::get('/book/{book}', [ProductsController::class, 'show']); 
@@ -57,26 +57,16 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'login']);
 
 
-
-
-//routing for the forum page
-        Route::get('/forum', function () {
-            return view('forum');
-        })->name('forum');
-
-
-
-
 // Shows contact page
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
 //Logs in User
-Route::post('/authenticate', [UserController::class, 'authenticate']);
+Route::post('/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
 
 //Logs out User
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // Shows about us page
 Route::get('/aboutus', function () {
@@ -120,10 +110,10 @@ Route::middleware('admin')->group(function () {
     Route::get('/book/{book}/edit', [ProductsController::class, 'edit']);
 
     // Update any new edits 
-    Route::put('/book/{book}', [ProductsController::class, 'update']);
+    Route::put('/book/{book}', [ProductsController::class, 'update'])->name('book.update');
 
     // Delete book
-    Route::delete('/book/{book}', [ProductsController::class, 'delete']);
+    Route::delete('/book/{book}', [ProductsController::class, 'delete'])->name('book.delete');
     
     // Shows create page for admins
     Route::get('/create', [ProductsController::class, 'create'])->name('create');
@@ -205,8 +195,8 @@ Route::get('/profile/previous-orders', [PrevOrdersController::class, 'showPrevio
 Route::post('/return-order/{orderDetail}', [PrevOrdersController::class, 'returnOrder'])->name('return-order');
 
 
-Route::get('/PrevOrders', function () {
-    return view('PrevOrders');
+Route::get('/prevOrders', function () {
+    return view('prevOrders');
 });
 
 //threads - (forum functionality)
@@ -214,11 +204,11 @@ Route::get('/PrevOrders', function () {
 Route::get('/forum', [ThreadController::class, 'index'])->name('forum');
 Route::get('/forum/create', [ThreadController::class, 'create'])->name('forum.create');
 Route::post('/forum/store', [ThreadController::class, 'store'])->name('forum.store');
-Route::post('/forum', [ThreadController::class, 'store'])->middleware('auth')->name('forum.store');
+Route::post('/forum', [ThreadController::class, 'store'])->middleware('auth')->name('forum.dashboard');
 
 
 Route::get('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
-Route::post('/discountpage', [DiscountController::class , 'index'])->name('discountpage');
+Route::post('/discountpage', [DiscountController::class , 'index'])->name('discountpage.dashboard');
 Route::post('comments/{product}', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
 Route::get('comments/{product}', [CommentController::class, 'show'])->middleware('auth')->name('comments.show');
 Route::post('/comments/reply/{product_id}/{comment_id}', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');

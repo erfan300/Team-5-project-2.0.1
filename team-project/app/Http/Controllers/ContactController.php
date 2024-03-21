@@ -35,19 +35,19 @@ class ContactController extends Controller
 
                     $contact = Contact::create($contactData); // Creates and inserts data into the contact database
                     if ($contact) {
-                        return redirect()->back()->with('success', 'Message sent successfully!');
+                        return redirect()->back()->with('message', 'Message sent successfully!');
                     } else {
-                        return redirect()->back()->with('error', 'Failed to save contact.');
+                        return redirect()->back()->with('message', 'Failed to save contact.');
                     }
                 } catch (\Exception $e) {
                     Log::error('Error saving contact: ' . $e->getMessage());
-                    return redirect()->back()->with('error', 'Failed to save contact.');
+                    return redirect()->back()->with('message', 'Failed to save contact.');
                 }
             } else {
-                return redirect()->back()->with('error', 'Only valid customers can submit the contact form.');
+                return redirect()->back()->with('message', 'Only valid customers can submit the contact form.');
             }
         } else {
-            return redirect()->route('login')->with('error', 'Please log in to submit the contact form.');
+            return redirect()->route('login')->with('message', 'Please log in to submit the contact form.');
         }
     }
 }

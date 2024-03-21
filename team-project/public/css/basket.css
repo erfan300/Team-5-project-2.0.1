@@ -227,7 +227,7 @@ h3{
 
 h5{
     color:#ff0000;
-    top:220px;
+    top:310px;
     left:10px;
     position: absolute;
     padding-left: 350px;
@@ -269,7 +269,9 @@ h5{
   
 }
 
-
+.table-section {
+    margin-top: 50px;
+}
 
 /* Footer */
 .footer {

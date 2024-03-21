@@ -9,10 +9,10 @@
     
     <div class="top-left">
         <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+            <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
             @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
+                <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
             @endauth
         </div>
     </div>
@@ -26,7 +26,7 @@
     </div>
     @auth
         <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
+            <form class="inLine" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -38,22 +38,22 @@
 </header>
 
 <nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
+    <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+    <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
+    <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
+    
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
-        <a href="search"><i class="fas fa-search"></i> Search</a>
-        <a href="list"><i class="fas fa-list"></i> List</a>
-        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
-        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
+        <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
+        <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+        <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
         <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
-      
     @endif
     
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+    <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
 <br>

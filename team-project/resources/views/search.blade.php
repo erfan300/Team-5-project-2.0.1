@@ -11,15 +11,15 @@
     
     <header>
     
-    <div class="top-left">
-        <div class="login-buttons">
-            <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-            <a href="register"><i class="fas fa-user-plus"></i> Register</a>
-            @auth
-                <a href="profile"><i class="fas fa-user"></i> Profile</a>
-            @endauth
+        <div class="top-left">
+            <div class="login-buttons">
+                <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
+                @auth
+                    <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
+                @endauth
+            </div>
         </div>
-    </div>
     <h1>BOOKS<span>4</span>U</h1>
     <div class="session-message">
         @if (session('message'))
@@ -30,7 +30,7 @@
     </div>
     @auth
         <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
+            <form class="inLine" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -42,27 +42,27 @@
 </header>
 
 <nav>
-    <a href="home"><i class="fas fa-home"></i> Home</a>
-    <a href="basket"><i class="fas fa-shopping-basket"></i> Basket</a>
-    <a href="wishlist"><i class="fas fa-heart"></i> Wishlist</a>
-    <a href="forum"><i class="fa fa-list-alt"></i> Forums</a>
+    <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+    <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
+    <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
+    <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
+    
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-        <a href="create"><i class="fas fa-plus-circle"></i> Create</a>
-        <a href="search"><i class="fas fa-search"></i> Search</a>
-        <a href="list"><i class="fas fa-list"></i> List</a>
-        <a href="{{ route('order-report') }}"><i class="fas fa-chart-bar"></i> Order Report</a>
-        <a href="{{ route('product-report') }}"><i class="fas fa-chart-pie"></i> Product Report</a>
+        <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
+        <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
+        <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
+        <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
+        <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
         <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
-        
     @endif
     
-    <a href="about"><i class="fas fa-info-circle"></i> About</a>
-    <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+    <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
 
   <!-- Search Bar -->
-  <form action="/search" class="search-form">
+  <form action="{{ url('/search') }}" class="search-form">
         <div class="search-container">
             <input type="text" name="search" class="search-input" placeholder="Search Books4U..." />
             <div class="search-button-container">
@@ -74,37 +74,37 @@
                 <div class="filter-categories">
                     <div class="filter-category">
                         <h6>Genre</h6>
-                        <a href="/search?genre=Fiction">Fiction</a>
-                        <a href="/search?genre=Non-fiction">Non-fiction</a>
-                        <a href="/search?genre=Science Fiction">Science Fiction</a>
-                        <a href="/search?genre=Mystery">Mystery</a>
-                        <a href="/search?genre=Historical">Historical</a>
-                        <a href="/search?genre=Thriller">Thriller</a>
-                        <a href="/search?genre=Romance">Romance</a>
-                        <a href="/search?genre=Young Adult">Young Adult</a>
-                        <a href="/search?genre=Fantasy">Fantasy</a>
-                        <a href="/search?genre=Children">Children</a>
-                        <a href="/search?genre=Biography">Biography</a>
-                        <a href="/search?genre=Adventure">Adventure</a>
-                        <a href="/search?genre=True Crime">True Crime</a>
-                        <a href="/search?genre=Horror">Horror</a>
+                        <a href="{{ url('/search?genre=Fiction') }}">Fiction</a>
+                        <a href="{{ url('/search?genre=Non-fiction') }}">Non-fiction</a>
+                        <a href="{{ url('/search?genre=Science Fiction') }}">Science Fiction</a>
+                        <a href="{{ url('/search?genre=Mystery') }}">Mystery</a>
+                        <a href="{{ url('/search?genre=Historical') }}">Historical</a>
+                        <a href="{{ url('/search?genre=Thriller') }}">Thriller</a>
+                        <a href="{{ url('/search?genre=Romance') }}">Romance</a>
+                        <a href="{{ url('/search?genre=Young Adult') }}">Young Adult</a>
+                        <a href="{{ url('/search?genre=Fantasy') }}">Fantasy</a>
+                        <a href="{{ url('/search?genre=Children') }}">Children</a>
+                        <a href="{{ url('/search?genre=Biography') }}">Biography</a>
+                        <a href="{{ url('/search?genre=Adventure') }}">Adventure</a>
+                        <a href="{{ url('/search?genre=True Crime') }}">True Crime</a>
+                        <a href="{{ url('/search?genre=Horror') }}">Horror</a>
                     </div>
                     <div class="filter-category">
                         <h6>Category</h6>
-                        <a href="/search">All</a>
-                        <a href="/search?category=1">General</a>
-                        <a href="/search?category=2">Best Sellers</a>
-                        <a href="/search?category=3">New Books</a>
-                        <a href="/search?category=4">Classics</a>
-                        <a href="/search?category=5">Recommended</a>
-                        <a href="/search?category=6">Books For Children</a>
-                        <a href="/search?category=7">Books For Young Adults</a>
-                        <a href="/search?category=8">Historical Period</a>
+                        <a href="{{ url('/search') }}">All</a>
+                        <a href="{{ url('/search?category=1') }}">General</a>
+                        <a href="{{ url('/search?category=2') }}">Best Sellers</a>
+                        <a href="{{ url('/search?category=3') }}">New Books</a>
+                        <a href="{{ url('/search?category=4') }}">Classics</a>
+                        <a href="{{ url('/search?category=5') }}">Recommended</a>
+                        <a href="{{ url('/search?category=6') }}">Books For Children</a>
+                        <a href="{{ url('/search?category=7') }}">Books For Young Adults</a>
+                        <a href="{{ url('/search?category=8') }}">Historical Period</a>
                     </div>
                     <div class="filter-category">
                         <h6>Book Type</h6>
-                        <a href="/search?type=Paperback">Paperbacks</a>
-                        <a href="/search?type=Hardback">Hardbacks</a>
+                        <a href="{{ url('/search?type=Paperback') }}">Paperbacks</a>
+                        <a href="{{ url('/search?type=Hardback') }}">Hardbacks</a>
                     </div>
                 </div>
             </div>
@@ -144,21 +144,22 @@
             </div>
             <div class="footer-section links">
                 <h3>Quick Links</h3>
-                <a href="about"><i class="fas fa-info-circle"></i> About</a>
-                <a href="contact"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="home"><i class="fas fa-home"></i> Home</a>
-                <a href="login"><i class="fas fa-sign-in-alt"></i> Log In</a>
-                <a href="register"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
+                <a href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
+                <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Log In</a>
+                <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Register</a>
             </div>
             <div class="footer-section contact-form">
                 <h3>Contact Us</h3>
-                <form action="#" method="post">
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                    <button type="submit" class="btn btn-big contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        Send
-                    </button>
+                <form class="small-contact" action="{{ route('save.contact') }}" method="post">
+                    @csrf
+                
+                    <input type="text" name="Name" class="contact-text-box" placeholder="Your Name" required>
+                    <input type="email" name="Email" class="contact-text-box" placeholder="Your Email" required>
+                    <input type="text" name="Subject" class="contact-subject-box" placeholder="Subject" required>
+                    <textarea name="Message" class="contact-text-area" rows="5" placeholder="Your message" required></textarea>
+                    <input type="submit" class="contact-send-btn" value="Send" name="send">
                 </form>
             </div>
         </div>

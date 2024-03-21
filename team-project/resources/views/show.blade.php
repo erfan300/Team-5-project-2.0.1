@@ -33,7 +33,7 @@
     </div>
     @auth
         <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
+            <form class="inLine" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -47,7 +47,6 @@
 
     <nav>
         <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
         <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
         <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
         <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
@@ -58,6 +57,7 @@
             <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
             <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
             <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
+            <a href="{{ route('discountpage') }}"><i class="fas fa-tags"></i> Discount Page</a>
         @endif
         
         <a href="{{ route('about') }}"><i class="fas fa-info-circle"></i> About</a>
@@ -102,12 +102,13 @@
             <button class="wishlist" type="submit">Add to Wishlist</button>
         </form>
         @if(Auth::check() && Auth::user()->User_Type === 'Admin')
-            <h3><a href="/book/{{$book->Product_ID}}/edit">Edit</a></h3>
-            <form method="POST" action="/book/{{$book->Product_ID}}">
+            <h3><a href="{{ url('/book/' . $book->Product_ID . '/edit') }}">Edit</a></h3>
+            <form method="POST" action="{{ route('book.delete', ['book' => $book->Product_ID]) }}">
                 @csrf
                 @method('DELETE')
                 <button class="delete-button" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
             </form>
+            
         @endif  
     </div>
 </div>

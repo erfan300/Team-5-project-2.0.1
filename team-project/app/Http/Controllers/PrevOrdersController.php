@@ -28,14 +28,22 @@ class PrevOrdersController extends Controller
     $user = auth()->user();
     $userId = $user->User_ID;
 
-    $orders = Orders::query()
+    if ($user->User_Type === 'Admin') {
+        $orders = Orders::query()
+        ->join('admins', 'orders.Admin_ID', '=', 'admins.Admin_ID')
+        ->where('admins.User_ID', $userId)
+        ->with('orderDetails.product')
+        ->get();
+    } elseif ($user->User_Type === 'Customer') {
+        $orders = Orders::query()
         ->join('customers', 'orders.Customer_ID', '=', 'customers.Customer_ID')
         ->where('customers.User_ID', $userId)
         ->with('orderDetails.product')
-        ->get();
+        ->get(); 
+    }
 
     // return the PrevOrders view with the orders data
-    return view('PrevOrders', compact('orders'));
+    return view('prevOrders', compact('orders'));
 
 }
 

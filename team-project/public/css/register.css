@@ -25,7 +25,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--white-color); /* Set background color to match header */
+    background-color: var(--primary-color); 
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -179,7 +179,7 @@ main {
 }
 
 .register-form {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     border-radius: 15px;
     width: 500px;
     padding: 20px;
@@ -204,6 +204,7 @@ main {
     position: relative;
     border-bottom: 3px solid black;
     margin: 20px 0;
+    background: white;
 }
 
 .input-box label {
@@ -337,28 +338,31 @@ main {
 }
 
 /* Styles for contact form */
-.contact-form {
-  color: var(--text-color);
+.small-contact {
+  margin-top: 1rem;
+  color: white;
+  width: 300px; /* Adjust width as needed */
 }
 
-.contact-form h3 {
-  color: var(--text-color);
-}
-
-.contact-form .text-input {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--text-color);
-  border-radius: 5px;
+.contact-text-box,
+.contact-subject-box,
+.contact-text-area {
   width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
-.contact-form textarea {
-  resize: vertical;
+.contact-text-box:focus,
+.contact-subject-box:focus,
+.contact-text-area:focus {
+  outline: none;
+  border-color: #007bff; /* Adjust focus color as needed */
 }
 
-.contact-btn {
+.contact-send-btn {
   background-color: #fff;
   color: #000;
   border: none;
@@ -369,7 +373,7 @@ main {
   z-index: 1;
 }
 
-.contact-btn:hover {
+.contact-send-btn:hover {
   background-color: var(--button-color);
   color: #fff;
 }

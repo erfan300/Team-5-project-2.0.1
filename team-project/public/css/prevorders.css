@@ -249,28 +249,31 @@ th {
   }
   
   /* Styles for contact form */
-  .contact-form {
-    color: var(--text-color);
-  }
-  
-  .contact-form h3 {
-    color: var(--text-color);
-  }
-  
-  .contact-form .text-input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
+  .small-contact {
+    margin-top: 1rem;
+    color: white;
+    width: 300px; /* Adjust width as needed */
+}
+
+.contact-text-box,
+.contact-subject-box,
+.contact-text-area {
     width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
-  }
-  
-  .contact-form textarea {
-    resize: vertical;
-  }
-  
-  .contact-btn {
+}
+
+.contact-text-box:focus,
+.contact-subject-box:focus,
+.contact-text-area:focus {
+    outline: none;
+    border-color: #007bff; /* Adjust focus color as needed */
+}
+
+.contact-send-btn {
     background-color: #fff;
     color: #000;
     border: none;
@@ -279,12 +282,12 @@ th {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     z-index: 1;
-  }
-  
-  .contact-btn:hover {
+}
+
+.contact-send-btn:hover {
     background-color: var(--button-color);
     color: #fff;
-  }
+}
   
   .social-media {
     margin-top: 20px;

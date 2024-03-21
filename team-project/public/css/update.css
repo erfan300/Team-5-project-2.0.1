@@ -324,41 +324,44 @@ color: var(--text-color);
 }
 
 /* Styles for contact form */
-.contact-form {
-color: var(--text-color);
+.small-contact {
+    margin-top: 1rem;
+    color: white;
+    width: 300px; /* Adjust width as needed */
 }
 
-.contact-form h3 {
-color: var(--text-color);
+.contact-text-box,
+.contact-subject-box,
+.contact-text-area {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-.contact-form .text-input {
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid var(--text-color);
-border-radius: 5px;
-width: 100%;
-box-sizing: border-box;
+.contact-text-box:focus,
+.contact-subject-box:focus,
+.contact-text-area:focus {
+    outline: none;
+    border-color: #007bff; /* Adjust focus color as needed */
 }
 
-.contact-form textarea {
-resize: vertical;
+.contact-send-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1;
 }
 
-.contact-btn {
-background-color: #fff;
-color: #000;
-border: none;
-padding: 10px 20px;
-font-size: 1rem;
-cursor: pointer;
-transition: background-color 0.3s, color 0.3s;
-z-index: 1;
-}
-
-.contact-btn:hover {
-background-color: var(--button-color);
-color: #fff;
+.contact-send-btn:hover {
+    background-color: var(--button-color);
+    color: #fff;
 }
 
 .social-media {

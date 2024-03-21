@@ -90,4 +90,42 @@ form input {
     margin: 10px 0;
 }
 
+.small-contact {
+    margin-top: 1rem;
+    color: white;
+    width: 300px; /* Adjust width as needed */
+}
 
+.contact-text-box,
+.contact-subject-box,
+.contact-text-area {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-text-box:focus,
+.contact-subject-box:focus,
+.contact-text-area:focus {
+    outline: none;
+    border-color: #007bff; /* Adjust focus color as needed */
+}
+
+.contact-send-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1;
+}
+
+.contact-send-btn:hover {
+    background-color: var(--button-color);
+    color: #fff;
+}

@@ -39,7 +39,7 @@
     </div>
     @auth
         <div class="log-out-box">
-            <form class="inLine" method="POST" action="/logout">
+            <form class="inLine" method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -53,7 +53,6 @@
 
     <nav>
         <a href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
-        <a href="{{ route('profile') }}"><i class="fas fa-user"></i> Profile</a>
         <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
         <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
         <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
@@ -80,8 +79,7 @@
 </header>
     <section class="form-section">
         <h1 class="book-title-edit">Edit: {{$book->Product_Name}} </h1>
-        <!-- The book edit form (fully working)-->
-        <form action="/book/{{$book->Product_ID}}" method="POST" class="book-form" enctype="multipart/form-data">
+        <form action="{{ route('book.update', ['book' => $book->Product_ID]) }}" method="POST" class="book-form" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
