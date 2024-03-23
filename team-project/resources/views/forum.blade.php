@@ -60,7 +60,7 @@
 <h2>All Threads</h2>
 
 @auth
-    <button class="myBtn">Create New Thread</button>
+<button id="myBtn">Create New Thread</button>
 @endauth
 
 <!-- The Modal -->

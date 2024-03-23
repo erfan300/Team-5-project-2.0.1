@@ -56,16 +56,24 @@
   }
   
  
-  .myBtn {
-    background-color: #4CAF50;
+
+  #myBtn {
+    background-color: var(--accent-color); 
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+}
+
+#myBtn:active {
+    transform: translateY(1px); 
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2); 
+}
+
 
 
 
