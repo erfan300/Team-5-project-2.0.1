@@ -99,11 +99,9 @@ function goBack() {
             <h3>Last Name: {{ $customer->Last_Name }}</h3>
             <h3>Address: {{ $customer->Address }}</h3>
             <h3>Phone Number: {{ $customer->Phone_Number }}</h3>
-        
-            @if(isset($user))
-                <h3>Username: {{ $user->Username }}</h3>
-                <h3>Email: {{ $user->Email }}</h3>
-                @endif
+            <h3>Username: {{ $user->Username }}</h3>
+            <h3>Email: {{ $user->Email }}</h3>
+            
         </div>
     </ul>
 </section>

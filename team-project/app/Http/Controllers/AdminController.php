@@ -12,17 +12,16 @@ use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
-    public function listCustomers()
-    {
+    public function listCustomers(){
         $customers = Customer::all();
 
         return view('list', compact('customers'));
     }
-    public function showCustomerDetails($id)
-{
+
+    public function showCustomerDetails($id){
     $customer = Customer::find($id);
 
-     $user = User::find($id);
+    $user = $customer->user;
 
     return view('single', compact('customer','user'));
 }
