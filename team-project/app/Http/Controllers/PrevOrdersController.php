@@ -48,30 +48,34 @@ class PrevOrdersController extends Controller
 }
 
 public function returnOrder($orderDetailId)
-    {
-        DB::transaction(function () use ($orderDetailId) {
-            $orderDetail = OrderDetails::findOrFail($orderDetailId);
-            $product = $orderDetail->product; 
-            $quantity = $orderDetail->Quantity;
+{
+    DB::transaction(function () use ($orderDetailId) {
+        $orderDetail = OrderDetails::findOrFail($orderDetailId);
+        //referring product table
+        $product = $orderDetail->product; 
+        $quantity = $orderDetail->Quantity;
 
-            // Update the inventory
-            $latestInventory = InventoryLog::where('Product_ID', $product->Product_ID)->latest('TransactionDate')->first();
-            if ($latestInventory) {
-                InventoryLog::create([
-                    'Product_ID' => $product->Product_ID,
-                    'Admin_ID' => auth()->user()->id, 
-                    'TransactionType' => 'In', // using In for transaction type
-                    'TransactionDate' => now(),
-                    'TransactionQuantity' => $quantity,
-                    'NewStockLevel' => $latestInventory->NewStockLevel + $quantity,
-                ]);
-            }
+        // Update the inventory log
+        $latestInventory = InventoryLog::where('Product_ID', $product->Product_ID)->latest('TransactionDate')->first();
+        if ($latestInventory) {
+            InventoryLog::create([
+                'Product_ID' => $product->Product_ID,
+                'Admin_ID' => auth()->user()->id, 
+                'TransactionType' => 'In', 
+                'TransactionDate' => now(),
+                'TransactionQuantity' => $quantity,
+                'NewStockLevel' => $latestInventory->NewStockLevel + $quantity,
+            ]);
+        }
 
-            
-            $orderDetail->delete();
-        });
+        // also updating stock level in the products table so that it can be shown on the products page
+        $product->increment('Stock_Level', $quantity);
 
-        return back()->with('success', 'Order returned and inventory updated.');
-    }
+        $orderDetail->delete();
+    });
+
+    return back()->with('success', 'Order returned and inventory updated.');
+}
+
   
 }
