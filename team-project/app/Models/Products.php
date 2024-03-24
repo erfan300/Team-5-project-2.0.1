@@ -36,10 +36,7 @@ class Products extends Model
                     ->orWhere('Description', 'like', '%' . request('search') . '%')
                     ->orWhere('Book_Type', 'like', '%' . request('search') . '%')
                     ->orWhere('Book_Genre', 'like', '%' . request('search') . '%');
-    
-                $query->orWhereHas('category', function ($query) use ($filters) {
-                    $query->where('Category_Name', 'like', '%' . request('search') . '%');
-                });
+
             });
         }
 

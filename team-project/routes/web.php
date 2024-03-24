@@ -41,7 +41,7 @@ Route::get('/home', [ProductsController::class, 'index'])->name('home');
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 // Creates a new user
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store'])->name('users');
 
 // Store new book into Database
 Route::post('/store', [ProductsController::class, 'store'])->name('store'); 
@@ -213,3 +213,8 @@ Route::post('comments/{product}', [CommentController::class, 'store'])->middlewa
 Route::get('comments/{product}', [CommentController::class, 'show'])->middleware('auth')->name('comments.show');
 Route::post('/comments/reply/{product_id}/{comment_id}', [CommentController::class, 'reply'])->middleware('auth')->name('comments.reply');
 Route::delete('/comments/{product_id}/{comment_id}', [CommentController::class, 'destroy'])->middleware('auth')->name('comments.destroy');
+
+Route::get('/create-symlink', function (){
+    symlink(storage_path('/app/public'), public_path('storage'));
+    echo "Symlink Created. Thanks";
+});

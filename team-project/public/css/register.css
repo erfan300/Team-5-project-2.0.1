@@ -45,6 +45,10 @@ body {
     z-index: 1000;
 }
 
+.error-message {
+  color: red;
+}
+
 .top-right {
     display: flex;
     justify-content: flex-end;

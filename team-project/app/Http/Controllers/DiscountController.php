@@ -20,7 +20,7 @@ class DiscountController extends Controller
     
         $request->validate([
             'code' => 'required|unique:discountcodes,code',
-            'percentage' => 'required|numeric',
+            'percentage' => 'required|numeric|min:0|max:100',
             'expiry_date' => 'nullable|date',
             'active' => 'boolean',
         ]);
@@ -42,6 +42,6 @@ class DiscountController extends Controller
             ]);
         }
     
-        return redirect()->route('discountpage');
+        return redirect()->route('discountpage')->with('message', 'Discount code created successfully.');
     }
 }

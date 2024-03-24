@@ -47,10 +47,10 @@
     <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
     <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
     <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
+    <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
     
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
         <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
-        <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
         <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
         <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
         <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
@@ -63,17 +63,8 @@
 
 <main>
     <!-- Register form-->
-    <form method="POST" class="register-form" action="/users">
+    <form method="POST" class="register-form" action="{{ route('users') }}">
         <h2>Sign up</h2>
-        @if ($errors->any())
-        <div class="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         @csrf
 
         <div class="input-box">
@@ -152,7 +143,7 @@
         </div>
 
         <button type="submit" class="sign-up-btn">Sign Up</button>
-        <p>Already registered? <a href="/login">Log in</a></p>
+        <p>Already registered? <a href="{{ route('login') }}">Log in</a></p>
     </form>
 </main>
 

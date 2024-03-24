@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Basket;
+use App\Models\Wishlist;
+use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\ContactController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
@@ -31,6 +33,14 @@ class Customer extends Model
 
     public function orders() {
         return $this->hasMany(Orders::class, 'Customer_ID');
+    }
+
+    public function basket(){
+        return $this->hasMany(Basket::class, 'Customer_ID');
+    }
+
+    public function wishlist(){
+        return $this->hasMany(Wishlist::class, 'Customer_ID');
     }
 
 

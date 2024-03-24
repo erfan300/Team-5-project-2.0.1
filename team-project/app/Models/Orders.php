@@ -17,7 +17,7 @@ class Orders extends Model
         'Order_ID', 
         'Customer_ID', 
         'Admin_ID',
-        'Order_Data',
+        'Order_Date',
         'Total_Price'
     ];
     public function customer() {

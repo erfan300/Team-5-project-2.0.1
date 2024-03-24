@@ -39,6 +39,19 @@ body {
     z-index: 1000;
 }
 
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.alert-success.fade-out {
+    animation: fadeOut 2s ease-out;
+}
+
 .top-right {
     display: flex;
     justify-content: flex-end;

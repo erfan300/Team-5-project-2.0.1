@@ -22,7 +22,7 @@ class ChPasswordController extends Controller
         $user = ChPassword::where('Email', $request->email)->first();
 
         if (!$user) {
-            return redirect('/change-password')->with('error', 'Email not found. Please enter a valid email.');
+            return redirect('/change-password')->with('message', 'Email not found. Please enter a valid email.');
         }
 
         
@@ -32,6 +32,6 @@ class ChPasswordController extends Controller
         $user->Password = $hashedPassword;
         $user->save();
 
-        return redirect('/login')->with('success', 'Password updated successfully!');
+        return redirect('/login')->with('message', 'Password updated successfully!');
     }
 }

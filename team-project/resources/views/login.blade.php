@@ -45,10 +45,10 @@
     <a href="{{ route('basket') }}"><i class="fas fa-shopping-basket"></i> Basket</a>
     <a href="{{ route('wishlist') }}"><i class="fas fa-heart"></i> Wishlist</a>
     <a href="{{ route('forum') }}"><i class="fa fa-list-alt"></i> Forums</a>
+    <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
     
     @if(Auth::check() && Auth::user()->User_Type === 'Admin')
         <a href="{{ route('create') }}"><i class="fas fa-plus"></i> Create</a>
-        <a href="{{ route('search') }}"><i class="fas fa-search"></i> Search</a>
         <a href="{{ route('list') }}"><i class="fas fa-list"></i> List</a>
         <a href="{{ route('order-report') }}"><i class="far fa-file-alt"></i> Order Reports</a>
         <a href="{{ route('product-report') }}"><i class="far fa-file-alt"></i> Product Report</a>
@@ -68,19 +68,25 @@
             @csrf
             <div class="input-box">
                 <input type="email" name="email" required>
+                @error('email')
+                    <p class="error-message">{{$message}}</p>
+                @enderror
                 <label>Email</label>
             </div>
 
             <div class="input-box">
                 <input type="password" name="password" required>
+                @error('password')
+                    <p class="error-message">{{$message}}</p>
+                @enderror
                 <label>Password</label>
             </div>
             <button type="submit" class="btn">Sign In</button>
             <div class="login-register">
-                <p>Don't have an account? <a href="/register" class="register-link">Register</a></p>
+                <p>Don't have an account? <a href="{{ route('register') }}" class="register-link">Register</a></p>
             </div>
             <div class="login-register">
-                <p>Forgot your password? <a href="/password" class="register-link">Reset Password here</a></p>
+                <p>Forgot your password? <a href="{{ route('change-password-form') }}" class="register-link">Reset Password here</a></p>
             </div>
         </form>
     </div>

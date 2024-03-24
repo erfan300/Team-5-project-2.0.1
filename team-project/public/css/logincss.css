@@ -133,6 +133,10 @@ header h1 span {
     margin-left: 10px;
 }
 
+.error-message {
+  color: red;
+}
+
 nav {
     background-color: var(--primary-color);
     overflow: hidden;

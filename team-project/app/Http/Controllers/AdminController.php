@@ -26,6 +26,7 @@ class AdminController extends Controller
 
     return view('single', compact('customer','user'));
 }
+
 public function deleteCustomer($id)
 {
     $customer = Customer::find($id);
@@ -34,17 +35,30 @@ public function deleteCustomer($id)
         return redirect('/')->with('error', 'Customer not found');
     }
 
+    $customer->basket()->delete();
+    $customer->wishlist()->delete();
+    $customer->contactUs()->delete();
+
+    $orders = $customer->orders;
+    
+        foreach ($orders as $order) {
+            $order->orderDetails()->delete();
+        }
+
     $userId = $customer->User_ID;
+    $customer->orders()->delete();
 
     $customer->delete();
 
     $user = User::find($userId);
     if ($user) {
+        $user->comments()->delete();
         $user->delete();
     }
 
     return redirect('/')->with('message', 'Customer details deleted successfully');
 }
+
 public function modifyCustomer($id)
 {
     $customer = Customer::find($id);
