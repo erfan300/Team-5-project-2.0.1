@@ -145,6 +145,10 @@ class BasketController extends Controller{
             $adminID = $user->admin->Admin_ID;
             $basketItems = Basket::where('Admin_ID', $adminID)->get();
         } 
+
+        if ($basketItems->isEmpty()) {
+            return back()->with('message', 'Your basket is empty!');
+        }
     
         // Create a new order
         $order = new Orders();
